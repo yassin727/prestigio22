@@ -1,21 +1,21 @@
-[2025-06-16T13:19:27.560Z] Initializing OpenAI with API key: MISSING API KEY
-[2025-06-16T13:19:27.560Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
-[2025-06-16T13:19:27.561Z] ✅ Google Gemini initialized
-[2025-06-16T13:19:27.563Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
-[2025-06-16T13:19:27.564Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\web project\models
-[2025-06-16T13:19:27.564Z] 🧪 Testing Google Gemini API connection...
-[2025-06-16T13:19:28.464Z] ✅ Google Gemini connection successful
-[2025-06-16T13:19:29.355Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-00.p3qyd4n.mongodb.net
-[2025-06-16T13:19:29.380Z] ✅ Server is running on port 5000
-[2025-06-16T13:19:29.381Z] 🌍 Environment: development
-[2025-06-16T13:19:29.381Z] 🚀 Available endpoints:
-[2025-06-16T13:19:29.381Z]    POST http://localhost:5000/api/chat
-[2025-06-16T13:19:29.381Z]    GET  http://localhost:5000/
-[2025-06-16T13:19:29.381Z]    GET  http://localhost:5000/health
-[2025-06-16T13:19:30.004Z] ✅ Email Service Connected
-[2025-06-16T13:19:38.646Z] 
+[2025-06-16T13:32:46.022Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-16T13:32:46.022Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-16T13:32:46.022Z] ✅ Google Gemini initialized
+[2025-06-16T13:32:46.023Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-16T13:32:46.024Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\web project\models
+[2025-06-16T13:32:46.025Z] 🧪 Testing Google Gemini API connection...
+[2025-06-16T13:32:46.949Z] ✅ Google Gemini connection successful
+[2025-06-16T13:32:47.871Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-16T13:32:47.890Z] ✅ Server is running on port 5000
+[2025-06-16T13:32:47.890Z] 🌍 Environment: development
+[2025-06-16T13:32:47.890Z] 🚀 Available endpoints:
+[2025-06-16T13:32:47.890Z]    POST http://localhost:5000/api/chat
+[2025-06-16T13:32:47.891Z]    GET  http://localhost:5000/
+[2025-06-16T13:32:47.891Z]    GET  http://localhost:5000/health
+[2025-06-16T13:32:48.673Z] ✅ Email Service Connected
+[2025-06-16T13:32:56.131Z] 
 === Incoming GET / ===
-[2025-06-16T13:19:38.646Z] Headers: {
+[2025-06-16T13:32:56.132Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
@@ -36,12 +36,12 @@
   "if-none-match": "W/\"8f44-19777fa53e8\"",
   "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
 }
-[2025-06-16T13:19:38.649Z] Serving frontend index.html
-[2025-06-16T13:19:38.661Z] === Completed 304 in 15ms ===
+[2025-06-16T13:32:56.132Z] Serving frontend index.html
+[2025-06-16T13:32:56.138Z] === Completed 304 in 7ms ===
 
-[2025-06-16T13:19:38.726Z] 
+[2025-06-16T13:32:56.169Z] 
 === Incoming GET /css/i18n.css ===
-[2025-06-16T13:19:38.727Z] Headers: {
+[2025-06-16T13:32:56.169Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -61,11 +61,11 @@
   "if-none-match": "W/\"18d8-19776a722eb\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
 }
-[2025-06-16T13:19:38.736Z] === Completed 304 in 10ms ===
+[2025-06-16T13:32:56.173Z] === Completed 304 in 4ms ===
 
-[2025-06-16T13:19:38.750Z] 
+[2025-06-16T13:32:56.181Z] 
 === Incoming GET /js/i18n.js ===
-[2025-06-16T13:19:38.750Z] Headers: {
+[2025-06-16T13:32:56.181Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -85,11 +85,11 @@
   "if-none-match": "W/\"a0ec-19776addfb3\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
 }
-[2025-06-16T13:19:38.752Z] === Completed 304 in 2ms ===
+[2025-06-16T13:32:56.182Z] === Completed 304 in 1ms ===
 
-[2025-06-16T13:19:38.755Z] 
+[2025-06-16T13:32:56.184Z] 
 === Incoming GET /js/auth.js ===
-[2025-06-16T13:19:38.755Z] Headers: {
+[2025-06-16T13:32:56.184Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -109,11 +109,11 @@
   "if-none-match": "W/\"1738-1976b23edc4\"",
   "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
 }
-[2025-06-16T13:19:38.757Z] === Completed 304 in 2ms ===
+[2025-06-16T13:32:56.185Z] === Completed 304 in 1ms ===
 
-[2025-06-16T13:19:43.075Z] 
+[2025-06-16T13:32:58.663Z] 
 === Incoming GET /pages/login.html ===
-[2025-06-16T13:19:43.076Z] Headers: {
+[2025-06-16T13:32:58.665Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
@@ -133,11 +133,11 @@
   "if-none-match": "W/\"4b02-197768ed3fd\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:26:01 GMT"
 }
-[2025-06-16T13:19:43.080Z] === Completed 304 in 5ms ===
+[2025-06-16T13:32:58.671Z] === Completed 304 in 8ms ===
 
-[2025-06-16T13:19:43.224Z] 
+[2025-06-16T13:32:58.828Z] 
 === Incoming GET /css/i18n.css ===
-[2025-06-16T13:19:43.224Z] Headers: {
+[2025-06-16T13:32:58.828Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -154,11 +154,9 @@
   "if-none-match": "W/\"18d8-19776a722eb\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
 }
-[2025-06-16T13:19:43.229Z] === Completed 304 in 5ms ===
-
-[2025-06-16T13:19:43.234Z] 
+[2025-06-16T13:32:58.829Z] 
 === Incoming GET /js/i18n.js ===
-[2025-06-16T13:19:43.234Z] Headers: {
+[2025-06-16T13:32:58.829Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -175,11 +173,13 @@
   "if-none-match": "W/\"a0ec-19776addfb3\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
 }
-[2025-06-16T13:19:43.236Z] === Completed 304 in 2ms ===
+[2025-06-16T13:32:58.833Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:19:47.746Z] 
+[2025-06-16T13:32:58.834Z] === Completed 304 in 5ms ===
+
+[2025-06-16T13:32:59.951Z] 
 === Incoming POST /api/auth/login ===
-[2025-06-16T13:19:47.747Z] Headers: {
+[2025-06-16T13:32:59.951Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "content-length": "54",
@@ -197,12 +197,12 @@
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:47.747Z] Body: {
+[2025-06-16T13:32:59.952Z] Body: {
   "username": "user_qvvuog1558",
   "password": "o30wilsl40"
 }
-[2025-06-16T13:19:47.749Z] === LOGIN REQUEST ===
-[2025-06-16T13:19:47.750Z] Headers: {
+[2025-06-16T13:32:59.952Z] === LOGIN REQUEST ===
+[2025-06-16T13:32:59.953Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "content-length": "54",
@@ -220,16 +220,16 @@
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:47.750Z] Body: {
+[2025-06-16T13:32:59.953Z] Body: {
   "username": "user_qvvuog1558",
   "password": "o30wilsl40"
 }
-[2025-06-16T13:19:49.017Z] ✅ Database login successful for user: user_qvvuog1558
-[2025-06-16T13:19:49.023Z] === Completed 200 in 1277ms ===
+[2025-06-16T13:33:00.746Z] ✅ Database login successful for user: user_qvvuog1558
+[2025-06-16T13:33:00.748Z] === Completed 200 in 797ms ===
 
-[2025-06-16T13:19:50.077Z] 
+[2025-06-16T13:33:01.802Z] 
 === Incoming GET /pages/car-selection.html ===
-[2025-06-16T13:19:50.078Z] Headers: {
+[2025-06-16T13:33:01.802Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
@@ -248,11 +248,11 @@
   "if-none-match": "W/\"5d49-1977827b23d\"",
   "if-modified-since": "Mon, 16 Jun 2025 09:52:36 GMT"
 }
-[2025-06-16T13:19:50.080Z] === Completed 304 in 3ms ===
+[2025-06-16T13:33:01.809Z] === Completed 304 in 7ms ===
 
-[2025-06-16T13:19:50.179Z] 
+[2025-06-16T13:33:01.940Z] 
 === Incoming GET /css/i18n.css ===
-[2025-06-16T13:19:50.179Z] Headers: {
+[2025-06-16T13:33:01.941Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -270,9 +270,9 @@
   "if-none-match": "W/\"18d8-19776a722eb\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
 }
-[2025-06-16T13:19:50.181Z] 
+[2025-06-16T13:33:01.945Z] 
 === Incoming GET /js/i18n.js ===
-[2025-06-16T13:19:50.181Z] Headers: {
+[2025-06-16T13:33:01.945Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -290,13 +290,13 @@
   "if-none-match": "W/\"a0ec-19776addfb3\"",
   "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
 }
-[2025-06-16T13:19:50.187Z] === Completed 304 in 8ms ===
+[2025-06-16T13:33:01.949Z] === Completed 304 in 9ms ===
 
-[2025-06-16T13:19:50.190Z] === Completed 304 in 9ms ===
+[2025-06-16T13:33:01.950Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:19:58.441Z] 
+[2025-06-16T13:33:04.545Z] 
 === Incoming GET /pages/luxurycars.html ===
-[2025-06-16T13:19:58.443Z] Headers: {
+[2025-06-16T13:33:04.546Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
@@ -310,17 +310,961 @@
   "sec-fetch-user": "?1",
   "sec-fetch-dest": "document",
   "referer": "http://localhost:5000/pages/car-selection.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"c78e-19778e6d149\"",
+  "if-modified-since": "Mon, 16 Jun 2025 13:21:22 GMT"
+}
+[2025-06-16T13:33:04.572Z] === Completed 200 in 27ms ===
+
+[2025-06-16T13:33:04.715Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-16T13:33:04.716Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"18d8-19776a722eb\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:04.723Z] === Completed 304 in 8ms ===
+
+[2025-06-16T13:33:04.730Z] 
+=== Incoming GET /pages/particles.js ===
+[2025-06-16T13:33:04.731Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:04.741Z] Serving index.html for route: /pages/particles.js
+[2025-06-16T13:33:04.746Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-16T13:33:04.748Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"a0ec-19776addfb3\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:04.750Z] 
+=== Incoming GET /pages/admin-vehicle-manager.js ===
+[2025-06-16T13:33:04.750Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:04.755Z] === Completed 304 in 25ms ===
+
+[2025-06-16T13:33:04.759Z] === Completed 304 in 13ms ===
+
+[2025-06-16T13:33:04.760Z] Serving index.html for route: /pages/admin-vehicle-manager.js
+[2025-06-16T13:33:04.762Z] === Completed 304 in 12ms ===
+
+[2025-06-16T13:33:04.839Z] 
+=== Incoming GET /api/cars/luxury ===
+[2025-06-16T13:33:04.840Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"13776-3uU+LvQCCXX3QW5cLllOXRnBt/E\""
+}
+[2025-06-16T13:33:05.098Z] === Completed 304 in 259ms ===
+
+[2025-06-16T13:33:05.119Z] 
+=== Incoming GET /logos/Aston-Martin-Logo.png ===
+[2025-06-16T13:33:05.119Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.123Z] 
+=== Incoming GET /logos/audi.png ===
+[2025-06-16T13:33:05.123Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.126Z] 
+=== Incoming GET /logos/bentley.png ===
+[2025-06-16T13:33:05.126Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.130Z] === Completed 200 in 4ms ===
+
+[2025-06-16T13:33:05.132Z] === Completed 200 in 9ms ===
+
+[2025-06-16T13:33:05.133Z] === Completed 200 in 14ms ===
+
+[2025-06-16T13:33:05.136Z] 
+=== Incoming GET /logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
+[2025-06-16T13:33:05.137Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.140Z] 
+=== Incoming GET /logos/Bugatti-Logo.png ===
+[2025-06-16T13:33:05.141Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.144Z] 
+=== Incoming GET /logos/ferrari-emblem-logo-png_seeklogo-53763.png ===
+[2025-06-16T13:33:05.144Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.149Z] === Completed 200 in 13ms ===
+
+[2025-06-16T13:33:05.157Z] === Completed 200 in 13ms ===
+
+[2025-06-16T13:33:05.163Z] 
+=== Incoming GET /logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
+[2025-06-16T13:33:05.164Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.172Z] === Completed 200 in 32ms ===
+
+[2025-06-16T13:33:05.179Z] 
+=== Incoming GET /logos/Lamborghini-Logo.png ===
+[2025-06-16T13:33:05.179Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.181Z] 
+=== Incoming GET /logos/land-rover-logo-png_seeklogo-201638.png ===
+[2025-06-16T13:33:05.183Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.193Z] === Completed 200 in 30ms ===
+
+[2025-06-16T13:33:05.198Z] === Completed 200 in 17ms ===
+
+[2025-06-16T13:33:05.201Z] 
+=== Incoming GET /logos/lexus.png ===
+[2025-06-16T13:33:05.205Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.212Z] 
+=== Incoming GET /logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png ===
+[2025-06-16T13:33:05.213Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.227Z] === Completed 200 in 26ms ===
+
+[2025-06-16T13:33:05.229Z] === Completed 200 in 17ms ===
+
+[2025-06-16T13:33:05.233Z] 
+=== Incoming GET /logos/mclaren-logo.png ===
+[2025-06-16T13:33:05.234Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.241Z] === Completed 200 in 62ms ===
+
+[2025-06-16T13:33:05.242Z] === Completed 200 in 9ms ===
+
+[2025-06-16T13:33:05.244Z] 
+=== Incoming GET /logos/Mercedes-Logo.svg.png ===
+[2025-06-16T13:33:05.244Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.246Z] 
+=== Incoming GET /logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png ===
+[2025-06-16T13:33:05.247Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.250Z] 
+=== Incoming GET /logos/rolls-royce-logo.png ===
+[2025-06-16T13:33:05.250Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:05.253Z] === Completed 200 in 7ms ===
+
+[2025-06-16T13:33:05.261Z] === Completed 200 in 11ms ===
+
+[2025-06-16T13:33:05.265Z] === Completed 200 in 21ms ===
+
+[2025-06-16T13:33:08.395Z] 
+=== Incoming GET /pages/images/P90344238-rolls-royce-cullinan-2250px.jpg ===
+[2025-06-16T13:33:08.395Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:08.396Z] 
+=== Incoming GET /pages/images/2015-Rolls-Royce-Ghost-Series-II-001-1600.jpg ===
+[2025-06-16T13:33:08.396Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:08.397Z] 
+=== Incoming GET /pages/images/2026-Rolls-Royce-Spectre-Black-Badge-001-2000.jpg ===
+[2025-06-16T13:33:08.397Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:08.398Z] 
+=== Incoming GET /pages/images/2014-Rolls-Royce-Wraith-005-1600.jpg ===
+[2025-06-16T13:33:08.398Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:08.401Z] Serving index.html for route: /pages/images/P90344238-rolls-royce-cullinan-2250px.jpg
+[2025-06-16T13:33:08.404Z] Serving index.html for route: /pages/images/2015-Rolls-Royce-Ghost-Series-II-001-1600.jpg
+[2025-06-16T13:33:08.406Z] Serving index.html for route: /pages/images/2026-Rolls-Royce-Spectre-Black-Badge-001-2000.jpg
+[2025-06-16T13:33:08.408Z] 
+=== Incoming GET /pages/images/01_RR_PHANTOM-single-twin-card-min.jpg ===
+[2025-06-16T13:33:08.408Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T13:33:08.409Z] Serving index.html for route: /pages/images/2014-Rolls-Royce-Wraith-005-1600.jpg
+[2025-06-16T13:33:08.411Z] Serving index.html for route: /pages/images/01_RR_PHANTOM-single-twin-card-min.jpg
+[2025-06-16T13:33:08.412Z] === Completed 200 in 17ms ===
+
+[2025-06-16T13:33:08.413Z] === Completed 200 in 16ms ===
+
+[2025-06-16T13:33:08.414Z] === Completed 200 in 18ms ===
+
+[2025-06-16T13:33:08.418Z] === Completed 200 in 20ms ===
+
+[2025-06-16T13:33:08.422Z] === Completed 200 in 14ms ===
+
+[2025-06-16T13:33:13.726Z] 
+=== Incoming GET /pages/images/720s.jpg ===
+[2025-06-16T13:33:13.726Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:13.731Z] 
+=== Incoming GET /pages/images/765lt.jpg ===
+[2025-06-16T13:33:13.732Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:13.735Z] 
+=== Incoming GET /pages/images/artura.jpg ===
+[2025-06-16T13:33:13.735Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:13.738Z] 
+=== Incoming GET /pages/images/p1.jpg ===
+[2025-06-16T13:33:13.738Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:13.739Z] 
+=== Incoming GET /pages/images/senna.jpg ===
+[2025-06-16T13:33:13.739Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:13.741Z] Serving index.html for route: /pages/images/720s.jpg
+[2025-06-16T13:33:13.742Z] Serving index.html for route: /pages/images/765lt.jpg
+[2025-06-16T13:33:13.743Z] Serving index.html for route: /pages/images/artura.jpg
+[2025-06-16T13:33:13.744Z] Serving index.html for route: /pages/images/p1.jpg
+[2025-06-16T13:33:13.746Z] Serving index.html for route: /pages/images/senna.jpg
+[2025-06-16T13:33:13.752Z] === Completed 200 in 26ms ===
+
+[2025-06-16T13:33:13.755Z] === Completed 200 in 24ms ===
+
+[2025-06-16T13:33:13.756Z] === Completed 200 in 21ms ===
+
+[2025-06-16T13:33:13.757Z] === Completed 200 in 19ms ===
+
+[2025-06-16T13:33:13.758Z] === Completed 200 in 19ms ===
+
+[2025-06-16T13:33:17.339Z] 
+=== Incoming GET /pages/images/batur.jpg ===
+[2025-06-16T13:33:17.339Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T13:33:17.341Z] 
+=== Incoming GET /pages/images/bentayga.jpg ===
+[2025-06-16T13:33:17.342Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T13:33:17.346Z] 
+=== Incoming GET /pages/images/01_RR_PHANTOM-single-twin-card-min.jpg ===
+[2025-06-16T13:33:17.347Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:33:17.348Z] 
+=== Incoming GET /pages/images/flying%20spur.jpg ===
+[2025-06-16T13:33:17.348Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T13:33:17.349Z] 
+=== Incoming GET /pages/images/2017-Bentley-Mulsanne-Speed-001-2000.jpg ===
+[2025-06-16T13:33:17.350Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T13:33:17.351Z] Serving index.html for route: /pages/images/batur.jpg
+[2025-06-16T13:33:17.352Z] Serving index.html for route: /pages/images/bentayga.jpg
+[2025-06-16T13:33:17.352Z] Serving index.html for route: /pages/images/01_RR_PHANTOM-single-twin-card-min.jpg
+[2025-06-16T13:33:17.354Z] Serving index.html for route: /pages/images/flying%20spur.jpg
+[2025-06-16T13:33:17.355Z] Serving index.html for route: /pages/images/2017-Bentley-Mulsanne-Speed-001-2000.jpg
+[2025-06-16T13:33:17.358Z] === Completed 304 in 12ms ===
+
+[2025-06-16T13:33:17.361Z] === Completed 200 in 22ms ===
+
+[2025-06-16T13:33:17.362Z] === Completed 200 in 21ms ===
+
+[2025-06-16T13:33:17.362Z] === Completed 200 in 13ms ===
+
+[2025-06-16T13:33:17.363Z] === Completed 200 in 15ms ===
+
+[2025-06-16T13:33:18.038Z] 
+=== Incoming GET /pages/car-customizer.html ===
+[2025-06-16T13:33:18.038Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:18.041Z] === Completed 200 in 3ms ===
+
+[2025-06-16T13:33:18.134Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-16T13:33:18.135Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"18d8-19776a722eb\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:18.135Z] === Completed 304 in 1ms ===
+
+[2025-06-16T13:33:18.158Z] 
+=== Incoming GET /js/car-models.js ===
+[2025-06-16T13:33:18.159Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"3caf-1977642e51d\"",
+  "if-modified-since": "Mon, 16 Jun 2025 01:03:04 GMT"
+}
+[2025-06-16T13:33:18.160Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-16T13:33:18.160Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"a0ec-19776addfb3\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:18.162Z] === Completed 304 in 4ms ===
+
+[2025-06-16T13:33:18.163Z] 
+=== Incoming GET /css/car-customizer.css ===
+[2025-06-16T13:33:18.163Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"3869-1976ca4aa84\"",
+  "if-modified-since": "Sat, 14 Jun 2025 04:13:40 GMT"
+}
+[2025-06-16T13:33:18.164Z] 
+=== Incoming GET /js/car-customizer.js ===
+[2025-06-16T13:33:18.165Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"88b2-19776843727\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:14:25 GMT"
+}
+[2025-06-16T13:33:18.166Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:33:18.169Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:33:18.170Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:33:19.846Z] 
+=== Incoming GET /models/mercedes/2021_mercedes-benz_s-class_maybach.glb ===
+[2025-06-16T13:33:19.847Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:33:20.170Z] === Completed 200 in 324ms ===
+
+[2025-06-16T13:34:02.984Z] 
+=== Incoming GET /pages/luxurycars.html ===
+[2025-06-16T13:34:02.984Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bentley-continental&name=Continental+GT&brand=Bentley&price=%24220%2C000&image=images%2F01_RR_PHANTOM-single-twin-card-min.jpg&info=626+HP%2C+6.0L+W12+Engine+%7C+Grand+touring+coupe+%7C+Handcrafted+luxury&type=buy",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
   "if-none-match": "W/\"c734-197782d3e0a\"",
   "if-modified-since": "Mon, 16 Jun 2025 09:58:40 GMT"
 }
-[2025-06-16T13:19:58.463Z] === Completed 200 in 22ms ===
+[2025-06-16T13:34:02.996Z] === Completed 200 in 12ms ===
 
-[2025-06-16T13:19:58.553Z] 
+[2025-06-16T13:34:03.140Z] 
 === Incoming GET /css/i18n.css ===
-[2025-06-16T13:19:58.554Z] Headers: {
+[2025-06-16T13:34:03.140Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -333,62 +1277,62 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "style",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:58.558Z] === Completed 304 in 5ms ===
+[2025-06-16T13:34:03.144Z] === Completed 304 in 4ms ===
 
-[2025-06-16T13:19:58.561Z] 
+[2025-06-16T13:34:03.153Z] 
 === Incoming GET /pages/particles.js ===
-[2025-06-16T13:19:58.562Z] Headers: {
+[2025-06-16T13:34:03.153Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "*/*",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:58.567Z] Serving index.html for route: /pages/particles.js
-[2025-06-16T13:19:58.570Z] === Completed 304 in 9ms ===
+[2025-06-16T13:34:03.158Z] Serving index.html for route: /pages/particles.js
+[2025-06-16T13:34:03.166Z] === Completed 304 in 13ms ===
 
-[2025-06-16T13:19:58.571Z] 
+[2025-06-16T13:34:03.179Z] 
 === Incoming GET /pages/admin-vehicle-manager.js ===
-[2025-06-16T13:19:58.572Z] Headers: {
+[2025-06-16T13:34:03.179Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "*/*",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:58.573Z] Serving index.html for route: /pages/admin-vehicle-manager.js
-[2025-06-16T13:19:58.575Z] === Completed 304 in 4ms ===
+[2025-06-16T13:34:03.180Z] Serving index.html for route: /pages/admin-vehicle-manager.js
+[2025-06-16T13:34:03.181Z] === Completed 304 in 2ms ===
 
-[2025-06-16T13:19:58.579Z] 
+[2025-06-16T13:34:03.182Z] 
 === Incoming GET /js/i18n.js ===
-[2025-06-16T13:19:58.581Z] Headers: {
+[2025-06-16T13:34:03.183Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -401,16 +1345,16 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:19:58.582Z] === Completed 304 in 3ms ===
+[2025-06-16T13:34:03.184Z] === Completed 304 in 2ms ===
 
-[2025-06-16T13:19:58.598Z] 
+[2025-06-16T13:34:03.188Z] 
 === Incoming GET /api/cars/luxury ===
-[2025-06-16T13:19:58.598Z] Headers: {
+[2025-06-16T13:34:03.188Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -421,1180 +1365,347 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "cors",
   "sec-fetch-dest": "empty",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
   "if-none-match": "W/\"13776-3uU+LvQCCXX3QW5cLllOXRnBt/E\""
 }
-[2025-06-16T13:19:58.825Z] === Completed 304 in 227ms ===
+[2025-06-16T13:34:03.409Z] === Completed 304 in 221ms ===
 
-[2025-06-16T13:19:58.836Z] 
-=== Incoming GET /pages/logos/Aston-Martin-Logo.png ===
-[2025-06-16T13:19:58.837Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.838Z] 
-=== Incoming GET /pages/logos/audi.png ===
-[2025-06-16T13:19:58.838Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.839Z] Serving index.html for route: /pages/logos/Aston-Martin-Logo.png
-[2025-06-16T13:19:58.840Z] Serving index.html for route: /pages/logos/audi.png
-[2025-06-16T13:19:58.841Z] === Completed 304 in 5ms ===
-
-[2025-06-16T13:19:58.843Z] === Completed 304 in 5ms ===
-
-[2025-06-16T13:19:58.845Z] 
-=== Incoming GET /pages/logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
-[2025-06-16T13:19:58.846Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.848Z] 
-=== Incoming GET /pages/logos/Bugatti-Logo.png ===
-[2025-06-16T13:19:58.848Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.850Z] Serving index.html for route: /pages/logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png
-[2025-06-16T13:19:58.852Z] Serving index.html for route: /pages/logos/Bugatti-Logo.png
-[2025-06-16T13:19:58.854Z] === Completed 304 in 9ms ===
-
-[2025-06-16T13:19:58.856Z] === Completed 304 in 8ms ===
-
-[2025-06-16T13:19:58.858Z] 
-=== Incoming GET /pages/logos/ferrari-emblem-logo-png_seeklogo-53763.png ===
-[2025-06-16T13:19:58.859Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.866Z] 
-=== Incoming GET /pages/logos/bentley.png ===
-[2025-06-16T13:19:58.866Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.869Z] Serving index.html for route: /pages/logos/ferrari-emblem-logo-png_seeklogo-53763.png
-[2025-06-16T13:19:58.871Z] 
-=== Incoming GET /pages/logos/Lamborghini-Logo.png ===
-[2025-06-16T13:19:58.871Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.873Z] 
-=== Incoming GET /pages/logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
-[2025-06-16T13:19:58.873Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.875Z] Serving index.html for route: /pages/logos/bentley.png
-[2025-06-16T13:19:58.876Z] === Completed 304 in 18ms ===
-
-[2025-06-16T13:19:58.879Z] Serving index.html for route: /pages/logos/Lamborghini-Logo.png
-[2025-06-16T13:19:58.883Z] Serving index.html for route: /pages/logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png
-[2025-06-16T13:19:58.887Z] === Completed 304 in 21ms ===
-
-[2025-06-16T13:19:58.889Z] 
-=== Incoming GET /pages/logos/land-rover-logo-png_seeklogo-201638.png ===
-[2025-06-16T13:19:58.889Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.893Z] === Completed 304 in 22ms ===
-
-[2025-06-16T13:19:58.899Z] === Completed 304 in 26ms ===
-
-[2025-06-16T13:19:58.902Z] Serving index.html for route: /pages/logos/land-rover-logo-png_seeklogo-201638.png
-[2025-06-16T13:19:58.905Z] 
-=== Incoming GET /pages/logos/lexus.png ===
-[2025-06-16T13:19:58.905Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.907Z] 
-=== Incoming GET /pages/logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png ===
-[2025-06-16T13:19:58.908Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.911Z] === Completed 304 in 22ms ===
-
-[2025-06-16T13:19:58.914Z] Serving index.html for route: /pages/logos/lexus.png
-[2025-06-16T13:19:58.917Z] Serving index.html for route: /pages/logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png
-[2025-06-16T13:19:58.919Z] 
-=== Incoming GET /pages/logos/mclaren-logo.png ===
-[2025-06-16T13:19:58.920Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.923Z] === Completed 304 in 18ms ===
-
-[2025-06-16T13:19:58.925Z] === Completed 304 in 18ms ===
-
-[2025-06-16T13:19:58.927Z] Serving index.html for route: /pages/logos/mclaren-logo.png
-[2025-06-16T13:19:58.931Z] 
-=== Incoming GET /pages/logos/Mercedes-Logo.svg.png ===
-[2025-06-16T13:19:58.931Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.935Z] === Completed 304 in 16ms ===
-
-[2025-06-16T13:19:58.937Z] Serving index.html for route: /pages/logos/Mercedes-Logo.svg.png
-[2025-06-16T13:19:58.940Z] 
-=== Incoming GET /pages/logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png ===
-[2025-06-16T13:19:58.940Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.943Z] 
-=== Incoming GET /pages/logos/rolls-royce-logo.png ===
-[2025-06-16T13:19:58.944Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:19:58.947Z] === Completed 304 in 16ms ===
-
-[2025-06-16T13:19:58.949Z] Serving index.html for route: /pages/logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png
-[2025-06-16T13:19:58.951Z] Serving index.html for route: /pages/logos/rolls-royce-logo.png
-[2025-06-16T13:19:58.955Z] === Completed 304 in 15ms ===
-
-[2025-06-16T13:19:58.956Z] === Completed 304 in 13ms ===
-
-[2025-06-16T13:20:01.751Z] 
-=== Incoming GET /pages/images/R8.jpg ===
-[2025-06-16T13:20:01.751Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:20:01.752Z] 
-=== Incoming GET /pages/images/RS_Q8.jpg ===
-[2025-06-16T13:20:01.753Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:20:01.754Z] 
-=== Incoming GET /pages/images/RS6_Avant.jpg ===
-[2025-06-16T13:20:01.754Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:20:01.755Z] 
-=== Incoming GET /pages/images/RS7.jpg ===
-[2025-06-16T13:20:01.756Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:20:01.759Z] 
-=== Incoming GET /pages/images/etron.jpg ===
-[2025-06-16T13:20:01.759Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:20:01.762Z] Serving index.html for route: /pages/images/R8.jpg
-[2025-06-16T13:20:01.763Z] Serving index.html for route: /pages/images/RS_Q8.jpg
-[2025-06-16T13:20:01.765Z] Serving index.html for route: /pages/images/RS6_Avant.jpg
-[2025-06-16T13:20:01.766Z] Serving index.html for route: /pages/images/RS7.jpg
-[2025-06-16T13:20:01.767Z] Serving index.html for route: /pages/images/etron.jpg
-[2025-06-16T13:20:01.768Z] === Completed 304 in 17ms ===
-
-[2025-06-16T13:20:01.768Z] === Completed 304 in 16ms ===
-
-[2025-06-16T13:20:01.770Z] === Completed 304 in 16ms ===
-
-[2025-06-16T13:20:01.771Z] === Completed 304 in 15ms ===
-
-[2025-06-16T13:20:01.772Z] === Completed 304 in 13ms ===
-
-[2025-06-16T13:23:01.451Z] 
-=== Incoming GET / ===
-[2025-06-16T13:23:01.459Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "upgrade-insecure-requests": "1",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-purpose": "prefetch;prerender",
-  "purpose": "prefetch",
-  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-  "sec-fetch-site": "none",
-  "sec-fetch-mode": "navigate",
-  "sec-fetch-user": "?1",
-  "sec-fetch-dest": "document",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:23:01.467Z] Serving frontend index.html
-[2025-06-16T13:23:01.482Z] === Completed 304 in 31ms ===
-
-[2025-06-16T13:23:01.511Z] 
-=== Incoming GET /css/i18n.css ===
-[2025-06-16T13:23:01.511Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-purpose": "prefetch;prerender",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "text/css,*/*;q=0.1",
-  "purpose": "prefetch",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "style",
-  "referer": "http://localhost:5000/",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"18d8-19776a722eb\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
-}
-[2025-06-16T13:23:01.517Z] === Completed 304 in 6ms ===
-
-[2025-06-16T13:23:01.526Z] 
-=== Incoming GET /js/i18n.js ===
-[2025-06-16T13:23:01.527Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-purpose": "prefetch;prerender",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "purpose": "prefetch",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"a0ec-19776addfb3\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
-}
-[2025-06-16T13:23:01.529Z] === Completed 304 in 3ms ===
-
-[2025-06-16T13:23:01.539Z] 
-=== Incoming GET /js/auth.js ===
-[2025-06-16T13:23:01.540Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-purpose": "prefetch;prerender",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "purpose": "prefetch",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"1738-1976b23edc4\"",
-  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
-}
-[2025-06-16T13:23:01.542Z] === Completed 304 in 3ms ===
-
-[2025-06-16T13:23:03.933Z] 
-=== Incoming GET /pages/login.html ===
-[2025-06-16T13:23:03.935Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "upgrade-insecure-requests": "1",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "navigate",
-  "sec-fetch-user": "?1",
-  "sec-fetch-dest": "document",
-  "referer": "http://localhost:5000/",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"4b02-197768ed3fd\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:26:01 GMT"
-}
-[2025-06-16T13:23:03.944Z] === Completed 304 in 11ms ===
-
-[2025-06-16T13:23:04.109Z] 
-=== Incoming GET /css/i18n.css ===
-[2025-06-16T13:23:04.109Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "text/css,*/*;q=0.1",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "style",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"18d8-19776a722eb\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
-}
-[2025-06-16T13:23:04.113Z] === Completed 304 in 4ms ===
-
-[2025-06-16T13:23:04.122Z] 
-=== Incoming GET /js/i18n.js ===
-[2025-06-16T13:23:04.122Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"a0ec-19776addfb3\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
-}
-[2025-06-16T13:23:04.124Z] === Completed 304 in 2ms ===
-
-[2025-06-16T13:23:05.095Z] 
-=== Incoming POST /api/auth/login ===
-[2025-06-16T13:23:05.096Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "content-length": "54",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "content-type": "application/json",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "origin": "http://localhost:5000",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "cors",
-  "sec-fetch-dest": "empty",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:05.096Z] Body: {
-  "username": "user_qvvuog1558",
-  "password": "o30wilsl40"
-}
-[2025-06-16T13:23:05.096Z] === LOGIN REQUEST ===
-[2025-06-16T13:23:05.097Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "content-length": "54",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "content-type": "application/json",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "origin": "http://localhost:5000",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "cors",
-  "sec-fetch-dest": "empty",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:05.097Z] Body: {
-  "username": "user_qvvuog1558",
-  "password": "o30wilsl40"
-}
-[2025-06-16T13:23:06.171Z] ✅ Database login successful for user: user_qvvuog1558
-[2025-06-16T13:23:06.178Z] === Completed 200 in 1083ms ===
-
-[2025-06-16T13:23:07.260Z] 
-=== Incoming GET /pages/car-selection.html ===
-[2025-06-16T13:23:07.261Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "upgrade-insecure-requests": "1",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "navigate",
-  "sec-fetch-user": "?1",
-  "sec-fetch-dest": "document",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"5d49-1977827b23d\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:52:36 GMT"
-}
-[2025-06-16T13:23:07.264Z] === Completed 304 in 4ms ===
-
-[2025-06-16T13:23:07.379Z] 
-=== Incoming GET /css/i18n.css ===
-[2025-06-16T13:23:07.380Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "text/css,*/*;q=0.1",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "style",
-  "referer": "http://localhost:5000/pages/car-selection.html",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"18d8-19776a722eb\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
-}
-[2025-06-16T13:23:07.381Z] 
-=== Incoming GET /js/i18n.js ===
-[2025-06-16T13:23:07.382Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/car-selection.html",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"a0ec-19776addfb3\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT"
-}
-[2025-06-16T13:23:07.385Z] === Completed 304 in 6ms ===
-
-[2025-06-16T13:23:07.386Z] === Completed 304 in 5ms ===
-
-[2025-06-16T13:23:11.974Z] 
-=== Incoming GET /pages/luxurycars.html ===
-[2025-06-16T13:23:11.976Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "upgrade-insecure-requests": "1",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "navigate",
-  "sec-fetch-user": "?1",
-  "sec-fetch-dest": "document",
-  "referer": "http://localhost:5000/pages/car-selection.html",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"c77f-19778e15800\"",
-  "if-modified-since": "Mon, 16 Jun 2025 13:15:23 GMT"
-}
-[2025-06-16T13:23:12.010Z] === Completed 200 in 36ms ===
-
-[2025-06-16T13:23:12.125Z] 
-=== Incoming GET /css/i18n.css ===
-[2025-06-16T13:23:12.126Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "if-none-match": "W/\"18d8-19776a722eb\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "text/css,*/*;q=0.1",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "style",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.128Z] === Completed 304 in 3ms ===
-
-[2025-06-16T13:23:12.129Z] 
-=== Incoming GET /pages/particles.js ===
-[2025-06-16T13:23:12.130Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:23:12.138Z] Serving index.html for route: /pages/particles.js
-[2025-06-16T13:23:12.139Z] 
-=== Incoming GET /pages/admin-vehicle-manager.js ===
-[2025-06-16T13:23:12.139Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"8f44-19777fa53e8\"",
-  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
-}
-[2025-06-16T13:23:12.140Z] === Completed 304 in 11ms ===
-
-[2025-06-16T13:23:12.144Z] Serving index.html for route: /pages/admin-vehicle-manager.js
-[2025-06-16T13:23:12.147Z] 
-=== Incoming GET /js/i18n.js ===
-[2025-06-16T13:23:12.148Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "if-none-match": "W/\"a0ec-19776addfb3\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "script",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.150Z] === Completed 304 in 11ms ===
-
-[2025-06-16T13:23:12.152Z] === Completed 304 in 5ms ===
-
-[2025-06-16T13:23:12.197Z] 
-=== Incoming GET /api/cars/luxury ===
-[2025-06-16T13:23:12.197Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "*/*",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "cors",
-  "sec-fetch-dest": "empty",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
-  "if-none-match": "W/\"13776-3uU+LvQCCXX3QW5cLllOXRnBt/E\""
-}
-[2025-06-16T13:23:12.441Z] === Completed 304 in 244ms ===
-
-[2025-06-16T13:23:12.456Z] 
+[2025-06-16T13:34:03.417Z] 
 === Incoming GET /logos/Aston-Martin-Logo.png ===
-[2025-06-16T13:23:12.457Z] Headers: {
+[2025-06-16T13:34:03.418Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"3051d-1957b4f092f\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:28:52 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.458Z] 
+[2025-06-16T13:34:03.419Z] 
 === Incoming GET /logos/audi.png ===
-[2025-06-16T13:23:12.458Z] Headers: {
+[2025-06-16T13:34:03.420Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"2909d-1957b51fa56\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:32:04 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.459Z] 
-=== Incoming GET /logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
-[2025-06-16T13:23:12.459Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.463Z] 
-=== Incoming GET /logos/bentley.png ===
-[2025-06-16T13:23:12.463Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.464Z] Serving index.html for route: /logos/Aston-Martin-Logo.png
-[2025-06-16T13:23:12.465Z] Serving index.html for route: /logos/audi.png
-[2025-06-16T13:23:12.467Z] Serving index.html for route: /logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png
-[2025-06-16T13:23:12.468Z] Serving index.html for route: /logos/bentley.png
-[2025-06-16T13:23:12.478Z] === Completed 200 in 22ms ===
+[2025-06-16T13:34:03.422Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:23:12.481Z] === Completed 200 in 18ms ===
+[2025-06-16T13:34:03.424Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:23:12.484Z] === Completed 200 in 26ms ===
-
-[2025-06-16T13:23:12.491Z] === Completed 200 in 31ms ===
-
-[2025-06-16T13:23:12.494Z] 
-=== Incoming GET /logos/Lamborghini-Logo.png ===
-[2025-06-16T13:23:12.495Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.498Z] 
-=== Incoming GET /logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
-[2025-06-16T13:23:12.498Z] Headers: {
-  "host": "localhost:5000",
-  "connection": "keep-alive",
-  "sec-ch-ua-platform": "\"Windows\"",
-  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
-  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
-  "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-  "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
-  "accept-encoding": "gzip, deflate, br, zstd",
-  "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
-}
-[2025-06-16T13:23:12.502Z] 
+[2025-06-16T13:34:03.429Z] 
 === Incoming GET /logos/Bugatti-Logo.png ===
-[2025-06-16T13:23:12.503Z] Headers: {
+[2025-06-16T13:34:03.429Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"20b52-1957b48dfa5\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:22:08 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.507Z] Serving index.html for route: /logos/Lamborghini-Logo.png
-[2025-06-16T13:23:12.510Z] Serving index.html for route: /logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png
-[2025-06-16T13:23:12.512Z] Serving index.html for route: /logos/Bugatti-Logo.png
-[2025-06-16T13:23:12.515Z] 
+[2025-06-16T13:34:03.432Z] 
 === Incoming GET /logos/ferrari-emblem-logo-png_seeklogo-53763.png ===
-[2025-06-16T13:23:12.515Z] Headers: {
+[2025-06-16T13:34:03.432Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"606f-1957b49cc2e\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:23:08 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.531Z] Serving index.html for route: /logos/ferrari-emblem-logo-png_seeklogo-53763.png
-[2025-06-16T13:23:12.535Z] === Completed 200 in 41ms ===
+[2025-06-16T13:34:03.433Z] === Completed 304 in 4ms ===
 
-[2025-06-16T13:23:12.538Z] === Completed 200 in 40ms ===
+[2025-06-16T13:34:03.435Z] === Completed 304 in 3ms ===
 
-[2025-06-16T13:23:12.540Z] === Completed 200 in 38ms ===
+[2025-06-16T13:34:03.439Z] 
+=== Incoming GET /logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
+[2025-06-16T13:34:03.441Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"3b36-1957b4cc19f\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:26:22 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:03.445Z] 
+=== Incoming GET /logos/Lamborghini-Logo.png ===
+[2025-06-16T13:34:03.446Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"90fad-1957b4a0ced\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:23:25 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:03.447Z] === Completed 304 in 8ms ===
 
-[2025-06-16T13:23:12.543Z] 
+[2025-06-16T13:34:03.449Z] 
+=== Incoming GET /logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
+[2025-06-16T13:34:03.450Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"9bfb-1957b4fb6fd\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:29:36 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:03.455Z] === Completed 304 in 10ms ===
+
+[2025-06-16T13:34:03.458Z] === Completed 304 in 9ms ===
+
+[2025-06-16T13:34:03.461Z] 
 === Incoming GET /logos/land-rover-logo-png_seeklogo-201638.png ===
-[2025-06-16T13:23:12.544Z] Headers: {
+[2025-06-16T13:34:03.462Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"c235-1957b4cfed0\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:26:38 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.548Z] === Completed 200 in 33ms ===
+[2025-06-16T13:34:03.464Z] 
+=== Incoming GET /logos/bentley.png ===
+[2025-06-16T13:34:03.465Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"22c7-1957b4b4602\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:24:45 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:03.467Z] === Completed 304 in 6ms ===
 
-[2025-06-16T13:23:12.550Z] Serving index.html for route: /logos/land-rover-logo-png_seeklogo-201638.png
-[2025-06-16T13:23:12.553Z] 
+[2025-06-16T13:34:03.468Z] 
 === Incoming GET /logos/lexus.png ===
-[2025-06-16T13:23:12.554Z] Headers: {
+[2025-06-16T13:34:03.469Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"ac2c-1957b5326a0\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:33:21 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.555Z] 
+[2025-06-16T13:34:03.470Z] 
 === Incoming GET /logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png ===
-[2025-06-16T13:23:12.556Z] Headers: {
+[2025-06-16T13:34:03.471Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"3a98-1957b501092\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:29:59 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.559Z] Serving index.html for route: /logos/lexus.png
-[2025-06-16T13:23:12.566Z] Serving index.html for route: /logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png
-[2025-06-16T13:23:12.568Z] 
+[2025-06-16T13:34:03.473Z] === Completed 304 in 9ms ===
+
+[2025-06-16T13:34:03.474Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:03.477Z] 
 === Incoming GET /logos/mclaren-logo.png ===
-[2025-06-16T13:23:12.568Z] Headers: {
+[2025-06-16T13:34:03.477Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"1bf7-1957b499397\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:22:54 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.572Z] === Completed 200 in 29ms ===
+[2025-06-16T13:34:03.479Z] === Completed 304 in 9ms ===
 
-[2025-06-16T13:23:12.574Z] Serving index.html for route: /logos/mclaren-logo.png
-[2025-06-16T13:23:12.581Z] 
+[2025-06-16T13:34:03.480Z] 
 === Incoming GET /logos/Mercedes-Logo.svg.png ===
-[2025-06-16T13:23:12.582Z] Headers: {
+[2025-06-16T13:34:03.480Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"ae880-1957b4f559e\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:29:11 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.587Z] === Completed 200 in 34ms ===
+[2025-06-16T13:34:03.482Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:23:12.591Z] Serving index.html for route: /logos/Mercedes-Logo.svg.png
-[2025-06-16T13:23:12.599Z] === Completed 200 in 44ms ===
-
-[2025-06-16T13:23:12.602Z] 
+[2025-06-16T13:34:03.483Z] 
 === Incoming GET /logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png ===
-[2025-06-16T13:23:12.603Z] Headers: {
+[2025-06-16T13:34:03.484Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"6e2c-1957b4c1fb0\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:25:41 GMT",
   "sec-ch-ua-mobile": "?0",
   "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:12.606Z] 
+[2025-06-16T13:34:03.485Z] 
 === Incoming GET /logos/rolls-royce-logo.png ===
-[2025-06-16T13:23:12.606Z] Headers: {
+[2025-06-16T13:34:03.485Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"9eb1-1957b493d48\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sun, 09 Mar 2025 14:22:32 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:03.487Z] === Completed 304 in 7ms ===
+
+[2025-06-16T13:34:03.489Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:03.491Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:05.274Z] 
+=== Incoming GET /pages/images/R8.jpg ===
+[2025-06-16T13:34:05.275Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -1605,24 +1716,16 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
 }
-[2025-06-16T13:23:12.611Z] Serving index.html for route: /logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png
-[2025-06-16T13:23:12.617Z] === Completed 200 in 50ms ===
-
-[2025-06-16T13:23:12.620Z] Serving index.html for route: /logos/rolls-royce-logo.png
-[2025-06-16T13:23:12.624Z] === Completed 200 in 43ms ===
-
-[2025-06-16T13:23:12.630Z] === Completed 200 in 28ms ===
-
-[2025-06-16T13:23:12.632Z] === Completed 200 in 26ms ===
-
-[2025-06-16T13:23:26.114Z] 
-=== Incoming GET /pages/images/ghibli.jpg ===
-[2025-06-16T13:23:26.114Z] Headers: {
+[2025-06-16T13:34:05.275Z] 
+=== Incoming GET /pages/images/RS_Q8.jpg ===
+[2025-06-16T13:34:05.275Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -1633,14 +1736,16 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
 }
-[2025-06-16T13:23:26.116Z] 
-=== Incoming GET /pages/images/granturismo.jpg ===
-[2025-06-16T13:23:26.117Z] Headers: {
+[2025-06-16T13:34:05.276Z] 
+=== Incoming GET /pages/images/RS6_Avant.jpg ===
+[2025-06-16T13:34:05.276Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -1651,20 +1756,16 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
 }
-[2025-06-16T13:23:26.118Z] Serving index.html for route: /pages/images/ghibli.jpg
-[2025-06-16T13:23:26.120Z] Serving index.html for route: /pages/images/granturismo.jpg
-[2025-06-16T13:23:26.121Z] === Completed 200 in 7ms ===
-
-[2025-06-16T13:23:26.122Z] === Completed 200 in 6ms ===
-
-[2025-06-16T13:23:26.123Z] 
-=== Incoming GET /pages/images/levante.jpg ===
-[2025-06-16T13:23:26.124Z] Headers: {
+[2025-06-16T13:34:05.277Z] 
+=== Incoming GET /pages/images/RS7.jpg ===
+[2025-06-16T13:34:05.277Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -1675,17 +1776,16 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
 }
-[2025-06-16T13:23:26.125Z] Serving index.html for route: /pages/images/levante.jpg
-[2025-06-16T13:23:26.127Z] === Completed 200 in 4ms ===
-
-[2025-06-16T13:23:26.127Z] 
-=== Incoming GET /pages/images/mc20.jpg ===
-[2025-06-16T13:23:26.128Z] Headers: {
+[2025-06-16T13:34:05.277Z] 
+=== Incoming GET /pages/images/etron.jpg ===
+[2025-06-16T13:34:05.278Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
@@ -1696,34 +1796,181 @@
   "sec-fetch-site": "same-origin",
   "sec-fetch-mode": "no-cors",
   "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"8f44-19777fa53e8\"",
+  "if-modified-since": "Mon, 16 Jun 2025 09:03:03 GMT"
+}
+[2025-06-16T13:34:05.278Z] Serving index.html for route: /pages/images/R8.jpg
+[2025-06-16T13:34:05.279Z] Serving index.html for route: /pages/images/RS_Q8.jpg
+[2025-06-16T13:34:05.279Z] Serving index.html for route: /pages/images/RS6_Avant.jpg
+[2025-06-16T13:34:05.280Z] Serving index.html for route: /pages/images/RS7.jpg
+[2025-06-16T13:34:05.280Z] Serving index.html for route: /pages/images/etron.jpg
+[2025-06-16T13:34:05.281Z] === Completed 304 in 7ms ===
+
+[2025-06-16T13:34:05.281Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:05.282Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:05.282Z] === Completed 304 in 5ms ===
+
+[2025-06-16T13:34:05.284Z] === Completed 304 in 7ms ===
+
+[2025-06-16T13:34:06.855Z] 
+=== Incoming GET /pages/car-customizer.html ===
+[2025-06-16T13:34:06.857Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"5868-197769f5da5\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:44:05 GMT"
+}
+[2025-06-16T13:34:06.863Z] === Completed 304 in 8ms ===
+
+[2025-06-16T13:34:06.970Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-16T13:34:06.970Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"18d8-19776a722eb\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
   "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
 }
-[2025-06-16T13:23:26.129Z] Serving index.html for route: /pages/images/mc20.jpg
-[2025-06-16T13:23:26.132Z] 
-=== Incoming GET /pages/images/quattroporte.jpg ===
-[2025-06-16T13:23:26.133Z] Headers: {
+[2025-06-16T13:34:06.972Z] 
+=== Incoming GET /css/car-customizer.css ===
+[2025-06-16T13:34:06.972Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"3869-1976ca4aa84\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Sat, 14 Jun 2025 04:13:40 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:06.973Z] 
+=== Incoming GET /js/car-models.js ===
+[2025-06-16T13:34:06.973Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"3caf-1977642e51d\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 01:03:04 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:06.974Z] 
+=== Incoming GET /js/car-customizer.js ===
+[2025-06-16T13:34:06.974Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"88b2-19776843727\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:14:25 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:06.975Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-16T13:34:06.975Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"a0ec-19776addfb3\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:59:55 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-16T13:34:06.976Z] === Completed 304 in 6ms ===
+
+[2025-06-16T13:34:06.979Z] === Completed 304 in 7ms ===
+
+[2025-06-16T13:34:06.981Z] === Completed 304 in 8ms ===
+
+[2025-06-16T13:34:06.982Z] === Completed 304 in 8ms ===
+
+[2025-06-16T13:34:06.984Z] === Completed 304 in 9ms ===
+
+[2025-06-16T13:34:08.544Z] 
+=== Incoming GET /models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb ===
+[2025-06-16T13:34:08.544Z] Headers: {
   "host": "localhost:5000",
   "connection": "keep-alive",
   "sec-ch-ua-platform": "\"Windows\"",
   "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
   "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
   "sec-ch-ua-mobile": "?0",
-  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "accept": "*/*",
   "sec-fetch-site": "same-origin",
-  "sec-fetch-mode": "no-cors",
-  "sec-fetch-dest": "image",
-  "referer": "http://localhost:5000/pages/luxurycars.html?type=buy",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/car-customizer.html?id=bugatti-bolide&name=R8&brand=Audi&price=%24168%2C000&image=images%2FR8.jpg&info=602+HP%2C+5.2L+V10+Engine+%7C+Mid-engine+supercar+%7C+Quattro+all-wheel+drive&type=buy",
   "accept-encoding": "gzip, deflate, br, zstd",
   "accept-language": "en-US,en;q=0.9",
-  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"1a5726c-1957ad94284\"",
+  "if-modified-since": "Sun, 09 Mar 2025 12:20:13 GMT"
 }
-[2025-06-16T13:23:26.136Z] Serving index.html for route: /pages/images/quattroporte.jpg
-[2025-06-16T13:23:26.140Z] === Completed 200 in 13ms ===
+[2025-06-16T13:34:08.549Z] === Completed 304 in 5ms ===
 
-[2025-06-16T13:23:26.142Z] === Completed 200 in 10ms ===
-
-[2025-06-16T13:32:38.750Z] 
-🚨 Received SIGINT. Shutting down gracefully...

@@ -39,7 +39,7 @@ const availableModels = {
     },
     'bmw-x6m': {
         name: 'BMW X6M Competition',
-        path: '/models/bmw/bmw_x6m_competition_assetto__www.vecarz.com.glb',
+        path: '../models/bmw/bmw_x6m_competition_assetto__www.vecarz.com.glb',
         price: 120000,
         description: 'High-performance luxury SUV',
         hasModel: true
