@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Models Status - Prestigio Motors</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .model-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .model-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .model-name {
+            color: #d4af37;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .model-description {
+            color: #cccccc;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .model-price {
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .model-path {
+            color: #888;
+            font-size: 0.8rem;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+        
+        .model-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            color: #000;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ffd700, #d4af37);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.3);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-available { background: #27ae60; }
+        .status-unknown { background: #f39c12; }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .back-link:hover {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <a href="frontend/pages/luxurycars.html" class="back-link">← Back to Luxury Cars</a>
+    
+    <div class="header">
+        <h1>Available 3D Car Models</h1>
+        <p>Interactive 3D customization available for the following vehicles</p>
+    </div>
+    
+    <div class="models-grid" id="models-grid">
+        <!-- Models will be loaded here -->
+    </div>
+
+    <script>
+        // Available car models (same as in car-customizer.js)
+        const availableModels = {
+            // ACTUAL 3D MODELS AVAILABLE
+            'bugatti-bolide': {
+                name: 'Bugatti Bolide 2024',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 4200000,
+                description: 'Ultimate track-focused hypercar',
+                hasModel: true
+            },
+            'mercedes-s-class': {
+                name: 'Mercedes-Benz S-Class Maybach',
+                path: 'models/mercedes/2021_mercedes-benz_s-class_maybach.glb',
+                price: 185000,
+                description: 'Luxury redefined',
+                hasModel: true
+            },
+            'mercedes-c-class': {
+                name: 'Mercedes-Benz C220',
+                path: 'models/mercedes/mercedes-_benz_w206_c220.glb',
+                price: 45000,
+                description: 'Compact luxury sedan',
+                hasModel: true
+            },
+            'bmw-x6m': {
+                name: 'BMW X6M Competition',
+                path: 'models/bmw/bmw_x6m_competition_assetto__www.vecarz.com.glb',
+                price: 120000,
+                description: 'High-performance luxury SUV',
+                hasModel: true
+            },
+            'bmw-m8': {
+                name: 'BMW M8 Competition Convertible',
+                path: 'models/bmw/bmw_m8_competition_convertible_f93.glb',
+                price: 140000,
+                description: 'Ultimate driving machine',
+                hasModel: true
+            },
+            'porsche-911': {
+                name: 'Porsche 911 Carrera 4S Cabriolet',
+                path: 'models/porshce/2019_porsche_911_carrera_4s_cabriolet_992.glb',
+                price: 216000,
+                description: 'Iconic sports car perfection',
+                hasModel: true
+            },
+            'porsche-cayenne': {
+                name: 'Porsche Cayenne Turbo Coupe',
+                path: 'models/porshce/2020_porsche_cayenne_turbo_coupe.glb',
+                price: 180000,
+                description: 'Luxury performance SUV',
+                hasModel: true
+            },
+            
+            // PLACEHOLDER MODELS (using similar vehicles)
+            'ferrari-sf90': {
+                name: 'Ferrari SF90 Stradale',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 625000,
+                description: 'Hybrid V8 supercar',
+                hasModel: false,
+                placeholder: true
+            },
+            'ferrari-f8': {
+                name: 'Ferrari F8 Tributo',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 276000,
+                description: 'Pure V8 excellence',
+                hasModel: false,
+                placeholder: true
+            },
+            'lamborghini-aventador': {
+                name: 'Lamborghini Aventador',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 500000,
+                description: 'V12 flagship supercar',
+                hasModel: false,
+                placeholder: true
+            },
+            'lamborghini-huracan': {
+                name: 'Lamborghini Huracán',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 260000,
+                description: 'V10 precision machine',
+                hasModel: false,
+                placeholder: true
+            },
+            'mclaren-720s': {
+                name: 'McLaren 720S',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 299000,
+                description: 'British engineering excellence',
+                hasModel: false,
+                placeholder: true
+            },
+            'rolls-phantom': {
+                name: 'Rolls-Royce Phantom',
+                path: 'models/mercedes/2021_mercedes-benz_s-class_maybach.glb',
+                price: 450000,
+                description: 'Ultimate luxury experience',
+                hasModel: false,
+                placeholder: true
+            },
+            'bentley-continental': {
+                name: 'Bentley Continental GT',
+                path: 'models/mercedes/2021_mercedes-benz_s-class_maybach.glb',
+                price: 220000,
+                description: 'Grand touring perfection',
+                hasModel: false,
+                placeholder: true
+            },
+            'aston-dbs': {
+                name: 'Aston Martin DBS Superleggera',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 316000,
+                description: 'British grand tourer',
+                hasModel: false,
+                placeholder: true
+            },
+            'maserati-mc20': {
+                name: 'Maserati MC20',
+                path: 'models/bugatti/bugatti_bolide_2024__www.vecarz.com.glb',
+                price: 212000,
+                description: 'Italian racing heritage',
+                hasModel: false,
+                placeholder: true
+            },
+            'jaguar-ftype': {
+                name: 'Jaguar F-Type',
+                path: 'models/porshce/2019_porsche_911_carrera_4s_cabriolet_992.glb',
+                price: 103000,
+                description: 'British sports car elegance',
+                hasModel: false,
+                placeholder: true
+            },
+            'lexus-lc500': {
+                name: 'Lexus LC 500',
+                path: 'models/porshce/2019_porsche_911_carrera_4s_cabriolet_992.glb',
+                price: 93000,
+                description: 'Japanese luxury coupe',
+                hasModel: false,
+                placeholder: true
+            },
+            'land-rover-vogue': {
+                name: 'Land Rover Range Rover Vogue',
+                path: 'models/bmw/bmw_x6m_competition_assetto__www.vecarz.com.glb',
+                price: 120000,
+                description: 'Luxury off-road capability',
+                hasModel: false,
+                placeholder: true
+            }
+        };
+
+        function formatPrice(price) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0
+            }).format(price);
+        }
+
+        function loadModels() {
+            const grid = document.getElementById('models-grid');
+            
+            for (const [carId, model] of Object.entries(availableModels)) {
+                const card = document.createElement('div');
+                card.className = 'model-card';
+                
+                const statusClass = model.hasModel ? 'status-available' : 'status-unknown';
+                const statusText = model.hasModel ? 'Real 3D Model' : 'Placeholder Model';
+                const placeholderNote = model.placeholder ? '<div style="color: #f39c12; font-size: 0.8rem; margin-top: 0.5rem;">⚠️ Using similar vehicle as placeholder</div>' : '';
+                
+                card.innerHTML = `
+                    <div class="model-name">
+                        <span class="status-indicator ${statusClass}" title="${statusText}"></span>
+                        ${model.name}
+                    </div>
+                    <div class="model-description">${model.description}</div>
+                    <div class="model-price">${formatPrice(model.price)}</div>
+                    <div class="model-path">${model.path}</div>
+                    ${placeholderNote}
+                    <div class="model-actions">
+                        <a href="frontend/pages/car-customizer.html?car=${carId}" class="btn btn-primary">
+                            🚗 Customize This Car
+                        </a>
+                        <button class="btn btn-secondary" onclick="testModel('${carId}')">
+                            🔧 Test Model
+                        </button>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            }
+        }
+
+        function testModel(carId) {
+            const model = availableModels[carId];
+            const testUrl = `test-3d.html?car=${carId}`;
+            window.open(testUrl, '_blank');
+        }
+
+        // Load models when page loads
+        document.addEventListener('DOMContentLoaded', loadModels);
+    </script>
+</body>
+</html> 

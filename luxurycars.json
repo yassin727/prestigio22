@@ -1,0 +1,1190 @@
+{
+    "cars": [
+      {
+        "id": "bugatti-chiron",
+        "name": "Bugatti Chiron",
+        "modelPath": "models/cars/bugatti_chiron.gltf",
+        "thumbnail": "images/thumbnails/bugatti_chiron.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#000000"
+      },
+      {
+        "id": "bugatti-divo",
+        "name": "Bugatti Divo",
+        "modelPath": "models/cars/bugatti_divo.gltf",
+        "thumbnail": "images/thumbnails/bugatti_divo.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#0000ff"
+      },
+      {
+        "id": "bugatti-la-voiture-noire",
+        "name": "Bugatti La Voiture Noire",
+        "modelPath": "models/cars/bugatti_la_voiture_noire.gltf",
+        "thumbnail": "images/thumbnails/bugatti_la_voiture_noire.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#000000"
+      },
+      {
+        "id": "bugatti-bolide",
+        "name": "Bugatti Bolide",
+        "modelPath": "models/cars/bugatti_bolide.gltf",
+        "thumbnail": "images/thumbnails/bugatti_bolide.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ff0000"
+      },
+      {
+        "id": "bugatti-veyron",
+        "name": "Bugatti Veyron",
+        "modelPath": "models/cars/bugatti_veyron.gltf",
+        "thumbnail": "images/thumbnails/bugatti_veyron.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffcc00"
+      },
+      {
+        "id": "rolls-royce-phantom",
+        "name": "Rolls-Royce Phantom",
+        "modelPath": "models/cars/rolls_royce_phantom.gltf",
+        "thumbnail": "images/thumbnails/rolls_royce_phantom.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffffff"
+      },
+      {
+        "id": "rolls-royce-ghost",
+        "name": "Rolls-Royce Ghost",
+        "modelPath": "models/cars/rolls_royce_ghost.gltf",
+        "thumbnail": "images/thumbnails/rolls_royce_ghost.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffffff"
+      },
+      {
+        "id": "rolls-royce-wraith",
+        "name": "Rolls-Royce Wraith",
+        "modelPath": "models/cars/rolls_royce_wraith.gltf",
+        "thumbnail": "images/thumbnails/rolls_royce_wraith.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffffff"
+      },
+      {
+        "id": "rolls-royce-cullinan",
+        "name": "Rolls-Royce Cullinan",
+        "modelPath": "models/cars/rolls_royce_cullinan.gltf",
+        "thumbnail": "images/thumbnails/rolls_royce_cullinan.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffffff"
+      },
+      {
+        "id": "rolls-royce-spectre",
+        "name": "Rolls-Royce Spectre",
+        "modelPath": "models/cars/rolls_royce_spectre.gltf",
+        "thumbnail": "images/thumbnails/rolls_royce_spectre.jpg",
+        "modifiableParts": {
+          "body": "CarBody",
+          "wheels": "Wheels",
+          "brakes": "BrakesCalipers",
+          "spoiler": "Spoiler",
+          "exhausts": "Exhausts"
+        },
+        "requiredMods": ["custom-colors", "body-parts"],
+        "unsupportedMods": [],
+        "defaultColor": "#ffffff"
+      },
+       {
+            "id": "bentley-continental-gt",
+            "name": "Bentley Continental GT",
+            "modelPath": "models/cars/bentley_continental_gt.gltf",
+            "thumbnail": "images/thumbnails/bentley_continental_gt.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#1a1a1a"
+          },
+          {
+            "id": "bentley-flying-spur",
+            "name": "Bentley Flying Spur",
+            "modelPath": "models/cars/bentley_flying_spur.gltf",
+            "thumbnail": "images/thumbnails/bentley_flying_spur.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#1a1a1a"
+          },
+          {
+            "id": "bentley-bentayga",
+            "name": "Bentley Bentayga",
+            "modelPath": "models/cars/bentley_bentayga.gltf",
+            "thumbnail": "images/thumbnails/bentley_bentayga.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#1a1a1a"
+          },
+          {
+            "id": "bentley-mulsanne",
+            "name": "Bentley Mulsanne",
+            "modelPath": "models/cars/bentley_mulsanne.gltf",
+            "thumbnail": "images/thumbnails/bentley_mulsanne.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#1a1a1a"
+          },
+          {
+            "id": "ferrari-laferrari",
+            "name": "Ferrari LaFerrari",
+            "modelPath": "models/cars/ferrari_laferrari.gltf",
+            "thumbnail": "images/thumbnails/ferrari_laferrari.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "ferrari-sf90-stradale",
+            "name": "Ferrari SF90 Stradale",
+            "modelPath": "models/cars/ferrari_sf90_stradale.gltf",
+            "thumbnail": "images/thumbnails/ferrari_sf90_stradale.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "ferrari-812-superfast",
+            "name": "Ferrari 812 Superfast",
+            "modelPath": "models/cars/ferrari_812_superfast.gltf",
+            "thumbnail": "images/thumbnails/ferrari_812_superfast.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "ferrari-f8-tributo",
+            "name": "Ferrari F8 Tributo",
+            "modelPath": "models/cars/ferrari_f8_tributo.gltf",
+            "thumbnail": "images/thumbnails/ferrari_f8_tributo.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "ferrari-roma",
+            "name": "Ferrari Roma",
+            "modelPath": "models/cars/ferrari_roma.gltf",
+            "thumbnail": "images/thumbnails/ferrari_roma.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "lamborghini-aventador",
+            "name": "Lamborghini Aventador",
+            "modelPath": "models/cars/lamborghini_aventador.gltf",
+            "thumbnail": "images/thumbnails/lamborghini_aventador.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ffcc00"
+          },
+          {
+            "id": "lamborghini-huracan",
+            "name": "Lamborghini Huracán",
+            "modelPath": "models/cars/lamborghini_huracan.gltf",
+            "thumbnail": "images/thumbnails/lamborghini_huracan.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ffcc00"
+          },
+          {
+            "id": "lamborghini-urus",
+            "name": "Lamborghini Urus",
+            "modelPath": "models/cars/lamborghini_urus.gltf",
+            "thumbnail": "images/thumbnails/lamborghini_urus.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ffcc00"
+          },
+          {
+            "id": "lamborghini-revuelto",
+            "name": "Lamborghini Revuelto",
+            "modelPath": "models/cars/lamborghini_revuelto.gltf",
+            "thumbnail": "images/thumbnails/lamborghini_revuelto.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ffcc00"
+          },
+          {
+            "id": "lamborghini-sian",
+            "name": "Lamborghini Sian",
+            "modelPath": "models/cars/lamborghini_sian.gltf",
+            "thumbnail": "images/thumbnails/lamborghini_sian.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ffcc00"
+          },
+          {
+            "id": "mclaren-p1",
+            "name": "McLaren P1",
+            "modelPath": "models/cars/mclaren_p1.gltf",
+            "thumbnail": "images/thumbnails/mclaren_p1.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "mclaren-720s",
+            "name": "McLaren 720S",
+            "modelPath": "models/cars/mclaren_720s.gltf",
+            "thumbnail": "images/thumbnails/mclaren_720s.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "mclaren-artura",
+            "name": "McLaren Artura",
+            "modelPath": "models/cars/mclaren_artura.gltf",
+            "thumbnail": "images/thumbnails/mclaren_artura.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "mclaren-765lt",
+            "name": "McLaren 765LT",
+            "modelPath": "models/cars/mclaren_765lt.gltf",
+            "thumbnail": "images/thumbnails/mclaren_765lt.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "mclaren-senna",
+            "name": "McLaren Senna",
+            "modelPath": "models/cars/mclaren_senna.gltf",
+            "thumbnail": "images/thumbnails/mclaren_senna.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "porsche-911-turbo-s",
+            "name": "Porsche 911 Turbo S",
+            "modelPath": "models/cars/porsche_911_turbo_s.gltf",
+            "thumbnail": "images/thumbnails/porsche_911_turbo_s.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "porsche-taycan",
+            "name": "Porsche Taycan",
+            "modelPath": "models/cars/porsche_taycan.gltf",
+            "thumbnail": "images/thumbnails/porsche_taycan.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "porsche-panamera",
+            "name": "Porsche Panamera",
+            "modelPath": "models/cars/porsche_panamera.gltf",
+            "thumbnail": "images/thumbnails/porsche_panamera.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "porsche-cayenne",
+            "name": "Porsche Cayenne",
+            "modelPath": "models/cars/porsche_cayenne.gltf",
+            "thumbnail": "images/thumbnails/porsche_cayenne.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "porsche-918-spyder",
+            "name": "Porsche 918 Spyder",
+            "modelPath": "models/cars/porsche_918_spyder.gltf",
+            "thumbnail": "images/thumbnails/porsche_918_spyder.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "aston-martin-db11",
+            "name": "Aston Martin DB11",
+            "modelPath": "models/cars/aston_martin_db11.gltf",
+            "thumbnail": "images/thumbnails/aston_martin_db11.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "aston-martin-vantage",
+            "name": "Aston Martin Vantage",
+            "modelPath": "models/cars/aston_martin_vantage.gltf",
+            "thumbnail": "images/thumbnails/aston_martin_vantage.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "aston-martin-dbs-superleggera",
+            "name": "Aston Martin DBS Superleggera",
+            "modelPath": "models/cars/aston_martin_dbs_superleggera.gltf",
+            "thumbnail": "images/thumbnails/aston_martin_dbs_superleggera.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "aston-martin-valkyrie",
+            "name": "Aston Martin Valkyrie",
+            "modelPath": "models/cars/aston_martin_valkyrie.gltf",
+            "thumbnail": "images/thumbnails/aston_martin_valkyrie.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "aston-martin-vanquish",
+            "name": "Aston Martin Vanquish",
+            "modelPath": "models/cars/aston_martin_vanquish.gltf",
+            "thumbnail": "images/thumbnails/aston_martin_vanquish.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "maserati-mc20",
+            "name": "Maserati MC20",
+            "modelPath": "models/cars/maserati_mc20.gltf",
+            "thumbnail": "images/thumbnails/maserati_mc20.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000cc"
+          },
+          {
+            "id": "maserati-ghibli",
+            "name": "Maserati Ghibli",
+            "modelPath": "models/cars/maserati_ghibli.gltf",
+            "thumbnail": "images/thumbnails/maserati_ghibli.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000cc"
+          },
+          {
+            "id": "maserati-quattroporte",
+            "name": "Maserati Quattroporte",
+            "modelPath": "models/cars/maserati_quattroporte.gltf",
+            "thumbnail": "images/thumbnails/maserati_quattroporte.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000cc"
+          },
+          {
+            "id": "maserati-levante",
+            "name": "Maserati Levante",
+            "modelPath": "models/cars/maserati_levante.gltf",
+            "thumbnail": "images/thumbnails/maserati_levante.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000cc"
+          },
+          {
+            "id": "maserati-granturismo",
+            "name": "Maserati GranTurismo",
+            "modelPath": "models/cars/maserati_granturismo.gltf",
+            "thumbnail": "images/thumbnails/maserati_granturismo.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000cc"
+          },
+          {
+            "id": "mercedes-amg-gt-black-series",
+            "name": "Mercedes-AMG GT Black Series",
+            "modelPath": "models/cars/mercedes_amg_gt_black_series.gltf",
+            "thumbnail": "images/thumbnails/mercedes_amg_gt_black_series.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "mercedes-s-class-maybach",
+            "name": "Mercedes S-Class Maybach",
+            "modelPath": "models/cars/mercedes_s_class_maybach.gltf",
+            "thumbnail": "images/thumbnails/mercedes_s_class_maybach.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "mercedes-g-class-g63-amg",
+            "name": "Mercedes G-Class (G63 AMG)",
+            "modelPath": "models/cars/mercedes_g_class_g63_amg.gltf",
+            "thumbnail": "images/thumbnails/mercedes_g_class_g63_amg.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "mercedes-eqs-amg",
+            "name": "Mercedes EQS AMG",
+            "modelPath": "models/cars/mercedes_eqs_amg.gltf",
+            "thumbnail": "images/thumbnails/mercedes_eqs_amg.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "mercedes-sl-63",
+            "name": "Mercedes SL 63",
+            "modelPath": "models/cars/mercedes_sl_63.gltf",
+            "thumbnail": "images/thumbnails/mercedes_sl_63.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "bmw-m8-competition",
+            "name": "BMW M8 Competition",
+            "modelPath": "models/cars/bmw_m8_competition.gltf",
+            "thumbnail": "images/thumbnails/bmw_m8_competition.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "bmw-m5-cs",
+            "name": "BMW M5 CS",
+            "modelPath": "models/cars/bmw_m5_cs.gltf",
+            "thumbnail": "images/thumbnails/bmw_m5_cs.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "bmw-alpina-b7",
+            "name": "BMW Alpina B7",
+            "modelPath": "models/cars/bmw_alpina_b7.gltf",
+            "thumbnail": "images/thumbnails/bmw_alpina_b7.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "bmw-ix-m60",
+            "name": "BMW iX M60",
+            "modelPath": "models/cars/bmw_ix_m60.gltf",
+            "thumbnail": "images/thumbnails/bmw_ix_m60.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "bmw-xm",
+            "name": "BMW XM",
+            "modelPath": "models/cars/bmw_xm.gltf",
+            "thumbnail": "images/thumbnails/bmw_xm.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#0000ff"
+          },
+          {
+            "id": "audi-r8-v10-performance",
+            "name": "Audi R8 V10 Performance",
+            "modelPath": "models/cars/audi_r8_v10_performance.gltf",
+            "thumbnail": "images/thumbnails/audi_r8_v10_performance.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "audi-rs-q8",
+            "name": "Audi RS Q8",
+            "modelPath": "models/cars/audi_rs_q8.gltf",
+            "thumbnail": "images/thumbnails/audi_rs_q8.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "audi-rs7-sportback",
+            "name": "Audi RS7 Sportback",
+            "modelPath": "models/cars/audi_rs7_sportback.gltf",
+            "thumbnail": "images/thumbnails/audi_rs7_sportback.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "audi-rs6-avant",
+            "name": "Audi RS6 Avant",
+            "modelPath": "models/cars/audi_rs6_avant.gltf",
+            "thumbnail": "images/thumbnails/audi_rs6_avant.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "audi-e-tron-gt",
+            "name": "Audi e-tron GT",
+            "modelPath": "models/cars/audi_e_tron_gt.gltf",
+            "thumbnail": "images/thumbnails/audi_e_tron_gt.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#ff0000"
+          },
+          {
+            "id": "lexus-lfa",
+            "name": "Lexus LFA",
+            "modelPath": "models/cars/lexus_lfa.gltf",
+            "thumbnail": "images/thumbnails/lexus_lfa.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#cc0000"
+          },
+          {
+            "id": "lexus-lc-500",
+            "name": "Lexus LC 500",
+            "modelPath": "models/cars/lexus_lc_500.gltf",
+            "thumbnail": "images/thumbnails/lexus_lc_500.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#cc0000"
+          },
+          {
+            "id": "lexus-rx-500h-f-sport",
+            "name": "Lexus RX 500h F Sport",
+            "modelPath": "models/cars/lexus_rx_500h_f_sport.gltf",
+            "thumbnail": "images/thumbnails/lexus_rx_500h_f_sport.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#cc0000"
+          },
+          {
+            "id": "lexus-ls-500",
+            "name": "Lexus LS 500",
+            "modelPath": "models/cars/lexus_ls_500.gltf",
+            "thumbnail": "images/thumbnails/lexus_ls_500.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#cc0000"
+          },
+          {
+            "id": "lexus-is-500-f-sport",
+            "name": "Lexus IS 500 F Sport",
+            "modelPath": "models/cars/lexus_is_500_f_sport.gltf",
+            "thumbnail": "images/thumbnails/lexus_is_500_f_sport.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#cc0000"
+          },
+          {
+            "id": "jaguar-f-type-r",
+            "name": "Jaguar F-Type R",
+            "modelPath": "models/cars/jaguar_f_type_r.gltf",
+            "thumbnail": "images/thumbnails/jaguar_f_type_r.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "jaguar-i-pace",
+            "name": "Jaguar I-PACE",
+            "modelPath": "models/cars/jaguar_i_pace.gltf",
+            "thumbnail": "images/thumbnails/jaguar_i_pace.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "jaguar-xf",
+            "name": "Jaguar XF",
+            "modelPath": "models/cars/jaguar_xf.gltf",
+            "thumbnail": "images/thumbnails/jaguar_xf.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "jaguar-xj-lwb",
+            "name": "Jaguar XJ LWB",
+            "modelPath": "models/cars/jaguar_xj_lwb.gltf",
+            "thumbnail": "images/thumbnails/jaguar_xj_lwb.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "jaguar-e-pace",
+            "name": "Jaguar E-PACE",
+            "modelPath": "models/cars/jaguar_e_pace.gltf",
+            "thumbnail": "images/thumbnails/jaguar_e_pace.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#000000"
+          },
+          {
+            "id": "land-rover-range-rover-sv",
+            "name": "Land Rover Range Rover SV",
+            "modelPath": "models/cars/land_rover_range_rover_sv.gltf",
+            "thumbnail": "images/thumbnails/land_rover_range_rover_sv.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "land-rover-range-rover-sport",
+            "name": "Land Rover Range Rover Sport",
+            "modelPath": "models/cars/land_rover_range_rover_sport.gltf",
+            "thumbnail": "images/thumbnails/land_rover_range_rover_sport.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "land-rover-defender-130",
+            "name": "Land Rover Defender 130",
+            "modelPath": "models/cars/land_rover_defender_130.gltf",
+            "thumbnail": "images/thumbnails/land_rover_defender_130.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "land-rover-velar",
+            "name": "Land Rover Velar",
+            "modelPath": "models/cars/land_rover_velar.gltf",
+            "thumbnail": "images/thumbnails/land_rover_velar.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          },
+          {
+            "id": "land-rover-discovery",
+            "name": "Land Rover Discovery",
+            "modelPath": "models/cars/land_rover_discovery.gltf",
+            "thumbnail": "images/thumbnails/land_rover_discovery.jpg",
+            "modifiableParts": {
+              "body": "CarBody",
+              "wheels": "Wheels",
+              "brakes": "BrakesCalipers",
+              "spoiler": "Spoiler",
+              "exhausts": "Exhausts"
+            },
+            "requiredMods": ["custom-colors", "body-parts"],
+            "unsupportedMods": [],
+            "defaultColor": "#006600"
+          }
+        ]
+      }
+    
+  
