@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance - Luxury Cars</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background & Particles */
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+            z-index: -2;
+        }
+
+        .background:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: -1;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.8);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 50px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            min-height: 650px;
+        }
+
+        /* Left Panel */
+        .left-panel {
+            flex: 1.2;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .car-showcase {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://source.unsplash.com/800x600/?range-rover');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 50px;
+        }
+
+        .brand h1 {
+            font-size: 42px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        }
+
+        .brand h1:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, transparent);
+            margin-top: 10px;
+        }
+
+        .brand p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 26px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            font-style: italic;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            flex: 0.8;
+            background: rgba(15, 15, 15, 0.95);
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .right-panel:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #d4af37, transparent);
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .login-header h2 {
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .login-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        /* Finance Form */
+        .finance-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .form-group input {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #fff;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #d4af37, #aa8a27);
+            color: #000;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .register-link {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .register-link a:hover {
+            color: #fff;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p, 
+        .footer-section address,
+        .footer-section ul {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: #d4af37;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .left-panel, .right-panel {
+                flex: 1;
+            }
+            
+            .left-panel {
+                min-height: 400px;
+            }
+        }
+        /* Header Styles */
+header {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #d4af37;
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+            
+            .overlay, .right-panel {
+                padding: 30px 20px;
+            }
+            
+            .brand h1 {
+                font-size: 32px;
+            }
+            
+            .tagline {
+                font-size: 20px;
+            }
+            
+            .login-header h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1>PRESTIGIO</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="luxurycars.html">Exotic Vehicles</a></li>
+            <li><a href="regularcars.html">Normal Vehicles</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="customerservice.html">Concierge</a></li>
+            
+        </ul>
+    </div>
+</header>
+<body>
+    <div class="background">
+        <div class="particles" id="particles-container">
+            <!-- Particle elements will be generated dynamically -->
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <div class="car-showcase">
+                    <div class="overlay">
+                        <div class="brand">
+                            <h1>Secure Payment</h1>
+                            <p>Luxury Awaits</p>
+                        </div>
+                        <div class="tagline">
+                            "Complete your purchase with confidence."
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <div class="login-header">
+                    <h2>Payment Details</h2>
+                    <p>Enter your payment information to complete your order.</p>
+                </div>
+                <form class="finance-form">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="555" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardholderName">Cardholder Name</label>
+                        <input type="text" id="cardholderName" name="cardholderName" placeholder="Youssef Yamen" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="billingAddress">Billing Address</label>
+                        <input type="text" id="billingAddress" name="billingAddress" placeholder="123 Luxury Lane" required>
+                    </div>
+                    <button type="submit" class="btn">Complete Payment</button>
+                </form>
+                <div class="register-link">
+                    <p>Need help? <a href="contact.html">Contact Us</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Prestigio Motors</h3>
+                <p>Since 1985, Prestigio Motors has been the premier destination for the world's finest automobiles, providing exceptional service and unmatched expertise.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="newarrivals.html">New Arrivals</a></li>
+                    <li><a href="luxurycars.html">Exotic Inventory</a></li>
+                    <li><a href="regularcars.html">Normal Inventory</a></li>
+                    <li><a href="specialeditions.html">Special Editions</a></li>
+                    <li><a href="customerservice.html">Concierge</a></li>
+                   
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                   Sixth District<br>
+                    Al Obour City<br><br>
+                    Phone: +2 01098613073<br>
+                    Email: prestegioautomobiles@gmail.com
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Prestigio Collection. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>   
+    <script src="particles.js"></script>
+    <script>
+        // Load customization data
+        document.addEventListener('DOMContentLoaded', function() {
+            const customization = JSON.parse(localStorage.getItem('carCustomization'));
+            if (customization) {
+                // Update the price display
+                const priceDisplay = document.createElement('div');
+                priceDisplay.className = 'price-display';
+                priceDisplay.innerHTML = `
+                    <h3>Selected Customizations</h3>
+                    <p>Total Price: ${customization.totalPrice}</p>
+                `;
+                document.querySelector('.right-panel').insertBefore(priceDisplay, document.querySelector('.finance-form'));
+            }
+        });
+
+        // Handle form submission
+        document.querySelector('.finance-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For now, we'll just show a success message
+            alert('Thank you for your purchase! We will contact you shortly.');
+            
+            // Clear the customization data
+            localStorage.removeItem('carCustomization');
+            
+            // Redirect to home page
+            window.location.href = 'project.html';
+        });
+    </script>
+</body>
+</html>

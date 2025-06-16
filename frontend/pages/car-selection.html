@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="carSelection.pageTitle">Car Selection - Prestigio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+        
+        /* CSS Variables */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-black: #2a2a2a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4d03f;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+            --dark-gray: #666666;
+            --border-color: #333333;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+            --transition: 0.3s ease;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23d4af37" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        /* Unified Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #d4af37;
+        }
+
+        .user-welcome {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .logout-btn {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #d4af37;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .selection-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 140px 20px 60px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .selection-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.8));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 1200px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selection-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .selection-box > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .selection-box h2 {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .selection-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .option-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.6));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px 25px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .option-card:hover::before {
+            left: 100%;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .luxury-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 69, 19, 0.1));
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .option-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .option-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .price-range {
+            color: #d4af37;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .buy-badge, .rent-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .buy-badge {
+            background: linear-gradient(135deg, #228b22, #32cd32);
+            color: white;
+        }
+
+        .rent-badge {
+            background: linear-gradient(135deg, #4169e1, #1e90ff);
+            color: white;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-top: 2px solid #d4af37;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+                height: 70px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-radius: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .user-info {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+                margin-top: 0.5rem;
+            }
+
+            .selection-container {
+                padding: 100px 20px 60px 20px;
+            }
+
+            .selection-box {
+                padding: 30px 20px;
+            }
+
+            .selection-box h2 {
+                font-size: 2.2rem;
+            }
+
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                padding: 0.5rem 1rem;
+                height: 60px;
+            }
+
+            .selection-container {
+                padding: 80px 10px 60px 10px;
+            }
+
+            .selection-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .selection-subtitle {
+                font-size: 1rem;
+            }
+
+            .option-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="luxurycars.html">Luxury Cars</a></li>
+                <li><a href="regularcars.html">Regular Cars</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <div class="user-info">
+                        <span class="user-welcome" id="userWelcome">Welcome, Guest</span>
+                        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="selection-container">
+        <div class="selection-box">
+            <h2 data-i18n="carSelection.selectVehicle">Choose Your Car Option</h2>
+            <p class="selection-subtitle" data-i18n="carSelection.exploreCollection">Select whether you want to buy or rent from our luxury or regular car collections</p>
+            
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p data-i18n="common.loading">Loading your options...</p>
+            </div>
+            
+            <div class="options-container" id="optionsContainer">
+                <div class="option-card luxury-card" onclick="selectOption('buy-luxury')">
+                    <div class="buy-badge" data-i18n="carSelection.buyNow">BUY</div>
+                    <div class="option-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 data-i18n="carSelection.buyLuxury">💎 Buy Luxury Cars</h3>
+                    <p>Own the ultimate luxury experience with premium vehicles from Ferrari, Lamborghini, Rolls-Royce, and other prestigious brands.</p>
+                    <div class="price-range">Starting from $150,000</div>
+                </div>
+                
+                <div class="option-card" onclick="selectOption('buy-regular')">
+                    <div class="buy-badge" data-i18n="carSelection.buyNow">BUY</div>
+                    <div class="option-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 data-i18n="carSelection.buyRegular">🚗 Buy Regular Cars</h3>
+                    <p>Purchase reliable and affordable vehicles from trusted manufacturers. Perfect for daily use with excellent value for money.</p>
+                    <div class="price-range">Starting from $15,000</div>
+                </div>
+                
+                <div class="option-card luxury-card" onclick="selectOption('rent-luxury')">
+                    <div class="rent-badge" data-i18n="carSelection.rentNow">RENT</div>
+                    <div class="option-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 data-i18n="carSelection.rentLuxury">💎 Rent Luxury Cars</h3>
+                    <p>Experience luxury without the commitment. Rent high-end vehicles for special occasions, events, or weekend getaways.</p>
+                    <div class="price-range">Starting from $500/day</div>
+                </div>
+                
+                <div class="option-card" onclick="selectOption('rent-regular')">
+                    <div class="rent-badge" data-i18n="carSelection.rentNow">RENT</div>
+                    <div class="option-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 data-i18n="carSelection.rentRegular">🚗 Rent Regular Cars</h3>
+                    <p>Affordable rental options for business trips, vacations, or temporary transportation needs. Reliable and economical.</p>
+                    <div class="price-range">Starting from $50/day</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" data-i18n="nav.contactUs">Contact</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <p data-i18n="footer.rights">&copy; 2025 Prestigio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script>
+        let userSession = {
+            username: null,
+            selectedOption: null,
+            isLoggedIn: false
+        };
+
+        // Initialize page and session
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize i18n
+            if (window.I18n) {
+                window.i18n = new I18n();
+            }
+            
+            initializeSession();
+            
+            // Add click event listeners to option cards
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px) scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        function initializeSession() {
+            // Check if user is already logged in this session
+            if (!userSession.isLoggedIn || !userSession.username) {
+                // Get user info from localStorage or sessionStorage
+                const userInfo = localStorage.getItem('userInfo') || sessionStorage.getItem('userInfo');
+                if (userInfo) {
+                    try {
+                        const user = JSON.parse(userInfo);
+                        userSession.username = user.fullName || 'Guest';
+                        userSession.isLoggedIn = true;
+                    } catch (e) {
+                        console.error('Error parsing user info:', e);
+                        userSession.username = 'Guest';
+                        userSession.isLoggedIn = false;
+                    }
+                } else {
+                    userSession.username = 'Guest';
+                    userSession.isLoggedIn = false;
+                }
+            }
+            
+            // Update welcome message
+            document.getElementById('userWelcome').textContent = `Welcome, ${userSession.username}`;
+        }
+
+        // Handle option selection
+        function selectOption(optionType) {
+            // Show loading
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const optionsContainer = document.getElementById('optionsContainer');
+            
+            loadingIndicator.classList.add('show');
+            optionsContainer.style.opacity = '0.5';
+            
+            // Store selected option in session
+            userSession.selectedOption = optionType;
+            
+            // Determine the target page based on the selected option
+            let targetPage = '';
+            switch(optionType) {
+                case 'buy-luxury':
+                    targetPage = 'luxurycars.html?type=buy';
+                    break;
+                case 'buy-regular':
+                    targetPage = 'regularcars.html?type=buy';
+                    break;
+                case 'rent-luxury':
+                    targetPage = 'luxurycars.html?type=rent';
+                    break;
+                case 'rent-regular':
+                    targetPage = 'regularcars.html?type=rent';
+                    break;
+                default:
+                    console.error('Unknown option type:', optionType);
+                    loadingIndicator.classList.remove('show');
+                    optionsContainer.style.opacity = '1';
+                    return;
+            }
+            
+            // Simulate loading time, then redirect
+            setTimeout(() => {
+                window.location.href = targetPage;
+            }, 1000);
+        }
+
+        // Handle logout
+        function handleLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear user data
+                localStorage.removeItem('userInfo');
+                sessionStorage.removeItem('userInfo');
+                
+                // Reset session
+                userSession = {
+                    username: null,
+                    selectedOption: null,
+                    isLoggedIn: false
+                };
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

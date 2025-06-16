@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Prestigio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+        
+        /* CSS Variables */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-black: #2a2a2a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4d03f;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+            --dark-gray: #666666;
+            --border-color: #333333;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+            --transition: 0.3s ease;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Unified Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links .active a {
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links .active a::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: 
+                linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(212, 175, 55, 0.1)),
+                radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.2) 0%, transparent 50%);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); }
+            to { filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.8)); }
+        }
+
+        .page-header p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--light-gray);
+            opacity: 0.9;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-content h2 {
+            color: var(--primary-gold);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin: 2rem 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-content li {
+            color: var(--light-gray);
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .about-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-black);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Particles.js container */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+                height: 70px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-radius: 8px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .about-content {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+
+            main {
+                padding-top: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                padding: 0.5rem 1rem;
+                height: 60px;
+            }
+
+            main {
+                padding-top: 80px;
+            }
+
+            .page-header {
+                padding: 2rem 1rem;
+            }
+
+            .about-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-gold);
+        }
+    </style>
+</head>
+<body>
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/luxurycars.html">Luxury Cars</a></li>
+                <li><a href="pages/regularcars.html">Regular Cars</a></li>
+                <li class="active"><a href="about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>About Prestigio</h1>
+            <p>Your trusted partner in luxury automotive experiences</p>
+        </section>
+
+        <section class="about-content">
+            <h2>Our Story</h2>
+            <p>Prestigio was founded with a vision to redefine luxury car ownership and experience. We bring you the finest selection of premium vehicles with exceptional service.</p>
+            
+            <h2>Our Mission</h2>
+            <p>To provide our clients with an unparalleled automotive experience through exceptional service, premium vehicles, and attention to detail.</p>
+            
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li>Extensive collection of luxury vehicles</li>
+                <li>Personalized service</li>
+                <li>Competitive pricing</li>
+                <li>Expert consultation</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Prestigio. All rights reserved.</p>
+    </footer>
+
+    <!-- Particles.js for background animation -->
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#d4af37" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#d4af37", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 6 }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "repulse": { "distance": 200 }, "push": { "particles_nb": 4 } }
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navLinks = document.getElementById('navLinks');
+            if (!e.target.closest('header') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

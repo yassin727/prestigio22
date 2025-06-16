@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="luxury.title">Luxury Car Brands - Prestigio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+    
+    /* CSS Variables */
+    :root {
+        --primary-black: #0a0a0a;
+        --secondary-black: #1a1a1a;
+        --accent-black: #2a2a2a;
+        --primary-gold: #d4af37;
+        --secondary-gold: #f4d03f;
+        --white: #ffffff;
+        --light-gray: #cccccc;
+        --dark-gray: #666666;
+        --border-color: #333333;
+        --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+        --transition: 0.3s ease;
+    }
+
+    /* Global Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', 'Arial', sans-serif;
+        background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+        color: var(--white);
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Unified Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        z-index: 1000;
+        transition: var(--transition);
+    }
+
+    header.scrolled {
+        background: rgba(10, 10, 10, 0.98);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+
+    .logo h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;
+        font-weight: 900;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: var(--transition);
+        position: relative;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-gold);
+        background: rgba(212, 175, 55, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+        transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: 2px solid var(--primary-gold);
+        color: var(--primary-gold);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .mobile-menu-toggle:hover {
+        background: var(--primary-gold);
+        color: var(--primary-black);
+    }
+
+    /* Page Header */
+    .page-header {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%);
+        padding: 140px 0 60px 0;
+        text-align: center;
+        border-bottom: none;
+        margin-bottom: 60px;
+    }
+
+    .page-header h2 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .page-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        border-radius: 2px;
+    }
+
+    /* Brands Container */
+    .brands-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        padding: 0 60px;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .brand-logo {
+        background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+        border: 2px solid rgba(212, 175, 55, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    .brand-logo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .brand-logo:hover::before {
+        opacity: 1;
+    }
+
+    .brand-logo:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: #d4af37;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(212, 175, 55, 0.3),
+            inset 0 1px 0 rgba(212, 175, 55, 0.2);
+    }
+
+    .brand-logo img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        filter: brightness(0.9) contrast(1.1);
+        transition: all 0.4s;
+    }
+
+    .brand-logo:hover img {
+        filter: brightness(1.1) contrast(1.2);
+        transform: scale(1.1);
+    }
+
+    /* Cars Container */
+    #cars-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+        backdrop-filter: blur(20px);
+        z-index: 2000;
+        overflow-y: auto;
+        padding: 100px 40px 40px;
+    }
+
+    .close-btn {
+        position: fixed;
+        top: 30px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #d4af37, #ffd700);
+        color: #000;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 2001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .close-btn:hover {
+        transform: scale(1.1) rotate(90deg);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .brand-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: #d4af37;
+        text-align: center;
+        margin-bottom: 60px;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .cars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .car-card {
+        background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+        border: 2px solid rgba(212, 175, 55, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        backdrop-filter: blur(10px);
+    }
+
+    .car-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+    }
+
+    .car-card:hover::before {
+        opacity: 1;
+    }
+
+    .car-card:hover {
+        transform: translateY(-15px) scale(1.03);
+        border-color: #d4af37;
+        box-shadow: 
+            0 25px 60px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(212, 175, 55, 0.4),
+            inset 0 1px 0 rgba(212, 175, 55, 0.2);
+    }
+
+    .car-image {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .car-image::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        pointer-events: none;
+    }
+
+    .car-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .car-card:hover .car-image img {
+        transform: scale(1.1);
+    }
+
+    .car-details {
+        padding: 30px;
+    }
+
+    .car-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #d4af37;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .car-info {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    .car-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Footer Styles */
+    .site-footer {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+        margin-top: 120px;
+        padding: 80px 0 40px;
+        border-top: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 60px;
+    }
+
+    .footer-section h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: #d4af37;
+        margin-bottom: 25px;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .footer-section p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-size: 16px;
+    }
+
+    .footer-section ul li a:hover {
+        color: #d4af37;
+        padding-left: 10px;
+    }
+
+    .footer-section address {
+        color: rgba(255, 255, 255, 0.8);
+        font-style: normal;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 40px 0;
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.1));
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d4af37;
+        font-size: 18px;
+        transition: all 0.4s;
+    }
+
+    .social-links a:hover {
+        background: linear-gradient(135deg, #d4af37, #ffd700);
+        color: #000;
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .brands-container {
+            padding: 0 40px;
+            gap: 30px;
+        }
+        
+        .cars-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            padding: 0 1rem;
+            height: 70px;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+        }
+        
+        .mobile-menu-toggle {
+            display: block;
+        }
+        
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            flex-direction: column;
+            padding: 1rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-links.active {
+            display: flex;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-links li {
+            margin: 0.5rem 0;
+        }
+        
+        .nav-links a {
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .page-header {
+            padding: 100px 0 60px 0;
+        }
+        
+        .brands-container {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            padding: 0 20px;
+            gap: 25px;
+        }
+        
+        .brand-logo {
+            padding: 30px 20px;
+        }
+        
+        .brand-logo img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        #cars-container {
+            padding: 80px 20px 20px;
+        }
+        
+        .cars-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .brand-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-container {
+            padding: 0 20px;
+            gap: 40px;
+        }
+        
+        .footer-bottom {
+            padding: 30px 20px 0;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .close-btn {
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav {
+            padding: 0.5rem 1rem;
+            height: 60px;
+        }
+
+        .page-header {
+            padding: 80px 0 60px 0;
+        }
+
+        .brand-logo {
+            padding: 25px 15px;
+        }
+        
+        .brand-logo img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .car-details {
+            padding: 25px 20px;
+        }
+        
+        .car-name {
+            font-size: 24px;
+        }
+        
+        .car-info {
+            font-size: 14px;
+        }
+        
+        .car-price {
+            font-size: 18px;
+        }
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #d4af37, #ffd700);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #ffd700, #d4af37);
+    }
+
+    /* Loading Animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .brand-logo {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .brand-logo:nth-child(1) { animation-delay: 0.1s; }
+    .brand-logo:nth-child(2) { animation-delay: 0.2s; }
+    .brand-logo:nth-child(3) { animation-delay: 0.3s; }
+    .brand-logo:nth-child(4) { animation-delay: 0.4s; }
+    .brand-logo:nth-child(5) { animation-delay: 0.5s; }
+    .brand-logo:nth-child(6) { animation-delay: 0.6s; }
+    .brand-logo:nth-child(7) { animation-delay: 0.7s; }
+    .brand-logo:nth-child(8) { animation-delay: 0.8s; }
+    .brand-logo:nth-child(9) { animation-delay: 0.9s; }
+    .brand-logo:nth-child(10) { animation-delay: 1.0s; }
+    .brand-logo:nth-child(11) { animation-delay: 1.1s; }
+    .brand-logo:nth-child(12) { animation-delay: 1.2s; }
+    .brand-logo:nth-child(13) { animation-delay: 1.3s; }
+    .brand-logo:nth-child(14) { animation-delay: 1.4s; }
+    .brand-logo:nth-child(15) { animation-delay: 1.5s; }
+</style>
+<body>
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="luxurycars.html">Luxury Cars</a></li>
+                <li><a href="regularcars.html">Regular Cars</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h2 data-i18n="carSelection.buyLuxury">💎 Buy Luxury Cars</h2>
+    </div>
+
+    <div class="brands-container" id="brands-container">
+        <!-- Brand logos will be loaded here -->
+    </div>
+
+    <div id="cars-container">
+        <div class="close-btn" id="close-btn" data-i18n="common.close">×</div>
+        <h2 class="brand-title" id="brand-title"></h2>
+        <div class="cars-grid" id="cars-grid"></div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 data-i18n="footer.aboutTitle">About Prestigio Motors</h3>
+                <p data-i18n="footer.aboutText">Since 1985, Prestigio Motors has been the premier destination for the world's finest automobiles, providing exceptional service and unmatched expertise.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                <ul>
+                    <li><a href="newarrivals.html" data-i18n="footer.newArrivals">New Arrivals</a></li>
+                    <li><a href="luxurycars.html" data-i18n="footer.exoticInventory">Exotic Inventory</a></li>
+                    <li><a href="regularcars.html" data-i18n="footer.normalInventory">Normal Inventory</a></li>
+                    <li><a href="specialeditions.html" data-i18n="footer.specialEditions">Special Editions</a></li>
+                    <li><a href="customerservice.html" data-i18n="nav.concierge">Concierge</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.contactTitle">Contact Us</h3>
+                <address>
+                   Sixth District<br>
+                    Al Obour City<br><br>
+                    <span data-i18n="footer.phone">Phone</span>: +2 01098613073<br>
+                    <span data-i18n="footer.email">Email</span>: prestegioautomobiles@gmail.com
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.rights">© 2025 Prestigio Collection. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>   
+    <script>
+        // API Configuration
+        const API_BASE = 'http://localhost:5000/api';
+        
+        // Dynamic brand data - will be populated from database
+        let brandsData = {};
+        
+        // Default brand logos mapping
+        const brandLogos = {
+            "Bugatti": "logos/Bugatti-Logo.png",
+            "Rolls-Royce": "logos/rolls-royce-logo.png",
+            "Bentley": "logos/bentley.png",
+            "Ferrari": "logos/ferrari-emblem-logo-png_seeklogo-53763.png",
+            "Lamborghini": "logos/Lamborghini-Logo.png",
+            "McLaren": "logos/mclaren-logo.png",
+            "Porsche": "logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png",
+            "Aston Martin": "logos/Aston-Martin-Logo.png",
+            "Maserati": "logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png",
+            "Mercedes-Benz": "logos/Mercedes-Logo.svg.png",
+            "BMW": "logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png",
+            "Audi": "logos/audi.png",
+            "Lexus": "logos/lexus.png",
+            "Jaguar": "logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png",
+            "Land Rover": "logos/land-rover-logo-png_seeklogo-201638.png"
+        };
+        
+        // Load luxury cars from database
+        async function loadLuxuryCars() {
+            try {
+                console.log('Loading luxury cars from database...');
+                const response = await fetch(`${API_BASE}/cars/luxury`);
+                const data = await response.json();
+                
+                if (data.success && data.cars) {
+                    console.log(`✅ Loaded ${data.cars.length} luxury cars`);
+                    
+                    // Group cars by brand
+                    const groupedByBrand = {};
+                    data.cars.forEach(car => {
+                        const brandKey = car.brand.toLowerCase().replace(/[\s-]/g, '');
+                        
+                        if (!groupedByBrand[brandKey]) {
+                            groupedByBrand[brandKey] = {
+                                name: car.brand,
+                                logo: car.brandLogo || brandLogos[car.brand] || "logos/default-logo.png",
+                                cars: []
+                            };
+                        }
+                        
+                        groupedByBrand[brandKey].cars.push({
+                            name: car.name,
+                            image: car.image,
+                            info: car.info,
+                            price: car.price,
+                            id: car._id
+                        });
+                    });
+                    
+                    brandsData = groupedByBrand;
+                    loadBrands();
+                    
+                } else {
+                    console.warn('⚠️ No luxury cars found or API error');
+                    loadFallbackData(); // Load static data as fallback
+                }
+                
+            } catch (error) {
+                console.error('❌ Error loading luxury cars:', error);
+                loadFallbackData(); // Load static data as fallback
+            }
+        }
+        
+        // Fallback static data (original data as backup)
+        function loadFallbackData() {
+            console.log('📋 Loading fallback static data...');
+            brandsData = {
+                bugatti: {
+                    name: "Bugatti",
+                    logo: "logos/Bugatti-Logo.png",
+                    cars: [
+                        { name: "Chiron", image: "images/2017-Bugatti-Chiron-009-2160.jpg", info: "1500 HP, 8.0L W16 Engine", price: "$3,000,000+" },
+                        { name: "Veyron", image: "images/2015-Bugatti-Veyron-Grand-Sport-Vitesse-La-Finale-001-1600.jpg", info: "1500 HP, 8.0L W16 Engine", price: "$3,300,000+" },
+                        { name: "Divo", image: "images/2019-Bugatti-Divo-007-2160.jpg", info: "1500 HP, 8.0L W16 Engine", price: "$5,800,000+" },
+                        { name: "La Voiture Noire", image: "images/images.jpg", info: "1500 HP, 8.0L W16 Engine", price: "$18,700,000+" },
+                        { name: "Bolide", image: "images/1-Bugatti-Bolide-review-2025.jpg", info: "1825 HP, 8.0L W16 Engine", price: "$4,000,000+" }
+                    ]
+                },
+                rollsRoyce: {
+                    name: "Rolls-Royce",
+                    logo: "logos/rolls-royce-logo.png",
+                    cars: [
+                        { name: "Phantom", image: "images/01_RR_PHANTOM-single-twin-card-min.jpg", info: "563 HP, 6.75L V12 Engine", price: "$450,000+" },
+                        { name: "Ghost", image: "images/2015-Rolls-Royce-Ghost-Series-II-001-1600.jpg", info: "563 HP, 6.75L V12 Engine", price: "$350,000+" },
+                        { name: "Cullinan", image: "images/P90344238-rolls-royce-cullinan-2250px.jpg", info: "563 HP, 6.75L V12 Engine", price: "$330,000+" },
+                        { name: "Wraith", image: "images/2014-Rolls-Royce-Wraith-005-1600.jpg", info: "624 HP, 6.75L V12 Engine", price: "$330,000+" },
+                        { name: "Spectre", image: "images/2026-Rolls-Royce-Spectre-Black-Badge-001-2000.jpg", info: "577 HP, Electric", price: "$420,000+" }
+                    ]
+                },
+                bentley: {
+                    name: "Bentley",
+                    logo: "logos/bentley.png",
+                    cars: [
+                        { name: "Continental GT", image: "images/01_RR_PHANTOM-single-twin-card-min.jpg", info: "626 HP, 6.0L W12 Engine", price: "$220,000+" },
+                        { name: "Bentayga", image: "images/bentayga.jpg", info: "542 HP, 4.0L V8 Engine", price: "$180,000+" },
+                        { name: "Flying Spur", image: "images/flying spur.jpg", info: "626 HP, 6.0L W12 Engine", price: "$214,000+" },
+                        { name: "Mulsanne", image: "images/2017-Bentley-Mulsanne-Speed-001-2000.jpg", info: "505 HP, 6.75L V8 Engine", price: "$335,000+" },
+                        { name: "Batur", image: "images/batur.jpg", info: "740 HP, 6.0L W12 Twin-Turbocharged", price: "$2.5 million+" }
+                    ]
+                },
+                ferrari: {
+                    name: "Ferrari",
+                    logo: "logos/ferrari-emblem-logo-png_seeklogo-53763.png",
+                    cars: [
+                        { name: "SF90 Stradale", image: "images/sf90.jpg", info: "986 HP, Hybrid V8 Engine", price: "$625,000+" },
+                        { name: "F8 Tributo", image: "images/f8.jpg", info: "710 HP, 3.9L V8 Engine", price: "$276,000+" },
+                        { name: "Roma", image: "images/roma.jpg", info: "612 HP, 3.9L V8 Engine", price: "$222,000+" },
+                        { name: "LaFerrari", image: "images/laferrari.jpg", info: "950 HP, Hybrid V12 Engine", price: "$3,000,000+" },
+                        { name: "812 Superfast", image: "images/superfast.jpg", info: "789 HP, 6.5L V12 Engine", price: "$340,000+" }
+                    ]
+                },
+                lamborghini: {
+                    name: "Lamborghini",
+                    logo: "logos/Lamborghini-Logo.png",
+                    cars: [
+                        { name: "Aventador", image: "images/aventador.jpg", info: "770 HP, 6.5L V12 Engine", price: "$500,000+" },
+                        { name: "Huracán", image: "images/huracan.jpg", info: "640 HP, 5.2L V10 Engine", price: "$260,000+" },
+                        { name: "Urus", image: "images/urus.jpg", info: "650 HP, 4.0L V8 Engine", price: "$220,000+" },
+                        { name: "Revuelto", image: "images/revuelto.jpg", info: "1001 HP, Hybrid V12 Engine", price: "$600,000+" },
+                        { name: "Sian", image: "images/sian.jpg", info: "819 HP, Hybrid V12 Engine", price: "$3,600,000+" }
+                    ]
+                },
+                mclaren: {
+                    name: "McLaren",
+                    logo: "logos/mclaren-logo.png",
+                    cars: [
+                        { name: "720S", image: "images/720s.jpg", info: "710 HP, 4.0L V8 Engine", price: "$299,000+" },
+                        { name: "Artura", image: "images/artura.jpg", info: "671 HP, Hybrid V6 Engine", price: "$225,000+" },
+                        { name: "Senna", image: "images/senna.jpg", info: "789 HP, 4.0L V8 Engine", price: "$1,000,000+" },
+                        { name: "P1", image: "images/p1.jpg", info: "903 HP, Hybrid V8 Engine", price: "$1,500,000+" },
+                        { name: "765LT", image: "images/765lt.jpg", info: "755 HP, 4.0L V8 Engine", price: "$358,000+" }
+                    ]
+                },
+                porsche: {
+                    name: "Porsche",
+                    logo: "logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png",
+                    cars: [
+                        { name: "911 Turbo S", image:"images/911_.jpg", info: "640 HP, 3.8L Flat-6 Engine", price: "$216,000+" },
+                        { name: "Taycan", image: "images/Porsche-Taycan-Performance.jpg", info: "750 HP, Electric", price: "$185,000+" },
+                        { name: "Panamera", image: "images/panamera_.jpg", info: "620 HP, 4.0L V8 Engine", price: "$179,000+" },
+                        { name: "Cayenne", image: "images/cayenne--coupe.jpg", info: "670 HP, 4.0L V8 Engine", price: "$180,000+" },
+                        { name: "918 Spyder", image: "images/918_Spyder.jpg", info: "887 HP, Hybrid V8 Engine", price: "$1,500,000+" }
+                    ]
+                },
+                astonMartin: {
+                    name: "Aston Martin",
+                    logo: "logos/Aston-Martin-Logo.png",
+                    cars: [
+                        { name: "DBS Superleggera", image: "images/DBS_Superleggera.jpg", info: "715 HP, 5.2L V12 Engine", price: "$316,000+" },
+                        { name: "Vantage", image: "images/Vantage.jpg", info: "503 HP, 4.0L V8 Engine", price: "$142,000+" },
+                        { name: "DBX", image: "images/DBX.jpg", info: "542 HP, 4.0L V8 Engine", price: "$176,000+" },
+                        { name: "DB11", image: "images/DB11.jpg", info: "630 HP, 5.2L V12 Engine", price: "$205,000+" },
+                        { name: "Valkyrie", image: "images/Valkyrie.jpg", info: "1160 HP, Hybrid V12 Engine", price: "$3,000,000+" }
+                    ]
+                },
+                maserati: {
+                    name: "Maserati",
+                    logo: "logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png",
+                    cars: [
+                        { name: "MC20", image: "images/mc20.jpg", info: "621 HP, 3.0L V6 Engine", price: "$212,000+" },
+                        { name: "Levante", image: "images/levante.jpg", info: "580 HP, 3.8L V8 Engine", price: "$153,000+" },
+                        { name: "Quattroporte", image: "images/quattroporte.jpg", info: "580 HP, 3.8L V8 Engine", price: "$142,000+" },
+                        { name: "Ghibli", image: "images/ghibli.jpg", info: "345 HP, 3.0L V6 Engine", price: "$75,000+" },
+                        { name: "GranTurismo", image: "images/granturismo.jpg", info: "490 HP, 3.0L V6 Engine", price: "$175,000+" }
+                    ]
+                },
+                mercedes: {
+                    name: "Mercedes-Benz",
+                    logo: "logos/Mercedes-Logo.svg.png",
+                    cars: [
+                        { name: "S-Class", image: "images/sclass.jpg", info: "496 HP, 4.0L V8 Engine", price: "$110,000+" },
+                        { name: "AMG GT", image: "images/amg.jpg", info: "720 HP, 4.0L V8 Engine", price: "$180,000+" },
+                        { name: "G-Class", image: "images/gclass.jpg", info: "577 HP, 4.0L V8 Engine", price: "$156,000+" },
+                        { name: "EQS AMG", image: "images/eqs.jpg", info: "751 HP, Electric", price: "$150,000+" },
+                        { name: "SL 63", image: "images/sl63.jpg", info: "577 HP, 4.0L V8 Engine", price: "$180,000+" }
+                    ]
+                },
+                bmw: {
+                    name: "BMW",
+                    logo: "logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png",
+                    cars: [
+                        { name: "M8 Competition", image: "images/m8.jpg", info: "617 HP, 4.4L V8 Engine", price: "$140,000+" },
+                        { name: "X7", image: "images/x7.jpg", info: "523 HP, 4.4L V8 Engine", price: "$120,000+" },
+                        { name: "i8", image: "images/i8.jpg", info: "369 HP, Hybrid", price: "$147,000+" },
+                        { name: "M5 CS", image: "images/m5cs.jpg", info: "627 HP, 4.4L V8 Engine", price: "$143,000+" },
+                        { name: "XM", image: "images/xm.jpg", info: "644 HP, Hybrid V8 Engine", price: "$160,000+" }
+                    ]
+                },
+                audi: {
+                    name: "Audi",
+                    logo: "logos/audi.png",
+                    cars: [
+                        { name: "R8", image: "images/R8.jpg", info: "602 HP, 5.2L V10 Engine", price: "$168,000+" },
+                        { name: "e-tron GT", image: "images/etron.jpg", info: "637 HP, Electric", price: "$140,000+" },
+                        { name: "RS7", image: "images/RS7.jpg", info: "591 HP, 4.0L V8 Engine", price: "$118,000+" },
+                        { name: "RS Q8", image: "images/RS_Q8.jpg", info: "591 HP, 4.0L V8 Engine", price: "$125,000+" },
+                        { name: "RS6 Avant", image: "images/RS6_Avant.jpg", info: "591 HP, 4.0L V8 Engine", price: "$110,000+" }
+                    ]
+                },
+                lexus: {
+                    name: "Lexus",
+                    logo: "logos/lexus.png",
+                    cars: [
+                        { name: "LC 500", image: "images/lc500.jpg", info: "471 HP, 5.0L V8 Engine", price: "$93,000+" },
+                        { name: "LS 500", image: "images/ls500.jpg", info: "416 HP, 3.5L V6 Engine", price: "$77,000+" },
+                        { name: "LX 600", image: "images/lx600.jpg", info: "409 HP, 3.5L V6 Engine", price: "$86,000+" },
+                        { name: "LFA", image: "images/lfa.jpg", info: "552 HP, 4.8L V10 Engine", price: "$500,000+" },
+                        { name: "IS 500 F Sport", image: "images/is500.jpg", info: "472 HP, 5.0L V8 Engine", price: "$60,000+" }
+                    ]
+                },
+                jaguar: {
+                    name: "Jaguar",
+                    logo: "logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png",
+                    cars: [
+                        { name: "F-Type", image: "images/ftype.jpg", info: "575 HP, 5.0L V8 Engine", price: "$103,000+" },
+                        { name: "I-PACE", image: "images/ipace.jpg", info: "394 HP, Electric", price: "$69,000+" },
+                        { name: "XJ", image: "images/xj.jpg", info: "470 HP, 5.0L V8 Engine", price: "$87,000+" },
+                        { name: "XF", image: "images/xf.jpg", info: "246 HP, 2.0L I4 Engine", price: "$45,000+" },
+                        { name: "E-PACE", image: "images/epace.jpg", info: "246 HP, 2.0L I4 Engine", price: "$45,000+" }
+                    ]
+                },
+                landRover: {
+                    name: "Land Rover",
+                    logo: "logos/land-rover-logo-png_seeklogo-201638.png",
+                    cars: [
+                        { name: "Vogue", image: "images/vogue.jpg", info: "606 HP,SV Bespoke V8 (Supercharged)", price: "$120,000+" },
+                        { name: "Defender", image: "images/defender.jpg", info: "518 HP, 5.0L V8 Engine", price: "$90,000+" },
+                        { name: "Range Rover Sport", image: "images/sport.jpg", info: "523 HP, 4.4L V8 Engine", price: "$83,000+" },
+                        { name: "Velar", image: "images/Velar.jpg", info: "247 HP, 2.0L I4 Engine", price: "$60,000+" },
+                        { name: "Discovery", image: "images/Discovery.jpg", info: "355 HP, 3.0L I6 Engine", price: "$60,000+" }
+                    ]
+                }
+            };
+            
+            // After setting fallback data, load the brands
+            loadBrands();
+        }
+
+        // Load brands
+        function loadBrands() {
+            const brandsContainer = document.getElementById('brands-container');
+            
+            for (const brandKey in brandsData) {
+                const brand = brandsData[brandKey];
+                const brandElement = document.createElement('div');
+                brandElement.className = 'brand-logo';
+                brandElement.dataset.brand = brandKey;
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = brand.logo;
+                imgElement.alt = brand.name;
+                
+                brandElement.appendChild(imgElement);
+                brandsContainer.appendChild(brandElement);
+                
+                // Add click event to show cars
+                brandElement.addEventListener('click', function() {
+                    showCars(brandKey);
+                });
+            }
+        }
+
+        // Show cars for selected brand
+        function showCars(brandKey) {
+            const brand = brandsData[brandKey];
+            const carsContainer = document.getElementById('cars-container');
+            const brandTitle = document.getElementById('brand-title');
+            const carsGrid = document.getElementById('cars-grid');
+            
+            // Set brand title
+            brandTitle.textContent = brand.name + " Models";
+            
+            // Clear previous cars
+            carsGrid.innerHTML = '';
+            
+            // Add cars
+            brand.cars.forEach(car => {
+                const carCard = document.createElement('div');
+                carCard.className = 'car-card';
+                
+                const carImage = document.createElement('div');
+                carImage.className = 'car-image';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = car.image;
+                imgElement.alt = car.name;
+                
+                carImage.appendChild(imgElement);
+                
+                const carDetails = document.createElement('div');
+                carDetails.className = 'car-details';
+                
+                const carName = document.createElement('h3');
+                carName.className = 'car-name';
+                carName.textContent = car.name;
+                
+                const carInfo = document.createElement('p');
+                carInfo.className = 'car-info';
+                carInfo.textContent = car.info;
+                
+                const carPrice = document.createElement('p');
+                carPrice.className = 'car-price';
+                carPrice.textContent = car.price;
+                
+                carDetails.appendChild(carName);
+                carDetails.appendChild(carInfo);
+                carDetails.appendChild(carPrice);
+                
+                carCard.appendChild(carImage);
+                carCard.appendChild(carDetails);
+                
+                // Add click event to open customizer
+                carCard.addEventListener('click', function() {
+                    // Map specific cars to available 3D models
+                    let carId = 'bugatti-bolide'; // default
+                    
+                    // BUGATTI MODELS
+                    if (brandKey === 'bugatti' && car.name === 'Bolide') {
+                        carId = 'bugatti-bolide';
+                    } else if (brandKey === 'bugatti') {
+                        carId = 'bugatti-bolide'; // fallback for other Bugatti models
+                    }
+                    
+                    // MERCEDES MODELS
+                    else if (brandKey === 'mercedes' && car.name === 'S-Class') {
+                        carId = 'mercedes-s-class';
+                    } else if (brandKey === 'mercedes') {
+                        carId = 'mercedes-c-class'; // fallback for other Mercedes models
+                    }
+                    
+                    // BMW MODELS
+                    else if (brandKey === 'bmw' && car.name === 'M8 Competition') {
+                        carId = 'bmw-m8';
+                    } else if (brandKey === 'bmw' && (car.name === 'X7' || car.name === 'XM')) {
+                        carId = 'bmw-x6m'; // SUV models
+                    } else if (brandKey === 'bmw') {
+                        carId = 'bmw-m8'; // fallback for other BMW models
+                    }
+                    
+                    // PORSCHE MODELS
+                    else if (brandKey === 'porsche' && car.name === '911 Turbo S') {
+                        carId = 'porsche-911';
+                    } else if (brandKey === 'porsche' && car.name === 'Cayenne') {
+                        carId = 'porsche-cayenne';
+                    } else if (brandKey === 'porsche') {
+                        carId = 'porsche-911'; // fallback for other Porsche models
+                    }
+                    
+                    // FERRARI MODELS (placeholders)
+                    else if (brandKey === 'ferrari' && car.name === 'SF90 Stradale') {
+                        carId = 'ferrari-sf90';
+                    } else if (brandKey === 'ferrari' && car.name === 'F8 Tributo') {
+                        carId = 'ferrari-f8';
+                    } else if (brandKey === 'ferrari') {
+                        carId = 'ferrari-sf90'; // fallback for other Ferrari models
+                    }
+                    
+                    // LAMBORGHINI MODELS (placeholders)
+                    else if (brandKey === 'lamborghini' && car.name === 'Aventador') {
+                        carId = 'lamborghini-aventador';
+                    } else if (brandKey === 'lamborghini' && car.name === 'Huracán') {
+                        carId = 'lamborghini-huracan';
+                    } else if (brandKey === 'lamborghini') {
+                        carId = 'lamborghini-aventador'; // fallback for other Lamborghini models
+                    }
+                    
+                    // MCLAREN MODELS (placeholders)
+                    else if (brandKey === 'mclaren' && car.name === '720S') {
+                        carId = 'mclaren-720s';
+                    } else if (brandKey === 'mclaren') {
+                        carId = 'mclaren-720s'; // fallback for other McLaren models
+                    }
+                    
+                    // ROLLS-ROYCE MODELS (placeholders)
+                    else if (brandKey === 'rollsRoyce' && car.name === 'Phantom') {
+                        carId = 'rolls-phantom';
+                    } else if (brandKey === 'rollsRoyce') {
+                        carId = 'rolls-phantom'; // fallback for other Rolls-Royce models
+                    }
+                    
+                    // BENTLEY MODELS (placeholders)
+                    else if (brandKey === 'bentley' && car.name === 'Continental GT') {
+                        carId = 'bentley-continental';
+                    } else if (brandKey === 'bentley') {
+                        carId = 'bentley-continental'; // fallback for other Bentley models
+                    }
+                    
+                    // ASTON MARTIN MODELS (placeholders)
+                    else if (brandKey === 'astonMartin' && car.name === 'DBS Superleggera') {
+                        carId = 'aston-dbs';
+                    } else if (brandKey === 'astonMartin') {
+                        carId = 'aston-dbs'; // fallback for other Aston Martin models
+                    }
+                    
+                    // MASERATI MODELS (placeholders)
+                    else if (brandKey === 'maserati' && car.name === 'MC20') {
+                        carId = 'maserati-mc20';
+                    } else if (brandKey === 'maserati') {
+                        carId = 'maserati-mc20'; // fallback for other Maserati models
+                    }
+                    
+                    // JAGUAR MODELS (placeholders)
+                    else if (brandKey === 'jaguar' && car.name === 'F-Type') {
+                        carId = 'jaguar-ftype';
+                    } else if (brandKey === 'jaguar') {
+                        carId = 'jaguar-ftype'; // fallback for other Jaguar models
+                    }
+                    
+                    // LEXUS MODELS (placeholders)
+                    else if (brandKey === 'lexus' && car.name === 'LC 500') {
+                        carId = 'lexus-lc500';
+                    } else if (brandKey === 'lexus') {
+                        carId = 'lexus-lc500'; // fallback for other Lexus models
+                    }
+                    
+                    // LAND ROVER MODELS (placeholders)
+                    else if (brandKey === 'landRover' && car.name === 'Vogue') {
+                        carId = 'land-rover-vogue';
+                    } else if (brandKey === 'landRover') {
+                        carId = 'land-rover-vogue'; // fallback for other Land Rover models
+                    }
+                    
+                    // Get transaction type from URL parameter
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const transactionType = urlParams.get('type') || 'buy'; // default to 'buy' if not specified
+                    
+                    // Create params for customizer
+                    const params = new URLSearchParams({
+                        id: carId,
+                        name: car.name,
+                        brand: brand.name,
+                        price: car.price,
+                        image: car.image,
+                        info: car.info,
+                        type: transactionType // pass the transaction type to customizer
+                    });
+                    
+                    // Redirect to appropriate customizer based on transaction type
+                    if (transactionType === 'rent') {
+                        window.location.href = `../basic-customize.html?${params.toString()}`;
+                    } else {
+                        window.location.href = `car-customizer.html?${params.toString()}`;
+                    }
+                });
+                
+                carsGrid.appendChild(carCard);
+            });
+            
+            // Show cars container
+            carsContainer.style.display = 'block';
+        }
+
+        // Close button event
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('cars-container').style.display = 'none';
+        });
+
+        // Load luxury cars from database when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLuxuryCars();
+            updatePageMode();
+        });
+        
+        // Update page based on transaction type
+        function updatePageMode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transactionType = urlParams.get('type') || 'buy';
+            
+            // Update page title and header based on mode
+            const headerTitle = document.querySelector('header h2');
+            if (headerTitle) {
+                if (transactionType === 'rent') {
+                    headerTitle.textContent = '💎 Rent Luxury Cars';
+                    document.title = 'Rent Luxury Cars - Prestigio';
+                } else {
+                    headerTitle.textContent = '💎 Buy Luxury Cars';
+                    document.title = 'Buy Luxury Cars - Prestigio';
+                }
+            }
+        }
+        
+        // Auto-refresh every 5 minutes to catch new vehicles (less frequent to avoid flickering)
+        // setInterval(loadLuxuryCars, 300000); // Disabled to prevent navigation flickering
+    
+    </script>
+    <script src="particles.js"></script>
+    <script src="admin-vehicle-manager.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize i18n
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.I18n) {
+                window.i18n = new I18n();
+            }
+        });
+    </script>
+</body>
+</html>

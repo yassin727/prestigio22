@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Prestigio Motors Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#d4af37',
+                        'gold-light': '#e6c757',
+                        'gold-dark': '#b8941f'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-6 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gold mb-2">Customer Management</h1>
+                <p class="text-gray-400">View and manage your customer database</p>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="refreshCustomers()" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sync-alt mr-2"></i>Refresh
+                </button>
+                <button onclick="exportCustomers()" class="bg-gold hover:bg-gold-dark text-black px-4 py-2 rounded-lg transition-colors font-semibold">
+                    <i class="fas fa-download mr-2"></i>Export
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Total Customers</p>
+                        <p id="totalCustomers" class="text-2xl font-bold text-gold">0</p>
+                    </div>
+                    <i class="fas fa-users text-gold text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Active Customers</p>
+                        <p id="activeCustomers" class="text-2xl font-bold text-green-400">0</p>
+                    </div>
+                    <i class="fas fa-user-check text-green-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">New This Month</p>
+                        <p id="newCustomers" class="text-2xl font-bold text-blue-400">0</p>
+                    </div>
+                    <i class="fas fa-user-plus text-blue-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">VIP Customers</p>
+                        <p id="vipCustomers" class="text-2xl font-bold text-purple-400">0</p>
+                    </div>
+                    <i class="fas fa-crown text-purple-400 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-gray-900 rounded-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Search Customers</label>
+                    <input type="text" id="searchInput" placeholder="Search by name, email, or username..." 
+                           class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                           onkeyup="filterCustomers()">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Registration Date</label>
+                    <select id="dateFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterCustomers()">
+                        <option value="">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Customer Type</label>
+                    <select id="typeFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterCustomers()">
+                        <option value="">All Types</option>
+                        <option value="vip">VIP</option>
+                        <option value="regular">Regular</option>
+                        <option value="new">New</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Status</label>
+                    <select id="statusFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterCustomers()">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customers Table -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Customer</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Contact</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Registration</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Purchases</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customersTableBody" class="divide-y divide-gray-700">
+                        <!-- Customer rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
+            <p class="mt-4 text-gray-400">Loading customers...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-12 hidden">
+            <i class="fas fa-users text-6xl text-gray-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">No Customers Found</h3>
+            <p class="text-gray-400">No customers match your current filters.</p>
+        </div>
+    </div>
+
+    <!-- Customer Details Modal -->
+    <div id="customerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Customer Details</h2>
+                <button onclick="closeCustomerModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="customerDetails">
+                <!-- Customer details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Message Modal -->
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-lg w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Send Message</h2>
+                <button onclick="closeMessageModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="messageForm" onsubmit="sendMessage(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">To:</label>
+                    <input type="text" id="messageRecipient" readonly class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Subject:</label>
+                    <input type="text" id="messageSubject" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">Message:</label>
+                    <textarea id="messageContent" required rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" onclick="closeMessageModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-gold hover:bg-gold-dark text-black px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let allCustomers = [];
+        let filteredCustomers = [];
+        let currentCustomerId = null;
+
+        // Load customers on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCustomers();
+        });
+
+        async function loadCustomers() {
+            try {
+                const response = await fetch(`${API_BASE}/admin/users`);
+                const data = await response.json();
+                
+                if (data.success && data.users) {
+                    // Use real user data and add some computed fields
+                    allCustomers = data.users.map(user => ({
+                        ...user,
+                        id: user._id,
+                        purchases: Math.floor(Math.random() * 5), // This would come from orders in real app
+                        totalSpent: Math.floor(Math.random() * 500000), // This would come from orders in real app
+                        status: user.isActive ? 'active' : 'inactive',
+                        type: Math.random() > 0.8 ? 'vip' : 'regular', // This would be a real field
+                        lastLogin: user.lastLogin || new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString()
+                    }));
+                    
+                    filteredCustomers = [...allCustomers];
+                    updateStats();
+                    displayCustomers();
+                } else {
+                    showEmptyState();
+                }
+            } catch (error) {
+                console.error('Error loading customers:', error);
+                showEmptyState();
+            } finally {
+                document.getElementById('loadingState').style.display = 'none';
+            }
+        }
+
+        function updateStats() {
+            const now = new Date();
+            const thisMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+            
+            const totalCustomers = allCustomers.length;
+            const activeCustomers = allCustomers.filter(c => c.status === 'active').length;
+            const newCustomers = allCustomers.filter(c => new Date(c.createdAt) >= thisMonth).length;
+            const vipCustomers = allCustomers.filter(c => c.type === 'vip').length;
+            
+            document.getElementById('totalCustomers').textContent = totalCustomers;
+            document.getElementById('activeCustomers').textContent = activeCustomers;
+            document.getElementById('newCustomers').textContent = newCustomers;
+            document.getElementById('vipCustomers').textContent = vipCustomers;
+        }
+
+        function displayCustomers() {
+            const tableBody = document.getElementById('customersTableBody');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (filteredCustomers.length === 0) {
+                tableBody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            tableBody.innerHTML = filteredCustomers.map(customer => `
+                <tr class="hover:bg-gray-800 transition-colors">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-black font-semibold mr-3">
+                                ${customer.fullName ? customer.fullName.charAt(0).toUpperCase() : customer.username.charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                                <div class="text-sm font-medium text-white">${customer.fullName || 'N/A'}</div>
+                                <div class="text-sm text-gray-400">@${customer.username}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-white">${customer.email}</div>
+                        <div class="text-sm text-gray-400">${customer.phone}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-white">${new Date(customer.createdAt).toLocaleDateString()}</div>
+                        <div class="text-sm text-gray-400">Last login: ${new Date(customer.lastLogin).toLocaleDateString()}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-semibold text-gold">${customer.purchases} vehicles</div>
+                        <div class="text-sm text-gray-400">$${customer.totalSpent.toLocaleString()}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex flex-col gap-1">
+                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                                customer.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                            }">
+                                ${customer.status}
+                            </span>
+                            ${customer.type === 'vip' ? '<span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">VIP</span>' : ''}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <div class="flex gap-2">
+                            <button onclick="viewCustomer('${customer.id}')" class="text-blue-400 hover:text-blue-300 transition-colors" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="sendMessageToCustomer('${customer.id}')" class="text-green-400 hover:text-green-300 transition-colors" title="Send Message">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <button onclick="editCustomer('${customer.id}')" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Edit Customer">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function filterCustomers() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const dateFilter = document.getElementById('dateFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            filteredCustomers = allCustomers.filter(customer => {
+                const matchesSearch = customer.username.toLowerCase().includes(searchTerm) || 
+                                    (customer.fullName && customer.fullName.toLowerCase().includes(searchTerm)) ||
+                                    customer.email.toLowerCase().includes(searchTerm);
+                
+                const matchesType = !typeFilter || customer.type === typeFilter;
+                const matchesStatus = !statusFilter || customer.status === statusFilter;
+                
+                let matchesDate = true;
+                if (dateFilter) {
+                    const customerDate = new Date(customer.createdAt);
+                    const now = new Date();
+                    
+                    switch (dateFilter) {
+                        case 'today':
+                            matchesDate = customerDate.toDateString() === now.toDateString();
+                            break;
+                        case 'week':
+                            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                            matchesDate = customerDate >= weekAgo;
+                            break;
+                        case 'month':
+                            const monthAgo = new Date(now.getFullYear(), now.getMonth(), 1);
+                            matchesDate = customerDate >= monthAgo;
+                            break;
+                        case 'year':
+                            const yearAgo = new Date(now.getFullYear(), 0, 1);
+                            matchesDate = customerDate >= yearAgo;
+                            break;
+                    }
+                }
+                
+                return matchesSearch && matchesType && matchesStatus && matchesDate;
+            });
+            
+            displayCustomers();
+        }
+
+        function viewCustomer(customerId) {
+            const customer = allCustomers.find(c => c.id === customerId);
+            if (!customer) return;
+            
+            currentCustomerId = customerId;
+            
+            document.getElementById('customerDetails').innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center text-black font-bold text-xl">
+                            ${customer.fullName ? customer.fullName.charAt(0).toUpperCase() : customer.username.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">${customer.fullName || 'N/A'}</h3>
+                            <p class="text-gray-400">@${customer.username}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gold">Contact Information</h4>
+                            <div class="space-y-2 text-sm">
+                                <div><span class="text-gray-400">Email:</span> ${customer.email}</div>
+                                <div><span class="text-gray-400">Phone:</span> ${customer.phone}</div>
+                                <div><span class="text-gray-400">Status:</span> 
+                                    <span class="capitalize ${customer.status === 'active' ? 'text-green-400' : 'text-red-400'}">${customer.status}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gold">Account Details</h4>
+                            <div class="space-y-2 text-sm">
+                                <div><span class="text-gray-400">Registered:</span> ${new Date(customer.createdAt).toLocaleDateString()}</div>
+                                <div><span class="text-gray-400">Last Login:</span> ${new Date(customer.lastLogin).toLocaleDateString()}</div>
+                                <div><span class="text-gray-400">Customer Type:</span> 
+                                    <span class="capitalize ${customer.type === 'vip' ? 'text-purple-400' : 'text-blue-400'}">${customer.type}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gold">Purchase History</h4>
+                            <div class="space-y-2 text-sm">
+                                <div><span class="text-gray-400">Total Purchases:</span> ${customer.purchases} vehicles</div>
+                                <div><span class="text-gray-400">Total Spent:</span> $${customer.totalSpent.toLocaleString()}</div>
+                                <div><span class="text-gray-400">Average Order:</span> $${customer.purchases > 0 ? Math.round(customer.totalSpent / customer.purchases).toLocaleString() : '0'}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <h4 class="font-semibold mb-3 text-gold">Quick Actions</h4>
+                            <div class="space-y-2">
+                                <button onclick="sendMessageToCustomer('${customer.id}')" class="w-full bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm transition-colors">
+                                    <i class="fas fa-envelope mr-2"></i>Send Message
+                                </button>
+                                <button onclick="editCustomer('${customer.id}')" class="w-full bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded text-sm transition-colors">
+                                    <i class="fas fa-edit mr-2"></i>Edit Customer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('customerModal').classList.remove('hidden');
+            document.getElementById('customerModal').classList.add('flex');
+        }
+
+        function closeCustomerModal() {
+            document.getElementById('customerModal').classList.add('hidden');
+            document.getElementById('customerModal').classList.remove('flex');
+            currentCustomerId = null;
+        }
+
+        function sendMessageToCustomer(customerId) {
+            const customer = allCustomers.find(c => c.id === customerId);
+            if (!customer) return;
+            
+            currentCustomerId = customerId;
+            document.getElementById('messageRecipient').value = `${customer.fullName || customer.username} (${customer.email})`;
+            
+            document.getElementById('messageModal').classList.remove('hidden');
+            document.getElementById('messageModal').classList.add('flex');
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').classList.add('hidden');
+            document.getElementById('messageModal').classList.remove('flex');
+            document.getElementById('messageForm').reset();
+            currentCustomerId = null;
+        }
+
+        async function sendMessage(event) {
+            event.preventDefault();
+            
+            const messageData = {
+                to: currentCustomerId,
+                subject: document.getElementById('messageSubject').value,
+                content: document.getElementById('messageContent').value
+            };
+            
+            try {
+                // In a real implementation, you would make an API call to send the message
+                // const response = await fetch(`${API_BASE}/messages`, {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(messageData)
+                // });
+                
+                closeMessageModal();
+                showNotification('Message sent successfully!', 'success');
+                
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showNotification('Error sending message', 'error');
+            }
+        }
+
+        function editCustomer(customerId) {
+            // In a real implementation, this would open an edit form
+            showNotification('Edit customer functionality would be implemented here', 'info');
+        }
+
+        function refreshCustomers() {
+            document.getElementById('loadingState').style.display = 'block';
+            loadCustomers();
+        }
+
+        function exportCustomers() {
+            const csvContent = "data:text/csv;charset=utf-8," + 
+                "Username,Full Name,Email,Phone,Registration Date,Status,Type,Purchases,Total Spent\n" +
+                filteredCustomers.map(c => 
+                    `"${c.username}","${c.fullName || ''}","${c.email}","${c.phone}","${new Date(c.createdAt).toLocaleDateString()}","${c.status}","${c.type}","${c.purchases}","${c.totalSpent}"`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "customers.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function showEmptyState() {
+            document.getElementById('customersTableBody').innerHTML = '';
+            document.getElementById('emptyState').classList.remove('hidden');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'success' ? 'bg-green-600' : type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact.pageTitle">Contact Us - PRESTIGIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <style>
+        /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+        
+        /* CSS Variables */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-black: #2a2a2a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4d03f;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+            --dark-gray: #666666;
+            --border-color: #333333;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+            --transition: 0.3s ease;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Unified Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 120px;
+            padding-bottom: 2rem;
+            min-height: 100vh;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form {
+            background: rgba(26, 26, 26, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+            to { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6)); }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-icon::before {
+            font-size: 1.5rem;
+            color: var(--primary-black);
+            font-weight: bold;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-gold);
+        }
+
+        .contact-details p {
+            color: var(--light-gray);
+            font-size: 1rem;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: rgba(42, 42, 42, 0.8);
+            color: var(--white);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 200px;
+            resize: vertical;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--secondary-black);
+            color: var(--white);
+            padding: 0.5rem;
+        }
+
+        /* Submit button disabled state */
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .submit-btn:disabled:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border: none;
+            border-radius: 10px;
+            color: var(--primary-black);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+            filter: brightness(1.1);
+        }
+
+        /* Particles.js container */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+                height: 70px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-radius: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-content {
+                padding-top: 90px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                padding: 0.5rem 1rem;
+                height: 60px;
+            }
+
+            .main-content {
+                padding-top: 80px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-gold);
+        }
+    </style>
+</head>
+<body>
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="luxurycars.html">Luxury Cars</a></li>
+                <li><a href="regularcars.html">Regular Cars</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" data-i18n="contact.getInTouch">Customer Service</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3 data-i18n="contact.address">Address</h3>
+                        <p data-i18n="contact.addressText">Sixth District<br>Al Obour City<br>Egypt</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3 data-i18n="contact.phone">Phone</h3>
+                        <p data-i18n="contact.phoneText">+2 01098613073</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3 data-i18n="contact.email">Email</h3>
+                        <p data-i18n="contact.emailText">prestegioautomobiles@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-details">
+                        <h3 data-i18n="contact.hours">Business Hours</h3>
+                        <p data-i18n="contact.hoursText">Mon - Fri: 9:00 AM - 8:00 PM<br>Sat: 10:00 AM - 6:00 PM<br>Sun: 12:00 PM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🚗</div>
+                    <div class="contact-details">
+                        <h3 data-i18n="contact.services">Our Services</h3>
+                        <p data-i18n="contact.servicesText">Luxury & Regular Cars<br>Customization & Financing<br>Maintenance & Insurance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2 class="section-title" data-i18n="contact.sendMessage">Submit Service Request</h2>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="service" data-i18n="contact.service">Select Service</label>
+                        <select id="service" name="service" required>
+                            <option value="" data-i18n="contact.selectService">Choose a service...</option>
+                            <option value="luxury-cars" data-i18n="contact.luxuryCars">Luxury Cars</option>
+                            <option value="regular-cars" data-i18n="contact.regularCars">Regular Cars</option>
+                            <option value="car-customization" data-i18n="contact.carCustomization">Car Customization</option>
+                            <option value="financing" data-i18n="contact.financing">Financing</option>
+                            <option value="maintenance" data-i18n="contact.maintenance">Maintenance & Service</option>
+                            <option value="insurance" data-i18n="contact.insurance">Insurance</option>
+                            <option value="trade-in" data-i18n="contact.tradeIn">Trade-In</option>
+                            <option value="general" data-i18n="contact.general">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problem" data-i18n="contact.problem">Describe Your Request</label>
+                        <textarea id="problem" name="problem" placeholder="Please describe your request or problem in detail..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-i18n="contact.sendButton">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Add timestamp and status
+            data.timestamp = new Date().toISOString();
+            data.status = 'pending';
+            
+            try {
+                // Show loading state
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+                
+                // Submit to backend API
+                const response = await fetch('/api/contact-requests', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    
+                    // Show success message
+                    showNotification('✅ Request submitted successfully! We will get back to you soon.', 'success');
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error('Failed to submit request');
+                }
+                
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                
+                // Try to save locally if API fails
+                try {
+                    const requests = JSON.parse(localStorage.getItem('contactRequests') || '[]');
+                    requests.push({
+                        id: Date.now(),
+                        ...data
+                    });
+                    localStorage.setItem('contactRequests', JSON.stringify(requests));
+                    
+                    showNotification('✅ Request saved locally. We will process it as soon as possible.', 'warning');
+                    this.reset();
+                } catch (localError) {
+                    showNotification('❌ Failed to submit request. Please try again later.', 'error');
+                }
+            } finally {
+                // Reset button state
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()" style="margin-left: 1rem; background: none; border: none; color: inherit; cursor: pointer; font-size: 1.2rem;">&times;</button>
+                </div>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                z-index: 10000;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                color: white;
+                font-weight: 500;
+                max-width: 400px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                animation: slideInRight 0.3s ease;
+                backdrop-filter: blur(10px);
+            `;
+            
+            // Set background color based on type
+            switch (type) {
+                case 'success':
+                    notification.style.background = 'linear-gradient(135deg, #2d5a27, #4caf50)';
+                    break;
+                case 'error':
+                    notification.style.background = 'linear-gradient(135deg, #5a272d, #f44336)';
+                    break;
+                case 'warning':
+                    notification.style.background = 'linear-gradient(135deg, #5a4a27, #ff9800)';
+                    break;
+                default:
+                    notification.style.background = 'linear-gradient(135deg, var(--primary-gold), var(--secondary-gold))';
+                    notification.style.color = 'var(--primary-black)';
+            }
+            
+            // Add animation styles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add to DOM
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#d4af37'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#d4af37',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>

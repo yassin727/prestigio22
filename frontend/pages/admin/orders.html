@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Prestigio Motors Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#d4af37',
+                        'gold-light': '#e6c757',
+                        'gold-dark': '#b8941f'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-6 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gold mb-2">Order Management</h1>
+                <p class="text-gray-400">Track and manage vehicle orders</p>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="refreshOrders()" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sync-alt mr-2"></i>Refresh
+                </button>
+                <button onclick="exportOrders()" class="bg-gold hover:bg-gold-dark text-black px-4 py-2 rounded-lg transition-colors font-semibold">
+                    <i class="fas fa-download mr-2"></i>Export
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Total Orders</p>
+                        <p id="totalOrders" class="text-2xl font-bold text-gold">0</p>
+                    </div>
+                    <i class="fas fa-shopping-cart text-gold text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Pending</p>
+                        <p id="pendingOrders" class="text-2xl font-bold text-yellow-400">0</p>
+                    </div>
+                    <i class="fas fa-clock text-yellow-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Confirmed</p>
+                        <p id="confirmedOrders" class="text-2xl font-bold text-blue-400">0</p>
+                    </div>
+                    <i class="fas fa-check-circle text-blue-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Completed</p>
+                        <p id="completedOrders" class="text-2xl font-bold text-green-400">0</p>
+                    </div>
+                    <i class="fas fa-check-double text-green-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Total Revenue</p>
+                        <p id="totalRevenue" class="text-2xl font-bold text-green-400">$0</p>
+                    </div>
+                    <i class="fas fa-dollar-sign text-green-400 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-gray-900 rounded-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Search Orders</label>
+                    <input type="text" id="searchInput" placeholder="Search by order ID, customer, or vehicle..." 
+                           class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                           onkeyup="filterOrders()">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Status</label>
+                    <select id="statusFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterOrders()">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="processing">Processing</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Date Range</label>
+                    <select id="dateFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterOrders()">
+                        <option value="">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Vehicle Type</label>
+                    <select id="typeFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterOrders()">
+                        <option value="">All Types</option>
+                        <option value="luxury">Exotic/Luxury</option>
+                        <option value="regular">Signature/Regular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Order ID</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Customer</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Vehicle</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Order Date</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Amount</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody" class="divide-y divide-gray-700">
+                        <!-- Order rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
+            <p class="mt-4 text-gray-400">Loading orders...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-12 hidden">
+            <i class="fas fa-shopping-cart text-6xl text-gray-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">No Orders Found</h3>
+            <p class="text-gray-400">No orders match your current filters.</p>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-3xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Order Details</h2>
+                <button onclick="closeOrderModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="orderDetails">
+                <!-- Order details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Status Modal -->
+    <div id="statusModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Update Order Status</h2>
+                <button onclick="closeStatusModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="statusForm" onsubmit="updateOrderStatus(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Order ID:</label>
+                    <input type="text" id="statusOrderId" readonly class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">New Status:</label>
+                    <select id="newStatus" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent">
+                        <option value="">Select Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="processing">Processing</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">Notes (Optional):</label>
+                    <textarea id="statusNotes" rows="3" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                              placeholder="Add any notes about this status change..."></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" onclick="closeStatusModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-gold hover:bg-gold-dark text-black px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Update Status
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let allOrders = [];
+        let filteredOrders = [];
+        let currentOrderId = null;
+
+        // Sample order data (in a real app, this would come from the database)
+        const sampleOrders = [
+            {
+                id: 'ORD-2023-001',
+                customerId: 'john_doe',
+                customerName: 'John Doe',
+                customerEmail: 'john@example.com',
+                vehicleId: 'ferrari_488',
+                vehicleName: 'Ferrari 488 GTB',
+                vehicleBrand: 'Ferrari',
+                vehicleType: 'luxury',
+                orderDate: new Date('2023-12-01').toISOString(),
+                amount: 275000,
+                status: 'pending',
+                notes: 'Customer interested in red color option',
+                paymentMethod: 'Bank Transfer',
+                deliveryAddress: '123 Main St, Beverly Hills, CA'
+            },
+            {
+                id: 'ORD-2023-002',
+                customerId: 'jane_smith',
+                customerName: 'Jane Smith',
+                customerEmail: 'jane@example.com',
+                vehicleId: 'porsche_911',
+                vehicleName: 'Porsche 911 Turbo S',
+                vehicleBrand: 'Porsche',
+                vehicleType: 'luxury',
+                orderDate: new Date('2023-12-05').toISOString(),
+                amount: 203500,
+                status: 'confirmed',
+                notes: 'Rush delivery requested',
+                paymentMethod: 'Credit Card',
+                deliveryAddress: '456 Oak Ave, Manhattan, NY'
+            },
+            {
+                id: 'ORD-2023-003',
+                customerId: 'mike_johnson',
+                customerName: 'Mike Johnson',
+                customerEmail: 'mike@example.com',
+                vehicleId: 'toyota_camry',
+                vehicleName: 'Toyota Camry',
+                vehicleBrand: 'Toyota',
+                vehicleType: 'regular',
+                orderDate: new Date('2023-12-10').toISOString(),
+                amount: 28000,
+                status: 'completed',
+                notes: 'Customer satisfied with delivery',
+                paymentMethod: 'Financing',
+                deliveryAddress: '789 Pine St, Austin, TX'
+            }
+        ];
+
+        // Load orders on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrders();
+        });
+
+        async function loadOrders() {
+            try {
+                // In a real implementation, you would fetch from your API
+                // const response = await fetch(`${API_BASE}/orders`);
+                // const data = await response.json();
+                
+                // For now, use sample data
+                allOrders = sampleOrders;
+                filteredOrders = [...allOrders];
+                updateStats();
+                displayOrders();
+                
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                showEmptyState();
+            } finally {
+                document.getElementById('loadingState').style.display = 'none';
+            }
+        }
+
+        function updateStats() {
+            const totalOrders = allOrders.length;
+            const pendingOrders = allOrders.filter(o => o.status === 'pending').length;
+            const confirmedOrders = allOrders.filter(o => o.status === 'confirmed').length;
+            const completedOrders = allOrders.filter(o => o.status === 'completed').length;
+            const totalRevenue = allOrders.filter(o => o.status === 'completed').reduce((sum, o) => sum + o.amount, 0);
+            
+            document.getElementById('totalOrders').textContent = totalOrders;
+            document.getElementById('pendingOrders').textContent = pendingOrders;
+            document.getElementById('confirmedOrders').textContent = confirmedOrders;
+            document.getElementById('completedOrders').textContent = completedOrders;
+            document.getElementById('totalRevenue').textContent = `$${totalRevenue.toLocaleString()}`;
+        }
+
+        function displayOrders() {
+            const tableBody = document.getElementById('ordersTableBody');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (filteredOrders.length === 0) {
+                tableBody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            tableBody.innerHTML = filteredOrders.map(order => `
+                <tr class="hover:bg-gray-800 transition-colors">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-white">${order.id}</div>
+                        <div class="text-sm text-gray-400">${order.paymentMethod}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-white">${order.customerName}</div>
+                        <div class="text-sm text-gray-400">${order.customerEmail}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-white">${order.vehicleBrand} ${order.vehicleName}</div>
+                        <div class="text-sm text-gray-400">
+                            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                                order.vehicleType === 'luxury' ? 'bg-gold text-black' : 'bg-blue-100 text-blue-800'
+                            }">
+                                ${order.vehicleType === 'luxury' ? 'Exotic' : 'Signature'}
+                            </span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-white">${new Date(order.orderDate).toLocaleDateString()}</div>
+                        <div class="text-sm text-gray-400">${new Date(order.orderDate).toLocaleTimeString()}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-semibold text-gold">$${order.amount.toLocaleString()}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(order.status)}">
+                            ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <div class="flex gap-2">
+                            <button onclick="viewOrder('${order.id}')" class="text-blue-400 hover:text-blue-300 transition-colors" title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="updateStatus('${order.id}')" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Update Status">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button onclick="printOrder('${order.id}')" class="text-green-400 hover:text-green-300 transition-colors" title="Print Order">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function getStatusColor(status) {
+            switch (status) {
+                case 'pending': return 'bg-yellow-100 text-yellow-800';
+                case 'confirmed': return 'bg-blue-100 text-blue-800';
+                case 'processing': return 'bg-purple-100 text-purple-800';
+                case 'completed': return 'bg-green-100 text-green-800';
+                case 'cancelled': return 'bg-red-100 text-red-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        function filterOrders() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const dateFilter = document.getElementById('dateFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            
+            filteredOrders = allOrders.filter(order => {
+                const matchesSearch = order.id.toLowerCase().includes(searchTerm) || 
+                                    order.customerName.toLowerCase().includes(searchTerm) ||
+                                    order.vehicleName.toLowerCase().includes(searchTerm);
+                
+                const matchesStatus = !statusFilter || order.status === statusFilter;
+                const matchesType = !typeFilter || order.vehicleType === typeFilter;
+                
+                let matchesDate = true;
+                if (dateFilter) {
+                    const orderDate = new Date(order.orderDate);
+                    const now = new Date();
+                    
+                    switch (dateFilter) {
+                        case 'today':
+                            matchesDate = orderDate.toDateString() === now.toDateString();
+                            break;
+                        case 'week':
+                            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                            matchesDate = orderDate >= weekAgo;
+                            break;
+                        case 'month':
+                            const monthAgo = new Date(now.getFullYear(), now.getMonth(), 1);
+                            matchesDate = orderDate >= monthAgo;
+                            break;
+                        case 'year':
+                            const yearAgo = new Date(now.getFullYear(), 0, 1);
+                            matchesDate = orderDate >= yearAgo;
+                            break;
+                    }
+                }
+                
+                return matchesSearch && matchesStatus && matchesType && matchesDate;
+            });
+            
+            displayOrders();
+        }
+
+        function viewOrder(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            currentOrderId = orderId;
+            
+            document.getElementById('orderDetails').innerHTML = `
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gold mb-4">Order Information</h3>
+                            <div class="space-y-3">
+                                <div><span class="text-gray-400">Order ID:</span> <span class="font-mono">${order.id}</span></div>
+                                <div><span class="text-gray-400">Order Date:</span> ${new Date(order.orderDate).toLocaleString()}</div>
+                                <div><span class="text-gray-400">Status:</span> 
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(order.status)}">
+                                        ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                                    </span>
+                                </div>
+                                <div><span class="text-gray-400">Payment Method:</span> ${order.paymentMethod}</div>
+                                <div><span class="text-gray-400">Total Amount:</span> <span class="text-gold font-semibold">$${order.amount.toLocaleString()}</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gold mb-4">Customer Information</h3>
+                            <div class="space-y-3">
+                                <div><span class="text-gray-400">Name:</span> ${order.customerName}</div>
+                                <div><span class="text-gray-400">Email:</span> ${order.customerEmail}</div>
+                                <div><span class="text-gray-400">Customer ID:</span> <span class="font-mono">${order.customerId}</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gold mb-4">Vehicle Information</h3>
+                            <div class="space-y-3">
+                                <div><span class="text-gray-400">Vehicle:</span> ${order.vehicleBrand} ${order.vehicleName}</div>
+                                <div><span class="text-gray-400">Type:</span> 
+                                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                                        order.vehicleType === 'luxury' ? 'bg-gold text-black' : 'bg-blue-100 text-blue-800'
+                                    }">
+                                        ${order.vehicleType === 'luxury' ? 'Exotic' : 'Signature'}
+                                    </span>
+                                </div>
+                                <div><span class="text-gray-400">Vehicle ID:</span> <span class="font-mono">${order.vehicleId}</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gold mb-4">Delivery Information</h3>
+                            <div class="space-y-3">
+                                <div><span class="text-gray-400">Address:</span> ${order.deliveryAddress}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ${order.notes ? `
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-gold mb-4">Notes</h3>
+                        <p class="text-gray-300">${order.notes}</p>
+                    </div>
+                    ` : ''}
+                    
+                    <div class="flex justify-end gap-4">
+                        <button onclick="updateStatus('${order.id}')" class="bg-yellow-600 hover:bg-yellow-700 px-6 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-edit mr-2"></i>Update Status
+                        </button>
+                        <button onclick="printOrder('${order.id}')" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-print mr-2"></i>Print Order
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('orderModal').classList.remove('hidden');
+            document.getElementById('orderModal').classList.add('flex');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+            document.getElementById('orderModal').classList.remove('flex');
+            currentOrderId = null;
+        }
+
+        function updateStatus(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            currentOrderId = orderId;
+            document.getElementById('statusOrderId').value = orderId;
+            document.getElementById('newStatus').value = order.status;
+            
+            document.getElementById('statusModal').classList.remove('hidden');
+            document.getElementById('statusModal').classList.add('flex');
+        }
+
+        function closeStatusModal() {
+            document.getElementById('statusModal').classList.add('hidden');
+            document.getElementById('statusModal').classList.remove('flex');
+            document.getElementById('statusForm').reset();
+            currentOrderId = null;
+        }
+
+        async function updateOrderStatus(event) {
+            event.preventDefault();
+            
+            const newStatus = document.getElementById('newStatus').value;
+            const notes = document.getElementById('statusNotes').value;
+            
+            try {
+                // In a real implementation, you would make an API call to update the order
+                // const response = await fetch(`${API_BASE}/orders/${currentOrderId}`, {
+                //     method: 'PUT',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ status: newStatus, notes })
+                // });
+                
+                // For now, update locally
+                const orderIndex = allOrders.findIndex(o => o.id === currentOrderId);
+                if (orderIndex !== -1) {
+                    allOrders[orderIndex].status = newStatus;
+                    if (notes) {
+                        allOrders[orderIndex].notes = notes;
+                    }
+                }
+                
+                filterOrders();
+                updateStats();
+                closeStatusModal();
+                closeOrderModal();
+                showNotification('Order status updated successfully!', 'success');
+                
+            } catch (error) {
+                console.error('Error updating order status:', error);
+                showNotification('Error updating order status', 'error');
+            }
+        }
+
+        function printOrder(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            // In a real implementation, this would generate a PDF or open a print dialog
+            showNotification(`Print functionality for order ${orderId} would be implemented here`, 'info');
+        }
+
+        function refreshOrders() {
+            document.getElementById('loadingState').style.display = 'block';
+            loadOrders();
+        }
+
+        function exportOrders() {
+            const csvContent = "data:text/csv;charset=utf-8," + 
+                "Order ID,Customer Name,Customer Email,Vehicle,Order Date,Amount,Status,Payment Method\n" +
+                filteredOrders.map(o => 
+                    `"${o.id}","${o.customerName}","${o.customerEmail}","${o.vehicleBrand} ${o.vehicleName}","${new Date(o.orderDate).toLocaleDateString()}","${o.amount}","${o.status}","${o.paymentMethod}"`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "orders.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function showEmptyState() {
+            document.getElementById('ordersTableBody').innerHTML = '';
+            document.getElementById('emptyState').classList.remove('hidden');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'success' ? 'bg-green-600' : type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

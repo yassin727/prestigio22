@@ -1,0 +1,333 @@
+/* ===== INTERNATIONALIZATION (i18n) STYLES ===== */
+
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    z-index: 9999;
+}
+
+.language-selected {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.language-selected:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-1px);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    margin-top: 5px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.language-option {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.language-option:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+}
+
+/* RTL (Right-to-Left) Support */
+html[dir="rtl"] {
+    direction: rtl;
+}
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+/* RTL Navigation */
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .header-content {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .user-info {
+    flex-direction: row-reverse;
+}
+
+/* RTL Language Selector */
+html[dir="rtl"] .language-dropdown {
+    left: auto;
+    right: 0;
+}
+
+/* RTL Form Elements */
+html[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] .form-group label {
+    text-align: right;
+}
+
+/* RTL Buttons */
+html[dir="rtl"] .btn {
+    direction: rtl;
+}
+
+html[dir="rtl"] .back-btn {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .back-btn i {
+    transform: scaleX(-1);
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+/* RTL Grid and Flex Layouts */
+html[dir="rtl"] .brands-container {
+    direction: rtl;
+}
+
+html[dir="rtl"] .cars-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .options-container {
+    direction: rtl;
+}
+
+/* RTL Text Alignment */
+html[dir="rtl"] .car-card,
+html[dir="rtl"] .option-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .car-details,
+html[dir="rtl"] .brand-name {
+    text-align: right;
+}
+
+/* RTL Footer */
+html[dir="rtl"] .footer-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-container {
+    direction: rtl;
+}
+
+html[dir="rtl"] .footer-section {
+    text-align: right;
+}
+
+/* RTL Chat Interface */
+html[dir="rtl"] .chatgpt-input-box {
+    direction: rtl;
+}
+
+html[dir="rtl"] .chatgpt-input-box input {
+    text-align: right;
+    padding-right: 50px;
+    padding-left: 15px;
+}
+
+html[dir="rtl"] .chatgpt-send-button {
+    left: 10px;
+    right: auto;
+}
+
+html[dir="rtl"] .message {
+    text-align: right;
+}
+
+html[dir="rtl"] .message.user {
+    margin-left: 0;
+    margin-right: 50px;
+}
+
+html[dir="rtl"] .message.concierge {
+    margin-right: 0;
+    margin-left: 50px;
+}
+
+/* RTL Customizer */
+html[dir="rtl"] .customization-panel {
+    direction: rtl;
+}
+
+html[dir="rtl"] .tabs {
+    direction: rtl;
+}
+
+html[dir="rtl"] .viewer-controls {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .panel-footer {
+    direction: rtl;
+}
+
+html[dir="rtl"] .action-buttons {
+    flex-direction: row-reverse;
+}
+
+/* RTL Car Selection */
+html[dir="rtl"] .selection-box {
+    direction: rtl;
+}
+
+html[dir="rtl"] .buy-badge,
+html[dir="rtl"] .rent-badge {
+    left: 15px;
+    right: auto;
+}
+
+/* Arabic Font Support */
+html[lang="ar"] {
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-weight: 600;
+}
+
+/* Enhanced Arabic Typography */
+html[lang="ar"] body {
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+html[lang="ar"] .nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+html[lang="ar"] .selection-box h2 {
+    line-height: 1.4;
+}
+
+html[lang="ar"] .option-card h3 {
+    line-height: 1.5;
+}
+
+html[lang="ar"] .footer-links a {
+    font-weight: 500;
+}
+
+/* RTL Animations */
+html[dir="rtl"] .notification {
+    left: 20px;
+    right: auto;
+    transform: translateX(-100%);
+}
+
+html[dir="rtl"] .notification.show {
+    transform: translateX(0);
+}
+
+/* RTL Specific Spacing Adjustments */
+html[dir="rtl"] .logo h1 {
+    letter-spacing: 1px;
+}
+
+html[dir="rtl"] .selection-box h2 {
+    letter-spacing: 1px;
+}
+
+/* Responsive RTL Adjustments */
+@media (max-width: 768px) {
+    html[dir="rtl"] .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    html[dir="rtl"] .nav-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    html[dir="rtl"] .user-info {
+        flex-direction: column;
+    }
+}
+
+/* Language Selector Mobile Responsive */
+@media (max-width: 480px) {
+    .language-selected {
+        padding: 6px 10px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+    
+    .language-option {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .language-selected {
+        border-width: 2px;
+        background: rgba(212, 175, 55, 0.2);
+    }
+    
+    .language-dropdown {
+        border-width: 2px;
+        background: rgba(0, 0, 0, 0.98);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .language-selected,
+    .language-option {
+        transition: none;
+    }
+    
+    html[dir="rtl"] .notification {
+        transition: none;
+    }
+} 
