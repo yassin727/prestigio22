@@ -11,8 +11,8 @@
     
 </head>
 <body>
-    <!-- Admin Login Modal (Initially shown if not authenticated) -->
-    <div class="modal" id="adminLoginModal" style="display: flex;">
+    <!-- Admin Login Modal (Initially hidden until JavaScript loads) -->
+    <div class="modal" id="adminLoginModal" style="display: none;">
         <div class="modal-content">
             <h2 class="modal-title">Admin Authentication Required</h2>
             <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Please enter your admin credentials to access the dashboard.</p>
@@ -421,26 +421,14 @@
       document.addEventListener('DOMContentLoaded', function() {
         console.log('🔐 Admin Dashboard Loading...');
         
-        // Check if admin is already logged in
-        const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+        // Clear any existing admin session to force fresh login
+        localStorage.removeItem('adminLoggedIn');
         
-        if (isAdminLoggedIn) {
-          // Hide login modal and show dashboard
-          document.getElementById('adminLoginModal').style.display = 'none';
-          document.getElementById('adminDashboard').style.display = 'grid';
-          
-          // Initialize the enhanced admin dashboard
-          if (typeof initializeEnhancedAdminDashboard === 'function') {
-            initializeEnhancedAdminDashboard();
-          }
-          
-          // Load real dashboard statistics
-          loadDashboardStats();
-        } else {
-          // Show login modal
-          document.getElementById('adminLoginModal').style.display = 'flex';
-          document.getElementById('adminDashboard').style.display = 'none';
-        }
+        // Always show login modal first
+        document.getElementById('adminLoginModal').style.display = 'flex';
+        document.getElementById('adminDashboard').style.display = 'none';
+        
+        console.log('🔐 Login modal displayed - authentication required');
         
         // Handle login form submission
         document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
