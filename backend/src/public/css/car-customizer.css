@@ -1,0 +1,343 @@
+.customize-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: calc(100vh - 64px);
+    background-color: #f8f9fa;
+}
+
+/* 3D Model Viewer */
+.model-viewer {
+    flex: 1;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#car-model {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+}
+
+.viewer-controls {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.viewer-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewer-controls button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Customization Panel */
+.customization-panel {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.panel-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.panel-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.panel-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Option Groups */
+.option-group {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.option-group:last-child {
+    border-bottom: none;
+}
+
+.option-group h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.color-option {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: #333;
+}
+
+.color-name {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Wheel Options */
+.wheel-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.wheel-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.wheel-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wheel-option.selected {
+    background-color: #e9ecef;
+    border: 2px solid #333;
+}
+
+.wheel-option img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.wheel-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.wheel-price {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Interior Options */
+.interior-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.interior-option {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.interior-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interior-option.selected {
+    background-color: #e9ecef;
+    border: 2px solid #333;
+}
+
+.interior-option img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.interior-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.interior-price {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Feature Options */
+.feature-options {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.feature-option {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.feature-option:hover {
+    background-color: #f8f9fa;
+}
+
+.feature-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.feature-option label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.feature-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Price Summary */
+.customization-summary {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.price-summary {
+    margin-bottom: 1.5rem;
+}
+
+.price-summary > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.total-price {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+    color: #333;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .customize-container {
+        flex-direction: column;
+    }
+
+    .model-viewer {
+        height: 400px;
+    }
+
+    #car-model {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .customize-container {
+        padding: 1rem;
+    }
+
+    .customization-panel {
+        padding: 1rem;
+    }
+
+    .wheel-options,
+    .interior-options {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+} 

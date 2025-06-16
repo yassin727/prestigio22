@@ -1,0 +1,109 @@
+<%- contentFor('body') %>
+
+<div class="customize-container">
+    <!-- 3D Model Viewer -->
+    <div class="model-viewer">
+        <div id="car-model"></div>
+        <div class="viewer-controls">
+            <button id="rotate-left"><i class="fas fa-undo"></i></button>
+            <button id="rotate-right"><i class="fas fa-redo"></i></button>
+            <button id="zoom-in"><i class="fas fa-search-plus"></i></button>
+            <button id="zoom-out"><i class="fas fa-search-minus"></i></button>
+            <button id="reset-view"><i class="fas fa-sync"></i></button>
+        </div>
+    </div>
+
+    <!-- Customization Panel -->
+    <div class="customization-panel">
+        <div class="panel-header">
+            <h2>Customize Your <%= car.make %> <%= car.model %></h2>
+            <p>Configure your dream car with our premium options</p>
+        </div>
+
+        <div class="customization-options">
+            <!-- Exterior Color -->
+            <div class="option-group">
+                <h3>Exterior Color</h3>
+                <div class="color-options">
+                    <% car.colors.forEach(color => { %>
+                        <div class="color-option" data-color="<%= color.code %>" style="background-color: <%= color.code %>">
+                            <span class="color-name"><%= color.name %></span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Wheels -->
+            <div class="option-group">
+                <h3>Wheels</h3>
+                <div class="wheel-options">
+                    <% car.wheels.forEach(wheel => { %>
+                        <div class="wheel-option" data-wheel="<%= wheel.id %>">
+                            <img src="<%= wheel.image %>" alt="<%= wheel.name %>">
+                            <span class="wheel-name"><%= wheel.name %></span>
+                            <span class="wheel-price">+$<%= wheel.price.toLocaleString() %></span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Interior -->
+            <div class="option-group">
+                <h3>Interior</h3>
+                <div class="interior-options">
+                    <% car.interiors.forEach(interior => { %>
+                        <div class="interior-option" data-interior="<%= interior.id %>">
+                            <img src="<%= interior.image %>" alt="<%= interior.name %>">
+                            <span class="interior-name"><%= interior.name %></span>
+                            <span class="interior-price">+$<%= interior.price.toLocaleString() %></span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="option-group">
+                <h3>Additional Features</h3>
+                <div class="feature-options">
+                    <% car.features.forEach(feature => { %>
+                        <div class="feature-option">
+                            <input type="checkbox" id="feature-<%= feature.id %>" data-feature="<%= feature.id %>">
+                            <label for="feature-<%= feature.id %>">
+                                <%= feature.name %>
+                                <span class="feature-price">+$<%= feature.price.toLocaleString() %></span>
+                            </label>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary and Actions -->
+        <div class="customization-summary">
+            <div class="price-summary">
+                <div class="base-price">
+                    <span>Base Price:</span>
+                    <span>$<%= car.basePrice.toLocaleString() %></span>
+                </div>
+                <div class="options-price">
+                    <span>Selected Options:</span>
+                    <span id="options-total">$0</span>
+                </div>
+                <div class="total-price">
+                    <span>Total Price:</span>
+                    <span id="total-price">$<%= car.basePrice.toLocaleString() %></span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="save-config" class="btn btn-primary">Save Configuration</button>
+                <button id="request-quote" class="btn btn-secondary">Request Quote</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('scripts') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="/js/car-customizer.js"></script> 

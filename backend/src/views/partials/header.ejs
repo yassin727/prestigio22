@@ -1,0 +1,50 @@
+<header class="site-header">
+    <div class="header-content">
+        <div class="logo">
+            <a href="/" class="logo-link">
+                <h1>PRESTIGIO</h1>
+                <span class="logo-tagline">Ultimate Automotive Luxury</span>
+            </a>
+        </div>
+        
+        <nav aria-label="Main navigation">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+                <span class="sr-only">Toggle menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/" <%= currentPage === 'home' ? 'aria-current="page"' : '' %>>Home</a></li>
+                <li><a href="/exotic-vehicles" <%= currentPage === 'exotic' ? 'aria-current="page"' : '' %>>Exotic Vehicles</a></li>
+                <li><a href="/signature-collection" <%= currentPage === 'signature' ? 'aria-current="page"' : '' %>>Signature Collection</a></li>
+                <li><a href="/configurator" <%= currentPage === 'configurator' ? 'aria-current="page"' : '' %>>Car Configurator</a></li>
+                <li><a href="/contact" <%= currentPage === 'contact' ? 'aria-current="page"' : '' %>>Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-actions">
+            <% if (user) { %>
+                <div class="user-menu">
+                    <button class="user-menu-toggle" aria-expanded="false" aria-controls="user-dropdown">
+                        <span class="user-name"><%= user.firstName %></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="user-dropdown" id="user-dropdown">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/saved-configurations">Saved Designs</a></li>
+                        <li><a href="/orders">Orders</a></li>
+                        <li><a href="/profile">Profile Settings</a></li>
+                        <li><a href="/logout" class="logout-link">Sign Out</a></li>
+                    </ul>
+                </div>
+            <% } else { %>
+                <a href="/login" class="btn btn-login">Sign In</a>
+                <a href="/register" class="btn btn-register">Join Prestigio</a>
+            <% } %>
+            
+            <button class="language-selector" aria-label="Select language">
+                <i class="fas fa-globe"></i>
+                <span>EN</span>
+            </button>
+        </div>
+    </div>
+</header> 

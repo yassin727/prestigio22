@@ -1,0 +1,336 @@
+[
+  {
+    "orderId": "ORD-1750032582904-2057",
+    "orderDate": "2025-06-16T00:09:42.906Z",
+    "status": "confirmed",
+    "car": {
+      "carId": "684f45159df6c9cb62e6b919",
+      "name": "Honda Civic Type R Limited Edition",
+      "brand": "Honda",
+      "basePrice": "123",
+      "image": "https://images.collectingcars.com/061524/MMP-1.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85"
+    },
+    "customizations": [
+      {
+        "name": "Carbon Fiber",
+        "category": "interior",
+        "price": 5000,
+        "description": "interior upgrade: Carbon Fiber"
+      },
+      {
+        "name": "Matte Finish",
+        "category": "exterior",
+        "price": 3000,
+        "description": "exterior upgrade: Matte Finish"
+      },
+      {
+        "name": "Premium Audio",
+        "category": "technology",
+        "price": 2000,
+        "description": "technology upgrade: Premium Audio"
+      }
+    ],
+    "basePrice": 123,
+    "customizationTotal": 10000,
+    "totalPrice": 10123,
+    "customer": {
+      "name": "mohamed hussein",
+      "email": "mohamedamh2006@gmail.com",
+      "phone": "01158228005",
+      "address": {
+        "street": "obour city 5th district",
+        "city": "cairo",
+        "state": "cairo",
+        "zipCode": "755844"
+      }
+    },
+    "payment": {
+      "method": "credit-card",
+      "status": "pending",
+      "cardLast4": "0145"
+    },
+    "notes": "",
+    "emailSent": false
+  },
+  {
+    "orderId": "ORD-1750034219557-8903",
+    "orderDate": "2025-06-16T00:36:59.557Z",
+    "status": "confirmed",
+    "transactionType": "rent",
+    "car": {
+      "carId": "lamborghini-aventador",
+      "name": "Sián FKP 37",
+      "brand": "Lamborghini",
+      "basePrice": "13699",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxjPcaJ5dUsnJVP5Y9ushSduD5OgtVOfm-Lw&s"
+    },
+    "customizations": [
+      {
+        "name": "Forest Green",
+        "category": "color",
+        "price": 800,
+        "description": "color upgrade: Forest Green"
+      },
+      {
+        "name": "GT Spoiler",
+        "category": "spoiler",
+        "price": 2500,
+        "description": "spoiler upgrade: GT Spoiler"
+      },
+      {
+        "name": "Carbon 20\"",
+        "category": "wheel",
+        "price": 3500,
+        "description": "wheel upgrade: Carbon 20\""
+      }
+    ],
+    "pricing": {
+      "basePrice": 13699,
+      "customizationPrice": 6800,
+      "totalPrice": 13926
+    },
+    "basePrice": 13699,
+    "customizationTotal": 6800,
+    "totalPrice": 13926,
+    "customer": {
+      "firstName": "youssef",
+      "lastName": "yamen",
+      "name": "youssef yamen",
+      "email": "youssefyamen611@gmail.com",
+      "phone": "01011104990",
+      "address": {
+        "street": "obour",
+        "city": "cairo",
+        "state": "cairo",
+        "zipCode": "755844"
+      }
+    },
+    "payment": {
+      "method": "cash",
+      "status": "pending",
+      "cardLast4": null
+    },
+    "notes": "",
+    "emailSent": false,
+    "rental": {
+      "duration": 20,
+      "pickupDate": "2025-06-18",
+      "returnDate": "2025-07-08",
+      "dailyRate": 13699
+    }
+  },
+  {
+    "orderId": "ORD-1750038775380-9306",
+    "orderDate": "2025-06-16T01:52:55.381Z",
+    "status": "pending",
+    "transactionType": "buy",
+    "type": "appointment",
+    "car": {
+      "carId": "bmw-m8",
+      "name": "BMW M8 Competition Convertible",
+      "brand": "N/A",
+      "basePrice": "140000",
+      "image": null
+    },
+    "appointment": {
+      "service": "appointment-employer",
+      "date": "2025-06-26",
+      "time": "afternoon",
+      "message": ""
+    },
+    "customizations": [],
+    "pricing": {
+      "basePrice": 0,
+      "customizationPrice": 0,
+      "totalPrice": 159500
+    },
+    "basePrice": 0,
+    "customizationTotal": 0,
+    "totalPrice": 159500,
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "name": "yassin wefky ",
+      "email": "yassindakrory927@gmail.com",
+      "phone": "01158228005",
+      "address": null
+    },
+    "emailSent": false
+  },
+  {
+    "orderId": "ORD-1750038779226-1463",
+    "orderDate": "2025-06-16T01:52:59.226Z",
+    "status": "pending",
+    "transactionType": "buy",
+    "type": "appointment",
+    "car": {
+      "carId": "bmw-m8",
+      "name": "BMW M8 Competition Convertible",
+      "brand": "N/A",
+      "basePrice": "140000",
+      "image": null
+    },
+    "appointment": {
+      "service": "appointment-employer",
+      "date": "2025-06-26",
+      "time": "afternoon",
+      "message": ""
+    },
+    "customizations": [],
+    "pricing": {
+      "basePrice": 0,
+      "customizationPrice": 0,
+      "totalPrice": 159500
+    },
+    "basePrice": 0,
+    "customizationTotal": 0,
+    "totalPrice": 159500,
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "name": "yassin wefky ",
+      "email": "yassindakrory927@gmail.com",
+      "phone": "01158228005",
+      "address": null
+    },
+    "emailSent": false
+  },
+  {
+    "orderId": "ORD-1750038927575-0354",
+    "orderDate": "2025-06-16T01:55:27.576Z",
+    "status": "pending",
+    "transactionType": "buy",
+    "type": "appointment",
+    "car": {
+      "carId": "honda-honda-civic-type-r-limited-edition",
+      "name": "Honda Honda Civic Type R Limited Edition",
+      "brand": "N/A",
+      "basePrice": "45000000",
+      "image": null
+    },
+    "appointment": {
+      "service": "appointment-employer",
+      "date": "2025-06-20",
+      "time": "afternoon",
+      "message": ""
+    },
+    "customizations": [],
+    "pricing": {
+      "basePrice": 0,
+      "customizationPrice": 0,
+      "totalPrice": 45019000
+    },
+    "basePrice": 0,
+    "customizationTotal": 0,
+    "totalPrice": 45019000,
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "name": "mohamed hussein",
+      "email": "mohamedamh2006@gmail.com",
+      "phone": "01098613073",
+      "address": null
+    },
+    "emailSent": false
+  },
+  {
+    "orderId": "ORD-1750039620168-8300",
+    "orderDate": "2025-06-16T02:07:00.170Z",
+    "status": "pending",
+    "transactionType": "buy",
+    "type": "appointment",
+    "car": {
+      "carId": "bmw-m8",
+      "name": "BMW M8 Competition Convertible",
+      "brand": "N/A",
+      "basePrice": "140000",
+      "image": null
+    },
+    "appointment": {
+      "service": "delivery",
+      "date": "2025-06-19",
+      "time": "morning",
+      "message": ""
+    },
+    "customizations": [],
+    "pricing": {
+      "basePrice": 0,
+      "customizationPrice": 0,
+      "totalPrice": 141500
+    },
+    "basePrice": 0,
+    "customizationTotal": 0,
+    "totalPrice": 141500,
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "name": "yassin wefky ",
+      "email": "yassindakrory927@gmail.com",
+      "phone": "01158228005",
+      "address": null
+    },
+    "emailSent": false
+  },
+  {
+    "orderId": "ORD-1750039691207-6713",
+    "orderDate": "2025-06-16T02:08:11.207Z",
+    "status": "confirmed",
+    "transactionType": "rent",
+    "type": "order",
+    "car": {
+      "carId": "bentley-continental",
+      "name": "Continental GT",
+      "brand": "Bentley",
+      "basePrice": "603",
+      "image": "images/01_RR_PHANTOM-single-twin-card-min.jpg"
+    },
+    "customizations": [
+      {
+        "name": "Lip Spoiler",
+        "category": "spoiler",
+        "price": 800,
+        "description": "spoiler upgrade: Lip Spoiler"
+      },
+      {
+        "name": "Sport 18\"",
+        "category": "wheel",
+        "price": 1200,
+        "description": "wheel upgrade: Sport 18\""
+      }
+    ],
+    "pricing": {
+      "basePrice": 603,
+      "customizationPrice": 2000,
+      "totalPrice": 670
+    },
+    "basePrice": 603,
+    "customizationTotal": 2000,
+    "totalPrice": 670,
+    "customer": {
+      "firstName": "mohamed",
+      "lastName": "hussein",
+      "name": "mohamed hussein",
+      "email": "yassindakrory927@gmail.com",
+      "phone": "01158228005",
+      "address": {
+        "street": "ll",
+        "city": "cairo",
+        "state": "mmm",
+        "zipCode": "755844"
+      }
+    },
+    "payment": {
+      "method": "cash",
+      "status": "pending",
+      "cardLast4": null
+    },
+    "notes": "",
+    "emailSent": false,
+    "rental": {
+      "duration": 1,
+      "pickupDate": "2025-06-27",
+      "returnDate": "2025-06-28",
+      "dailyRate": 603
+    }
+  }
+]

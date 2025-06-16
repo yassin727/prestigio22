@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - Prestigio Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-header {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .sidebar-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .customers-table {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .customers-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .customers-table th,
+        .customers-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .customers-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #7f8c8d;
+        }
+
+        .customers-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .customer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .customer-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .customer-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .customer-info .name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .customer-info .email {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .customer-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: #2c3e50;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Prestigio Admin</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/admin/cars"><i class="fas fa-car"></i> Vehicle Inventory</a></li>
+            <li><a href="/admin/customers" class="active"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="/admin/orders"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+            <li><a href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="/admin/settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="/api/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Customers</h1>
+            <button class="btn btn-primary" id="exportBtn">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search customers...">
+        </div>
+
+        <div class="customers-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Phone</th>
+                        <th>Location</th>
+                        <th>Vehicles Owned</th>
+                        <th>Last Purchase</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customers.forEach(customer => { %>
+                        <tr>
+                            <td>
+                                <div class="customer-name">
+                                    <img src="<%= customer.avatar || '/images/default-avatar.jpg' %>" alt="<%= customer.name %>" class="customer-avatar">
+                                    <div class="customer-info">
+                                        <span class="name"><%= customer.name %></span>
+                                        <span class="email"><%= customer.email %></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><%= customer.phone %></td>
+                            <td><%= customer.city %></td>
+                            <td><%= customer.vehiclesOwned || 0 %></td>
+                            <td><%= customer.lastPurchase ? new Date(customer.lastPurchase).toLocaleDateString() : 'N/A' %></td>
+                            <td>
+                                <span class="customer-status status-<%= customer.status.toLowerCase() %>">
+                                    <%= customer.status %>
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" onclick="viewCustomer('<%= customer._id %>')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Customer Details Modal -->
+    <div class="modal" id="customerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Customer Details</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="customerDetails">
+                <!-- Customer details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.customers-table tbody tr');
+
+            rows.forEach(row => {
+                const name = row.querySelector('.name').textContent.toLowerCase();
+                const email = row.querySelector('.email').textContent.toLowerCase();
+                const phone = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const location = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                if (name.includes(searchTerm) || 
+                    email.includes(searchTerm) || 
+                    phone.includes(searchTerm) || 
+                    location.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Export functionality
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            // Implement export functionality
+            alert('Export functionality will be implemented here');
+        });
+
+        // View customer details
+        function viewCustomer(customerId) {
+            fetch(`/api/admin/customers/${customerId}`)
+                .then(response => response.json())
+                .then(customer => {
+                    const detailsHtml = `
+                        <div class="customer-profile">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <p>${customer.name}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <p>${customer.email}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <p>${customer.phone}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <p>${customer.address}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <p>${customer.city}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Vehicles Owned</label>
+                                <p>${customer.vehiclesOwned || 0}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Purchase</label>
+                                <p>${customer.lastPurchase ? new Date(customer.lastPurchase).toLocaleDateString() : 'N/A'}</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <p>${customer.status}</p>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('customerDetails').innerHTML = detailsHtml;
+                    document.getElementById('customerModal').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching customer details:', error));
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('customerModal').style.display = 'none';
+        }
+
+        // Handle logout
+        document.querySelector('a[href="/api/auth/logout"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/login';
+            })
+            .catch(error => console.error('Logout error:', error));
+        });
+    </script>
+</body>
+</html> 

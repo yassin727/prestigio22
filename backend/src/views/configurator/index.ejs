@@ -1,0 +1,116 @@
+<%- contentFor('body') %>
+
+<div class="configurator-container">
+    <div class="configurator-sidebar">
+        <div class="vehicle-info">
+            <h1 class="vehicle-name"><%= car.brand %> <%= car.model %></h1>
+            <p class="vehicle-price">Starting from <%= car.basePrice %></p>
+        </div>
+
+        <div class="configuration-steps">
+            <!-- Exterior Color -->
+            <div class="config-section" id="exteriorColors">
+                <h2>Exterior Color</h2>
+                <div class="color-options">
+                    <% colors.forEach(function(color) { %>
+                        <div class="color-option <%= color.id === selectedColor ? 'selected' : '' %>"
+                             style="background-color: <%= color.hex %>"
+                             data-color-id="<%= color.id %>"
+                             data-price="<%= color.price %>"
+                             title="<%= color.name %>">
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Wheels -->
+            <div class="config-section" id="wheels">
+                <h2>Wheels</h2>
+                <div class="wheel-options">
+                    <% wheels.forEach(function(wheel) { %>
+                        <div class="option-card <%= wheel.id === selectedWheel ? 'selected' : '' %>"
+                             data-wheel-id="<%= wheel.id %>"
+                             data-price="<%= wheel.price %>">
+                            <img src="<%= wheel.image %>" alt="<%= wheel.name %>">
+                            <h3><%= wheel.name %></h3>
+                            <p class="price"><%= wheel.price === 0 ? 'Included' : '+' + wheel.price %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Interior -->
+            <div class="config-section" id="interior">
+                <h2>Interior</h2>
+                <div class="interior-options">
+                    <% interiors.forEach(function(interior) { %>
+                        <div class="option-card <%= interior.id === selectedInterior ? 'selected' : '' %>"
+                             data-interior-id="<%= interior.id %>"
+                             data-price="<%= interior.price %>">
+                            <img src="<%= interior.image %>" alt="<%= interior.name %>">
+                            <h3><%= interior.name %></h3>
+                            <p class="price"><%= interior.price === 0 ? 'Included' : '+' + interior.price %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Performance Package -->
+            <div class="config-section" id="performance">
+                <h2>Performance Package</h2>
+                <div class="package-options">
+                    <% packages.forEach(function(package) { %>
+                        <div class="option-card <%= package.id === selectedPackage ? 'selected' : '' %>"
+                             data-package-id="<%= package.id %>"
+                             data-price="<%= package.price %>">
+                            <img src="<%= package.image %>" alt="<%= package.name %>">
+                            <h3><%= package.name %></h3>
+                            <p class="description"><%= package.description %></p>
+                            <p class="price"><%= package.price === 0 ? 'Included' : '+' + package.price %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <div class="configuration-summary">
+            <h2>Your Configuration</h2>
+            <div class="summary-items">
+                <!-- Summary items will be populated via JavaScript -->
+            </div>
+            <div class="total-price">
+                <span>Total</span>
+                <span class="price">$0</span>
+            </div>
+            <div class="configuration-actions">
+                <button class="btn btn-save">Save Configuration</button>
+                <button class="btn btn-primary">Reserve Vehicle</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="configurator-viewer">
+        <div id="carViewer"></div>
+        <div class="viewer-controls">
+            <button class="control-btn" id="zoomIn" title="Zoom In">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="control-btn" id="zoomOut" title="Zoom Out">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="control-btn" id="rotateLeft" title="Rotate Left">
+                <i class="fas fa-undo"></i>
+            </button>
+            <button class="control-btn" id="rotateRight" title="Rotate Right">
+                <i class="fas fa-redo"></i>
+            </button>
+            <button class="control-btn" id="resetView" title="Reset View">
+                <i class="fas fa-sync"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('scripts') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/js/configurator.js"></script> 

@@ -1,0 +1,93 @@
+<%- contentFor('body') %>
+
+<div class="background">
+    <div class="particles">
+        <!-- Particle elements will be generated dynamically -->
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="car-showcase">
+                <div class="overlay">
+                    <div class="brand">
+                        <h1>Apply for Membership</h1>
+                        <p>Join the Elite</p>
+                    </div>
+                    <div class="tagline">
+                        "Experience the pinnacle of luxury and exclusivity."
+                    </div>
+                    <div class="car-model-container">
+                        <div class="car-model"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="login-header">
+                <h2>Membership Application</h2>
+                <p>Fill out the form to apply for an exclusive membership.</p>
+            </div>
+            <form class="membership-form" id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Why Join Us?</label>
+                    <textarea id="message" name="message" placeholder="Tell us why you want to join" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Apply Now</button>
+            </form>
+            <div class="register-link">
+                <p>Already a member? <a href="/auth/login">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- contentFor('scripts') %>
+<script>
+document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        const response = await fetch('/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            window.location.href = '/auth/login';
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        alert('An error occurred. Please try again.');
+    }
+});
+</script> 

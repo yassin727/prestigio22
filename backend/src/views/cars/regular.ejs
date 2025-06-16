@@ -1,0 +1,115 @@
+<%- contentFor('body') %>
+
+<div class="brands-container" id="brands-container">
+    <% for (const [brandKey, brand] of Object.entries(brandsData)) { %>
+        <div class="brand-logo" data-brand="<%= brandKey %>">
+            <img src="<%= brand.logo %>" alt="<%= brand.name %>">
+            <div class="brand-name"><%= brand.name %> <%= brand.flag %></div>
+        </div>
+    <% } %>
+</div>
+
+<div id="cars-container">
+    <div class="close-btn" id="close-btn">×</div>
+    <h2 class="brand-title" id="brand-title"></h2>
+    <div class="cars-grid" id="cars-grid"></div>
+</div>
+
+<%- contentFor('scripts') %>
+<script>
+    // Brand data from server
+    const brandsData = <%- JSON.stringify(brandsData) %>;
+
+    // Load brands
+    function loadBrands() {
+        const brandsContainer = document.getElementById('brands-container');
+        
+        for (const brandKey in brandsData) {
+            const brand = brandsData[brandKey];
+            const brandElement = document.createElement('div');
+            brandElement.className = 'brand-logo';
+            brandElement.dataset.brand = brandKey;
+            
+            const imgElement = document.createElement('img');
+            imgElement.src = brand.logo;
+            imgElement.alt = brand.name;
+            
+            const nameElement = document.createElement('div');
+            nameElement.className = 'brand-name';
+            nameElement.textContent = brand.name + ' ' + brand.flag;
+            
+            brandElement.appendChild(imgElement);
+            brandElement.appendChild(nameElement);
+            brandsContainer.appendChild(brandElement);
+            
+            // Add click event to show cars
+            brandElement.addEventListener('click', function() {
+                showCars(brandKey);
+            });
+        }
+    }
+
+    // Show cars for selected brand
+    function showCars(brandKey) {
+        const brand = brandsData[brandKey];
+        const carsContainer = document.getElementById('cars-container');
+        const brandTitle = document.getElementById('brand-title');
+        const carsGrid = document.getElementById('cars-grid');
+        
+        // Set brand title
+        brandTitle.textContent = brand.name + " " + brand.flag + " Models";
+        
+        // Clear previous cars
+        carsGrid.innerHTML = '';
+        
+        // Add cars
+        brand.cars.forEach(car => {
+            const carCard = document.createElement('div');
+            carCard.className = 'car-card';
+            
+            const carImage = document.createElement('div');
+            carImage.className = 'car-image';
+            
+            const imgElement = document.createElement('img');
+            imgElement.src = car.image;
+            imgElement.alt = car.name;
+            
+            carImage.appendChild(imgElement);
+            
+            const carDetails = document.createElement('div');
+            carDetails.className = 'car-details';
+            
+            const carName = document.createElement('h3');
+            carName.className = 'car-name';
+            carName.textContent = car.name;
+            
+            const carInfo = document.createElement('p');
+            carInfo.className = 'car-info';
+            carInfo.textContent = car.info;
+            
+            const carPrice = document.createElement('p');
+            carPrice.className = 'car-price';
+            carPrice.textContent = car.price;
+            
+            carDetails.appendChild(carName);
+            carDetails.appendChild(carInfo);
+            carDetails.appendChild(carPrice);
+            
+            carCard.appendChild(carImage);
+            carCard.appendChild(carDetails);
+            
+            carsGrid.appendChild(carCard);
+        });
+        
+        // Show cars container
+        carsContainer.style.display = 'block';
+    }
+
+    // Close button event
+    document.getElementById('close-btn').addEventListener('click', function() {
+        document.getElementById('cars-container').style.display = 'none';
+    });
+
+    // Load brands when page loads
+    document.addEventListener('DOMContentLoaded', loadBrands);
+</script> 

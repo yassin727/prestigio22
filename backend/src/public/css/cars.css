@@ -1,0 +1,130 @@
+.brands-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-logo:hover {
+    transform: translateY(-5px);
+}
+
+.brand-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#cars-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.brand-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.car-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-details {
+    padding: 1.5rem;
+}
+
+.car-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.car-info {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.car-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .brands-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .brand-logo img {
+        max-width: 100px;
+    }
+
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+} 
