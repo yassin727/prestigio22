@@ -19809,3 +19809,6 @@
 {"level":"info","message":"\u001b[0mPOST /api/auth/login \u001b[31m500\u001b[0m 66.268 ms - 44\u001b[0m","timestamp":"2025-06-16T04:23:17.207Z"}
 {"level":"info","message":"Email server is ready to send messages","timestamp":"2025-06-16T04:24:58.207Z"}
 {"level":"info","message":"MongoDB Connected:","timestamp":"2025-06-16T04:24:58.969Z"}
+{"level":"info","message":"Sending appointment confirmation email to:","timestamp":"2025-06-16T13:01:53.470Z"}
+{"level":"info","message":"Email server is ready to send messages","timestamp":"2025-06-16T13:01:54.099Z"}
+{"level":"info","message":"Appointment confirmation email sent:","timestamp":"2025-06-16T13:01:55.034Z"}

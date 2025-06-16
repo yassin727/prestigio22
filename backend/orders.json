@@ -332,5 +332,43 @@
       "returnDate": "2025-06-28",
       "dailyRate": 603
     }
+  },
+  {
+    "orderId": "ORD-1750078909560-2149",
+    "orderDate": "2025-06-16T13:01:49.564Z",
+    "status": "pending",
+    "transactionType": "buy",
+    "type": "appointment",
+    "car": {
+      "carId": "bugatti-bolide",
+      "name": "Bugatti Bolide",
+      "brand": "N/A",
+      "basePrice": "4000000",
+      "image": null
+    },
+    "appointment": {
+      "service": "appointment-employer",
+      "date": "2025-06-20",
+      "time": "afternoon",
+      "message": ""
+    },
+    "customizations": [],
+    "pricing": {
+      "basePrice": 0,
+      "customizationPrice": 0,
+      "totalPrice": 4047000
+    },
+    "basePrice": 0,
+    "customizationTotal": 0,
+    "totalPrice": 4047000,
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "name": "adham hossam",
+      "email": "hossamadham018@gmail.com",
+      "phone": "01098613073",
+      "address": null
+    },
+    "emailSent": false
   }
 ]
