@@ -1,0 +1,231 @@
+[2025-06-13T23:13:22.212Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-13T23:13:22.214Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-13T23:13:22.214Z] ✅ Google Gemini initialized
+[2025-06-13T23:13:22.218Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T23:13:22.219Z] 🧪 Testing Google Gemini API connection...
+[2025-06-13T23:13:23.283Z] ✅ Google Gemini connection successful
+[2025-06-13T23:13:24.474Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-13T23:13:24.491Z] ✅ Server is running on port 5000
+[2025-06-13T23:13:24.491Z] 🌍 Environment: development
+[2025-06-13T23:13:24.491Z] 🚀 Available endpoints:
+[2025-06-13T23:13:24.491Z]    POST http://localhost:5000/api/chat
+[2025-06-13T23:13:24.492Z]    GET  http://localhost:5000/
+[2025-06-13T23:13:24.492Z]    GET  http://localhost:5000/health
+[2025-06-13T23:13:25.366Z] ✅ Email Service Connected
+[2025-06-13T23:13:46.022Z] 
+=== Incoming GET /pages/admindashboard.html ===
+[2025-06-13T23:13:46.023Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:13:46.037Z] === Completed 200 in 15ms ===
+
+[2025-06-13T23:13:46.124Z] 
+=== Incoming GET /pages/admin.css ===
+[2025-06-13T23:13:46.125Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:13:46.132Z] Serving index.html for route: /pages/admin.css
+[2025-06-13T23:13:46.135Z] 
+=== Incoming GET /pages/images/orange.jpg ===
+[2025-06-13T23:13:46.136Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T23:13:46.138Z] Serving index.html for route: /pages/images/orange.jpg
+[2025-06-13T23:13:46.140Z] === Completed 200 in 16ms ===
+
+[2025-06-13T23:13:46.143Z] === Completed 304 in 8ms ===
+
+[2025-06-13T23:13:46.145Z] 
+=== Incoming GET /pages/admin.js ===
+[2025-06-13T23:13:46.145Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:13:46.147Z] Serving index.html for route: /pages/admin.js
+[2025-06-13T23:13:46.150Z] === Completed 200 in 5ms ===
+
+[2025-06-13T23:15:38.955Z] 
+=== Incoming GET /pages/admindashboard.html ===
+[2025-06-13T23:15:38.955Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "cache-control": "max-age=0",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"667c-1976b8a01b4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 23:04:55 GMT"
+}
+[2025-06-13T23:15:38.961Z] === Completed 200 in 6ms ===
+
+[2025-06-13T23:15:39.004Z] 
+=== Incoming GET /pages/css/admin.css ===
+[2025-06-13T23:15:39.004Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:15:39.007Z] Serving index.html for route: /pages/css/admin.css
+[2025-06-13T23:15:39.013Z] === Completed 200 in 9ms ===
+
+[2025-06-13T23:15:39.019Z] 
+=== Incoming GET /pages/js/admin.js ===
+[2025-06-13T23:15:39.019Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:15:39.021Z] Serving index.html for route: /pages/js/admin.js
+[2025-06-13T23:15:39.026Z] === Completed 200 in 7ms ===
+
+[2025-06-13T23:15:39.032Z] 
+=== Incoming GET /pages/images/orange.jpg ===
+[2025-06-13T23:15:39.033Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T23:15:39.035Z] Serving index.html for route: /pages/images/orange.jpg
+[2025-06-13T23:15:39.039Z] === Completed 304 in 7ms ===
+
+[2025-06-13T23:15:43.259Z] 
+=== Incoming GET / ===
+[2025-06-13T23:15:43.259Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-purpose": "prefetch;prerender",
+  "purpose": "prefetch",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T23:15:43.261Z] Serving frontend index.html
+[2025-06-13T23:15:43.264Z] === Completed 304 in 5ms ===
+
+[2025-06-13T23:15:43.285Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-13T23:15:43.286Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"1738-1976b23edc4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
+}
+[2025-06-13T23:15:43.289Z] === Completed 304 in 4ms ===
+
+[2025-06-13T23:15:53.729Z] 
+🚨 Received SIGINT. Shutting down gracefully...

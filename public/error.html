@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Try the Dino Game!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .error-code {
+            font-size: 72px;
+            color: #333;
+            margin: 0;
+        }
+
+        .error-message {
+            font-size: 24px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        #game-container {
+            width: 600px;
+            height: 200px;
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #dino {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+        }
+
+        .obstacle {
+            width: 20px;
+            height: 40px;
+            background-color: #666;
+            position: absolute;
+            bottom: 0;
+            right: -20px;
+        }
+
+        .ground {
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+
+        #game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #333;
+        }
+
+        .restart-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .restart-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Oops! Something went wrong.</p>
+        <p>While you wait, try playing our dinosaur game!</p>
+    </div>
+
+    <div id="game-container">
+        <div id="dino"></div>
+        <div class="ground"></div>
+        <div id="score">Score: 0</div>
+        <div id="game-over">Game Over! Press Space to restart</div>
+    </div>
+
+    <button class="restart-btn" onclick="window.location.reload()">Try Again</button>
+
+    <script>
+        const dino = document.getElementById('dino');
+        const gameContainer = document.getElementById('game-container');
+        const scoreDisplay = document.getElementById('score');
+        const gameOverDisplay = document.getElementById('game-over');
+
+        let isJumping = false;
+        let gravity = 0.9;
+        let position = 0;
+        let score = 0;
+        let isGameOver = false;
+
+        // Jump function
+        function jump() {
+            if (isJumping) return;
+            
+            let upTime = setInterval(function() {
+                // Jump up
+                if (position >= 150) {
+                    clearInterval(upTime);
+                    let downTime = setInterval(function() {
+                        // Fall down
+                        if (position <= 0) {
+                            clearInterval(downTime);
+                            isJumping = false;
+                        }
+                        position -= 30;
+                        dino.style.bottom = position + 'px';
+                    }, 20);
+                }
+                position += 30;
+                dino.style.bottom = position + 'px';
+                isJumping = true;
+            }, 20);
+        }
+
+        // Generate obstacles
+        function generateObstacle() {
+            if (isGameOver) return;
+
+            const obstacle = document.createElement('div');
+            obstacle.classList.add('obstacle');
+            gameContainer.appendChild(obstacle);
+
+            let obstaclePosition = 580;
+            let obstacleTimer = setInterval(function() {
+                if (obstaclePosition < -20) {
+                    clearInterval(obstacleTimer);
+                    gameContainer.removeChild(obstacle);
+                    score++;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                } else if (
+                    obstaclePosition > 0 && 
+                    obstaclePosition < 100 && 
+                    position < 40
+                ) {
+                    clearInterval(obstacleTimer);
+                    gameOver();
+                }
+
+                obstaclePosition -= 10;
+                obstacle.style.right = -obstaclePosition + 'px';
+            }, 20);
+
+            // Generate new obstacle after random time
+            setTimeout(generateObstacle, Math.random() * 2000 + 1000);
+        }
+
+        // Game over function
+        function gameOver() {
+            isGameOver = true;
+            gameOverDisplay.style.display = 'block';
+        }
+
+        // Control
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                if (isGameOver) {
+                    window.location.reload();
+                } else {
+                    jump();
+                }
+            }
+        });
+
+        // Start game
+        generateObstacle();
+    </script>
+</body>
+</html> 

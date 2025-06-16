@@ -1,0 +1,1283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="regular.title">PRESTIGIO - Premium Car Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+        
+        /* CSS Variables */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-black: #2a2a2a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4d03f;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+            --dark-gray: #666666;
+            --border-color: #333333;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+            --transition: 0.3s ease;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Unified Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            font-weight: 900;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 60px 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            padding-top: 60px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 30px;
+        }
+
+        .gold-accent {
+            color: var(--primary-gold);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Brands Container */
+        .brands-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .brand-logo {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(42, 42, 42, 0.9) 100%);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-logo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--gold-primary), transparent, var(--gold-primary));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .brand-logo:hover::before {
+            opacity: 1;
+        }
+
+        .brand-logo:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                var(--shadow-gold),
+                0 20px 60px rgba(0, 0, 0, 0.8);
+            border-color: var(--gold-primary);
+        }
+
+        .brand-logo img {
+            max-width: 80px;
+            max-height: 80px;
+            object-fit: contain;
+            transition: all 0.5s ease;
+            margin-bottom: 20px;
+            filter: grayscale(100%) brightness(0.8);
+        }
+
+        .brand-logo:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%) brightness(1);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover .brand-name {
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .brand-flag {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo:hover .brand-flag {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* Cars Modal */
+        #cars-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(26, 26, 26, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 100px 20px 40px;
+            animation: modalFadeIn 0.5s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, var(--black-light), var(--black-medium));
+            border: 2px solid var(--gold-primary);
+            border-radius: 50%;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .close-btn:hover {
+            background: var(--gold-primary);
+            color: var(--black-primary);
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+        }
+
+        .brand-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .car-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(42, 42, 42, 0.9) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .car-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .car-card:hover::before {
+            left: 100%;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 0 30px rgba(212, 175, 55, 0.3),
+                0 20px 60px rgba(0, 0, 0, 0.8);
+            border-color: var(--gold-primary);
+        }
+
+        .car-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: brightness(0.8);
+        }
+
+        .car-card:hover .car-image img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .car-details {
+            padding: 25px;
+        }
+
+        .car-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .car-info {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .car-price {
+            font-size: 1.3rem;
+            color: var(--gold-primary);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(135deg, var(--black-primary) 0%, var(--black-light) 100%);
+            padding: 80px 0 30px;
+            border-top: 2px solid var(--gold-primary);
+            margin-top: 100px;
+            position: relative;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .footer-section h3 {
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-primary), transparent);
+        }
+
+        .footer-section p,
+        .footer-section address,
+        .footer-section ul {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold-primary);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        .footer-bottom {
+            width: 90%;
+            max-width: 1400px;
+            margin: 50px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(145deg, var(--black-light), var(--black-medium));
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .social-links a:hover {
+            background: var(--gold-primary);
+            color: var(--black-primary);
+            border-color: var(--gold-primary);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+                height: 70px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-radius: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding-top: 30px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .brands-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                padding: 0 20px;
+                gap: 20px;
+            }
+            
+            .cars-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                padding: 0.5rem 1rem;
+                height: 60px;
+            }
+
+            .hero-section {
+                padding-top: 20px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for brand cards */
+        .brand-logo:nth-child(1) { animation-delay: 0.1s; }
+        .brand-logo:nth-child(2) { animation-delay: 0.2s; }
+        .brand-logo:nth-child(3) { animation-delay: 0.3s; }
+        .brand-logo:nth-child(4) { animation-delay: 0.4s; }
+        .brand-logo:nth-child(5) { animation-delay: 0.5s; }
+        .brand-logo:nth-child(6) { animation-delay: 0.6s; }
+        .brand-logo:nth-child(7) { animation-delay: 0.7s; }
+        .brand-logo:nth-child(8) { animation-delay: 0.8s; }
+        .brand-logo:nth-child(9) { animation-delay: 0.9s; }
+        .brand-logo:nth-child(10) { animation-delay: 1.0s; }
+        .brand-logo:nth-child(11) { animation-delay: 1.1s; }
+        .brand-logo:nth-child(12) { animation-delay: 1.2s; }
+    </style>
+</head>
+<body>
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="luxurycars.html">Luxury Cars</a></li>
+                <li><a href="regularcars.html" class="active">Regular Cars</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="regular.title">Premium <span class="gold-accent">Automotive</span> Collection</h1>
+            <p class="hero-subtitle" data-i18n="regular.subtitle">Explore the world's most prestigious car brands</p>
+        </section>
+
+        <div class="brands-container" id="brands-container">
+            <!-- Brand logos will be loaded here -->
+        </div>
+    </main>
+
+    <div id="cars-container">
+        <div class="close-btn" id="close-btn" data-i18n="common.close">
+            <i class="fas fa-times"></i>
+        </div>
+        <h2 class="brand-title" id="brand-title"></h2>
+        <div class="cars-grid" id="cars-grid"></div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 data-i18n="footer.aboutTitle">About Prestigio Motors</h3>
+                <p data-i18n="footer.aboutText">Since 1985, Prestigio Motors has been the premier destination for the world's finest automobiles, providing exceptional service and unmatched expertise in luxury automotive excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                <ul>
+                    <li><a href="newarrivals.html" data-i18n="footer.newArrivals">New Arrivals</a></li>
+                    <li><a href="luxurycars.html" data-i18n="footer.exoticInventory">Exotic Inventory</a></li>
+                    <li><a href="regularcars.html" data-i18n="footer.normalInventory">Normal Inventory</a></li>
+                    <li><a href="specialeditions.html" data-i18n="footer.specialEditions">Special Editions</a></li>
+                    <li><a href="customerservice.html" data-i18n="nav.concierge">Concierge</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.contactTitle">Contact Us</h3>
+                <address>
+                    Sixth District<br>
+                    Al Obour City<br><br>
+                    <span data-i18n="footer.phone">Phone</span>: +2 01098613073<br>
+                    <span data-i18n="footer.email">Email</span>: prestegioautomobiles@gmail.com
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.rights">© 2025 Prestigio Collection. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API Configuration
+        const API_BASE = 'http://localhost:5000/api';
+        
+        // Dynamic brand data - will be populated from database
+        let brandsData = {};
+        
+        // Default brand logos mapping
+        const brandLogos = {
+            "Toyota": "/api/placeholder/150/150",
+            "Honda": "/api/placeholder/150/150",
+            "Ford": "/api/placeholder/150/150",
+            "Chevrolet": "/api/placeholder/150/150",
+            "Hyundai": "/api/placeholder/150/150",
+            "Nissan": "/api/placeholder/150/150",
+            "Volkswagen": "/api/placeholder/150/150",
+            "Subaru": "/api/placeholder/150/150",
+            "Kia": "/api/placeholder/150/150",
+            "Mazda": "/api/placeholder/150/150"
+        };
+        
+        // Load regular cars from database
+        async function loadRegularCars() {
+            try {
+                console.log('Loading regular cars from database...');
+                const response = await fetch(`${API_BASE}/cars/regular`);
+                const data = await response.json();
+                
+                if (data.success && data.cars) {
+                    console.log(`✅ Loaded ${data.cars.length} regular cars`);
+                    
+                    // Group cars by brand
+                    const groupedByBrand = {};
+                    data.cars.forEach(car => {
+                        const brandKey = car.brand.toLowerCase().replace(/[\s-]/g, '');
+                        
+                        if (!groupedByBrand[brandKey]) {
+                            groupedByBrand[brandKey] = {
+                                name: car.brand,
+                                logo: car.brandLogo || brandLogos[car.brand] || "/api/placeholder/150/150",
+                                flag: "🚗", // default flag
+                                cars: []
+                            };
+                        }
+                        
+                        groupedByBrand[brandKey].cars.push({
+                            name: car.name,
+                            image: car.image,
+                            info: car.info,
+                            price: car.price,
+                            id: car._id
+                        });
+                    });
+                    
+                    brandsData = groupedByBrand;
+                    loadBrands();
+                    
+                } else {
+                    console.warn('⚠️ No regular cars found or API error');
+                    loadFallbackData(); // Load static data as fallback
+                }
+                
+            } catch (error) {
+                console.error('❌ Error loading regular cars:', error);
+                loadFallbackData(); // Load static data as fallback
+            }
+        }
+        
+        // Fallback static data (original data as backup)
+        function loadFallbackData() {
+            console.log('📋 Loading fallback static data...');
+            brandsData = {
+            toyota: {
+                name: "Toyota",
+                logo: "/api/placeholder/150/150",
+                flag: "🇯🇵",
+                cars: [
+                    { name: "Camry", image: "/api/placeholder/600/400", info: "Midsize sedan, 2.5L I4 (203 HP) or 3.5L V6 (301 HP)", price: "$26K-35K" },
+                    { name: "Corolla", image: "/api/placeholder/600/400", info: "Compact sedan or hatchback, 2.0L I4 (169 HP)", price: "$21K-28K" },
+                    { name: "RAV4", image: "/api/placeholder/600/400", info: "Compact SUV, 2.5L I4 (203 HP) or hybrid (219 HP)", price: "$28K-38K" },
+                    { name: "Highlander", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.4L I4 (265 HP) or hybrid (243 HP)", price: "$36K-52K" },
+                    { name: "Prius", image: "/api/placeholder/600/400", info: "Hybrid compact car, 1.8L I4 (121 HP) or plug-in hybrid (220 HP)", price: "$25K-34K" }
+                ]
+            },
+            honda: {
+                name: "Honda",
+                logo: "/api/placeholder/150/150",
+                flag: "🚘",
+                cars: [
+                    { name: "Civic", image: "/api/placeholder/600/400", info: "Compact sedan or hatchback, 2.0L I4 (158 HP) or 1.5L turbo (180 HP)", price: "$23K-30K" },
+                    { name: "Accord", image: "/api/placeholder/600/400", info: "Midsize sedan, 1.5L turbo (192 HP) or 2.0L turbo (252 HP)", price: "$27K-38K" },
+                    { name: "CR-V", image: "/api/placeholder/600/400", info: "Compact SUV, 1.5L turbo (190 HP) or hybrid (212 HP)", price: "$28K-38K" },
+                    { name: "HR-V", image: "/api/placeholder/600/400", info: "Subcompact SUV, 2.0L I4 (158 HP)", price: "$23K-30K" },
+                    { name: "Odyssey", image: "/api/placeholder/600/400", info: "Minivan, 3.5L V6 (280 HP)", price: "$37K-52K" }
+                ]
+            },
+            ford: {
+                name: "Ford",
+                logo: "/api/placeholder/150/150",
+                flag: "🇺🇸",
+                cars: [
+                    { name: "Mustang", image: "/api/placeholder/600/400", info: "Sports car, 2.3L turbo I4 (310 HP) or 5.0L V8 (450 HP)", price: "$30K-60K" },
+                    { name: "Explorer", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.3L turbo I4 (300 HP) or 3.0L V6 (400 HP)", price: "$36K-55K" },
+                    { name: "F-150", image: "/api/placeholder/600/400", info: "Full-size pickup, 3.3L V6 (290 HP) to 3.5L turbo V6 (450 HP)", price: "$33K-80K" },
+                    { name: "Escape", image: "/api/placeholder/600/400", info: "Compact SUV, 1.5L turbo I4 (181 HP) or 2.0L turbo (250 HP)", price: "$26K-38K" }
+                ]
+            },
+            chevrolet: {
+                name: "Chevrolet",
+                logo: "/api/placeholder/150/150",
+                flag: "🔥",
+                cars: [
+                    { name: "Malibu", image: "/api/placeholder/600/400", info: "Midsize sedan, 1.5L turbo I4 (160 HP)", price: "$25K-35K" },
+                    { name: "Traverse", image: "/api/placeholder/600/400", info: "Midsize SUV, 3.6L V6 (310 HP)", price: "$35K-50K" },
+                    { name: "Silverado 1500", image: "/api/placeholder/600/400", info: "Full-size pickup, 2.7L turbo I4 (310 HP) to 6.2L V8 (420 HP)", price: "$36K-70K" },
+                    { name: "Equinox", image: "/api/placeholder/600/400", info: "Compact SUV, 1.5L turbo I4 (175 HP)", price: "$26K-35K" },
+                    { name: "Trailblazer", image: "/api/placeholder/600/400", info: "Subcompact SUV, 1.2L turbo I3 (137 HP) or 1.3L turbo (155 HP)", price: "$22K-30K" }
+                ]
+            },
+            hyundai: {
+                name: "Hyundai",
+                logo: "/api/placeholder/150/150",
+                flag: "⚡",
+                cars: [
+                    { name: "Elantra", image: "/api/placeholder/600/400", info: "Compact sedan, 2.0L I4 (147 HP) or 1.6L turbo (201 HP)", price: "$20K-28K" },
+                    { name: "Sonata", image: "/api/placeholder/600/400", info: "Midsize sedan, 2.5L I4 (191 HP) or 1.6L turbo (180 HP)", price: "$25K-35K" },
+                    { name: "Tucson", image: "/api/placeholder/600/400", info: "Compact SUV, 2.5L I4 (187 HP) or hybrid (226 HP)", price: "$26K-38K" },
+                    { name: "Santa Fe", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.5L I4 (191 HP) or hybrid (225 HP)", price: "$28K-42K" },
+                    { name: "Palisade", image: "/api/placeholder/600/400", info: "Large SUV, 3.8L V6 (291 HP)", price: "$35K-50K" }
+                ]
+            },
+            nissan: {
+                name: "Nissan",
+                logo: "/api/placeholder/150/150",
+                flag: "🏁",
+                cars: [
+                    { name: "Altima", image: "/api/placeholder/600/400", info: "Midsize sedan, 2.5L I4 (188 HP) or 2.0L turbo (248 HP)", price: "$25K-35K" },
+                    { name: "Sentra", image: "/api/placeholder/600/400", info: "Compact sedan, 2.0L I4 (149 HP)", price: "$20K-25K" },
+                    { name: "Rogue", image: "/api/placeholder/600/400", info: "Compact SUV, 1.5L turbo I3 (201 HP)", price: "$27K-38K" },
+                    { name: "Pathfinder", image: "/api/placeholder/600/400", info: "Midsize SUV, 3.5L V6 (284 HP)", price: "$34K-50K" },
+                    { name: "Maxima", image: "/api/placeholder/600/400", info: "Midsize sedan, 3.5L V6 (300 HP)", price: "$38K-45K" }
+                ]
+            },
+            volkswagen: {
+                name: "Volkswagen",
+                logo: "/api/placeholder/150/150",
+                flag: "🇩🇪",
+                cars: [
+                    { name: "Jetta", image: "/api/placeholder/600/400", info: "Compact sedan, 1.5L turbo I4 (158 HP)", price: "$20K-28K" },
+                    { name: "Tiguan", image: "/api/placeholder/600/400", info: "Compact SUV, 2.0L turbo I4 (184 HP)", price: "$27K-38K" },
+                    { name: "Golf GTI", image: "/api/placeholder/600/400", info: "Hot hatch, 2.0L turbo I4 (241 HP)", price: "$30K-40K" },
+                    { name: "Atlas", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.0L turbo I4 (235 HP) or 3.6L V6 (276 HP)", price: "$35K-50K" }
+                ]
+            },
+            subaru: {
+                name: "Subaru",
+                logo: "/api/placeholder/150/150",
+                flag: "🏔️",
+                cars: [
+                    { name: "Outback", image: "/api/placeholder/600/400", info: "Midsize wagon, 2.5L flat-4 (182 HP) or 2.4L turbo (260 HP)", price: "$28K-40K" },
+                    { name: "Forester", image: "/api/placeholder/600/400", info: "Compact SUV, 2.5L flat-4 (182 HP)", price: "$26K-35K" },
+                    { name: "WRX", image: "/api/placeholder/600/400", info: "Performance sedan, 2.4L turbo flat-4 (271 HP)", price: "$30K-40K" },
+                    { name: "Crosstrek", image: "/api/placeholder/600/400", info: "Subcompact SUV, 2.0L flat-4 (152 HP) or 2.5L (182 HP)", price: "$23K-30K" },
+                    { name: "Legacy", image: "/api/placeholder/600/400", info: "Midsize sedan, 2.5L flat-4 (182 HP) or 2.4L turbo (260 HP)", price: "$25K-35K" }
+                ]
+            },
+            kia: {
+                name: "Kia",
+                logo: "/api/placeholder/150/150",
+                flag: "🏆",
+                cars: [
+                    { name: "K5", image: "/api/placeholder/600/400", info: "Midsize sedan, 1.6L turbo (180 HP) or 2.5L turbo (290 HP)", price: "$24K-35K" },
+                    { name: "Sportage", image: "/api/placeholder/600/400", info: "Compact SUV, 2.5L I4 (187 HP) or hybrid (227 HP)", price: "$26K-38K" },
+                    { name: "Sorento", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.5L I4 (191 HP) or hybrid (227 HP)", price: "$30K-45K" },
+                    { name: "Seltos", image: "/api/placeholder/600/400", info: "Subcompact SUV, 2.0L I4 (146 HP) or 1.6L turbo (175 HP)", price: "$22K-30K" },
+                    { name: "Telluride", image: "/api/placeholder/600/400", info: "Large SUV, 3.8L V6 (291 HP)", price: "$36K-50K" }
+                ]
+            },
+            mazda: {
+                name: "Mazda",
+                logo: "/api/placeholder/150/150",
+                flag: "🚗",
+                cars: [
+                    { name: "Mazda3", image: "/api/placeholder/600/400", info: "Compact sedan or hatchback, 2.5L I4 (186 HP)", price: "$22K-30K" },
+                    { name: "CX-5", image: "/api/placeholder/600/400", info: "Compact SUV, 2.5L I4 (187 HP) or turbo (250 HP)", price: "$26K-38K" },
+                    { name: "CX-9", image: "/api/placeholder/600/400", info: "Midsize SUV, 2.5L turbo I4 (250 HP)", price: "$35K-50K" },
+                    { name: "MX-5 Miata", image: "/api/placeholder/600/400", info: "Sports car, 2.0L I4 (181 HP)", price: "$28K-35K" }
+                ]
+            },
+            dodge: {
+                name: "Dodge",
+                logo: "/api/placeholder/150/150",
+                flag: "🏎️",
+                cars: [
+                    { name: "Charger", image: "/api/placeholder/600/400", info: "Sedan, 3.6L V6 (292 HP) or 5.7L V8 (370 HP)", price: "$35K-50K" },
+                    { name: "Challenger", image: "/api/placeholder/600/400", info: "Coupe, 3.6L V6 (303 HP)", price: "$30K-45K" },
+                    { name: "Durango", image: "/api/placeholder/600/400", info: "Midsize SUV, 3.6L V6 (293 HP) or 5.7L V8 (360 HP)", price: "$40K-60K" }
+                ]
+            },
+            jeep: {
+                name: "Jeep",
+                logo: "/api/placeholder/150/150",
+                flag: "🚙",
+                cars: [
+                    { name: "Wrangler", image: "/api/placeholder/600/400", info: "Off-road SUV, 3.6L V6 (285 HP) or 2.0L turbo (270 HP)", price: "$32K-60K" },
+                    { name: "Grand Cherokee", image: "/api/placeholder/600/400", info: "Midsize SUV, 3.6L V6 (293 HP) or 5.7L V8 (357 HP)", price: "$38K-70K" },
+                    { name: "Renegade", image: "/api/placeholder/600/400", info: "Subcompact SUV, 2.4L I4 (180 HP)", price: "$24K-30K" },
+                    { name: "Compass", image: "/api/placeholder/600/400", info: "Compact SUV, 2.4L I4 (177 HP)", price: "$26K-35K" },
+                    { name: "Gladiator", image: "/api/placeholder/600/400", info: "Midsize pickup, 3.6L V6 (285 HP)", price: "$38K-55K" }
+                ]
+            },
+            tesla: {
+                name: "Tesla",
+                logo: "/api/placeholder/150/150",
+                flag: "⚡",
+                cars: [
+                    { name: "Model 3", image: "/api/placeholder/600/400", info: "Electric sedan, 283–450 HP, 272–358-mile range", price: "$40K-55K" },
+                    { name: "Model Y", image: "/api/placeholder/600/400", info: "Electric SUV, 283–456 HP, 279–330-mile range", price: "$45K-60K" },
+                    { name: "Model S", image: "/api/placeholder/600/400", info: "Electric sedan, 670 HP, 405-mile range", price: "$75K-100K" },
+                    { name: "Model X", image: "/api/placeholder/600/400", info: "Electric SUV, 670 HP, 348-mile range", price: "$80K-110K" },
+                    { name: "Cybertruck", image: "/api/placeholder/600/400", info: "Electric pickup, 500+ HP, 250–500-mile range", price: "$40K-70K (pre-order)" }
+                ]
+            },
+            chrysler: {
+                name: "Chrysler",
+                logo: "/api/placeholder/150/150",
+                flag: "🌟",
+                cars: [
+                    { name: "300", image: "/api/placeholder/600/400", info: "Full-size sedan, 3.6L V6 (292 HP) or 5.7L V8 (363 HP)", price: "$32K-45K" },
+                    { name: "Pacifica", image: "/api/placeholder/600/400", info: "Minivan, 3.6L V6 (287 HP) or plug-in hybrid (260 HP)", price: "$37K-55K" },
+                    { name: "Voyager", image: "/api/placeholder/600/400", info: "Minivan, 3.6L V6 (287 HP)", price: "$30K-40K" }
+                ]
+            }
+        };
+        
+        // After setting fallback data, load the brands
+        loadBrands();
+    }
+
+        // Load brands
+        function loadBrands() {
+            const brandsContainer = document.getElementById('brands-container');
+            
+            for (const brandKey in brandsData) {
+                const brand = brandsData[brandKey];
+                const brandElement = document.createElement('div');
+                brandElement.className = 'brand-logo';
+                brandElement.dataset.brand = brandKey;
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = brand.logo;
+                imgElement.alt = brand.name;
+                
+                const nameElement = document.createElement('div');
+                nameElement.className = 'brand-name';
+                nameElement.textContent = brand.name + ' ' + brand.flag;
+                
+                brandElement.appendChild(imgElement);
+                brandElement.appendChild(nameElement);
+                brandsContainer.appendChild(brandElement);
+                
+                // Add click event to show cars
+                brandElement.addEventListener('click', function() {
+                    showCars(brandKey);
+                });
+            }
+        }
+
+        // Show cars for selected brand
+        function showCars(brandKey) {
+            const brand = brandsData[brandKey];
+            const carsContainer = document.getElementById('cars-container');
+            const brandTitle = document.getElementById('brand-title');
+            const carsGrid = document.getElementById('cars-grid');
+            
+            // Set brand title
+            brandTitle.textContent = brand.name + " " + brand.flag + " Models";
+            
+            // Clear previous cars
+            carsGrid.innerHTML = '';
+            
+            // Add cars
+            brand.cars.forEach(car => {
+                const carCard = document.createElement('div');
+                carCard.className = 'car-card';
+                
+                const carImage = document.createElement('div');
+                carImage.className = 'car-image';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = car.image;
+                imgElement.alt = car.name;
+                
+                carImage.appendChild(imgElement);
+                
+                const carDetails = document.createElement('div');
+                carDetails.className = 'car-details';
+                
+                const carName = document.createElement('h3');
+                carName.className = 'car-name';
+                carName.textContent = car.name;
+                
+                const carInfo = document.createElement('p');
+                carInfo.className = 'car-info';
+                carInfo.textContent = car.info;
+                
+                const carPrice = document.createElement('p');
+                carPrice.className = 'car-price';
+                carPrice.textContent = car.price;
+                
+                carDetails.appendChild(carName);
+                carDetails.appendChild(carInfo);
+                carDetails.appendChild(carPrice);
+                
+                carCard.appendChild(carImage);
+                carCard.appendChild(carDetails);
+                
+                // Add click event to redirect to customization page
+                carCard.addEventListener('click', function() {
+                    // Get transaction type from URL parameter
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const transactionType = urlParams.get('type') || 'buy'; // default to 'buy' if not specified
+                    
+                    const params = new URLSearchParams({
+                        id: car.id || '',
+                        name: car.name,
+                        brand: brand.name,
+                        price: car.price,
+                        image: car.image,
+                        info: car.info,
+                        type: transactionType // pass the transaction type to customizer
+                    });
+                    // Redirect to appropriate customizer based on transaction type
+                    if (transactionType === 'rent') {
+                        window.location.href = `../basic-customize.html?${params.toString()}`;
+                    } else {
+                        window.location.href = `car-customizer.html?${params.toString()}`;
+                    }
+                });
+                
+                // Add hover effect
+                carCard.style.cursor = 'pointer';
+                carCard.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.2)';
+                });
+                carCard.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '';
+                });
+                
+                carsGrid.appendChild(carCard);
+            });
+            
+            // Show cars container
+            carsContainer.style.display = 'block';
+        }
+
+        // Close button event
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('cars-container').style.display = 'none';
+        });
+
+        // Load regular cars from database when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadRegularCars();
+            updatePageMode();
+        });
+        
+        // Update page based on transaction type
+        function updatePageMode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transactionType = urlParams.get('type') || 'buy';
+            
+            // Update page title and header based on mode
+            const headerTitle = document.querySelector('header h2');
+            if (headerTitle) {
+                if (transactionType === 'rent') {
+                    headerTitle.textContent = '🚗 Rent Regular Cars';
+                    document.title = 'Rent Regular Cars - Prestigio';
+                } else {
+                    headerTitle.textContent = '🚗 Buy Regular Cars';
+                    document.title = 'Buy Regular Cars - Prestigio';
+                }
+            }
+        }
+        
+        // Auto-refresh every 60 seconds to catch new vehicles
+        setInterval(loadRegularCars, 60000);
+    </script>
+
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="admin-vehicle-manager.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#d4af37'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#d4af37',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Initialize i18n
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.I18n) {
+                window.i18n = new I18n();
+            }
+        });
+    </script>
+</body>
+</html>

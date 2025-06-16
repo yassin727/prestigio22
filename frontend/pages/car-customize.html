@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Car</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #1a1a1a;
+            --accent-color: #f5f5f5;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--secondary-color), #333);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .selected-car {
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #eee;
+        }
+
+        .car-image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .car-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .car-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .car-brand {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .car-description {
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .base-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .customization-section {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .customization-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #e9ecef;
+        }
+
+        .option.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .option-info {
+            flex: 1;
+        }
+
+        .option-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .option-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .option-price {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .price-summary {
+            position: sticky;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--secondary-color), #333);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .total-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-top: 2px solid var(--primary-color);
+            padding-top: 10px;
+        }
+
+        .purchase-btn {
+            background: linear-gradient(135deg, var(--primary-color), #b8941f);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .purchase-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .selected-car {
+                flex-direction: column;
+            }
+            
+            .customization-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-summary {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loadingOverlay">
+        <div>
+            <div class="spinner"></div>
+            <p>Loading customization options...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="regularcars.html" class="back-btn">← Back to Cars</a>
+        
+        <div class="header">
+            <h1>Customize Your Dream Car</h1>
+            <p>Select your preferred options and upgrades</p>
+        </div>
+
+        <div class="selected-car">
+            <div class="car-image">
+                <img id="carImage" src="/api/placeholder/500/300" alt="Selected Car">
+            </div>
+            <div class="car-info">
+                <div class="car-name" id="carName">Loading...</div>
+                <div class="car-brand" id="carBrand">Loading...</div>
+                <div class="car-description" id="carDescription">Loading...</div>
+                <div class="base-price" id="basePrice">$0</div>
+            </div>
+        </div>
+
+        <div class="customization-section">
+            <h2 class="section-title">Customize Your Vehicle</h2>
+            
+            <div class="customization-categories">
+                <!-- Interior Customizations -->
+                <div class="category-card">
+                    <h3 class="category-title">
+                        🪑 Interior Upgrades
+                    </h3>
+                    <div class="options-container" id="interiorOptions">
+                        <div class="option" data-category="interior" data-name="Premium Leather Seats" data-price="2500">
+                            <div class="option-info">
+                                <div class="option-name">Premium Leather Seats</div>
+                                <div class="option-description">High-quality leather with heating and cooling</div>
+                            </div>
+                            <div class="option-price">+$2,500</div>
+                        </div>
+                        <div class="option" data-category="interior" data-name="Carbon Fiber Dashboard" data-price="1800">
+                            <div class="option-info">
+                                <div class="option-name">Carbon Fiber Dashboard</div>
+                                <div class="option-description">Lightweight carbon fiber interior trim</div>
+                            </div>
+                            <div class="option-price">+$1,800</div>
+                        </div>
+                        <div class="option" data-category="interior" data-name="Premium Sound System" data-price="3200">
+                            <div class="option-info">
+                                <div class="option-name">Premium Sound System</div>
+                                <div class="option-description">15-speaker surround sound system</div>
+                            </div>
+                            <div class="option-price">+$3,200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exterior Customizations -->
+                <div class="category-card">
+                    <h3 class="category-title">
+                        🎨 Exterior Upgrades
+                    </h3>
+                    <div class="options-container" id="exteriorOptions">
+                        <div class="option" data-category="exterior" data-name="Custom Paint Job" data-price="3500">
+                            <div class="option-info">
+                                <div class="option-name">Custom Paint Job</div>
+                                <div class="option-description">Metallic or matte finish in custom colors</div>
+                            </div>
+                            <div class="option-price">+$3,500</div>
+                        </div>
+                        <div class="option" data-category="exterior" data-name="Sport Body Kit" data-price="4200">
+                            <div class="option-info">
+                                <div class="option-name">Sport Body Kit</div>
+                                <div class="option-description">Aerodynamic body kit with spoiler</div>
+                            </div>
+                            <div class="option-price">+$4,200</div>
+                        </div>
+                        <div class="option" data-category="exterior" data-name="Upgraded Wheels" data-price="2800">
+                            <div class="option-info">
+                                <div class="option-name">Upgraded Wheels</div>
+                                <div class="option-description">20" alloy wheels with performance tires</div>
+                            </div>
+                            <div class="option-price">+$2,800</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Upgrades -->
+                <div class="category-card">
+                    <h3 class="category-title">
+                        ⚡ Performance Upgrades
+                    </h3>
+                    <div class="options-container" id="performanceOptions">
+                        <div class="option" data-category="performance" data-name="Engine Tune" data-price="5500">
+                            <div class="option-info">
+                                <div class="option-name">Engine Tune</div>
+                                <div class="option-description">ECU tune for increased horsepower</div>
+                            </div>
+                            <div class="option-price">+$5,500</div>
+                        </div>
+                        <div class="option" data-category="performance" data-name="Sport Suspension" data-price="3800">
+                            <div class="option-info">
+                                <div class="option-name">Sport Suspension</div>
+                                <div class="option-description">Adjustable coilover suspension system</div>
+                            </div>
+                            <div class="option-price">+$3,800</div>
+                        </div>
+                        <div class="option" data-category="performance" data-name="Performance Exhaust" data-price="2200">
+                            <div class="option-info">
+                                <div class="option-name">Performance Exhaust</div>
+                                <div class="option-description">Cat-back exhaust system with sport sound</div>
+                            </div>
+                            <div class="option-price">+$2,200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Upgrades -->
+                <div class="category-card">
+                    <h3 class="category-title">
+                        📱 Technology Upgrades
+                    </h3>
+                    <div class="options-container" id="technologyOptions">
+                        <div class="option" data-category="technology" data-name="Advanced Navigation" data-price="1500">
+                            <div class="option-info">
+                                <div class="option-name">Advanced Navigation</div>
+                                <div class="option-description">12" touchscreen with GPS and traffic</div>
+                            </div>
+                            <div class="option-price">+$1,500</div>
+                        </div>
+                        <div class="option" data-category="technology" data-name="Driver Assistance Package" data-price="2900">
+                            <div class="option-info">
+                                <div class="option-name">Driver Assistance Package</div>
+                                <div class="option-description">Adaptive cruise, lane keep, blind spot</div>
+                            </div>
+                            <div class="option-price">+$2,900</div>
+                        </div>
+                        <div class="option" data-category="technology" data-name="Wireless Charging" data-price="800">
+                            <div class="option-info">
+                                <div class="option-name">Wireless Charging</div>
+                                <div class="option-description">Wireless charging pad for smartphones</div>
+                            </div>
+                            <div class="option-price">+$800</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-summary">
+            <div class="price-breakdown">
+                <div class="price-item">
+                    <span>Base Price:</span>
+                    <span id="basePriceDisplay">$0</span>
+                </div>
+                <div class="price-item">
+                    <span>Customizations:</span>
+                    <span id="customizationTotal">+$0</span>
+                </div>
+                <div class="price-item total-price">
+                    <span>Total Price:</span>
+                    <span id="totalPrice">$0</span>
+                </div>
+            </div>
+            <button class="purchase-btn" id="proceedToPurchase">
+                Proceed to Purchase
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Get car data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const carData = {
+            id: urlParams.get('id'),
+            name: urlParams.get('name'),
+            brand: urlParams.get('brand'),
+            price: urlParams.get('price'),
+            image: urlParams.get('image'),
+            info: urlParams.get('info')
+        };
+
+        let selectedOptions = [];
+        let basePrice = 0;
+
+        // Load car information
+        function loadCarInfo() {
+            if (!carData.name) {
+                alert('No car selected. Redirecting to car selection.');
+                window.location.href = 'regularcars.html';
+                return;
+            }
+
+            document.getElementById('carName').textContent = carData.name;
+            document.getElementById('carBrand').textContent = carData.brand;
+            document.getElementById('carDescription').textContent = carData.info || 'Premium vehicle with excellent performance and comfort.';
+            document.getElementById('carImage').src = carData.image || '/api/placeholder/500/300';
+            
+            // Extract numeric value from price string
+            const priceMatch = carData.price.match(/\$(\d+)K?-?(\d+)?K?/);
+            if (priceMatch) {
+                let price = parseInt(priceMatch[1]);
+                if (carData.price.includes('K')) {
+                    price = price * 1000;
+                }
+                basePrice = price;
+            } else {
+                basePrice = 25000; // Default price
+            }
+            
+            document.getElementById('basePrice').textContent = `$${basePrice.toLocaleString()}`;
+            document.getElementById('basePriceDisplay').textContent = `$${basePrice.toLocaleString()}`;
+            updateTotalPrice();
+        }
+
+        // Add event listeners to options
+        function initializeOptions() {
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', toggleOption);
+            });
+        }
+
+        // Toggle option selection
+        function toggleOption(event) {
+            const option = event.currentTarget;
+            const optionData = {
+                name: option.dataset.name,
+                category: option.dataset.category,
+                price: parseInt(option.dataset.price),
+                description: option.querySelector('.option-description').textContent
+            };
+
+            if (option.classList.contains('selected')) {
+                // Remove option
+                option.classList.remove('selected');
+                selectedOptions = selectedOptions.filter(opt => opt.name !== optionData.name);
+            } else {
+                // Add option
+                option.classList.add('selected');
+                selectedOptions.push(optionData);
+            }
+
+            updateTotalPrice();
+        }
+
+        // Update total price display
+        function updateTotalPrice() {
+            const customizationTotal = selectedOptions.reduce((total, option) => total + option.price, 0);
+            const totalPrice = basePrice + customizationTotal;
+
+            document.getElementById('customizationTotal').textContent = `+$${customizationTotal.toLocaleString()}`;
+            document.getElementById('totalPrice').textContent = `$${totalPrice.toLocaleString()}`;
+        }
+
+        // Proceed to purchase
+        function proceedToPurchase() {
+            if (selectedOptions.length === 0) {
+                if (!confirm('No customizations selected. Proceed with base model?')) {
+                    return;
+                }
+            }
+
+            // Store order data in localStorage
+            const orderData = {
+                car: carData,
+                customizations: selectedOptions,
+                basePrice: basePrice,
+                customizationTotal: selectedOptions.reduce((total, option) => total + option.price, 0),
+                totalPrice: basePrice + selectedOptions.reduce((total, option) => total + option.price, 0)
+            };
+
+            localStorage.setItem('pendingOrder', JSON.stringify(orderData));
+            
+            // Redirect to order page
+            window.location.href = '../order-page.html';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCarInfo();
+            initializeOptions();
+            
+            document.getElementById('proceedToPurchase').addEventListener('click', proceedToPurchase);
+            
+            // Hide loading overlay
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html> 

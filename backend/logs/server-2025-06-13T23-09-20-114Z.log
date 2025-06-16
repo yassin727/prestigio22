@@ -1,0 +1,178 @@
+[2025-06-13T23:09:20.131Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-13T23:09:20.137Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-13T23:09:20.137Z] ✅ Google Gemini initialized
+[2025-06-13T23:09:20.146Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T23:09:20.150Z] 🧪 Testing Google Gemini API connection...
+[2025-06-13T23:09:21.541Z] ✅ Google Gemini connection successful
+[2025-06-13T23:09:22.813Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-00.p3qyd4n.mongodb.net
+[2025-06-13T23:09:22.868Z] ✅ Server is running on port 5000
+[2025-06-13T23:09:22.869Z] 🌍 Environment: development
+[2025-06-13T23:09:22.870Z] 🚀 Available endpoints:
+[2025-06-13T23:09:22.871Z]    POST http://localhost:5000/api/chat
+[2025-06-13T23:09:22.872Z]    GET  http://localhost:5000/
+[2025-06-13T23:09:22.873Z]    GET  http://localhost:5000/health
+[2025-06-13T23:09:23.799Z] ✅ Email Service Connected
+[2025-06-13T23:09:59.746Z] 
+=== Incoming GET / ===
+[2025-06-13T23:09:59.747Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-purpose": "prefetch;prerender",
+  "purpose": "prefetch",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:09:59.748Z] Serving frontend index.html
+[2025-06-13T23:09:59.758Z] === Completed 200 in 12ms ===
+
+[2025-06-13T23:09:59.776Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-13T23:09:59.776Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:09:59.780Z] === Completed 200 in 4ms ===
+
+[2025-06-13T23:10:18.099Z] 
+=== Incoming GET /admindashboard.html ===
+[2025-06-13T23:10:18.100Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:10:18.107Z] Serving index.html for route: /admindashboard.html
+[2025-06-13T23:10:18.112Z] === Completed 200 in 13ms ===
+
+[2025-06-13T23:10:18.196Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-13T23:10:18.196Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"1738-1976b23edc4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
+}
+[2025-06-13T23:10:18.203Z] === Completed 304 in 7ms ===
+
+[2025-06-13T23:10:23.440Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-13T23:10:23.441Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T23:10:23.442Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-13T23:10:23.455Z] === Completed 200 in 15ms ===
+
+[2025-06-13T23:10:39.757Z] 
+=== Incoming GET /admindashboard.html ===
+[2025-06-13T23:10:39.758Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T23:10:39.759Z] Serving index.html for route: /admindashboard.html
+[2025-06-13T23:10:39.761Z] === Completed 304 in 4ms ===
+
+[2025-06-13T23:10:39.801Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-13T23:10:39.802Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T23:10:39.806Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-13T23:10:39.808Z] === Completed 304 in 7ms ===
+
+[2025-06-13T23:10:39.810Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-13T23:10:39.811Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/admindashboard.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"1738-1976b23edc4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
+}
+[2025-06-13T23:10:39.813Z] === Completed 304 in 3ms ===
+
+[2025-06-13T23:13:07.797Z] 
+🚨 Received SIGINT. Shutting down gracefully...

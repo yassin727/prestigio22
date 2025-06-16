@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="concierge.pageTitle">Luxury Motors - Personal Concierge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* ===== PRESTIGIO MOTORS - UNIFIED BLACK & GOLD THEME ===== */
+        
+        /* CSS Variables */
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --accent-black: #2a2a2a;
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4d03f;
+            --white: #ffffff;
+            --light-gray: #cccccc;
+            --dark-gray: #666666;
+            --border-color: #333333;
+            --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.3);
+            --transition: 0.3s ease;
+        }
+
+        /* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000 0%, #111 100%);
+    z-index: -2;
+}
+
+.background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.8);
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(50px) rotate(180deg);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Unified Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+    transition: width var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--primary-gold);
+    color: var(--primary-black);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    padding: 140px 0 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+}
+
+.concierge-profile {
+    flex: 0.35;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px;
+    position: relative;
+    height: fit-content;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    overflow: hidden;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-details h2 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.profile-details .title {
+    color: #d4af37;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.profile-details .description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-details {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-details .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border-left: 2px solid #d4af37;
+}
+
+.contact-details .contact-item i {
+    color: #d4af37;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.contact-details .contact-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.availability {
+    width: 100%;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.availability h3 {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.status {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    background: #d4af37;
+}
+
+.concierge-services {
+    flex: 0.65;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.service-panel {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+    position: relative;
+}
+
+.service-panel-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+}
+
+.service-panel-header h2 {
+    font-size: 24px;
+    color: #d4af37;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+        .service-panel-content {
+            padding: 30px;
+        }
+
+        /* Purchase Summary Styles */
+        .purchase-summary {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .purchase-summary h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vehicle-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-item span:first-child {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .info-item span:last-child {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .total-price {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .total-price .price {
+            font-size: 24px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .feature-item i {
+            color: #d4af37;
+            margin-right: 10px;
+        }
+
+        .placeholder-notice {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .placeholder-notice i {
+            color: #ffc107;
+        }
+
+        .placeholder-notice span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+/* Appointment Booking Styles */
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    grid-column: span 2;
+    padding: 16px;
+    background: linear-gradient(135deg, #d4af37, #aa8a27);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s;
+}
+
+.submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.submit-btn:hover:before {
+    left: 100%;
+}
+
+/* ChatGPT-like Chat Interface */
+.chatgpt-container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.chatgpt-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.chatgpt-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.chatgpt-title i {
+    font-size: 20px;
+    color: #d4af37;
+}
+
+.chatgpt-title h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+.chatgpt-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.chatgpt-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.message {
+    margin-bottom: 24px;
+    max-width: 85%;
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.message.user .message-content {
+    background: linear-gradient(135deg, #d4af37, #aa8a27);
+    color: #000;
+    border-radius: 18px 18px 4px 18px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.message.concierge {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.message.concierge .message-content {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px 18px 18px 4px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.message-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 6px;
+    text-align: right;
+    padding: 0 4px;
+}
+
+.chatgpt-input-container {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.chatgpt-input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.chatgpt-input-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 15px;
+    color: #fff;
+    background: transparent;
+}
+
+.chatgpt-input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.chatgpt-send-button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    background: #d4af37;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.chatgpt-send-button:hover {
+    background: #c19b26;
+    transform: scale(1.1);
+}
+
+.chatgpt-send-button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.suggested-questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.suggested-question {
+    padding: 10px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.suggested-question:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 18px 18px 18px 4px;
+    width: fit-content;
+    margin-bottom: 24px;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #d4af37;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.4;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation: 1s blink infinite 0.1s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation: 1s blink infinite 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation: 1s blink infinite 0.3s;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.chatgpt-footer {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.chatgpt-footer small {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Footer Styles */
+.site-footer {
+    width: 100%;
+    background: linear-gradient(to bottom, #0a0a0a, #000);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0 30px;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.site-footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #d4af37;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, #d4af37, transparent);
+}
+
+.footer-section p {
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37;
+    padding-left: 5px;
+}
+
+.footer-section ul li a:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.footer-section ul li a:hover:before {
+    width: 100%;
+}
+
+.footer-section address {
+    font-style: normal;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 10px 0;
+}
+
+.footer-bottom .social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-bottom .social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s;
+}
+
+.footer-bottom .social-links a:hover {
+    color: #d4af37;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .concierge-profile, 
+    .concierge-services {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+        height: 70px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+    
+    .nav-links a {
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 100px 0 60px 0;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .submit-btn {
+        grid-column: span 1;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        padding: 0 10px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .suggested-questions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav {
+        padding: 0.5rem 1rem;
+        height: 60px;
+    }
+
+    .main-content {
+        padding: 80px 0 60px 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="particles" id="particles"></div>
+
+    <header class="unified-header" id="header">
+        <nav>
+            <div class="logo">
+                <h1>PRESTIGIO</h1>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="luxurycars.html">Luxury Cars</a></li>
+                <li><a href="regularcars.html">Regular Cars</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Concierge Profile Section -->
+            <div class="concierge-profile">
+                <div class="profile-image">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Moamen Mohy">
+                </div>
+                <div class="profile-details">
+                    <h2>Moamen Mohy</h2>
+                    <p class="title" data-i18n="concierge.profileTitle">Senior Personal Concierge</p>
+                    <p class="description" data-i18n="concierge.profileDescription">With over 15 years of experience serving our most discerning clients, Moamen is dedicated to providing exceptional service and personalized attention to every detail.</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+2 01005708578</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>moamen.mohy@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Sheikh Zayed Showroom</p>
+                    </div>
+                </div>
+                <div class="availability">
+                    <h3 data-i18n="concierge.currentAvailability">Current Availability</h3>
+                    <span class="status" data-i18n="concierge.availableNow">Available Now</span>
+                </div>
+            </div>
+
+            <!-- Concierge Services Section -->
+            <div class="concierge-services">
+                <!-- Purchase Summary (Hidden by default) -->
+                <div id="purchase-summary" class="purchase-summary" style="display: none;">
+                    <h3><i class="fas fa-car"></i> <span data-i18n="concierge.vehicleConfiguration">Your Vehicle Configuration</span></h3>
+                    <div class="vehicle-info">
+                        <div class="info-item">
+                            <span data-i18n="concierge.vehicle">Vehicle:</span>
+                            <span id="vehicle-name">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span data-i18n="concierge.color">Color:</span>
+                            <span id="vehicle-color">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span data-i18n="concierge.finish">Finish:</span>
+                            <span id="vehicle-finish">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span data-i18n="concierge.wheels">Wheels:</span>
+                            <span id="vehicle-wheels">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span data-i18n="concierge.interior">Interior:</span>
+                            <span id="vehicle-interior">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span data-i18n="concierge.performance">Performance:</span>
+                            <span id="vehicle-performance">-</span>
+                        </div>
+                    </div>
+                    <div id="selected-features" data-i18n="concierge.additionalFeatures"></div>
+                    <div class="total-price">
+                        <div data-i18n="concierge.totalConfigurationPrice">Total Configuration Price</div>
+                        <div class="price" id="total-price">$0</div>
+                    </div>
+                </div>
+
+                <!-- Appointment Booking Panel -->
+                <div class="service-panel">
+                    <div class="service-panel-header">
+                        <h2 data-i18n="concierge.scheduleAppointment">Schedule an Appointment</h2>
+                    </div>
+                    <div class="service-panel-content">
+                        <form class="booking-form" id="appointmentForm">
+                            <div class="form-group">
+                                <label for="name" data-i18n="concierge.fullName">Full Name</label>
+                                <input type="text" id="name" name="name" data-i18n-placeholder="concierge.enterFullName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="concierge.emailAddress">Email Address</label>
+                                <input type="email" id="email" name="email" data-i18n-placeholder="concierge.enterEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="concierge.phoneNumber">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" data-i18n-placeholder="concierge.enterPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service" data-i18n="concierge.serviceType">Service Type</label>
+                                <select id="service" name="service" required>
+                                    <option value="" data-i18n="concierge.selectService">Select a service</option>
+                                    <option value="test-drive" data-i18n="concierge.testDrive">Vehicle Test Drive</option>
+                                    <option value="private-viewing" data-i18n="concierge.privateViewing">Private Showroom Viewing</option>
+                                    <option value="delivery" data-i18n="concierge.deliveryCoordination">Vehicle Delivery Coordination</option>
+                                    <option value="maintenance" data-i18n="concierge.maintenanceService">Maintenance Service</option>
+                                    <option value="appointment-employer">Appointment with Employer</option>
+                                    <option value="custom" data-i18n="concierge.customRequest">Custom Request</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date" data-i18n="concierge.preferredDate">Preferred Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time" data-i18n="concierge.preferredTime">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="" data-i18n="concierge.selectTime">Select a time</option>
+                                    <option value="morning" data-i18n="concierge.morning">9:00 AM - 12:00 PM</option>
+                                    <option value="afternoon" data-i18n="concierge.afternoon">1:00 PM - 4:00 PM</option>
+                                    <option value="evening" data-i18n="concierge.evening">5:00 PM - 8:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message" data-i18n="concierge.specialRequests">Special Requests</label>
+                                <textarea id="message" name="message" data-i18n-placeholder="concierge.specialRequestsPlaceholder" placeholder="Please share any special requests or questions"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn" data-i18n="concierge.scheduleAppointmentBtn">Schedule Appointment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Chat with Concierge Panel -->
+                <div class="service-panel">
+                    <div class="chatgpt-container">
+                        <div class="chatgpt-header">
+                            <div class="chatgpt-title">
+                                <i class="fas fa-robot"></i>
+                                <h2 data-i18n="concierge.prestigioConcierge">Prestigio Concierge</h2>
+                            </div>
+                            <div class="chatgpt-subtitle" data-i18n="concierge.howCanIHelp">How can I help you today?</div>
+                        </div>
+                        
+                        <div class="chatgpt-messages" id="chatMessages">
+                            <!-- Initial greeting message -->
+                            <div class="message concierge">
+                                <div class="message-content">
+                                    <p>Hello! I'm your Prestigio Concierge. I can help you with information about our vehicles, services, appointments, and more. What would you like to know?</p>
+                                    <div class="message-time">Just now</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Suggested questions -->
+                            <div class="suggested-questions">
+                                <div class="suggested-question" onclick="sendSuggestedMessage('What luxury vehicles do you have available?')">What luxury vehicles do you have available?</div>
+                                <div class="suggested-question" onclick="sendSuggestedMessage('Can I schedule a test drive?')">Can I schedule a test drive?</div>
+                                <div class="suggested-question" onclick="sendSuggestedMessage('What are your business hours?')">What are your business hours?</div>
+                                <div class="suggested-question" onclick="sendSuggestedMessage('Tell me about your financing options')">Tell me about your financing options</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chatgpt-input-container">
+                            <div class="chatgpt-input-box">
+                                <input type="text" id="messageInput" placeholder="Message Prestigio Concierge..." autocomplete="off">
+                                <button id="sendButton" class="chatgpt-send-button">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <div class="chatgpt-footer">
+                                <small>Prestigio Concierge may produce inaccurate information. Verify important details.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 data-i18n="footer.aboutTitle">About Prestigio Motors</h3>
+                <p data-i18n="footer.aboutText">Since 1985, Prestigio Motors has been the premier destination for the world's finest automobiles, providing exceptional service and unmatched expertise.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                <ul>
+                    <li><a href="newarrivals.html" data-i18n="footer.newArrivals">New Arrivals</a></li>
+                    <li><a href="luxurycars.html" data-i18n="footer.exoticInventory">Exotic Inventory</a></li>
+                    <li><a href="regularcars.html" data-i18n="footer.normalInventory">Normal Inventory</a></li>
+                    <li><a href="specialeditions.html" data-i18n="footer.specialEditions">Special Editions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.contactTitle">Contact Us</h3>
+                <address>
+                    Sixth District<br>
+                    Al Obour City<br><br>
+                    <span data-i18n="footer.phone">Phone</span>: +2 01098613073<br>
+                    <span data-i18n="footer.email">Email</span>: prestegioautomobiles@gmail.com
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.rights">© 2025 Prestigio Collection. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particle animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // AI-Powered Dynamic Response System
+        class LuxuryConciergeAI {
+            constructor() {
+                this.dealershipData = {
+                    name: "Prestigio Motors",
+                    brands: ["Bugatti", "Ferrari", "Lamborghini", "Mercedes-Benz", "BMW", "Porsche", "McLaren", "Rolls-Royce"],
+                    services: ["Test drives", "Private viewings", "Customization", "Financing", "Delivery", "Maintenance", "Trade-ins"],
+                    location: "Sheikh Zayed Showroom, Al Obour City",
+                    contact: "+2 01005708578",
+                    email: "prestegioautomobiles@gmail.com",
+                    hours: "Monday-Saturday 9AM-8PM, Sunday 10AM-6PM",
+                    priceRange: "$150,000 - $3,000,000+",
+                    financing: "2.9% APR starting rate"
+                };
+                
+                this.conversationHistory = [];
+            }
+
+            async generateResponse(userMessage) {
+                this.conversationHistory.push({role: 'user', message: userMessage});
+                
+                const intent = this.analyzeIntent(userMessage);
+                const entities = this.extractEntities(userMessage);
+                const response = this.constructResponse(intent, entities, userMessage);
+                
+                this.conversationHistory.push({role: 'assistant', message: response});
+                return response;
+            }
+
+            analyzeIntent(message) {
+                const lowerMsg = message.toLowerCase();
+                
+                const intentPatterns = {
+                    greeting: /\b(hello|hi|hey|good morning|good afternoon|good evening|greetings)\b/,
+                    vehicleInquiry: /\b(car|vehicle|auto|inventory|collection|available|models|show|see)\b/,
+                    brandSpecific: /\b(bugatti|ferrari|lamborghini|mercedes|bmw|porsche|mclaren|rolls)\b/,
+                    pricing: /\b(price|cost|expensive|cheap|money|budget|afford|value|investment)\b/,
+                    testDrive: /\b(test|drive|try|experience|demo|feel)\b/,
+                    financing: /\b(finance|loan|payment|lease|credit|apr|monthly)\b/,
+                    appointment: /\b(appointment|meeting|visit|schedule|book|arrange)\b/,
+                    customization: /\b(custom|personalize|modify|configure|bespoke|unique)\b/,
+                    delivery: /\b(delivery|shipping|transport|deliver|ship)\b/,
+                    maintenance: /\b(maintenance|repair|service|fix|warranty|care)\b/,
+                    trade: /\b(trade|sell|exchange|current|existing|old)\b/,
+                    hours: /\b(hours|open|closed|time|when|schedule)\b/,
+                    contact: /\b(contact|phone|call|email|reach|address)\b/,
+                    thanks: /\b(thank|thanks|appreciate|grateful)\b/,
+                    help: /\b(help|assist|support|guide|advice)\b/
+                };
+
+                for (const [intent, pattern] of Object.entries(intentPatterns)) {
+                    if (pattern.test(lowerMsg)) {
+                        return intent;
+                    }
+                }
+                
+                return 'general';
+            }
+
+            extractEntities(message) {
+                const lowerMsg = message.toLowerCase();
+                const entities = {
+                    brands: [],
+                    services: [],
+                    priceTerms: [],
+                    timeTerms: []
+                };
+
+                // Extract mentioned brands
+                this.dealershipData.brands.forEach(brand => {
+                    if (lowerMsg.includes(brand.toLowerCase())) {
+                        entities.brands.push(brand);
+                    }
+                });
+
+                // Extract service mentions
+                const serviceKeywords = {
+                    'test drive': ['test', 'drive', 'try'],
+                    'financing': ['finance', 'loan', 'payment'],
+                    'customization': ['custom', 'personalize', 'modify'],
+                    'delivery': ['delivery', 'shipping', 'transport'],
+                    'maintenance': ['maintenance', 'service', 'repair']
+                };
+
+                for (const [service, keywords] of Object.entries(serviceKeywords)) {
+                    if (keywords.some(keyword => lowerMsg.includes(keyword))) {
+                        entities.services.push(service);
+                    }
+                }
+
+                return entities;
+            }
+
+            constructResponse(intent, entities, originalMessage) {
+                const responseComponents = {
+                    greeting: this.generateGreeting(),
+                    vehicleInquiry: this.generateVehicleResponse(entities),
+                    brandSpecific: this.generateBrandResponse(entities.brands[0]),
+                    pricing: this.generatePricingResponse(),
+                    testDrive: this.generateTestDriveResponse(),
+                    financing: this.generateFinancingResponse(),
+                    appointment: this.generateAppointmentResponse(),
+                    customization: this.generateCustomizationResponse(),
+                    delivery: this.generateDeliveryResponse(),
+                    maintenance: this.generateMaintenanceResponse(),
+                    trade: this.generateTradeResponse(),
+                    hours: this.generateHoursResponse(),
+                    contact: this.generateContactResponse(),
+                    thanks: this.generateThanksResponse(),
+                    help: this.generateHelpResponse(),
+                    general: this.generateGeneralResponse()
+                };
+
+                let response = responseComponents[intent] || responseComponents.general;
+                
+                // Add contextual information based on entities
+                if (entities.brands.length > 0 && intent !== 'brandSpecific') {
+                    response += ` ${this.addBrandContext(entities.brands[0])}`;
+                }
+
+                // Add engaging closing
+                response += this.generateClosing(intent);
+
+                return response;
+            }
+
+            generateGreeting() {
+                const greetings = [
+                    "Welcome to Prestigio Motors! I'm your AI luxury automotive concierge, delighted to assist you with our exceptional vehicle collection.",
+                    "Hello! Thank you for your interest in Prestigio Motors. I'm here to provide personalized guidance through our world-class automotive offerings.",
+                    "Greetings! It's my pleasure to help you explore our prestigious collection of luxury vehicles and premium services."
+                ];
+                return greetings[Math.floor(Math.random() * greetings.length)];
+            }
+
+            generateVehicleResponse(entities) {
+                const responses = [
+                    "Our curated collection represents the pinnacle of automotive excellence, featuring carefully selected luxury vehicles from the world's most prestigious manufacturers.",
+                    "We maintain an exceptional inventory of premium automobiles, each embodying uncompromising quality, performance, and craftsmanship.",
+                    "Our showroom showcases an extraordinary selection of luxury vehicles, from high-performance supercars to ultra-luxury grand tourers."
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+
+            generateBrandResponse(brand) {
+                const brandResponses = {
+                    'Bugatti': "Bugatti represents the absolute pinnacle of automotive engineering and French luxury craftsmanship. Our Bugatti collection features the legendary Chiron series, delivering over 1,400 horsepower while maintaining exquisite refinement and comfort.",
+                    'Ferrari': "Ferrari embodies Italian passion, Formula 1 heritage, and cutting-edge technology. Our selection includes iconic models like the F8 Tributo and SF90 Stradale, each delivering an emotional connection that's uniquely Ferrari.",
+                    'Lamborghini': "Lamborghini offers dramatic design language and exhilarating performance that commands attention. Our inventory features the Huracán and Aventador series, representing the perfect fusion of Italian artistry and engineering excellence.",
+                    'Mercedes-Benz': "Mercedes-Benz represents German engineering precision combined with sophisticated luxury. Our collection includes high-performance AMG variants and ultra-luxurious Maybach models.",
+                    'BMW': "BMW delivers the ultimate driving machine experience through perfect balance of luxury and performance. Our selection features M-series performance cars and X-series luxury SUVs.",
+                    'Porsche': "Porsche combines legendary sports car heritage with everyday usability. Our collection includes the iconic 911 series, versatile Cayenne SUVs, and elegant Panamera sedans."
+                };
+                return brandResponses[brand] || "This exceptional brand represents automotive excellence and luxury craftsmanship.";
+            }
+
+            generatePricingResponse() {
+                return "Our luxury vehicles represent significant investments in automotive artistry, with values ranging from $150,000 to over $3 million. Each price reflects the vehicle's exclusivity, performance capabilities, and meticulous craftsmanship.";
+            }
+
+            generateTestDriveResponse() {
+                return "I can arrange exclusive test drive experiences tailored to your preferences. We offer both performance track sessions and comfortable city drives, ensuring you experience every aspect of your potential vehicle.";
+            }
+
+            generateFinancingResponse() {
+                return `We provide sophisticated financing solutions designed for luxury vehicle acquisitions, with competitive rates starting from ${this.dealershipData.financing} for qualified clients. Our programs include traditional financing and flexible leasing options.`;
+            }
+
+            generateAppointmentResponse() {
+                return "I would be delighted to schedule a private consultation at your convenience. Our personalized appointments include detailed vehicle presentations and one-on-one discussions about your specific requirements.";
+            }
+
+            generateCustomizationResponse() {
+                return "Our bespoke customization services allow you to create a truly unique vehicle. We offer custom paint programs, premium interior materials, performance enhancements, and distinctive design elements.";
+            }
+
+            generateDeliveryResponse() {
+                return "We provide white-glove delivery services worldwide, ensuring your vehicle arrives in pristine condition. Local deliveries include personal transport to your preferred location with full preparation.";
+            }
+
+            generateMaintenanceResponse() {
+                return "Our certified technicians provide comprehensive maintenance and care programs designed to preserve your vehicle's performance and value. We offer convenient pickup and delivery service with premium loaner vehicles.";
+            }
+
+            generateTradeResponse() {
+                return "We accept trade-ins and provide professional appraisal services. Our experienced team evaluates vehicles based on condition, rarity, and market demand to provide competitive valuations.";
+            }
+
+            generateHoursResponse() {
+                return `Our showroom operates ${this.dealershipData.hours}. We also accommodate private appointments outside regular hours for our valued clients.`;
+            }
+
+            generateContactResponse() {
+                return `You can reach our concierge team at ${this.dealershipData.contact} or visit us at our ${this.dealershipData.location}. We're also available via email at ${this.dealershipData.email}.`;
+            }
+
+            generateThanksResponse() {
+                return "You're very welcome! I'm here whenever you need assistance with our luxury vehicles or services. It's my pleasure to help you with your automotive interests.";
+            }
+
+            generateHelpResponse() {
+                return "I'm here to provide comprehensive assistance with our luxury vehicle collection, services, and ownership experiences. I can help with vehicle information, scheduling, financing, or any other questions.";
+            }
+
+            generateGeneralResponse() {
+                const responses = [
+                    "I appreciate your inquiry about our luxury automotive services. As your dedicated AI concierge, I'm here to provide detailed information about our exceptional offerings.",
+                    "Thank you for reaching out to Prestigio Motors. I'm committed to helping you discover the perfect luxury vehicle that matches your sophisticated preferences.",
+                    "I'm delighted to assist you with our prestigious automotive collection and premium services. Every interaction is an opportunity to exceed your expectations."
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+
+            addBrandContext(brand) {
+                return `Our ${brand} selection represents exceptional automotive heritage and engineering excellence.`;
+            }
+
+            generateClosing(intent) {
+                const closings = [
+                    " How may I further assist you with your luxury automotive interests?",
+                    " What specific aspect of our collection would you like to explore?",
+                    " Would you like to schedule a personalized viewing experience?",
+                    " What additional information can I provide about our services?"
+                ];
+                return closings[Math.floor(Math.random() * closings.length)];
+            }
+        }
+
+        // AI-Powered Chat System
+        function initializeChat() {
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const chatMessages = document.getElementById('chatMessages');
+            const aiConcierge = new LuxuryConciergeAI();
+
+            async function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user');
+                    messageInput.value = '';
+                    sendButton.disabled = true;
+                    
+                    showTypingIndicator();
+                    
+                    try {
+                        const response = await aiConcierge.generateResponse(message);
+                        const thinkingTime = 1200 + Math.random() * 1800;
+                        
+                        setTimeout(() => {
+                            hideTypingIndicator();
+                            addMessage(response, 'concierge');
+                            sendButton.disabled = false;
+                        }, thinkingTime);
+                    } catch (error) {
+                        console.error('AI Error:', error);
+                        setTimeout(() => {
+                            hideTypingIndicator();
+                            addMessage('I apologize for the brief delay. I am here to assist you with any questions about our luxury vehicle collection or services. How may I help you today?', 'concierge');
+                            sendButton.disabled = false;
+                        }, 1000);
+                    }
+                }
+            }
+
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
+                messageDiv.innerHTML = `
+                    <div class="message-content">
+                        <p>${text}</p>
+                        <div class="message-time">${timeString}</div>
+                    </div>
+                `;
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typing-indicator';
+                typingDiv.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function hideTypingIndicator() {
+                const typingIndicator = document.getElementById('typing-indicator');
+                if (typingIndicator) typingIndicator.remove();
+            }
+
+            // Advanced AI Response Generator
+            async function generateAIResponse(userMessage) {
+                const dealershipData = {
+                    name: "Prestigio Motors",
+                    brands: ["Bugatti", "Ferrari", "Lamborghini", "Mercedes-Benz", "BMW", "Porsche", "McLaren", "Rolls-Royce"],
+                    services: ["Test drives", "Private viewings", "Customization", "Financing", "Delivery", "Maintenance", "Trade-ins"],
+                    location: "Sheikh Zayed Showroom, Al Obour City",
+                    contact: "+2 01005708578",
+                    email: "prestegioautomobiles@gmail.com",
+                    hours: "Mon-Sat 9AM-8PM, Sun 10AM-6PM",
+                    priceRange: "$150,000 - $3,000,000+",
+                    financing: "2.9% APR starting rate"
+                };
+
+                return await processUserIntent(userMessage, dealershipData);
+            }
+
+            async function processUserIntent(message, data) {
+                const lowerMsg = message.toLowerCase();
+                const words = lowerMsg.split(' ');
+                
+                // Intent Analysis Engine
+                const intents = {
+                    greeting: ['hello', 'hi', 'hey', 'good', 'morning', 'afternoon', 'evening'],
+                    vehicles: ['car', 'vehicle', 'auto', 'inventory', 'collection', 'available', 'models'],
+                    brands: ['bugatti', 'ferrari', 'lamborghini', 'mercedes', 'bmw', 'porsche', 'mclaren', 'rolls'],
+                    pricing: ['price', 'cost', 'expensive', 'cheap', 'money', 'budget', 'afford', 'value'],
+                    services: ['service', 'help', 'assist', 'support', 'offer', 'provide'],
+                    testDrive: ['test', 'drive', 'try', 'experience', 'demo'],
+                    financing: ['finance', 'loan', 'payment', 'lease', 'credit', 'apr'],
+                    appointment: ['appointment', 'meeting', 'visit', 'schedule', 'book'],
+                    customization: ['custom', 'personalize', 'modify', 'configure', 'bespoke'],
+                    delivery: ['delivery', 'shipping', 'transport', 'deliver'],
+                    maintenance: ['maintenance', 'repair', 'service', 'fix', 'warranty'],
+                    trade: ['trade', 'sell', 'exchange', 'current'],
+                    hours: ['hours', 'open', 'closed', 'time', 'when'],
+                    contact: ['contact', 'phone', 'call', 'email', 'reach']
+                };
+
+                // Calculate intent scores
+                const intentScores = {};
+                for (const [intent, keywords] of Object.entries(intents)) {
+                    intentScores[intent] = keywords.filter(keyword => lowerMsg.includes(keyword)).length;
+                }
+
+                // Find primary intent
+                const primaryIntent = Object.keys(intentScores).reduce((a, b) => 
+                    intentScores[a] > intentScores[b] ? a : b
+                );
+
+                // Generate contextual response
+                return await generateContextualResponse(primaryIntent, message, data, intentScores);
+            }
+
+            async function generateContextualResponse(intent, originalMessage, data, scores) {
+                const responseTemplates = {
+                    greeting: [
+                        "Welcome to Prestigio Motors! I'm delighted to assist you with our world-class luxury vehicle collection.",
+                        "Hello! Thank you for your interest in Prestigio Motors. I'm here to provide personalized assistance with our exceptional automotive offerings.",
+                        "Greetings! It's my pleasure to help you explore our prestigious collection of luxury vehicles."
+                    ],
+                    vehicles: [
+                        "Our curated collection features the finest luxury vehicles from renowned manufacturers worldwide.",
+                        "We maintain an exceptional inventory of premium automobiles, each representing the pinnacle of automotive excellence.",
+                        "Our showroom showcases carefully selected luxury vehicles that embody performance, craftsmanship, and exclusivity."
+                    ],
+                    pricing: [
+                        "Our luxury vehicles represent significant investments in automotive artistry and engineering excellence.",
+                        "Investment values reflect the exclusivity, performance capabilities, and meticulous craftsmanship of each vehicle.",
+                        "Pricing corresponds to the rarity, heritage, and exceptional quality that defines our collection."
+                    ]
+                };
+
+                // Generate dynamic content based on intent
+                let response = '';
+                const templates = responseTemplates[intent] || responseTemplates.greeting;
+                const baseResponse = templates[Math.floor(Math.random() * templates.length)];
+
+                // Add specific information based on detected topics
+                let specificInfo = '';
+                
+                if (scores.brands > 0) {
+                    const mentionedBrands = data.brands.filter(brand => 
+                        originalMessage.toLowerCase().includes(brand.toLowerCase())
+                    );
+                    
+                    if (mentionedBrands.length > 0) {
+                        const brand = mentionedBrands[0];
+                        specificInfo += ` ${brand} represents exceptional automotive heritage and engineering excellence. `;
+                        
+                        // Brand-specific details
+                        const brandDetails = {
+                            'Bugatti': 'These French masterpieces deliver unprecedented power and luxury, with models like the Chiron showcasing over 1,400 horsepower.',
+                            'Ferrari': 'Italian passion meets Formula 1 technology in vehicles like the F8 Tributo and SF90 Stradale.',
+                            'Lamborghini': 'Dramatic design and exhilarating performance define models like the Huracán and Aventador.',
+                            'Mercedes-Benz': 'German precision engineering combines with luxury in our AMG performance and Maybach ultra-luxury selections.',
+                            'BMW': 'The ultimate driving machine philosophy shines through our M-series performance cars and X-series luxury SUVs.',
+                            'Porsche': 'Legendary sports car heritage meets everyday usability in our 911, Cayenne, and Panamera collections.'
+                        };
+                        
+                        specificInfo += brandDetails[brand] || 'Each model in our collection represents the finest automotive craftsmanship.';
+                    }
+                }
+
+                if (scores.testDrive > 0) {
+                    specificInfo += ' I can arrange exclusive test drive experiences tailored to your preferences, including both performance track sessions and comfortable city drives.';
+                }
+
+                if (scores.financing > 0) {
+                    specificInfo += ` We offer sophisticated financing solutions starting from ${data.financing} for qualified clients, including traditional loans and flexible leasing programs.`;
+                }
+
+                if (scores.appointment > 0) {
+                    specificInfo += ' I would be delighted to schedule a private consultation at your convenience, ensuring personalized attention to your automotive interests.';
+                }
+
+                if (scores.customization > 0) {
+                    specificInfo += ' Our bespoke customization services allow you to create a truly unique vehicle with custom paint, premium materials, and performance enhancements.';
+                }
+
+                if (scores.hours > 0 || scores.contact > 0) {
+                    specificInfo += ` Our showroom is open ${data.hours}. You can reach us at ${data.contact} or visit us at our ${data.location}.`;
+                }
+
+                // Construct final response
+                response = baseResponse + specificInfo;
+                
+                // Add engaging closing
+                const closings = [
+                    ' How may I further assist you with your luxury automotive interests?',
+                    ' What specific aspect of our collection would you like to explore?',
+                    ' Would you like to schedule a personalized viewing experience?',
+                    ' What additional information can I provide about our services?'
+                ];
+                
+                response += closings[Math.floor(Math.random() * closings.length)];
+
+                return response;
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !sendButton.disabled) {
+                    sendMessage();
+                }
+            });
+        }
+
+        function sendSuggestedMessage(message) {
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            messageInput.value = message;
+            if (!sendButton.disabled) {
+                sendButton.click();
+            }
+        }
+
+        // Load purchase data functionality
+        function loadPurchaseData() {
+            try {
+                const purchaseData = localStorage.getItem('purchaseData');
+                if (purchaseData) {
+                    const data = JSON.parse(purchaseData);
+                    document.getElementById('purchase-summary').style.display = 'block';
+                    
+                    document.getElementById('vehicle-name').textContent = data.carName || '-';
+                    document.getElementById('vehicle-color').textContent = (data.options?.color || data.selectedColor || '-');
+                    document.getElementById('vehicle-finish').textContent = (data.options?.finish || data.selectedFinish || '-');
+                    document.getElementById('vehicle-wheels').textContent = (data.options?.wheels || data.selectedWheels || '-');
+                    document.getElementById('vehicle-interior').textContent = (data.options?.interior || data.selectedInterior || '-');
+                    document.getElementById('vehicle-performance').textContent = (data.options?.performance || data.selectedPerformance || '-');
+                    document.getElementById('total-price').textContent = (data.totalPrice ? `$${data.totalPrice.toLocaleString()}` : '$0');
+
+                    const featuresContainer = document.getElementById('selected-features');
+                    featuresContainer.innerHTML = '';
+
+                    if (data.selectedFeatures && data.selectedFeatures.length > 0) {
+                        const featuresTitle = document.createElement('h5');
+                        featuresTitle.textContent = 'Additional Features:';
+                        featuresTitle.style.color = '#d4af37';
+                        featuresTitle.style.marginBottom = '10px';
+                        featuresContainer.appendChild(featuresTitle);
+
+                        data.selectedFeatures.forEach(feature => {
+                            const featureElement = document.createElement('div');
+                            featureElement.className = 'feature-item';
+                            featureElement.innerHTML = `<i class="fas fa-check"></i><span>${feature.name}</span>`;
+                            featuresContainer.appendChild(featureElement);
+                        });
+                    }
+
+                    if (data.isPlaceholder) {
+                        const notice = document.createElement('div');
+                        notice.className = 'placeholder-notice';
+                        notice.innerHTML = `<i class="fas fa-info-circle"></i><span>Note: This vehicle uses a preview model. The actual ${data.carName} will be available for viewing at our showroom.</span>`;
+                        document.getElementById('purchase-summary').appendChild(notice);
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading purchase data:', error);
+            }
+        }
+
+        // Save appointment to database
+        async function saveAppointmentToDatabase(appointmentData) {
+            try {
+                const orderData = {
+                    type: 'appointment',
+                    status: 'pending',
+                    customer: {
+                        name: appointmentData.name,
+                        email: appointmentData.email,
+                        phone: appointmentData.phone
+                    },
+                    appointment: {
+                        service: appointmentData.service,
+                        date: appointmentData.date,
+                        time: appointmentData.time,
+                        message: appointmentData.message || ''
+                    },
+                    vehicleDetails: appointmentData.vehicleDetails || null,
+                    createdAt: new Date().toISOString(),
+                    totalPrice: appointmentData.vehicleDetails?.totalPrice || 0
+                };
+
+                const response = await fetch('/api/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('✅ Appointment saved successfully:', result);
+                
+                // Send confirmation email
+                await sendAppointmentConfirmationEmail(appointmentData, result.orderId);
+                
+                return result;
+            } catch (error) {
+                console.error('❌ Error saving appointment:', error);
+                throw error;
+            }
+        }
+
+        // Send appointment confirmation email
+        async function sendAppointmentConfirmationEmail(appointmentData, orderId) {
+            try {
+                const emailData = {
+                    to: appointmentData.email,
+                    subject: 'Appointment Confirmation - Prestigio Motors',
+                    type: 'appointment',
+                    data: {
+                        customerName: appointmentData.name,
+                        service: appointmentData.service,
+                        date: appointmentData.date,
+                        time: appointmentData.time,
+                        orderId: orderId,
+                        vehicleDetails: appointmentData.vehicleDetails
+                    }
+                };
+
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(emailData)
+                });
+
+                if (response.ok) {
+                    console.log('✅ Confirmation email sent successfully');
+                } else {
+                    console.warn('⚠️ Failed to send confirmation email');
+                }
+            } catch (error) {
+                console.warn('⚠️ Error sending confirmation email:', error);
+            }
+        }
+
+        // Form submission handler
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const appointmentData = Object.fromEntries(formData.entries());
+
+            const purchaseData = localStorage.getItem('purchaseData');
+            if (purchaseData) {
+                appointmentData.vehicleDetails = JSON.parse(purchaseData);
+            }
+
+            const requiredFields = ['name', 'email', 'phone', 'service', 'date', 'time'];
+            const missingFields = requiredFields.filter(field => !appointmentData[field]);
+            
+            if (missingFields.length > 0) {
+                showNotification(`Please fill in all required fields: ${missingFields.join(', ')}`, 'error');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(appointmentData.email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+
+            const selectedDate = new Date(appointmentData.date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                showNotification('Please select a future date', 'error');
+                return;
+            }
+
+            // Save appointment to database
+            saveAppointmentToDatabase(appointmentData)
+                .then(() => {
+                    showAppointmentSuccessNotification('Appointment request submitted successfully! We will contact you within 24 hours to confirm your appointment.');
+                    event.target.reset();
+
+                    if (purchaseData) {
+                        document.getElementById('purchase-summary').style.display = 'none';
+                        localStorage.removeItem('purchaseData');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error saving appointment:', error);
+                    showNotification('There was an error submitting your appointment. Please try again or contact us directly.', 'error');
+                });
+        }
+
+        function showAppointmentSuccessNotification(message) {
+            const notification = document.createElement('div');
+            
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <div class="notification-content">
+                    <span>${message}</span>
+                    <div class="notification-buttons">
+                        <button class="logout-btn" onclick="logoutToHome()">
+                            <i class="fas fa-home"></i> Return to Home
+                        </button>
+                        <button class="notification-close" onclick="this.parentElement.parentElement.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px; background: #4CAF50;
+                color: white; padding: 20px; border-radius: 12px; display: flex;
+                align-items: flex-start; gap: 15px; z-index: 10000; transform: translateX(100%);
+                transition: transform 0.3s ease; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+                max-width: 450px; min-width: 350px; font-family: Arial, sans-serif;
+            `;
+
+            // Style the notification content
+            const content = notification.querySelector('.notification-content');
+            content.style.cssText = 'flex: 1; display: flex; flex-direction: column; gap: 15px;';
+
+            // Style the buttons container
+            const buttonsContainer = notification.querySelector('.notification-buttons');
+            buttonsContainer.style.cssText = 'display: flex; gap: 10px; align-items: center;';
+
+            // Style the logout button
+            const logoutBtn = notification.querySelector('.logout-btn');
+            logoutBtn.style.cssText = `
+                background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+                color: white; padding: 8px 16px; border-radius: 6px; cursor: pointer;
+                font-size: 14px; display: flex; align-items: center; gap: 8px;
+                transition: all 0.3s ease; font-weight: 500;
+            `;
+
+            // Style the close button
+            const closeButton = notification.querySelector('.notification-close');
+            closeButton.style.cssText = `
+                background: none; border: none; color: white; cursor: pointer;
+                padding: 4px; font-size: 16px; opacity: 0.8; transition: opacity 0.3s;
+            `;
+
+            // Add hover effects
+            logoutBtn.addEventListener('mouseenter', () => {
+                logoutBtn.style.background = 'rgba(255,255,255,0.3)';
+                logoutBtn.style.transform = 'translateY(-1px)';
+            });
+            logoutBtn.addEventListener('mouseleave', () => {
+                logoutBtn.style.background = 'rgba(255,255,255,0.2)';
+                logoutBtn.style.transform = 'translateY(0)';
+            });
+
+            closeButton.addEventListener('mouseenter', () => {
+                closeButton.style.opacity = '1';
+            });
+            closeButton.addEventListener('mouseleave', () => {
+                closeButton.style.opacity = '0.8';
+            });
+
+            document.body.appendChild(notification);
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+            
+            // Auto-remove after 10 seconds (longer for appointment confirmations)
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.parentElement && notification.remove(), 300);
+                }
+            }, 10000);
+        }
+
+        function logoutToHome() {
+            // Clear any stored data
+            localStorage.removeItem('purchaseData');
+            localStorage.removeItem('orderData');
+            localStorage.removeItem('userSession');
+            
+            // Redirect to home page
+            window.location.href = '../index.html';
+        }
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            const iconMap = { 'success': 'check-circle', 'error': 'exclamation-circle', 'info': 'info-circle' };
+            const colorMap = { 'success': '#4CAF50', 'error': '#f44336', 'info': '#2196F3' };
+            
+            notification.innerHTML = `
+                <i class="fas fa-${iconMap[type]}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            notification.style.cssText = `
+                position: fixed; top: 20px; right: 20px; background: ${colorMap[type]};
+                color: white; padding: 15px 20px; border-radius: 8px; display: flex;
+                align-items: center; gap: 10px; z-index: 10000; transform: translateX(100%);
+                transition: transform 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                max-width: 400px; min-width: 300px;
+            `;
+
+            const closeButton = notification.querySelector('.notification-close');
+            closeButton.style.cssText = 'background: none; border: none; color: white; cursor: pointer; padding: 0; margin-left: auto; font-size: 14px;';
+
+            document.body.appendChild(notification);
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.parentElement && notification.remove(), 300);
+                }
+            }, 5000);
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            initializeChat();
+            loadPurchaseData();
+            
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', handleFormSubmission);
+            }
+            
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+
+            // Add welcome message
+            setTimeout(() => {
+                const chatMessages = document.getElementById('chatMessages');
+                if (chatMessages) {
+                    const welcomeMessage = document.createElement('div');
+                    welcomeMessage.className = 'message concierge';
+                    welcomeMessage.innerHTML = `
+                        <div class="message-content">
+                            <p>Welcome to Prestigio Motors! I'm your advanced AI luxury automotive concierge, powered by intelligent conversation technology. I can provide personalized assistance with our exceptional vehicle collection, services, financing, and appointments. Every response is dynamically generated based on your specific interests. How may I assist you today?</p>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    `;
+                    chatMessages.appendChild(welcomeMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }, 2000);
+        });
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script src="../js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.I18n) {
+                window.i18n = new I18n();
+            }
+        });
+    </script>
+</body>
+</html>

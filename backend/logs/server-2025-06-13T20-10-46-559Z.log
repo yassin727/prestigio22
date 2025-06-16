@@ -1,0 +1,13 @@
+[2025-06-13T20:10:46.561Z] Initializing OpenAI with API key: sk-pr...VagA
+[2025-06-13T20:10:46.564Z] Testing OpenAI connection...
+[2025-06-13T20:10:48.001Z] Failed to connect to OpenAI: Connection error.
+[2025-06-13T20:10:48.019Z] ❌ MongoDB Connection Error: querySrv ECONNREFUSED _mongodb._tcp.prestigio.p3qyd4n.mongodb.net
+[2025-06-13T20:10:48.021Z] ⚠️ Database functionality will be disabled.
+[2025-06-13T20:10:48.045Z] ✅ Server is running on port 5000
+[2025-06-13T20:10:48.045Z] 🌍 Environment: development
+[2025-06-13T20:10:48.046Z] 🚀 Available endpoints:
+[2025-06-13T20:10:48.046Z]    POST http://localhost:5000/api/chat
+[2025-06-13T20:10:48.047Z]    GET  http://localhost:5000/
+[2025-06-13T20:10:48.047Z]    GET  http://localhost:5000/health
+[2025-06-13T20:10:48.056Z] ❌ Email Service Error: getaddrinfo ENOTFOUND smtp.gmail.com
+[2025-06-13T20:10:48.056Z] ⚠️ Email functionality will be disabled.

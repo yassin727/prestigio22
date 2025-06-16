@@ -1,0 +1,44 @@
+[2025-06-12T02:49:42.638Z] Initializing OpenAI with API key: sk-pr...VagA
+[2025-06-12T02:49:42.641Z] Testing OpenAI connection...
+[2025-06-12T02:49:43.430Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-12T02:49:43.431Z] ⚠️ Email Service: Credentials not configured. Email functionality will be disabled.
+[2025-06-12T02:49:43.438Z] ✅ Server is running on port 5000
+[2025-06-12T02:49:43.438Z] 🌍 Environment: development
+[2025-06-12T02:49:43.438Z] 🚀 Available endpoints:
+[2025-06-12T02:49:43.438Z]    POST http://localhost:5000/api/chat
+[2025-06-12T02:49:43.439Z]    GET  http://localhost:5000/
+[2025-06-12T02:49:43.439Z]    GET  http://localhost:5000/health
+[2025-06-12T02:49:43.768Z] Successfully connected to OpenAI. Available models: [
+  "gpt-3.5-turbo",
+  "gpt-3.5-turbo-16k",
+  "gpt-3.5-turbo-instruct",
+  "gpt-3.5-turbo-instruct-0914",
+  "gpt-3.5-turbo-1106",
+  "gpt-3.5-turbo-0125",
+  "gpt-4o",
+  "gpt-4o-2024-05-13",
+  "gpt-4o-mini-2024-07-18",
+  "gpt-4o-mini",
+  "gpt-4o-2024-08-06",
+  "gpt-4o-audio-preview-2024-10-01",
+  "gpt-4o-audio-preview",
+  "gpt-4o-mini-audio-preview-2024-12-17",
+  "gpt-4o-mini-audio-preview",
+  "gpt-4o-2024-11-20",
+  "gpt-4.5-preview",
+  "gpt-4.5-preview-2025-02-27",
+  "gpt-4o-search-preview-2025-03-11",
+  "gpt-4o-search-preview",
+  "gpt-4o-mini-search-preview-2025-03-11",
+  "gpt-4o-mini-search-preview",
+  "gpt-4o-transcribe",
+  "gpt-4o-mini-transcribe",
+  "gpt-4o-mini-tts",
+  "gpt-4.1-2025-04-14",
+  "gpt-4.1",
+  "gpt-4.1-mini-2025-04-14",
+  "gpt-4.1-mini",
+  "gpt-4.1-nano-2025-04-14",
+  "gpt-4.1-nano",
+  "gpt-image-1"
+]

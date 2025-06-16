@@ -1,0 +1,16 @@
+[2025-06-13T22:42:54.974Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-13T22:42:54.977Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-13T22:42:54.977Z] ✅ Google Gemini initialized
+[2025-06-13T22:42:54.980Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T22:42:54.981Z] 🧪 Testing Google Gemini API connection...
+[2025-06-13T22:42:56.066Z] ✅ Google Gemini connection successful
+[2025-06-13T22:42:57.352Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-02.p3qyd4n.mongodb.net
+[2025-06-13T22:42:57.373Z] ✅ Server is running on port 5000
+[2025-06-13T22:42:57.373Z] 🌍 Environment: development
+[2025-06-13T22:42:57.374Z] 🚀 Available endpoints:
+[2025-06-13T22:42:57.374Z]    POST http://localhost:5000/api/chat
+[2025-06-13T22:42:57.374Z]    GET  http://localhost:5000/
+[2025-06-13T22:42:57.374Z]    GET  http://localhost:5000/health
+[2025-06-13T22:42:58.249Z] ✅ Email Service Connected
+[2025-06-13T22:45:12.889Z] 
+🚨 Received SIGINT. Shutting down gracefully...

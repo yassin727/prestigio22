@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Order - CarRental</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/order-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="car-customize.html" class="back-btn">← Back to Customization</a>
+        
+        <div class="order-container">
+            <div class="order-header">
+                <h1>Complete Your Purchase</h1>
+                <p>Review your order and enter your details to complete the purchase</p>
+            </div>
+
+            <div class="order-content">
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    
+                    <div class="car-details">
+                        <img id="orderCarImage" src="" alt="Car Image" class="order-car-image">
+                        <div class="car-info">
+                            <h3 id="orderCarName">Loading...</h3>
+                            <p id="orderCarBrand">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div id="rentalDetails" class="rental-details" style="display: none;">
+                        <h3>Rental Details</h3>
+                        <div class="rental-info">
+                            <div class="rental-item">
+                                <span>Duration:</span>
+                                <span id="rentalDuration">-</span>
+                            </div>
+                            <div class="rental-item">
+                                <span>Pickup Date:</span>
+                                <span id="rentalPickup">-</span>
+                            </div>
+                            <div class="rental-item">
+                                <span>Return Date:</span>
+                                <span id="rentalReturn">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-breakdown">
+                        <div class="price-item">
+                            <span>Base Price:</span>
+                            <span id="orderBasePrice">$0</span>
+                        </div>
+                        <div id="orderCustomizations"></div>
+                        <div class="total-line">
+                            <span>Total:</span>
+                            <span id="orderTotal">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-form">
+                    <h2>Your Information</h2>
+                    
+                    <form id="purchaseForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">ZIP Code *</label>
+                                <input type="text" id="zipCode" name="zipCode" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method *</label>
+                            <select id="paymentMethod" name="paymentMethod" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="credit-card">Credit Card</option>
+                                <option value="debit-card">Debit Card</option>
+                                <option value="financing">Financing</option>
+                                <option value="cash">Cash</option>
+                            </select>
+                        </div>
+
+                        <div class="payment-details" id="paymentDetails" style="display: none;">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date *</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardholderName">Cardholder Name *</label>
+                                <input type="text" id="cardholderName" name="cardholderName">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special requests or notes..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                I agree to the <a href="#" target="_blank">Terms and Conditions</a> *
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="emailUpdates" name="emailUpdates">
+                                I would like to receive email updates about my order and promotions
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Complete Purchase</span>
+                            <span class="btn-loader" style="display: none;">Processing...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. Your order has been successfully placed.</p>
+            <div class="order-details">
+                <p><strong>Order ID:</strong> <span id="confirmationOrderId"></span></p>
+                <p><strong>Confirmation Email:</strong> Sent to <span id="confirmationEmail"></span></p>
+            </div>
+            <div class="modal-actions">
+                <button onclick="goToHomepage()" class="btn-primary">Continue Shopping</button>
+                <button onclick="viewOrderDetails()" class="btn-secondary">View Order Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/order-page.js"></script>
+</body>
+</html> 

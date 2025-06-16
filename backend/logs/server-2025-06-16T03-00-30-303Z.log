@@ -1,0 +1,103 @@
+[2025-06-16T03:00:30.365Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-16T03:00:30.371Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-16T03:00:30.372Z] ✅ Google Gemini initialized
+[2025-06-16T03:00:30.383Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-16T03:00:30.389Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\web project\models
+[2025-06-16T03:00:30.396Z] 🧪 Testing Google Gemini API connection...
+[2025-06-16T03:00:32.102Z] ✅ Google Gemini connection successful
+[2025-06-16T03:00:33.134Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-00.p3qyd4n.mongodb.net
+[2025-06-16T03:00:33.182Z] ✅ Server is running on port 5000
+[2025-06-16T03:00:33.183Z] 🌍 Environment: development
+[2025-06-16T03:00:33.184Z] 🚀 Available endpoints:
+[2025-06-16T03:00:33.185Z]    POST http://localhost:5000/api/chat
+[2025-06-16T03:00:33.185Z]    GET  http://localhost:5000/
+[2025-06-16T03:00:33.185Z]    GET  http://localhost:5000/health
+[2025-06-16T03:00:33.879Z] ✅ Email Service Connected
+[2025-06-16T03:00:41.908Z] 
+=== Incoming GET / ===
+[2025-06-16T03:00:41.908Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-16T03:00:41.911Z] Serving frontend index.html
+[2025-06-16T03:00:41.947Z] === Completed 200 in 39ms ===
+
+[2025-06-16T03:00:42.145Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-16T03:00:42.147Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"18d8-19776a722eb\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:52:34 GMT"
+}
+[2025-06-16T03:00:42.160Z] === Completed 304 in 15ms ===
+
+[2025-06-16T03:00:42.162Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-16T03:00:42.163Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"9a32-19776a04678\"",
+  "if-modified-since": "Mon, 16 Jun 2025 02:45:04 GMT"
+}
+[2025-06-16T03:00:42.165Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-16T03:00:42.165Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"1738-1976b23edc4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
+}
+[2025-06-16T03:00:42.170Z] === Completed 200 in 8ms ===
+
+[2025-06-16T03:00:42.174Z] === Completed 304 in 9ms ===
+
+[2025-06-16T03:35:28.114Z] 
+🚨 Received SIGINT. Shutting down gracefully...

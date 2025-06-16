@@ -1,0 +1,1513 @@
+[2025-06-13T22:30:29.957Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-13T22:30:29.962Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-13T22:30:29.964Z] ✅ Google Gemini initialized
+[2025-06-13T22:30:29.970Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T22:30:29.977Z] 🧪 Testing Google Gemini API connection...
+[2025-06-13T22:30:31.200Z] ✅ Google Gemini connection successful
+[2025-06-13T22:30:32.525Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-02.p3qyd4n.mongodb.net
+[2025-06-13T22:30:32.577Z] ✅ Server is running on port 5000
+[2025-06-13T22:30:32.579Z] 🌍 Environment: development
+[2025-06-13T22:30:32.579Z] 🚀 Available endpoints:
+[2025-06-13T22:30:32.581Z]    POST http://localhost:5000/api/chat
+[2025-06-13T22:30:32.581Z]    GET  http://localhost:5000/
+[2025-06-13T22:30:32.582Z]    GET  http://localhost:5000/health
+[2025-06-13T22:30:33.486Z] ✅ Email Service Connected
+[2025-06-13T22:30:40.899Z] 
+=== Incoming GET /pages/customerservice.html ===
+[2025-06-13T22:30:40.900Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "cache-control": "max-age=0",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"78fa-19761b9b795\"",
+  "if-modified-since": "Thu, 12 Jun 2025 01:20:50 GMT"
+}
+[2025-06-13T22:30:40.952Z] === Completed 304 in 53ms ===
+
+[2025-06-13T22:30:41.255Z] 
+=== Incoming GET /pages/customerservice.css ===
+[2025-06-13T22:30:41.257Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:30:41.269Z] Serving index.html for route: /pages/customerservice.css
+[2025-06-13T22:30:41.279Z] 
+=== Incoming GET /pages/images/orange.jpg ===
+[2025-06-13T22:30:41.281Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:30:41.287Z] === Completed 304 in 32ms ===
+
+[2025-06-13T22:30:41.295Z] Serving index.html for route: /pages/images/orange.jpg
+[2025-06-13T22:30:41.314Z] 
+=== Incoming GET /js/particles.js ===
+[2025-06-13T22:30:41.316Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:30:41.323Z] 
+=== Incoming GET /js/customerservice.js ===
+[2025-06-13T22:30:41.325Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"314d-19761f4008f\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Thu, 12 Jun 2025 02:24:30 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:30:41.333Z] === Completed 304 in 54ms ===
+
+[2025-06-13T22:30:41.344Z] Serving index.html for route: /js/particles.js
+[2025-06-13T22:30:41.356Z] === Completed 304 in 33ms ===
+
+[2025-06-13T22:30:41.365Z] === Completed 304 in 51ms ===
+
+[2025-06-13T22:30:41.398Z] 
+=== Incoming GET /api/placeholder/800/650 ===
+[2025-06-13T22:30:41.400Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:30:41.416Z] === Completed 404 in 18ms ===
+
+[2025-06-13T22:30:47.621Z] 
+=== Incoming GET / ===
+[2025-06-13T22:30:47.624Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-purpose": "prefetch;prerender",
+  "purpose": "prefetch",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:30:47.633Z] Serving frontend index.html
+[2025-06-13T22:30:47.646Z] === Completed 304 in 25ms ===
+
+[2025-06-13T22:30:47.697Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-13T22:30:47.698Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"1738-1976b23edc4\"",
+  "if-modified-since": "Fri, 13 Jun 2025 21:13:26 GMT"
+}
+[2025-06-13T22:30:47.706Z] === Completed 304 in 9ms ===
+
+[2025-06-13T22:31:02.896Z] 
+=== Incoming GET /pages/luxurycars.html ===
+[2025-06-13T22:31:02.901Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"8e9d-197619ad8d3\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:47:07 GMT"
+}
+[2025-06-13T22:31:02.928Z] === Completed 304 in 32ms ===
+
+[2025-06-13T22:31:03.164Z] 
+=== Incoming GET /pages/css/luxurycars.css ===
+[2025-06-13T22:31:03.172Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.180Z] Serving index.html for route: /pages/css/luxurycars.css
+[2025-06-13T22:31:03.214Z] === Completed 304 in 50ms ===
+
+[2025-06-13T22:31:03.242Z] 
+=== Incoming GET /pages/admin-controls.css ===
+[2025-06-13T22:31:03.248Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.269Z] 
+=== Incoming GET /pages/particles.js ===
+[2025-06-13T22:31:03.271Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.284Z] 
+=== Incoming GET /pages/admin-vehicle-manager.js ===
+[2025-06-13T22:31:03.298Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.331Z] Serving index.html for route: /pages/admin-controls.css
+[2025-06-13T22:31:03.353Z] Serving index.html for route: /pages/particles.js
+[2025-06-13T22:31:03.380Z] Serving index.html for route: /pages/admin-vehicle-manager.js
+[2025-06-13T22:31:03.397Z] === Completed 304 in 155ms ===
+
+[2025-06-13T22:31:03.414Z] === Completed 304 in 145ms ===
+
+[2025-06-13T22:31:03.469Z] === Completed 304 in 185ms ===
+
+[2025-06-13T22:31:03.631Z] 
+=== Incoming GET /pages/logos/Bugatti-Logo.png ===
+[2025-06-13T22:31:03.636Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.642Z] 
+=== Incoming GET /pages/logos/rolls-royce-logo.png ===
+[2025-06-13T22:31:03.644Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.647Z] 
+=== Incoming GET /pages/logos/bentley.png ===
+[2025-06-13T22:31:03.648Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.655Z] Serving index.html for route: /pages/logos/Bugatti-Logo.png
+[2025-06-13T22:31:03.661Z] Serving index.html for route: /pages/logos/rolls-royce-logo.png
+[2025-06-13T22:31:03.667Z] 
+=== Incoming GET /pages/logos/ferrari-emblem-logo-png_seeklogo-53763.png ===
+[2025-06-13T22:31:03.670Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.677Z] Serving index.html for route: /pages/logos/bentley.png
+[2025-06-13T22:31:03.689Z] === Completed 304 in 58ms ===
+
+[2025-06-13T22:31:03.695Z] === Completed 304 in 53ms ===
+
+[2025-06-13T22:31:03.702Z] Serving index.html for route: /pages/logos/ferrari-emblem-logo-png_seeklogo-53763.png
+[2025-06-13T22:31:03.717Z] === Completed 304 in 70ms ===
+
+[2025-06-13T22:31:03.723Z] 
+=== Incoming GET /pages/logos/Lamborghini-Logo.png ===
+[2025-06-13T22:31:03.725Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.732Z] 
+=== Incoming GET /pages/logos/mclaren-logo.png ===
+[2025-06-13T22:31:03.735Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.741Z] === Completed 304 in 74ms ===
+
+[2025-06-13T22:31:03.745Z] Serving index.html for route: /pages/logos/Lamborghini-Logo.png
+[2025-06-13T22:31:03.752Z] Serving index.html for route: /pages/logos/mclaren-logo.png
+[2025-06-13T22:31:03.759Z] 
+=== Incoming GET /pages/logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png ===
+[2025-06-13T22:31:03.760Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.766Z] === Completed 304 in 43ms ===
+
+[2025-06-13T22:31:03.771Z] === Completed 304 in 39ms ===
+
+[2025-06-13T22:31:03.775Z] Serving index.html for route: /pages/logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png
+[2025-06-13T22:31:03.780Z] 
+=== Incoming GET /pages/logos/Aston-Martin-Logo.png ===
+[2025-06-13T22:31:03.784Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.795Z] === Completed 304 in 36ms ===
+
+[2025-06-13T22:31:03.802Z] Serving index.html for route: /pages/logos/Aston-Martin-Logo.png
+[2025-06-13T22:31:03.819Z] 
+=== Incoming GET /pages/logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png ===
+[2025-06-13T22:31:03.822Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.833Z] 
+=== Incoming GET /pages/logos/Mercedes-Logo.svg.png ===
+[2025-06-13T22:31:03.836Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.843Z] === Completed 304 in 63ms ===
+
+[2025-06-13T22:31:03.847Z] Serving index.html for route: /pages/logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png
+[2025-06-13T22:31:03.852Z] Serving index.html for route: /pages/logos/Mercedes-Logo.svg.png
+[2025-06-13T22:31:03.857Z] 
+=== Incoming GET /pages/logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
+[2025-06-13T22:31:03.859Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.872Z] === Completed 304 in 53ms ===
+
+[2025-06-13T22:31:03.879Z] === Completed 304 in 46ms ===
+
+[2025-06-13T22:31:03.882Z] Serving index.html for route: /pages/logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png
+[2025-06-13T22:31:03.885Z] 
+=== Incoming GET /pages/logos/audi.png ===
+[2025-06-13T22:31:03.886Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.893Z] === Completed 304 in 36ms ===
+
+[2025-06-13T22:31:03.906Z] Serving index.html for route: /pages/logos/audi.png
+[2025-06-13T22:31:03.911Z] 
+=== Incoming GET /pages/logos/lexus.png ===
+[2025-06-13T22:31:03.913Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.922Z] 
+=== Incoming GET /pages/logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
+[2025-06-13T22:31:03.925Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.944Z] === Completed 304 in 59ms ===
+
+[2025-06-13T22:31:03.953Z] Serving index.html for route: /pages/logos/lexus.png
+[2025-06-13T22:31:03.961Z] Serving index.html for route: /pages/logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png
+[2025-06-13T22:31:03.966Z] 
+=== Incoming GET /pages/logos/land-rover-logo-png_seeklogo-201638.png ===
+[2025-06-13T22:31:03.967Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:03.971Z] === Completed 304 in 60ms ===
+
+[2025-06-13T22:31:03.974Z] === Completed 304 in 51ms ===
+
+[2025-06-13T22:31:03.980Z] Serving index.html for route: /pages/logos/land-rover-logo-png_seeklogo-201638.png
+[2025-06-13T22:31:04.003Z] === Completed 304 in 36ms ===
+
+[2025-06-13T22:31:05.420Z] 
+=== Incoming GET /pages/customerservice.html ===
+[2025-06-13T22:31:05.421Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"78fa-19761b9b795\"",
+  "if-modified-since": "Thu, 12 Jun 2025 01:20:50 GMT"
+}
+[2025-06-13T22:31:05.433Z] === Completed 304 in 13ms ===
+
+[2025-06-13T22:31:05.688Z] 
+=== Incoming GET /pages/customerservice.css ===
+[2025-06-13T22:31:05.691Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:05.698Z] 
+=== Incoming GET /pages/images/orange.jpg ===
+[2025-06-13T22:31:05.702Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:05.707Z] 
+=== Incoming GET /js/particles.js ===
+[2025-06-13T22:31:05.709Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"53af-197619d42d6\"",
+  "if-modified-since": "Thu, 12 Jun 2025 00:49:45 GMT"
+}
+[2025-06-13T22:31:05.724Z] 
+=== Incoming GET /js/customerservice.js ===
+[2025-06-13T22:31:05.726Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"314d-19761f4008f\"",
+  "if-modified-since": "Thu, 12 Jun 2025 02:24:30 GMT"
+}
+[2025-06-13T22:31:05.733Z] Serving index.html for route: /pages/customerservice.css
+[2025-06-13T22:31:05.738Z] Serving index.html for route: /pages/images/orange.jpg
+[2025-06-13T22:31:05.741Z] Serving index.html for route: /js/particles.js
+[2025-06-13T22:31:05.748Z] 
+=== Incoming GET /api/placeholder/800/650 ===
+[2025-06-13T22:31:05.750Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:05.774Z] === Completed 304 in 50ms ===
+
+[2025-06-13T22:31:05.794Z] === Completed 304 in 106ms ===
+
+[2025-06-13T22:31:05.810Z] === Completed 304 in 112ms ===
+
+[2025-06-13T22:31:05.820Z] === Completed 304 in 113ms ===
+
+[2025-06-13T22:31:05.828Z] === Completed 404 in 80ms ===
+
+[2025-06-13T22:31:09.922Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:31:09.924Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "48",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:09.925Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    }
+  ]
+}
+[2025-06-13T22:31:09.936Z] === CHAT REQUEST ===
+[2025-06-13T22:31:09.938Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "48",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:09.939Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    }
+  ]
+}
+[2025-06-13T22:31:09.940Z] 🤖 Trying AI providers...
+[2025-06-13T22:31:10.958Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:31:10.968Z] === Completed 200 in 1046ms ===
+
+[2025-06-13T22:31:19.252Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:31:19.252Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "194",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:19.253Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    }
+  ]
+}
+[2025-06-13T22:31:19.253Z] === CHAT REQUEST ===
+[2025-06-13T22:31:19.254Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "194",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:19.254Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    }
+  ]
+}
+[2025-06-13T22:31:19.255Z] 🤖 Trying AI providers...
+[2025-06-13T22:31:20.470Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:31:20.477Z] === Completed 200 in 1225ms ===
+
+[2025-06-13T22:31:35.226Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:31:35.227Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "440",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:35.227Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    }
+  ]
+}
+[2025-06-13T22:31:35.227Z] === CHAT REQUEST ===
+[2025-06-13T22:31:35.228Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "440",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:35.229Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    }
+  ]
+}
+[2025-06-13T22:31:35.230Z] 🤖 Trying AI providers...
+[2025-06-13T22:31:36.658Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:31:36.660Z] === Completed 200 in 1434ms ===
+
+[2025-06-13T22:31:52.861Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:31:52.862Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "817",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:52.864Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    }
+  ]
+}
+[2025-06-13T22:31:52.865Z] === CHAT REQUEST ===
+[2025-06-13T22:31:52.865Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "817",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:31:52.866Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    }
+  ]
+}
+[2025-06-13T22:31:52.867Z] 🤖 Trying AI providers...
+[2025-06-13T22:31:54.136Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:31:54.139Z] === Completed 200 in 1279ms ===
+
+[2025-06-13T22:32:13.472Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:32:13.478Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1128",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:13.479Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    }
+  ]
+}
+[2025-06-13T22:32:13.481Z] === CHAT REQUEST ===
+[2025-06-13T22:32:13.481Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1128",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:13.482Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    }
+  ]
+}
+[2025-06-13T22:32:13.482Z] 🤖 Trying AI providers...
+[2025-06-13T22:32:14.453Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:32:14.454Z] === Completed 200 in 982ms ===
+
+[2025-06-13T22:32:31.289Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:32:31.290Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1331",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:31.290Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant: I am Prestigio Motors' virtual assistant.  How can I further assist you with your S-Class inquiry?\n"
+    },
+    {
+      "role": "user",
+      "content": "give me info about the bmw xm"
+    }
+  ]
+}
+[2025-06-13T22:32:31.291Z] === CHAT REQUEST ===
+[2025-06-13T22:32:31.291Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1331",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:31.292Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant: I am Prestigio Motors' virtual assistant.  How can I further assist you with your S-Class inquiry?\n"
+    },
+    {
+      "role": "user",
+      "content": "give me info about the bmw xm"
+    }
+  ]
+}
+[2025-06-13T22:32:31.293Z] 🤖 Trying AI providers...
+[2025-06-13T22:32:32.588Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:32:32.590Z] === Completed 200 in 1301ms ===
+
+[2025-06-13T22:32:47.053Z] 
+=== Incoming POST /api/chat ===
+[2025-06-13T22:32:47.055Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1714",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:47.056Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant: I am Prestigio Motors' virtual assistant.  How can I further assist you with your S-Class inquiry?\n"
+    },
+    {
+      "role": "user",
+      "content": "give me info about the bmw xm"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  While we specialize in Mercedes-Benz, including the S-Class, we don't currently have BMW XMs in stock.  To find information on the BMW XM, I suggest checking BMW's official website or contacting a BMW dealership directly.  Is there anything else I can help you with regarding Mercedes-Benz vehicles?\n"
+    },
+    {
+      "role": "user",
+      "content": "kosomak"
+    }
+  ]
+}
+[2025-06-13T22:32:47.057Z] === CHAT REQUEST ===
+[2025-06-13T22:32:47.058Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "1714",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9"
+}
+[2025-06-13T22:32:47.059Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Prestigio Motors. How can I assist you today?\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to have sex"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm sorry, but I cannot assist you with that request.  Prestigio Motors is a luxury car dealership, and that is outside the scope of our services.\n"
+    },
+    {
+      "role": "user",
+      "content": "i want to ask about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  Excellent!  We have a stunning selection of the new S-Class.  To best assist you, could you tell me which model and features you're interested in?  Alternatively, you can call us at +2 01098613073 or email prestegioautomobiles@gmail.com. We're open Mon-Sat 9AM-8PM, Sun 11AM-6PM.\n"
+    },
+    {
+      "role": "user",
+      "content": "what about the prices"
+    },
+    {
+      "role": "assistant",
+      "content": "Pricing for the new S-Class varies depending on the model and optional features.  To get a precise quote, please contact us at +2 01098613073 or email prestegioautomobiles@gmail.com with your specifications.  We're happy to help!\n"
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant: I am Prestigio Motors' virtual assistant.  How can I further assist you with your S-Class inquiry?\n"
+    },
+    {
+      "role": "user",
+      "content": "give me info about the bmw xm"
+    },
+    {
+      "role": "assistant",
+      "content": "Assistant:  While we specialize in Mercedes-Benz, including the S-Class, we don't currently have BMW XMs in stock.  To find information on the BMW XM, I suggest checking BMW's official website or contacting a BMW dealership directly.  Is there anything else I can help you with regarding Mercedes-Benz vehicles?\n"
+    },
+    {
+      "role": "user",
+      "content": "kosomak"
+    }
+  ]
+}
+[2025-06-13T22:32:47.060Z] 🤖 Trying AI providers...
+[2025-06-13T22:32:48.539Z] ✅ GEMINI Response received using gemini-1.5-flash
+[2025-06-13T22:32:48.543Z] === Completed 200 in 1490ms ===
+
+[2025-06-13T22:40:52.331Z] 
+🚨 Received SIGINT. Shutting down gracefully...

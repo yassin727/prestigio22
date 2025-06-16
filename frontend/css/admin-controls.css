@@ -1,0 +1,137 @@
+/**
+ * Admin Controls Styles
+ */
+
+/* Admin control buttons on car cards */
+.admin-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+}
+
+.admin-edit-btn,
+.admin-delete-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.admin-edit-btn {
+    background: rgba(40, 167, 69, 0.8);
+}
+
+.admin-delete-btn {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+.admin-edit-btn:hover {
+    background: rgba(40, 167, 69, 1);
+    transform: scale(1.1);
+}
+
+.admin-delete-btn:hover {
+    background: rgba(220, 53, 69, 1);
+    transform: scale(1.1);
+}
+
+/* Add vehicle button */
+.admin-add-btn {
+    background: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.admin-add-btn:hover {
+    background: #c09c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-add-btn i {
+    font-size: 12px;
+}
+
+/* Car card positioning for admin controls */
+.car-card {
+    position: relative;
+}
+
+/* Confirmation dialog styling */
+.admin-confirm-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 90%;
+}
+
+.admin-confirm-dialog h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.admin-confirm-dialog p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.admin-confirm-dialog .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.admin-confirm-dialog button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-confirm-dialog .confirm-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.admin-confirm-dialog .cancel-btn {
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Overlay for dialogs */
+.admin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+} 

@@ -1,0 +1,16 @@
+[2025-06-13T22:28:55.782Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-13T22:28:55.786Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-13T22:28:55.789Z] ✅ Google Gemini initialized
+[2025-06-13T22:28:55.796Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T22:28:55.800Z] 🧪 Testing Google Gemini API connection...
+[2025-06-13T22:28:56.881Z] ❌ Google Gemini connection failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+[2025-06-13T22:28:59.213Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-13T22:28:59.332Z] ✅ Server is running on port 5000
+[2025-06-13T22:28:59.333Z] 🌍 Environment: development
+[2025-06-13T22:28:59.333Z] 🚀 Available endpoints:
+[2025-06-13T22:28:59.334Z]    POST http://localhost:5000/api/chat
+[2025-06-13T22:28:59.334Z]    GET  http://localhost:5000/
+[2025-06-13T22:28:59.340Z]    GET  http://localhost:5000/health
+[2025-06-13T22:29:00.395Z] ✅ Email Service Connected
+[2025-06-13T22:30:17.395Z] 
+🚨 Received SIGINT. Shutting down gracefully...

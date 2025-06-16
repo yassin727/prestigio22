@@ -1,0 +1,79 @@
+[2025-06-12T01:54:59.164Z] Initializing OpenAI with API key: sk-pr...VagA
+[2025-06-12T01:54:59.166Z] Testing OpenAI connection...
+[2025-06-12T01:55:00.226Z] Successfully connected to OpenAI. Available models: [
+  "gpt-3.5-turbo",
+  "gpt-3.5-turbo-16k",
+  "gpt-3.5-turbo-instruct",
+  "gpt-3.5-turbo-instruct-0914",
+  "gpt-3.5-turbo-1106",
+  "gpt-3.5-turbo-0125",
+  "gpt-4o",
+  "gpt-4o-2024-05-13",
+  "gpt-4o-mini-2024-07-18",
+  "gpt-4o-mini",
+  "gpt-4o-2024-08-06",
+  "gpt-4o-audio-preview-2024-10-01",
+  "gpt-4o-audio-preview",
+  "gpt-4o-mini-audio-preview-2024-12-17",
+  "gpt-4o-mini-audio-preview",
+  "gpt-4o-2024-11-20",
+  "gpt-4.5-preview",
+  "gpt-4.5-preview-2025-02-27",
+  "gpt-4o-search-preview-2025-03-11",
+  "gpt-4o-search-preview",
+  "gpt-4o-mini-search-preview-2025-03-11",
+  "gpt-4o-mini-search-preview",
+  "gpt-4o-transcribe",
+  "gpt-4o-mini-transcribe",
+  "gpt-4o-mini-tts",
+  "gpt-4.1-2025-04-14",
+  "gpt-4.1",
+  "gpt-4.1-mini-2025-04-14",
+  "gpt-4.1-mini",
+  "gpt-4.1-nano-2025-04-14",
+  "gpt-4.1-nano",
+  "gpt-image-1"
+]
+[2025-06-12T01:55:26.823Z] 
+=== Incoming GET /customerservice.html ===
+[2025-06-12T01:55:26.823Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=-UzNv1ZH5mNIaZqC5HIJFq-i; XSRF-TOKEN=M9KtpFzS-S_qTFDxUaOpsB6bE1FbWaTU87ps"
+}
+[2025-06-12T01:55:26.859Z] === Completed 404 in 36ms ===
+
+[2025-06-12T01:56:09.563Z] 
+=== Incoming GET / ===
+[2025-06-12T01:56:09.564Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=-UzNv1ZH5mNIaZqC5HIJFq-i; XSRF-TOKEN=M9KtpFzS-S_qTFDxUaOpsB6bE1FbWaTU87ps",
+  "if-none-match": "W/\"49-mxoQ4jAYY5UGFT4pdIkbzsJPMaI\""
+}
+[2025-06-12T01:56:09.569Z] === Completed 304 in 6ms ===
+

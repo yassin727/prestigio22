@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Prestigio Motors Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#d4af37',
+                        'gold-light': '#e6c757',
+                        'gold-dark': '#b8941f'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-6 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gold mb-2">Message Center</h1>
+                <p class="text-gray-400">Manage customer inquiries and communications</p>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="refreshMessages()" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sync-alt mr-2"></i>Refresh
+                </button>
+                <button onclick="composeMessage()" class="bg-gold hover:bg-gold-dark text-black px-4 py-2 rounded-lg transition-colors font-semibold">
+                    <i class="fas fa-plus mr-2"></i>Compose
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Total Messages</p>
+                        <p id="totalMessages" class="text-2xl font-bold text-gold">0</p>
+                    </div>
+                    <i class="fas fa-envelope text-gold text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Unread</p>
+                        <p id="unreadMessages" class="text-2xl font-bold text-red-400">0</p>
+                    </div>
+                    <i class="fas fa-envelope-open text-red-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">Replied</p>
+                        <p id="repliedMessages" class="text-2xl font-bold text-green-400">0</p>
+                    </div>
+                    <i class="fas fa-reply text-green-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-400 text-sm">High Priority</p>
+                        <p id="highPriorityMessages" class="text-2xl font-bold text-orange-400">0</p>
+                    </div>
+                    <i class="fas fa-exclamation-triangle text-orange-400 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-gray-900 rounded-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Search Messages</label>
+                    <input type="text" id="searchInput" placeholder="Search by sender, subject, or content..." 
+                           class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                           onkeyup="filterMessages()">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Status</label>
+                    <select id="statusFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterMessages()">
+                        <option value="">All Messages</option>
+                        <option value="unread">Unread</option>
+                        <option value="read">Read</option>
+                        <option value="replied">Replied</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Priority</label>
+                    <select id="priorityFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterMessages()">
+                        <option value="">All Priorities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Date Range</label>
+                    <select id="dateFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterMessages()">
+                        <option value="">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div class="bg-gray-900 rounded-lg p-4 mb-6" id="bulkActions" style="display: none;">
+            <div class="flex justify-between items-center">
+                <span id="selectedCount" class="text-sm text-gray-400">0 messages selected</span>
+                <div class="flex gap-2">
+                    <button onclick="markSelectedAsRead()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        Mark as Read
+                    </button>
+                    <button onclick="archiveSelected()" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        Archive
+                    </button>
+                    <button onclick="deleteSelected()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        Delete
+                    </button>
+                    <button onclick="clearSelection()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm transition-colors">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages List -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+            <div id="messagesList" class="divide-y divide-gray-700">
+                <!-- Messages will be populated here -->
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
+            <p class="mt-4 text-gray-400">Loading messages...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-12 hidden">
+            <i class="fas fa-inbox text-6xl text-gray-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">No Messages Found</h3>
+            <p class="text-gray-400">No messages match your current filters.</p>
+        </div>
+    </div>
+
+    <!-- Message Details Modal -->
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-3xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Message Details</h2>
+                <button onclick="closeMessageModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="messageDetails">
+                <!-- Message details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Reply Modal -->
+    <div id="replyModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Reply to Message</h2>
+                <button onclick="closeReplyModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="replyForm" onsubmit="sendReply(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">To:</label>
+                    <input type="text" id="replyTo" readonly class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Subject:</label>
+                    <input type="text" id="replySubject" readonly class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">Your Reply:</label>
+                    <textarea id="replyContent" required rows="8" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                              placeholder="Type your reply here..."></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" onclick="closeReplyModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-gold hover:bg-gold-dark text-black px-6 py-2 rounded-lg font-semibold transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Reply
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Compose Modal -->
+    <div id="composeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gold">Compose Message</h2>
+                <button onclick="closeComposeModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="composeForm" onsubmit="sendNewMessage(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">To (Email):</label>
+                    <input type="email" id="composeTo" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Subject:</label>
+                    <input type="text" id="composeSubject" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">Message:</label>
+                    <textarea id="composeContent" required rows="8" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                              placeholder="Type your message here..."></textarea>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" onclick="closeComposeModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-gold hover:bg-gold-dark text-black px-6 py-2 rounded-lg font-semibold transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let allMessages = [];
+        let filteredMessages = [];
+        let selectedMessages = new Set();
+        let currentMessageId = null;
+
+        // Sample message data
+        const sampleMessages = [
+            {
+                id: 'MSG-001',
+                senderName: 'Alice Johnson',
+                senderEmail: 'alice@example.com',
+                subject: 'Inquiry about Ferrari 488 GTB',
+                content: 'Hi, I am very interested in the Ferrari 488 GTB that I saw on your website. Could you please provide more details about the financing options available? Also, I would like to know about the warranty and maintenance packages. Thank you!',
+                date: new Date('2023-12-08T10:30:00').toISOString(),
+                status: 'unread',
+                priority: 'high',
+                category: 'inquiry'
+            },
+            {
+                id: 'MSG-002',
+                senderName: 'Bob Wilson',
+                senderEmail: 'bob@example.com',
+                subject: 'Service Appointment Request',
+                content: 'Hello, I need to schedule a service appointment for my Porsche 911. The car has been making some unusual noises and I would like to have it checked. When would be the earliest available appointment?',
+                date: new Date('2023-12-07T14:15:00').toISOString(),
+                status: 'read',
+                priority: 'medium',
+                category: 'service'
+            },
+            {
+                id: 'MSG-003',
+                senderName: 'Carol Davis',
+                senderEmail: 'carol@example.com',
+                subject: 'Thank you for excellent service',
+                content: 'I wanted to thank you for the excellent service during my recent purchase. The team was very professional and helpful throughout the entire process. I will definitely recommend Prestigio Motors to my friends.',
+                date: new Date('2023-12-06T09:45:00').toISOString(),
+                status: 'replied',
+                priority: 'low',
+                category: 'feedback'
+            },
+            {
+                id: 'MSG-004',
+                senderName: 'David Brown',
+                senderEmail: 'david@example.com',
+                subject: 'Question about trade-in value',
+                content: 'I am interested in trading in my current vehicle for one of your luxury cars. Could you please let me know what the trade-in value would be for a 2020 BMW X5 with 45,000 miles?',
+                date: new Date('2023-12-05T16:20:00').toISOString(),
+                status: 'unread',
+                priority: 'medium',
+                category: 'trade-in'
+            }
+        ];
+
+        // Load messages on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMessages();
+        });
+
+        async function loadMessages() {
+            try {
+                // In a real implementation, you would fetch from your API
+                // const response = await fetch(`${API_BASE}/messages`);
+                // const data = await response.json();
+                
+                // For now, use sample data
+                allMessages = sampleMessages;
+                filteredMessages = [...allMessages];
+                updateStats();
+                displayMessages();
+                
+            } catch (error) {
+                console.error('Error loading messages:', error);
+                showEmptyState();
+            } finally {
+                document.getElementById('loadingState').style.display = 'none';
+            }
+        }
+
+        function updateStats() {
+            const totalMessages = allMessages.length;
+            const unreadMessages = allMessages.filter(m => m.status === 'unread').length;
+            const repliedMessages = allMessages.filter(m => m.status === 'replied').length;
+            const highPriorityMessages = allMessages.filter(m => m.priority === 'high').length;
+            
+            document.getElementById('totalMessages').textContent = totalMessages;
+            document.getElementById('unreadMessages').textContent = unreadMessages;
+            document.getElementById('repliedMessages').textContent = repliedMessages;
+            document.getElementById('highPriorityMessages').textContent = highPriorityMessages;
+        }
+
+        function displayMessages() {
+            const messagesList = document.getElementById('messagesList');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (filteredMessages.length === 0) {
+                messagesList.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            messagesList.innerHTML = filteredMessages.map(message => `
+                <div class="p-6 hover:bg-gray-800 transition-colors ${message.status === 'unread' ? 'bg-gray-850 border-l-4 border-gold' : ''}">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-4 flex-1">
+                            <input type="checkbox" class="mt-1 w-4 h-4 text-gold bg-gray-800 border-gray-600 rounded focus:ring-gold"
+                                   onchange="toggleMessageSelection('${message.id}')"
+                                   ${selectedMessages.has(message.id) ? 'checked' : ''}>
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-black font-semibold">
+                                        ${message.senderName.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">${message.senderName}</h3>
+                                        <p class="text-sm text-gray-400">${message.senderEmail}</p>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getPriorityColor(message.priority)}">
+                                            ${message.priority}
+                                        </span>
+                                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(message.status)}">
+                                            ${message.status}
+                                        </span>
+                                    </div>
+                                </div>
+                                <h4 class="text-lg font-medium text-white mb-2">${message.subject}</h4>
+                                <p class="text-gray-300 text-sm mb-3">${message.content.substring(0, 150)}...</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-gray-500">${new Date(message.date).toLocaleString()}</span>
+                                    <div class="flex space-x-2">
+                                        <button onclick="viewMessage('${message.id}')" class="text-blue-400 hover:text-blue-300 transition-colors" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button onclick="replyToMessage('${message.id}')" class="text-green-400 hover:text-green-300 transition-colors" title="Reply">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button onclick="markAsRead('${message.id}')" class="text-yellow-400 hover:text-yellow-300 transition-colors" title="Mark as Read">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button onclick="archiveMessage('${message.id}')" class="text-gray-400 hover:text-gray-300 transition-colors" title="Archive">
+                                            <i class="fas fa-archive"></i>
+                                        </button>
+                                        <button onclick="deleteMessage('${message.id}')" class="text-red-400 hover:text-red-300 transition-colors" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getPriorityColor(priority) {
+            switch (priority) {
+                case 'high': return 'bg-red-100 text-red-800';
+                case 'medium': return 'bg-yellow-100 text-yellow-800';
+                case 'low': return 'bg-green-100 text-green-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch (status) {
+                case 'unread': return 'bg-gold text-black';
+                case 'read': return 'bg-blue-100 text-blue-800';
+                case 'replied': return 'bg-green-100 text-green-800';
+                case 'archived': return 'bg-gray-100 text-gray-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        function filterMessages() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            const dateFilter = document.getElementById('dateFilter').value;
+            
+            filteredMessages = allMessages.filter(message => {
+                const matchesSearch = message.senderName.toLowerCase().includes(searchTerm) || 
+                                    message.senderEmail.toLowerCase().includes(searchTerm) ||
+                                    message.subject.toLowerCase().includes(searchTerm) ||
+                                    message.content.toLowerCase().includes(searchTerm);
+                
+                const matchesStatus = !statusFilter || message.status === statusFilter;
+                const matchesPriority = !priorityFilter || message.priority === priorityFilter;
+                
+                let matchesDate = true;
+                if (dateFilter) {
+                    const messageDate = new Date(message.date);
+                    const now = new Date();
+                    
+                    switch (dateFilter) {
+                        case 'today':
+                            matchesDate = messageDate.toDateString() === now.toDateString();
+                            break;
+                        case 'week':
+                            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                            matchesDate = messageDate >= weekAgo;
+                            break;
+                        case 'month':
+                            const monthAgo = new Date(now.getFullYear(), now.getMonth(), 1);
+                            matchesDate = messageDate >= monthAgo;
+                            break;
+                    }
+                }
+                
+                return matchesSearch && matchesStatus && matchesPriority && matchesDate;
+            });
+            
+            displayMessages();
+        }
+
+        function toggleMessageSelection(messageId) {
+            if (selectedMessages.has(messageId)) {
+                selectedMessages.delete(messageId);
+            } else {
+                selectedMessages.add(messageId);
+            }
+            updateBulkActions();
+        }
+
+        function updateBulkActions() {
+            const bulkActions = document.getElementById('bulkActions');
+            const selectedCount = document.getElementById('selectedCount');
+            
+            if (selectedMessages.size > 0) {
+                bulkActions.style.display = 'block';
+                selectedCount.textContent = `${selectedMessages.size} message${selectedMessages.size > 1 ? 's' : ''} selected`;
+            } else {
+                bulkActions.style.display = 'none';
+            }
+        }
+
+        function clearSelection() {
+            selectedMessages.clear();
+            updateBulkActions();
+            displayMessages();
+        }
+
+        function viewMessage(messageId) {
+            const message = allMessages.find(m => m.id === messageId);
+            if (!message) return;
+            
+            currentMessageId = messageId;
+            
+            // Mark as read when viewing
+            if (message.status === 'unread') {
+                markAsRead(messageId);
+            }
+            
+            document.getElementById('messageDetails').innerHTML = `
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-black font-bold text-lg">
+                                    ${message.senderName.charAt(0)}
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold">${message.senderName}</h3>
+                                    <p class="text-gray-400">${message.senderEmail}</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getPriorityColor(message.priority)}">
+                                    ${message.priority} priority
+                                </span>
+                                <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(message.status)}">
+                                    ${message.status}
+                                </span>
+                            </div>
+                        </div>
+                        <h2 class="text-xl font-semibold mb-2">${message.subject}</h2>
+                        <p class="text-sm text-gray-400 mb-4">${new Date(message.date).toLocaleString()}</p>
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <p class="text-gray-300 leading-relaxed">${message.content}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end space-x-4">
+                        <button onclick="replyToMessage('${message.id}')" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-reply mr-2"></i>Reply
+                        </button>
+                        <button onclick="archiveMessage('${message.id}')" class="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-archive mr-2"></i>Archive
+                        </button>
+                        <button onclick="deleteMessage('${message.id}')" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-trash mr-2"></i>Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('messageModal').classList.remove('hidden');
+            document.getElementById('messageModal').classList.add('flex');
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').classList.add('hidden');
+            document.getElementById('messageModal').classList.remove('flex');
+            currentMessageId = null;
+        }
+
+        function replyToMessage(messageId) {
+            const message = allMessages.find(m => m.id === messageId);
+            if (!message) return;
+            
+            currentMessageId = messageId;
+            document.getElementById('replyTo').value = `${message.senderName} <${message.senderEmail}>`;
+            document.getElementById('replySubject').value = `Re: ${message.subject}`;
+            
+            document.getElementById('replyModal').classList.remove('hidden');
+            document.getElementById('replyModal').classList.add('flex');
+        }
+
+        function closeReplyModal() {
+            document.getElementById('replyModal').classList.add('hidden');
+            document.getElementById('replyModal').classList.remove('flex');
+            document.getElementById('replyForm').reset();
+            currentMessageId = null;
+        }
+
+        async function sendReply(event) {
+            event.preventDefault();
+            
+            const replyContent = document.getElementById('replyContent').value;
+            
+            try {
+                // In a real implementation, you would make an API call to send the reply
+                // const response = await fetch(`${API_BASE}/messages/${currentMessageId}/reply`, {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ content: replyContent })
+                // });
+                
+                // Update message status to replied
+                const messageIndex = allMessages.findIndex(m => m.id === currentMessageId);
+                if (messageIndex !== -1) {
+                    allMessages[messageIndex].status = 'replied';
+                }
+                
+                filterMessages();
+                updateStats();
+                closeReplyModal();
+                closeMessageModal();
+                showNotification('Reply sent successfully!', 'success');
+                
+            } catch (error) {
+                console.error('Error sending reply:', error);
+                showNotification('Error sending reply', 'error');
+            }
+        }
+
+        function composeMessage() {
+            document.getElementById('composeModal').classList.remove('hidden');
+            document.getElementById('composeModal').classList.add('flex');
+        }
+
+        function closeComposeModal() {
+            document.getElementById('composeModal').classList.add('hidden');
+            document.getElementById('composeModal').classList.remove('flex');
+            document.getElementById('composeForm').reset();
+        }
+
+        async function sendNewMessage(event) {
+            event.preventDefault();
+            
+            const messageData = {
+                to: document.getElementById('composeTo').value,
+                subject: document.getElementById('composeSubject').value,
+                content: document.getElementById('composeContent').value
+            };
+            
+            try {
+                // In a real implementation, you would make an API call to send the message
+                // const response = await fetch(`${API_BASE}/messages/send`, {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(messageData)
+                // });
+                
+                closeComposeModal();
+                showNotification('Message sent successfully!', 'success');
+                
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showNotification('Error sending message', 'error');
+            }
+        }
+
+        function markAsRead(messageId) {
+            const messageIndex = allMessages.findIndex(m => m.id === messageId);
+            if (messageIndex !== -1) {
+                allMessages[messageIndex].status = 'read';
+                filterMessages();
+                updateStats();
+                showNotification('Message marked as read', 'success');
+            }
+        }
+
+        function archiveMessage(messageId) {
+            const messageIndex = allMessages.findIndex(m => m.id === messageId);
+            if (messageIndex !== -1) {
+                allMessages[messageIndex].status = 'archived';
+                filterMessages();
+                updateStats();
+                showNotification('Message archived', 'success');
+            }
+        }
+
+        function deleteMessage(messageId) {
+            if (confirm('Are you sure you want to delete this message?')) {
+                allMessages = allMessages.filter(m => m.id !== messageId);
+                selectedMessages.delete(messageId);
+                filterMessages();
+                updateStats();
+                updateBulkActions();
+                closeMessageModal();
+                showNotification('Message deleted', 'success');
+            }
+        }
+
+        function markSelectedAsRead() {
+            selectedMessages.forEach(messageId => {
+                const messageIndex = allMessages.findIndex(m => m.id === messageId);
+                if (messageIndex !== -1) {
+                    allMessages[messageIndex].status = 'read';
+                }
+            });
+            clearSelection();
+            filterMessages();
+            updateStats();
+            showNotification(`${selectedMessages.size} messages marked as read`, 'success');
+        }
+
+        function archiveSelected() {
+            selectedMessages.forEach(messageId => {
+                const messageIndex = allMessages.findIndex(m => m.id === messageId);
+                if (messageIndex !== -1) {
+                    allMessages[messageIndex].status = 'archived';
+                }
+            });
+            clearSelection();
+            filterMessages();
+            updateStats();
+            showNotification(`${selectedMessages.size} messages archived`, 'success');
+        }
+
+        function deleteSelected() {
+            if (confirm(`Are you sure you want to delete ${selectedMessages.size} messages?`)) {
+                allMessages = allMessages.filter(m => !selectedMessages.has(m.id));
+                clearSelection();
+                filterMessages();
+                updateStats();
+                showNotification(`${selectedMessages.size} messages deleted`, 'success');
+            }
+        }
+
+        function refreshMessages() {
+            document.getElementById('loadingState').style.display = 'block';
+            loadMessages();
+        }
+
+        function showEmptyState() {
+            document.getElementById('messagesList').innerHTML = '';
+            document.getElementById('emptyState').classList.remove('hidden');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'success' ? 'bg-green-600' : type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,8 @@
+[2025-06-16T10:29:14.332Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-16T10:29:14.333Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-16T10:29:14.333Z] ✅ Google Gemini initialized
+[2025-06-16T10:29:14.339Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-16T10:29:14.342Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\web project\models
+[2025-06-16T10:29:14.343Z] 🧪 Testing Google Gemini API connection...
+[2025-06-16T10:29:15.514Z] ✅ Google Gemini connection successful
+[2025-06-16T10:29:16.859Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-02.p3qyd4n.mongodb.net

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Prestigio Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-header {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .sidebar-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .settings-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .settings-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .settings-card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #3498db;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        .settings-section {
+            margin-bottom: 30px;
+        }
+
+        .settings-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .settings-description {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Prestigio Admin</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/admin/cars"><i class="fas fa-car"></i> Vehicle Inventory</a></li>
+            <li><a href="/admin/customers"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="/admin/orders"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+            <li><a href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="/admin/settings" class="active"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="/api/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Settings</h1>
+        </div>
+
+        <div class="alert alert-success" id="successAlert">
+            Settings updated successfully!
+        </div>
+
+        <div class="alert alert-danger" id="errorAlert">
+            Failed to update settings. Please try again.
+        </div>
+
+        <div class="settings-container">
+            <div class="settings-card">
+                <h2>General Settings</h2>
+                <form id="generalSettingsForm">
+                    <div class="form-group">
+                        <label for="siteName">Site Name</label>
+                        <input type="text" id="siteName" class="form-control" value="<%= settings.siteName %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="siteDescription">Site Description</label>
+                        <textarea id="siteDescription" class="form-control" rows="3"><%= settings.siteDescription %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email</label>
+                        <input type="email" id="contactEmail" class="form-control" value="<%= settings.contactEmail %>">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="settings-card">
+                <h2>Security Settings</h2>
+                <form id="securitySettingsForm">
+                    <div class="settings-section">
+                        <h3>Password Requirements</h3>
+                        <div class="settings-description">
+                            Configure the minimum requirements for user passwords
+                        </div>
+                        <div class="form-group">
+                            <label for="minPasswordLength">Minimum Password Length</label>
+                            <input type="number" id="minPasswordLength" class="form-control" value="<%= settings.minPasswordLength %>">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="requireUppercase" <%= settings.requireUppercase ? 'checked' : '' %>>
+                                Require Uppercase Letters
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="requireNumbers" <%= settings.requireNumbers ? 'checked' : '' %>>
+                                Require Numbers
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="requireSymbols" <%= settings.requireSymbols ? 'checked' : '' %>>
+                                Require Special Characters
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="settings-card">
+                <h2>Notification Settings</h2>
+                <form id="notificationSettingsForm">
+                    <div class="settings-section">
+                        <h3>Email Notifications</h3>
+                        <div class="settings-description">
+                            Configure which events trigger email notifications
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="notifyNewOrders" <%= settings.notifyNewOrders ? 'checked' : '' %>>
+                                New Orders
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="notifyNewMessages" <%= settings.notifyNewMessages ? 'checked' : '' %>>
+                                New Messages
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="notifyLowStock" <%= settings.notifyLowStock ? 'checked' : '' %>>
+                                Low Stock Alerts
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="settings-card">
+                <h2>Danger Zone</h2>
+                <div class="settings-section">
+                    <h3>Clear Cache</h3>
+                    <div class="settings-description">
+                        Clear all cached data to free up space
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearCache()">Clear Cache</button>
+                </div>
+                <div class="settings-section">
+                    <h3>Reset Settings</h3>
+                    <div class="settings-description">
+                        Reset all settings to their default values
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="resetSettings()">Reset Settings</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Show alert
+        function showAlert(type, message) {
+            const alert = document.getElementById(`${type}Alert`);
+            alert.textContent = message;
+            alert.style.display = 'block';
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+
+        // Save general settings
+        document.getElementById('generalSettingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                siteName: document.getElementById('siteName').value,
+                siteDescription: document.getElementById('siteDescription').value,
+                contactEmail: document.getElementById('contactEmail').value
+            };
+
+            saveSettings('general', data);
+        });
+
+        // Save security settings
+        document.getElementById('securitySettingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                minPasswordLength: parseInt(document.getElementById('minPasswordLength').value),
+                requireUppercase: document.getElementById('requireUppercase').checked,
+                requireNumbers: document.getElementById('requireNumbers').checked,
+                requireSymbols: document.getElementById('requireSymbols').checked
+            };
+
+            saveSettings('security', data);
+        });
+
+        // Save notification settings
+        document.getElementById('notificationSettingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                notifyNewOrders: document.getElementById('notifyNewOrders').checked,
+                notifyNewMessages: document.getElementById('notifyNewMessages').checked,
+                notifyLowStock: document.getElementById('notifyLowStock').checked
+            };
+
+            saveSettings('notifications', data);
+        });
+
+        // Save settings to backend
+        function saveSettings(type, data) {
+            fetch(`/api/admin/settings/${type}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    showAlert('success', 'Settings updated successfully!');
+                } else {
+                    throw new Error('Failed to update settings');
+                }
+            })
+            .catch(error => {
+                console.error('Error updating settings:', error);
+                showAlert('error', 'Failed to update settings. Please try again.');
+            });
+        }
+
+        // Clear cache
+        function clearCache() {
+            if (confirm('Are you sure you want to clear all cached data?')) {
+                fetch('/api/admin/settings/cache', {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showAlert('success', 'Cache cleared successfully!');
+                    } else {
+                        throw new Error('Failed to clear cache');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error clearing cache:', error);
+                    showAlert('error', 'Failed to clear cache. Please try again.');
+                });
+            }
+        }
+
+        // Reset settings
+        function resetSettings() {
+            if (confirm('Are you sure you want to reset all settings to their default values? This cannot be undone.')) {
+                fetch('/api/admin/settings/reset', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload();
+                    } else {
+                        throw new Error('Failed to reset settings');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error resetting settings:', error);
+                    showAlert('error', 'Failed to reset settings. Please try again.');
+                });
+            }
+        }
+
+        // Handle logout
+        document.querySelector('a[href="/api/auth/logout"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/login';
+            })
+            .catch(error => console.error('Logout error:', error));
+        });
+    </script>
+</body>
+</html> 

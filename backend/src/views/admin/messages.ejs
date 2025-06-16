@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Prestigio Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-header {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .sidebar-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .messages-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            height: calc(100vh - 140px);
+        }
+
+        .message-list {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-list-header {
+            padding: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .message-list-header h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .message-search {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .message-search:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .message-items {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .message-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ecf0f1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .message-item:hover {
+            background: #f8f9fa;
+        }
+
+        .message-item.active {
+            background: #e3f2fd;
+        }
+
+        .message-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .message-sender {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .message-time {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .message-preview {
+            font-size: 14px;
+            color: #7f8c8d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .message-content {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message-header {
+            padding: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .message-header h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .message-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .message-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message-text {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .message-reply {
+            padding: 20px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .reply-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .reply-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .reply-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .message-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-unread {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .status-read {
+            background: #f5f5f5;
+            color: #757575;
+        }
+
+        .status-replied {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .no-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #7f8c8d;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .no-message i {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Prestigio Admin</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/admin/cars"><i class="fas fa-car"></i> Vehicle Inventory</a></li>
+            <li><a href="/admin/customers"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="/admin/orders"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+            <li><a href="/admin/messages" class="active"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="/admin/settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="/api/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Messages</h1>
+        </div>
+
+        <div class="messages-container">
+            <div class="message-list">
+                <div class="message-list-header">
+                    <h2>Inbox</h2>
+                    <input type="text" class="message-search" placeholder="Search messages...">
+                </div>
+                <div class="message-items">
+                    <% messages.forEach(message => { %>
+                        <div class="message-item <%= message._id === selectedMessage?._id ? 'active' : '' %>" 
+                             onclick="viewMessage('<%= message._id %>')">
+                            <div class="message-item-header">
+                                <span class="message-sender"><%= message.sender.name %></span>
+                                <span class="message-time"><%= new Date(message.createdAt).toLocaleDateString() %></span>
+                            </div>
+                            <div class="message-preview"><%= message.content %></div>
+                            <span class="message-status status-<%= message.status.toLowerCase() %>">
+                                <%= message.status %>
+                            </span>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+
+            <div class="message-content">
+                <% if (selectedMessage) { %>
+                    <div class="message-header">
+                        <h2><%= selectedMessage.subject %></h2>
+                        <div class="message-info">
+                            <span>From: <%= selectedMessage.sender.name %> (<%= selectedMessage.sender.email %>)</span>
+                            <span><%= new Date(selectedMessage.createdAt).toLocaleString() %></span>
+                        </div>
+                    </div>
+                    <div class="message-body">
+                        <div class="message-text"><%= selectedMessage.content %></div>
+                        <% if (selectedMessage.replies && selectedMessage.replies.length > 0) { %>
+                            <div class="message-replies">
+                                <% selectedMessage.replies.forEach(reply => { %>
+                                    <div class="message-reply">
+                                        <div class="reply-header">
+                                            <span class="reply-sender"><%= reply.sender.name %></span>
+                                            <span class="reply-time"><%= new Date(reply.createdAt).toLocaleString() %></span>
+                                        </div>
+                                        <div class="reply-content"><%= reply.content %></div>
+                                    </div>
+                                <% }); %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="message-reply">
+                        <form class="reply-form" onsubmit="sendReply(event)">
+                            <textarea class="reply-input" rows="3" placeholder="Type your reply..."></textarea>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                <% } else { %>
+                    <div class="no-message">
+                        <i class="fas fa-envelope-open"></i>
+                        <h3>No Message Selected</h3>
+                        <p>Select a message from the list to view its contents</p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Search functionality
+        document.querySelector('.message-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const messages = document.querySelectorAll('.message-item');
+
+            messages.forEach(message => {
+                const sender = message.querySelector('.message-sender').textContent.toLowerCase();
+                const content = message.querySelector('.message-preview').textContent.toLowerCase();
+
+                if (sender.includes(searchTerm) || content.includes(searchTerm)) {
+                    message.style.display = '';
+                } else {
+                    message.style.display = 'none';
+                }
+            });
+        });
+
+        // View message
+        function viewMessage(messageId) {
+            window.location.href = `/admin/messages?message=${messageId}`;
+        }
+
+        // Send reply
+        function sendReply(event) {
+            event.preventDefault();
+            const messageId = '<%= selectedMessage?._id %>';
+            const content = document.querySelector('.reply-input').value;
+
+            if (!content.trim()) return;
+
+            fetch(`/api/admin/messages/${messageId}/reply`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify({ content })
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    throw new Error('Failed to send reply');
+                }
+            })
+            .catch(error => console.error('Error sending reply:', error));
+        }
+
+        // Handle logout
+        document.querySelector('a[href="/api/auth/logout"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/login';
+            })
+            .catch(error => console.error('Logout error:', error));
+        });
+    </script>
+</body>
+</html> 

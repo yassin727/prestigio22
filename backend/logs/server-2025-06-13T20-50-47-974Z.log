@@ -1,0 +1,78 @@
+[2025-06-13T20:50:47.977Z] Initializing OpenAI with API key: sk-pr...VagA
+[2025-06-13T20:50:47.979Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-13T20:50:47.980Z] Testing OpenAI connection...
+[2025-06-13T20:50:49.474Z] Successfully connected to OpenAI. Available models: [
+  "gpt-3.5-turbo",
+  "gpt-3.5-turbo-16k",
+  "gpt-3.5-turbo-instruct",
+  "gpt-3.5-turbo-instruct-0914",
+  "gpt-3.5-turbo-1106",
+  "gpt-3.5-turbo-0125",
+  "gpt-4o",
+  "gpt-4o-2024-05-13",
+  "gpt-4o-mini-2024-07-18",
+  "gpt-4o-mini",
+  "gpt-4o-2024-08-06",
+  "gpt-4o-audio-preview-2024-10-01",
+  "gpt-4o-audio-preview",
+  "gpt-4o-mini-audio-preview-2024-12-17",
+  "gpt-4o-mini-audio-preview",
+  "gpt-4o-2024-11-20",
+  "gpt-4.5-preview",
+  "gpt-4.5-preview-2025-02-27",
+  "gpt-4o-search-preview-2025-03-11",
+  "gpt-4o-search-preview",
+  "gpt-4o-mini-search-preview-2025-03-11",
+  "gpt-4o-mini-search-preview",
+  "gpt-4o-transcribe",
+  "gpt-4o-mini-transcribe",
+  "gpt-4o-mini-tts",
+  "gpt-4.1-2025-04-14",
+  "gpt-4.1",
+  "gpt-4.1-mini-2025-04-14",
+  "gpt-4.1-mini",
+  "gpt-4.1-nano-2025-04-14",
+  "gpt-4.1-nano",
+  "gpt-image-1"
+]
+[2025-06-13T20:50:50.663Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-13T20:50:50.696Z] ✅ Server is running on port 5000
+[2025-06-13T20:50:50.697Z] 🌍 Environment: development
+[2025-06-13T20:50:50.699Z] 🚀 Available endpoints:
+[2025-06-13T20:50:50.699Z]    POST http://localhost:5000/api/chat
+[2025-06-13T20:50:50.700Z]    GET  http://localhost:5000/
+[2025-06-13T20:50:50.700Z]    GET  http://localhost:5000/health
+[2025-06-13T20:50:51.599Z] ✅ Email Service Connected
+[2025-06-13T20:50:58.255Z] 
+=== Incoming GET / ===
+[2025-06-13T20:50:58.256Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "cache-control": "max-age=0",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "if-none-match": "W/\"8f-I4P733i3IiMKCIdrljn5nMY4SVM\""
+}
+[2025-06-13T20:50:58.266Z] === Completed 200 in 11ms ===
+
+[2025-06-13T20:54:17.755Z] 
+=== Incoming GET / ===
+[2025-06-13T20:54:17.756Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061",
+  "host": "localhost:5000",
+  "connection": "Keep-Alive"
+}
+[2025-06-13T20:54:17.756Z] === Completed 200 in 1ms ===
+
+[2025-06-13T20:56:07.817Z] 
+🚨 Received SIGINT. Shutting down gracefully...

@@ -1,0 +1,71 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Prestigio Motors</h3>
+            <p>Since 1985, Prestigio Motors has been the premier destination for the world's finest automobiles, providing exceptional service and unmatched expertise.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/new-arrivals">New Arrivals</a></li>
+                <li><a href="/exotic-vehicles">Exotic Inventory</a></li>
+                <li><a href="/signature-collection">Signature Collection</a></li>
+                <li><a href="/special-editions">Special Editions</a></li>
+                <li><a href="/concierge">Concierge Service</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <address>
+                Sixth District<br>
+                Al Obour City<br><br>
+                Phone: <a href="tel:+201098613073">+2 01098613073</a><br>
+                Email: <a href="mailto:prestegioautomobiles@gmail.com">prestegioautomobiles@gmail.com</a>
+            </address>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <form class="newsletter-form" id="newsletterForm" action="/api/newsletter/subscribe" method="POST">
+                <label for="newsletterEmail" class="sr-only">Email address</label>
+                <div class="input-group">
+                    <input type="email" 
+                           id="newsletterEmail" 
+                           name="email" 
+                           placeholder="Enter your email"
+                           required>
+                    <button type="submit" aria-label="Subscribe to newsletter">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-links">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-conditions">Terms & Conditions</a>
+            <a href="/sitemap">Sitemap</a>
+        </div>
+        
+        <p>&copy; <%= new Date().getFullYear() %> Prestigio Collection. All rights reserved.</p>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Follow us on Facebook" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Follow us on Instagram" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="Follow us on Twitter" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+</footer> 

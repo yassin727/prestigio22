@@ -1,0 +1,6 @@
+[2025-06-14T01:31:15.005Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-14T01:31:15.006Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-14T01:31:15.006Z] ✅ Google Gemini initialized
+[2025-06-14T01:31:15.010Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\web project\frontend
+[2025-06-14T01:31:15.012Z] 🧪 Testing Google Gemini API connection...
+[2025-06-14T01:31:15.695Z] ✅ Google Gemini connection successful

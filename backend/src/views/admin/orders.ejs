@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders - Prestigio Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f9;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-header {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .sidebar-menu i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #27ae60;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .orders-table {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .orders-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders-table th,
+        .orders-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .orders-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #7f8c8d;
+        }
+
+        .orders-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .order-id {
+            font-family: monospace;
+            color: #3498db;
+        }
+
+        .order-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-processing {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: #2c3e50;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+
+        .order-details {
+            margin-bottom: 20px;
+        }
+
+        .order-details h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .order-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-group {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .info-group label {
+            display: block;
+            color: #7f8c8d;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .info-group p {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .order-items {
+            margin-top: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .order-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-details h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .item-details p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .item-price {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .order-total {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .filter-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-box select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            min-width: 150px;
+        }
+
+        .filter-box select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Prestigio Admin</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/admin/cars"><i class="fas fa-car"></i> Vehicle Inventory</a></li>
+            <li><a href="/admin/customers"><i class="fas fa-users"></i> Customers</a></li>
+            <li><a href="/admin/orders" class="active"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+            <li><a href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="/admin/settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="/api/auth/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Orders</h1>
+            <button class="btn btn-primary" id="exportBtn">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search orders...">
+        </div>
+
+        <div class="filter-box">
+            <select id="statusFilter">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="processing">Processing</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <select id="dateFilter">
+                <option value="">All Time</option>
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+        </div>
+
+        <div class="orders-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Vehicle</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td class="order-id">#<%= order._id.toString().slice(-6) %></td>
+                            <td><%= order.user.name %></td>
+                            <td><%= order.car.make %> <%= order.car.model %></td>
+                            <td>$<%= order.totalAmount.toLocaleString() %></td>
+                            <td><%= new Date(order.createdAt).toLocaleDateString() %></td>
+                            <td>
+                                <span class="order-status status-<%= order.status.toLowerCase() %>">
+                                    <%= order.status %>
+                                </span>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" onclick="viewOrder('<%= order._id %>')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Details</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="orderDetails">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.orders-table tbody tr');
+
+            rows.forEach(row => {
+                const orderId = row.querySelector('.order-id').textContent.toLowerCase();
+                const customer = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const vehicle = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                if (orderId.includes(searchTerm) || 
+                    customer.includes(searchTerm) || 
+                    vehicle.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Status filter
+        document.getElementById('statusFilter').addEventListener('change', function(e) {
+            const status = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.orders-table tbody tr');
+
+            rows.forEach(row => {
+                const orderStatus = row.querySelector('.order-status').textContent.toLowerCase();
+                if (!status || orderStatus === status) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Date filter
+        document.getElementById('dateFilter').addEventListener('change', function(e) {
+            const filter = e.target.value;
+            const rows = document.querySelectorAll('.orders-table tbody tr');
+            const now = new Date();
+
+            rows.forEach(row => {
+                const dateStr = row.querySelector('td:nth-child(5)').textContent;
+                const orderDate = new Date(dateStr);
+
+                let show = true;
+                switch (filter) {
+                    case 'today':
+                        show = orderDate.toDateString() === now.toDateString();
+                        break;
+                    case 'week':
+                        const weekAgo = new Date(now.setDate(now.getDate() - 7));
+                        show = orderDate >= weekAgo;
+                        break;
+                    case 'month':
+                        const monthAgo = new Date(now.setMonth(now.getMonth() - 1));
+                        show = orderDate >= monthAgo;
+                        break;
+                }
+
+                row.style.display = show ? '' : 'none';
+            });
+        });
+
+        // Export functionality
+        document.getElementById('exportBtn').addEventListener('click', function() {
+            // Implement export functionality
+            alert('Export functionality will be implemented here');
+        });
+
+        // View order details
+        function viewOrder(orderId) {
+            fetch(`/api/admin/orders/${orderId}`)
+                .then(response => response.json())
+                .then(order => {
+                    const detailsHtml = `
+                        <div class="order-details">
+                            <div class="order-info">
+                                <div class="info-group">
+                                    <label>Order ID</label>
+                                    <p>#${order._id.toString().slice(-6)}</p>
+                                </div>
+                                <div class="info-group">
+                                    <label>Date</label>
+                                    <p>${new Date(order.createdAt).toLocaleString()}</p>
+                                </div>
+                                <div class="info-group">
+                                    <label>Customer</label>
+                                    <p>${order.user.name}</p>
+                                </div>
+                                <div class="info-group">
+                                    <label>Status</label>
+                                    <p>${order.status}</p>
+                                </div>
+                            </div>
+
+                            <div class="order-items">
+                                <h3>Vehicle Details</h3>
+                                <div class="order-item">
+                                    <img src="${order.car.images[0]}" alt="${order.car.make} ${order.car.model}">
+                                    <div class="item-details">
+                                        <h4>${order.car.make} ${order.car.model}</h4>
+                                        <p>Year: ${order.car.year}</p>
+                                        <p>Type: ${order.car.type}</p>
+                                    </div>
+                                    <div class="item-price">
+                                        $${order.totalAmount.toLocaleString()}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="order-total">
+                                Total: $${order.totalAmount.toLocaleString()}
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-success" onclick="updateOrderStatus('${order._id}', 'completed')">
+                                    Mark as Completed
+                                </button>
+                                <button class="btn btn-danger" onclick="updateOrderStatus('${order._id}', 'cancelled')">
+                                    Cancel Order
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('orderDetails').innerHTML = detailsHtml;
+                    document.getElementById('orderModal').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching order details:', error));
+        }
+
+        // Update order status
+        function updateOrderStatus(orderId, status) {
+            fetch(`/api/admin/orders/${orderId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify({ status })
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    throw new Error('Failed to update order status');
+                }
+            })
+            .catch(error => console.error('Error updating order status:', error));
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        // Handle logout
+        document.querySelector('a[href="/api/auth/logout"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/login';
+            })
+            .catch(error => console.error('Logout error:', error));
+        });
+    </script>
+</body>
+</html> 

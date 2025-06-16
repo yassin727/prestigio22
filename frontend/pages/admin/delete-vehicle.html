@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Vehicle - Prestigio Motors Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#d4af37',
+                        'gold-light': '#e6c757',
+                        'gold-dark': '#b8941f'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-6 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-red-500 mb-2">Delete Vehicle</h1>
+                <p class="text-gray-400">Remove vehicles from your inventory</p>
+            </div>
+            <button onclick="window.history.back()" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>Back
+            </button>
+        </div>
+
+        <!-- Warning Banner -->
+        <div class="bg-red-900 border border-red-700 rounded-lg p-4 mb-8">
+            <div class="flex items-center">
+                <i class="fas fa-exclamation-triangle text-red-400 text-xl mr-3"></i>
+                <div>
+                    <h3 class="font-semibold text-red-300">Warning: Permanent Action</h3>
+                    <p class="text-red-200 text-sm">Deleting a vehicle will permanently remove it from your inventory. This action cannot be undone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-gray-900 rounded-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Search Vehicles</label>
+                    <input type="text" id="searchInput" placeholder="Search by make, model, or ID..." 
+                           class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                           onkeyup="filterVehicles()">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Category</label>
+                    <select id="categoryFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterVehicles()">
+                        <option value="">All Categories</option>
+                        <option value="luxury">Exotic/Luxury</option>
+                        <option value="regular">Signature/Regular</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Brand</label>
+                    <select id="brandFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterVehicles()">
+                        <option value="">All Brands</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Status</label>
+                    <select id="statusFilter" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-gold focus:border-transparent"
+                            onchange="filterVehicles()">
+                        <option value="">All Status</option>
+                        <option value="available">Available</option>
+                        <option value="reserved">Reserved</option>
+                        <option value="sold">Sold</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div class="bg-gray-900 rounded-lg p-4 mb-6" id="bulkActions" style="display: none;">
+            <div class="flex justify-between items-center">
+                <span id="selectedCount" class="text-sm text-gray-400">0 vehicles selected</span>
+                <div class="flex gap-2">
+                    <button onclick="clearSelection()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm transition-colors">
+                        Clear Selection
+                    </button>
+                    <button onclick="bulkDelete()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm transition-colors">
+                        <i class="fas fa-trash mr-2"></i>Delete Selected
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle Grid -->
+        <div id="vehicleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Vehicle cards will be populated here -->
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
+            <p class="mt-4 text-gray-400">Loading vehicles...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="text-center py-12 hidden">
+            <i class="fas fa-car text-6xl text-gray-600 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">No Vehicles Found</h3>
+            <p class="text-gray-400">No vehicles match your current filters.</p>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="text-center">
+                <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Confirm Deletion</h3>
+                <p class="text-gray-400 mb-2">Are you sure you want to delete this vehicle?</p>
+                <div id="vehicleDetails" class="bg-gray-800 rounded-lg p-4 mb-6 text-left">
+                    <!-- Vehicle details will be populated here -->
+                </div>
+                <p class="text-red-400 text-sm mb-6">This action cannot be undone.</p>
+                <div class="flex justify-center gap-4">
+                    <button onclick="closeDeleteModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button onclick="confirmDelete()" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-trash mr-2"></i>Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Delete Confirmation Modal -->
+    <div id="bulkDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-gray-900 rounded-lg p-8 max-w-lg w-full mx-4">
+            <div class="text-center">
+                <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Confirm Bulk Deletion</h3>
+                <p class="text-gray-400 mb-4">Are you sure you want to delete <span id="bulkCount" class="text-red-400 font-semibold"></span> vehicles?</p>
+                <div class="bg-gray-800 rounded-lg p-4 mb-6 max-h-40 overflow-y-auto">
+                    <ul id="bulkVehicleList" class="text-left text-sm space-y-1">
+                        <!-- Selected vehicles will be listed here -->
+                    </ul>
+                </div>
+                <p class="text-red-400 text-sm mb-6">This action cannot be undone.</p>
+                <div class="flex justify-center gap-4">
+                    <button onclick="closeBulkDeleteModal()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+                    <button onclick="confirmBulkDelete()" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-trash mr-2"></i>Delete All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+        let allVehicles = [];
+        let filteredVehicles = [];
+        let selectedVehicles = new Set();
+        let currentDeleteId = null;
+
+        // Load vehicles on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllVehicles();
+        });
+
+        async function loadAllVehicles() {
+            try {
+                // Use the same endpoint as add-vehicle form to ensure consistency
+                const response = await fetch(`${API_BASE}/admin/cars`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    allVehicles = data.cars || [];
+                    filteredVehicles = [...allVehicles];
+                    populateFilters();
+                    displayVehicles();
+                } else {
+                    showEmptyState();
+                }
+                
+            } catch (error) {
+                console.error('Error loading vehicles:', error);
+                showEmptyState();
+            } finally {
+                document.getElementById('loadingState').style.display = 'none';
+            }
+        }
+
+        function displayVehicles() {
+            const grid = document.getElementById('vehicleGrid');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (filteredVehicles.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            grid.innerHTML = filteredVehicles.map(vehicle => `
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg border-2 ${selectedVehicles.has(vehicle._id) ? 'border-red-500' : 'border-transparent'} transition-all">
+                    <div class="relative">
+                        <img src="${vehicle.image}" alt="${vehicle.name}" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <input type="checkbox" id="select-${vehicle._id}" 
+                                   class="w-5 h-5 text-red-600 bg-gray-800 border-gray-600 rounded focus:ring-red-500"
+                                   onchange="toggleSelection('${vehicle._id}')"
+                                   ${selectedVehicles.has(vehicle._id) ? 'checked' : ''}>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-${vehicle.category === 'luxury' ? 'gold' : 'blue-600'} text-black px-2 py-1 rounded-full text-xs font-semibold">
+                                ${vehicle.category === 'luxury' ? 'Exotic' : 'Signature'}
+                            </span>
+                        </div>
+                        <div class="absolute bottom-4 right-4">
+                            <button onclick="deleteVehicle('${vehicle._id}')" 
+                                    class="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors shadow-lg">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">${vehicle.brand}</h3>
+                            <span class="text-gold font-bold text-lg">${vehicle.price}</span>
+                        </div>
+                        <h4 class="text-lg text-gray-300 mb-2">${vehicle.name}</h4>
+                        <p class="text-gray-400 text-sm mb-4">${vehicle.info.substring(0, 100)}...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">ID: ${vehicle._id}</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">
+                                ${vehicle.status || 'Available'}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function populateFilters() {
+            const brandFilter = document.getElementById('brandFilter');
+            const brands = [...new Set(allVehicles.map(v => v.brand))].sort();
+            
+            brandFilter.innerHTML = '<option value="">All Brands</option>' + 
+                brands.map(brand => `<option value="${brand}">${brand}</option>`).join('');
+        }
+
+        function filterVehicles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const brandFilter = document.getElementById('brandFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            filteredVehicles = allVehicles.filter(vehicle => {
+                const matchesSearch = vehicle.name.toLowerCase().includes(searchTerm) || 
+                                    vehicle.brand.toLowerCase().includes(searchTerm) ||
+                                    vehicle._id.toLowerCase().includes(searchTerm);
+                
+                const matchesCategory = !categoryFilter || vehicle.category === categoryFilter;
+                const matchesBrand = !brandFilter || vehicle.brand === brandFilter;
+                const matchesStatus = !statusFilter || (vehicle.status || 'available') === statusFilter;
+                
+                return matchesSearch && matchesCategory && matchesBrand && matchesStatus;
+            });
+            
+            displayVehicles();
+        }
+
+        function toggleSelection(vehicleId) {
+            if (selectedVehicles.has(vehicleId)) {
+                selectedVehicles.delete(vehicleId);
+            } else {
+                selectedVehicles.add(vehicleId);
+            }
+            
+            updateBulkActions();
+            displayVehicles(); // Refresh to update border colors
+        }
+
+        function updateBulkActions() {
+            const bulkActions = document.getElementById('bulkActions');
+            const selectedCount = document.getElementById('selectedCount');
+            
+            if (selectedVehicles.size > 0) {
+                bulkActions.style.display = 'block';
+                selectedCount.textContent = `${selectedVehicles.size} vehicle${selectedVehicles.size > 1 ? 's' : ''} selected`;
+            } else {
+                bulkActions.style.display = 'none';
+            }
+        }
+
+        function clearSelection() {
+            selectedVehicles.clear();
+            updateBulkActions();
+            displayVehicles();
+        }
+
+        function deleteVehicle(id) {
+            const vehicle = allVehicles.find(v => v._id === id);
+            if (!vehicle) return;
+            
+            currentDeleteId = id;
+            
+            document.getElementById('vehicleDetails').innerHTML = `
+                <div class="flex items-center mb-2">
+                    <img src="${vehicle.image}" alt="${vehicle.name}" class="w-16 h-12 object-cover rounded mr-3">
+                    <div>
+                        <div class="font-semibold">${vehicle.brand} ${vehicle.name}</div>
+                        <div class="text-sm text-gray-400">${vehicle.price}</div>
+                    </div>
+                </div>
+                <div class="text-xs text-gray-500">ID: ${vehicle._id}</div>
+            `;
+            
+            document.getElementById('deleteModal').classList.remove('hidden');
+            document.getElementById('deleteModal').classList.add('flex');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.add('hidden');
+            document.getElementById('deleteModal').classList.remove('flex');
+            currentDeleteId = null;
+        }
+
+        async function confirmDelete() {
+            try {
+                // In a real implementation, you would make an API call to delete the vehicle
+                // const response = await fetch(`${API_BASE}/cars/${currentDeleteId}`, {
+                //     method: 'DELETE'
+                // });
+                
+                // For now, remove locally
+                allVehicles = allVehicles.filter(v => v._id !== currentDeleteId);
+                selectedVehicles.delete(currentDeleteId);
+                filterVehicles();
+                updateBulkActions();
+                
+                closeDeleteModal();
+                showNotification('Vehicle deleted successfully!', 'success');
+                
+            } catch (error) {
+                console.error('Error deleting vehicle:', error);
+                showNotification('Error deleting vehicle', 'error');
+            }
+        }
+
+        function bulkDelete() {
+            if (selectedVehicles.size === 0) return;
+            
+            const selectedVehiclesList = Array.from(selectedVehicles).map(id => 
+                allVehicles.find(v => v._id === id)
+            ).filter(v => v);
+            
+            document.getElementById('bulkCount').textContent = selectedVehicles.size;
+            document.getElementById('bulkVehicleList').innerHTML = selectedVehiclesList.map(vehicle => `
+                <li class="flex justify-between">
+                    <span>${vehicle.brand} ${vehicle.name}</span>
+                    <span class="text-gray-400">${vehicle.price}</span>
+                </li>
+            `).join('');
+            
+            document.getElementById('bulkDeleteModal').classList.remove('hidden');
+            document.getElementById('bulkDeleteModal').classList.add('flex');
+        }
+
+        function closeBulkDeleteModal() {
+            document.getElementById('bulkDeleteModal').classList.add('hidden');
+            document.getElementById('bulkDeleteModal').classList.remove('flex');
+        }
+
+        async function confirmBulkDelete() {
+            try {
+                // In a real implementation, you would make API calls to delete the vehicles
+                // const deletePromises = Array.from(selectedVehicles).map(id => 
+                //     fetch(`${API_BASE}/cars/${id}`, { method: 'DELETE' })
+                // );
+                // await Promise.all(deletePromises);
+                
+                // For now, remove locally
+                allVehicles = allVehicles.filter(v => !selectedVehicles.has(v._id));
+                const deletedCount = selectedVehicles.size;
+                selectedVehicles.clear();
+                
+                filterVehicles();
+                updateBulkActions();
+                closeBulkDeleteModal();
+                
+                showNotification(`${deletedCount} vehicles deleted successfully!`, 'success');
+                
+            } catch (error) {
+                console.error('Error deleting vehicles:', error);
+                showNotification('Error deleting vehicles', 'error');
+            }
+        }
+
+        function showEmptyState() {
+            document.getElementById('vehicleGrid').innerHTML = '';
+            document.getElementById('emptyState').classList.remove('hidden');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg text-white z-50 ${
+                type === 'success' ? 'bg-green-600' : 'bg-red-600'
+            }`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

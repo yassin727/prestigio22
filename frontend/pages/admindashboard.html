@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestigio Motors - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin-controls.css">
+    
+</head>
+<body>
+    <!-- Admin Login Modal (Initially shown if not authenticated) -->
+    <div class="modal" id="adminLoginModal" style="display: flex;">
+        <div class="modal-content">
+            <h2 class="modal-title">Admin Authentication Required</h2>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Please enter your admin credentials to access the dashboard.</p>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminUsername">Username</label>
+                    <input type="text" id="adminUsername" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" class="form-control" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+            <div id="loginError" style="color: #f44336; margin-top: 10px; display: none;"></div>
+        </div>
+    </div>
+
+    <div class="admin-container" id="adminDashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Prestigio Admin</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="admindashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="admin/exotic-inventory.html"><i class="fas fa-car"></i> Exotic Inventory</a></li>
+                <li><a href="admin/signature-inventory.html"><i class="fas fa-car"></i> Signature Inventory</a></li>
+                <li><a href="admin/add-vehicle.html"><i class="fas fa-plus-circle"></i> Add New Vehicle</a></li>
+                <li><a href="admin/delete-vehicle.html"><i class="fas fa-trash"></i> Delete Vehicle</a></li>
+                <li><a href="admin/customers.html"><i class="fas fa-users"></i> Customers</a></li>
+                <li><a href="admin/database-setup.html"><i class="fas fa-database"></i> Database Setup</a></li>
+                <li><a href="admin/orders.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                <li><a href="admin/messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="admin/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="../project.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1>Admin Dashboard</h1>
+                <div class="user-info">
+                    <img src="images/orange.jpg" alt="Admin User">
+                    <span>Moamen Mohy</span>
+                </div>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Total Vehicles</div>
+                        <div class="card-icon blue">
+                            <i class="fas fa-car"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="totalVehicles">Loading...</div>
+                    <div class="card-footer" id="vehiclesChange">Loading...</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Total Customers</div>
+                        <div class="card-icon green">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="totalCustomers">Loading...</div>
+                    <div class="card-footer" id="customersChange">Loading...</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Luxury Cars</div>
+                        <div class="card-icon orange">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="luxuryCars">Loading...</div>
+                    <div class="card-footer" id="luxuryChange">Exotic Collection</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Regular Cars</div>
+                        <div class="card-icon red">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                    </div>
+                    <div class="card-value" id="regularCars">Loading...</div>
+                    <div class="card-footer" id="regularChange">Signature Collection</div>
+                </div>
+            </div>
+
+            <!-- Vehicle Inventory Section -->
+            <div class="table-container" id="cars">
+                <div class="table-header">
+                    <h2 class="table-title">Vehicle Inventory</h2>
+                    <button class="btn btn-primary" id="addCarBtn">
+                        <i class="fas fa-plus"></i> Add Vehicle
+                    </button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Make & Model</th>
+                            <th>Type</th>
+                            <th>Year</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#PRS1001</td>
+                            <td><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=60" alt="Car" style="width:60px;height:40px;object-fit:cover;"></td>
+                            <td>Ferrari 488 GTB</td>
+                            <td>Exotic</td>
+                            <td>2022</td>
+                            <td>$275,000</td>
+                            <td><span class="status active">Available</span></td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#PRS1002</td>
+                            <td><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=60" alt="Car" style="width:60px;height:40px;object-fit:cover;"></td>
+                            <td>Porsche 911 Turbo S</td>
+                            <td>Exotic</td>
+                            <td>2023</td>
+                            <td>$203,500</td>
+                            <td><span class="status active">Available</span></td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#PRS1003</td>
+                            <td><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=60" alt="Car" style="width:60px;height:40px;object-fit:cover;"></td>
+                            <td>Lamborghini Huracan</td>
+                            <td>Exotic</td>
+                            <td>2021</td>
+                            <td>$261,274</td>
+                            <td><span class="status pending">Reserved</span></td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#PRS2001</td>
+                            <td><img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=60" alt="Car" style="width:60px;height:40px;object-fit:cover;"></td>
+                            <td>Toyota Camry</td>
+                            <td>Regular</td>
+                            <td>2023</td>
+                            <td>$28,000</td>
+                            <td><span class="status active">Available</span></td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#PRS2002</td>
+                            <td><img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=60" alt="Car" style="width:60px;height:40px;object-fit:cover;"></td>
+                            <td>Honda Civic</td>
+                            <td>Regular</td>
+                            <td>2022</td>
+                            <td>$24,000</td>
+                            <td><span class="status inactive">Sold</span></td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Car Form (Initially hidden) -->
+            <div class="form-container" id="add-car" style="display: none;">
+                <h2 class="form-title">Add New Vehicle</h2>
+                <form id="carForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carMake">Make</label>
+                            <input type="text" id="carMake" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carModel">Model</label>
+                            <input type="text" id="carModel" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carYear">Year</label>
+                            <input type="number" id="carYear" class="form-control" min="1900" max="2025" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carPrice">Price ($)</label>
+                            <input type="number" id="carPrice" class="form-control" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carType">Vehicle Type</label>
+                            <select id="carType" class="form-control" required>
+                                <option value="">Select Type</option>
+                                <option value="exotic">Exotic</option>
+                                <option value="regular">Regular</option>
+                                <option value="special">Special Edition</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="carStatus">Status</label>
+                            <select id="carStatus" class="form-control" required>
+                                <option value="available">Available</option>
+                                <option value="reserved">Reserved</option>
+                                <option value="sold">Sold</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carDescription">Description</label>
+                        <textarea id="carDescription" class="form-control" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="carImages">Upload Images</label>
+                        <input type="file" id="carImages" class="form-control" multiple accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-danger" id="cancelCarBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Customers Section -->
+            <div class="table-container" id="customers">
+                <div class="table-header">
+                    <h2 class="table-title">Customer List</h2>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Vehicles Owned</th>
+                            <th>Last Purchase</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#CUS1001</td>
+                            <td>Elie George</td>
+                            <td>elie4423@gmail.com</td>
+                            <td>01024583457</td>
+                            <td>3</td>
+                            <td>2023-05-15</td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-primary"><i class="fas fa-envelope"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#CUS1002</td>
+                            <td>Sarah Magdy</td>
+                            <td>sarahss2@gmail.com</td>
+                            <td>01232457898</td>
+                            <td>1</td>
+                            <td>2023-06-22</td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-primary"><i class="fas fa-envelope"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#CUS1003</td>
+                            <td>Ahmed Ismael</td>
+                            <td>Ahmed33@gmail.com</td>
+                            <td>01123468634</td>
+                            <td>2</td>
+                            <td>2023-04-10</td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-primary"><i class="fas fa-envelope"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#CUS1004</td>
+                            <td>Islam Ahmed</td>
+                            <td>islam223@gmail.com</td>
+                            <td>01092832404</td>
+                            <td>0</td>
+                            <td>-</td>
+                            <td>
+                                <button class="action-btn btn-success"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-primary"><i class="fas fa-envelope"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Vehicle Gallery View -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">Vehicle Gallery</h2>
+                    <div>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-th-large"></i> Grid View
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-list"></i> List View
+                        </button>
+                    </div>
+                </div>
+                <div class="car-gallery">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400" alt="Ferrari 488 GTB">
+                        </div>
+                        <div class="car-details">
+                            <h3 class="car-title">Ferrari 488 GTB</h3>
+                            <div class="car-price">$275,000</div>
+                            <div class="car-meta">
+                                <span><i class="fas fa-calendar-alt"></i> 2022</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 3,200 mi</span>
+                            </div>
+                            <div class="car-actions">
+                                <button class="btn btn-success">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400" alt="Porsche 911 Turbo S">
+                        </div>
+                        <div class="car-details">
+                            <h3 class="car-title">Porsche 911 Turbo S</h3>
+                            <div class="car-price">$203,500</div>
+                            <div class="car-meta">
+                                <span><i class="fas fa-calendar-alt"></i> 2023</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 1,800 mi</span>
+                            </div>
+                            <div class="car-actions">
+                                <button class="btn btn-success">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400" alt="Toyota Camry">
+                        </div>
+                        <div class="car-details">
+                            <h3 class="car-title">Toyota Camry</h3>
+                            <div class="car-price">$28,000</div>
+                            <div class="car-meta">
+                                <span><i class="fas fa-calendar-alt"></i> 2023</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 12,400 mi</span>
+                            </div>
+                            <div class="car-actions">
+                                <button class="btn btn-success">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">Confirm Deletion</h2>
+            <p>Are you sure you want to delete this vehicle? This action cannot be undone.</p>
+            <div class="form-actions">
+                <button class="btn" id="cancelDelete">Cancel</button>
+                <button class="btn btn-danger" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="../js/admin.js"></script>
+    
+    <!-- Admin Dashboard Authentication Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('🔐 Admin Dashboard Loading...');
+        
+        // Check if admin is already logged in
+        const isAdminLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+        
+        if (isAdminLoggedIn) {
+          // Hide login modal and show dashboard
+          document.getElementById('adminLoginModal').style.display = 'none';
+          document.getElementById('adminDashboard').style.display = 'grid';
+          
+          // Initialize the enhanced admin dashboard
+          if (typeof initializeEnhancedAdminDashboard === 'function') {
+            initializeEnhancedAdminDashboard();
+          }
+          
+          // Load real dashboard statistics
+          loadDashboardStats();
+        } else {
+          // Show login modal
+          document.getElementById('adminLoginModal').style.display = 'flex';
+          document.getElementById('adminDashboard').style.display = 'none';
+        }
+        
+        // Handle login form submission
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const username = document.getElementById('adminUsername').value.trim();
+          const password = document.getElementById('adminPassword').value.trim();
+          const errorDiv = document.getElementById('loginError');
+          
+          // Clear previous errors
+          errorDiv.style.display = 'none';
+          
+          // Debug: Log the entered credentials
+          console.log('Entered username:', JSON.stringify(username));
+          console.log('Entered password:', JSON.stringify(password));
+          console.log('Username length:', username.length);
+          console.log('Password length:', password.length);
+          
+          // Check credentials (case-insensitive for username)
+          const validCredentials = [
+            { user: 'admin', pass: 'prestigio123' },
+            { user: 'admin', pass: 'admin123' },
+            { user: 'prestigio', pass: 'admin123' }
+          ];
+          
+          const isValidLogin = validCredentials.some(cred => 
+            username.toLowerCase() === cred.user.toLowerCase() && password === cred.pass
+          );
+          
+          if (isValidLogin) {
+            // Successful login
+            localStorage.setItem('adminLoggedIn', 'true');
+            
+            // Hide login modal and show dashboard
+            document.getElementById('adminLoginModal').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'grid';
+            
+            // Initialize the enhanced admin dashboard
+            if (typeof initializeEnhancedAdminDashboard === 'function') {
+              initializeEnhancedAdminDashboard();
+            }
+            
+            // Load real dashboard statistics
+            loadDashboardStats();
+            
+            console.log('✅ Admin login successful');
+          } else {
+            // Failed login
+            errorDiv.innerHTML = `
+              <strong>Invalid credentials!</strong><br>
+              Try one of these combinations:<br>
+              • Username: <code>admin</code> | Password: <code>prestigio123</code><br>
+              • Username: <code>admin</code> | Password: <code>admin123</code><br>
+              • Username: <code>prestigio</code> | Password: <code>admin123</code>
+            `;
+            errorDiv.style.display = 'block';
+            
+            // Clear password field
+            document.getElementById('adminPassword').value = '';
+            
+            console.log('❌ Admin login failed');
+          }
+        });
+        
+        // Auto-focus username field
+        document.getElementById('adminUsername').focus();
+      });
+      
+      // Handle logout
+      function handleAdminLogout() {
+        localStorage.removeItem('adminLoggedIn');
+        window.location.reload();
+      }
+      
+      // Load dashboard statistics from API
+      async function loadDashboardStats() {
+        const API_BASE = 'http://localhost:5000/api';
+        
+        try {
+          const response = await fetch(`${API_BASE}/admin/dashboard-stats`);
+          const data = await response.json();
+          
+          if (data.success) {
+            const stats = data.stats;
+            
+            // Update dashboard cards
+            document.getElementById('totalVehicles').textContent = stats.totalCars;
+            document.getElementById('totalCustomers').textContent = stats.totalUsers;
+            document.getElementById('luxuryCars').textContent = stats.luxuryCars;
+            document.getElementById('regularCars').textContent = stats.regularCars;
+            
+            // Update footer text
+            document.getElementById('vehiclesChange').textContent = `${stats.totalBrands} brands available`;
+            document.getElementById('customersChange').textContent = `Active users in system`;
+            
+            // Update vehicle inventory table with recent cars
+            if (data.recent && data.recent.cars) {
+              updateInventoryTable(data.recent.cars);
+            }
+            
+            console.log('✅ Dashboard stats loaded:', stats);
+          }
+        } catch (error) {
+          console.error('❌ Error loading dashboard stats:', error);
+          // Set fallback values
+          document.getElementById('totalVehicles').textContent = '0';
+          document.getElementById('totalCustomers').textContent = '0';
+          document.getElementById('luxuryCars').textContent = '0';
+          document.getElementById('regularCars').textContent = '0';
+        }
+      }
+      
+      function updateInventoryTable(recentCars) {
+        const tableBody = document.querySelector('#cars tbody');
+        if (!tableBody || !recentCars) return;
+        
+        tableBody.innerHTML = recentCars.slice(0, 5).map(car => `
+          <tr>
+            <td>#${car._id.slice(-6).toUpperCase()}</td>
+            <td><img src="${car.image}" alt="${car.name}" style="width:60px;height:40px;object-fit:cover;border-radius:4px;"></td>
+            <td>${car.brand} ${car.name}</td>
+            <td>${car.category === 'luxury' ? 'Exotic' : 'Regular'}</td>
+            <td>${car.year || 'N/A'}</td>
+            <td>${car.price}</td>
+            <td><span class="status ${car.isActive ? 'active' : 'inactive'}">${car.isActive ? 'Available' : 'Unavailable'}</span></td>
+            <td>
+              <button class="action-btn btn-success" onclick="editCar('${car._id}')"><i class="fas fa-edit"></i></button>
+              <button class="action-btn btn-danger" onclick="deleteCar('${car._id}')"><i class="fas fa-trash"></i></button>
+            </td>
+          </tr>
+        `).join('');
+      }
+      
+      function editCar(carId) {
+        // Navigate to appropriate inventory page
+        window.location.href = `admin/exotic-inventory.html`;
+      }
+      
+      function deleteCar(carId) {
+        if (confirm('Are you sure you want to delete this vehicle?')) {
+          // Handle delete - would make API call
+          console.log('Delete car:', carId);
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,969 @@
+[2025-06-12T02:31:11.095Z] Initializing OpenAI with API key: sk-pr...VagA
+[2025-06-12T02:31:11.098Z] Testing OpenAI connection...
+[2025-06-12T02:31:12.412Z] Successfully connected to OpenAI. Available models: [
+  "gpt-3.5-turbo",
+  "gpt-3.5-turbo-16k",
+  "gpt-3.5-turbo-instruct",
+  "gpt-3.5-turbo-instruct-0914",
+  "gpt-3.5-turbo-1106",
+  "gpt-3.5-turbo-0125",
+  "gpt-4o",
+  "gpt-4o-2024-05-13",
+  "gpt-4o-mini-2024-07-18",
+  "gpt-4o-mini",
+  "gpt-4o-2024-08-06",
+  "gpt-4o-audio-preview-2024-10-01",
+  "gpt-4o-audio-preview",
+  "gpt-4o-mini-audio-preview-2024-12-17",
+  "gpt-4o-mini-audio-preview",
+  "gpt-4o-2024-11-20",
+  "gpt-4.5-preview",
+  "gpt-4.5-preview-2025-02-27",
+  "gpt-4o-search-preview-2025-03-11",
+  "gpt-4o-search-preview",
+  "gpt-4o-mini-search-preview-2025-03-11",
+  "gpt-4o-mini-search-preview",
+  "gpt-4o-transcribe",
+  "gpt-4o-mini-transcribe",
+  "gpt-4o-mini-tts",
+  "gpt-4.1-2025-04-14",
+  "gpt-4.1",
+  "gpt-4.1-mini-2025-04-14",
+  "gpt-4.1-mini",
+  "gpt-4.1-nano-2025-04-14",
+  "gpt-4.1-nano",
+  "gpt-image-1"
+]
+[2025-06-12T02:31:22.581Z] 
+=== Incoming GET /health ===
+[2025-06-12T02:31:22.582Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061",
+  "host": "localhost:5000",
+  "connection": "Keep-Alive"
+}
+[2025-06-12T02:31:22.590Z] === Completed 200 in 9ms ===
+
+[2025-06-12T02:31:35.877Z] 
+=== Incoming POST /api/chat ===
+[2025-06-12T02:31:35.878Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061",
+  "content-type": "application/json",
+  "host": "localhost:5000",
+  "content-length": "199",
+  "expect": "100-continue",
+  "connection": "Keep-Alive"
+}
+[2025-06-12T02:31:35.878Z] Body: {
+  "messages": [
+    {
+      "content": "Hello, can you help me?",
+      "role": "user"
+    }
+  ]
+}
+[2025-06-12T02:31:35.879Z] === CHAT REQUEST ===
+[2025-06-12T02:31:35.879Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061",
+  "content-type": "application/json",
+  "host": "localhost:5000",
+  "content-length": "199",
+  "expect": "100-continue",
+  "connection": "Keep-Alive"
+}
+[2025-06-12T02:31:35.879Z] Body: {
+  "messages": [
+    {
+      "content": "Hello, can you help me?",
+      "role": "user"
+    }
+  ]
+}
+[2025-06-12T02:31:35.880Z] Sending to OpenAI: {
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful concierge for Prestigio Motors, a luxury car dealership in Al Obour City, Egypt. Contact: +2 01098613073, prestegioautomobiles@gmail.com. Provide helpful, professional, and friendly responses to customer inquiries. If you don't know the answer, offer to connect them with a human representative. Keep responses concise but informative. Hours: Mon-Sat 9AM-8PM, Sun 11AM-6PM."
+    },
+    {
+      "content": "Hello, can you help me?",
+      "role": "user"
+    }
+  ]
+}
+[2025-06-12T02:31:38.428Z] === OPENAI ERROR ===
+[2025-06-12T02:31:38.428Z] Error message: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+[2025-06-12T02:31:38.428Z] Rate limit or quota exceeded - using fallback response
+[2025-06-12T02:31:38.429Z] === Completed 200 in 2552ms ===
+
+[2025-06-12T02:32:43.123Z] 
+=== Incoming GET /customerservice.html ===
+[2025-06-12T02:32:43.132Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "accept-encoding": "gzip,deflate,br",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept-language": "en-US,en;q=0.9",
+  "upgrade-insecure-requests": "1",
+  "content-type": "application/octet-stream",
+  "content-length": "0",
+  "host": "localhost:5000",
+  "connection": "keep-alive"
+}
+[2025-06-12T02:32:43.199Z] === Completed 200 in 76ms ===
+
+[2025-06-12T02:32:43.229Z] 
+=== Incoming GET /customerservice.html ===
+[2025-06-12T02:32:43.229Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept-language": "en-US,en;q=0.9",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:43.255Z] === Completed 200 in 27ms ===
+
+[2025-06-12T02:32:43.516Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-12T02:32:43.517Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:43.543Z] === Completed 200 in 27ms ===
+
+[2025-06-12T02:32:48.481Z] 
+=== Incoming GET /pages/luxurycars.html ===
+[2025-06-12T02:32:48.482Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "accept-encoding": "gzip,deflate,br",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept-language": "en-US,en;q=0.9",
+  "referer": "http://localhost:5000/customerservice.html",
+  "upgrade-insecure-requests": "1",
+  "content-type": "application/octet-stream",
+  "content-length": "0",
+  "host": "localhost:5000",
+  "connection": "keep-alive"
+}
+[2025-06-12T02:32:48.531Z] === Completed 200 in 50ms ===
+
+[2025-06-12T02:32:48.651Z] 
+=== Incoming GET /pages/luxurycars.html ===
+[2025-06-12T02:32:48.652Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept-language": "en-US,en;q=0.9",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:48.663Z] === Completed 200 in 12ms ===
+
+[2025-06-12T02:32:48.811Z] 
+=== Incoming GET /pages/css/luxurycars.css ===
+[2025-06-12T02:32:48.812Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:48.816Z] 
+=== Incoming GET /pages/admin-controls.css ===
+[2025-06-12T02:32:48.816Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:48.828Z] === Completed 200 in 17ms ===
+
+[2025-06-12T02:32:48.830Z] === Completed 200 in 14ms ===
+
+[2025-06-12T02:32:48.832Z] 
+=== Incoming GET /pages/particles.js ===
+[2025-06-12T02:32:48.832Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:48.836Z] 
+=== Incoming GET /pages/admin-vehicle-manager.js ===
+[2025-06-12T02:32:48.836Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:48.875Z] === Completed 200 in 43ms ===
+
+[2025-06-12T02:32:48.888Z] === Completed 200 in 52ms ===
+
+[2025-06-12T02:32:49.209Z] 
+=== Incoming GET /pages/logos/Bugatti-Logo.png ===
+[2025-06-12T02:32:49.209Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.279Z] 
+=== Incoming GET /pages/logos/rolls-royce-logo.png ===
+[2025-06-12T02:32:49.279Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.290Z] 
+=== Incoming GET /pages/logos/bentley.png ===
+[2025-06-12T02:32:49.290Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.292Z] 
+=== Incoming GET /pages/logos/ferrari-emblem-logo-png_seeklogo-53763.png ===
+[2025-06-12T02:32:49.292Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.314Z] === Completed 200 in 105ms ===
+
+[2025-06-12T02:32:49.321Z] === Completed 200 in 42ms ===
+
+[2025-06-12T02:32:49.332Z] 
+=== Incoming GET /pages/logos/Lamborghini-Logo.png ===
+[2025-06-12T02:32:49.343Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.352Z] === Completed 200 in 62ms ===
+
+[2025-06-12T02:32:49.362Z] === Completed 200 in 67ms ===
+
+[2025-06-12T02:32:49.375Z] 
+=== Incoming GET /pages/logos/mclaren-logo.png ===
+[2025-06-12T02:32:49.375Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.379Z] 
+=== Incoming GET /pages/logos/png-clipart-porsche-911-car-desktop-logo-porsche-emblem-label.png ===
+[2025-06-12T02:32:49.379Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.477Z] 
+=== Incoming GET /pages/logos/Aston-Martin-Logo.png ===
+[2025-06-12T02:32:49.478Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.564Z] === Completed 200 in 232ms ===
+
+[2025-06-12T02:32:49.573Z] === Completed 200 in 198ms ===
+
+[2025-06-12T02:32:49.621Z] 
+=== Incoming GET /pages/logos/lexus.png ===
+[2025-06-12T02:32:49.621Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.625Z] 
+=== Incoming GET /pages/logos/png-clipart-bmw-car-logo-bmw-logo-trademark-logo.png ===
+[2025-06-12T02:32:49.625Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.626Z] 
+=== Incoming GET /pages/logos/Mercedes-Logo.svg.png ===
+[2025-06-12T02:32:49.627Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.629Z] === Completed 200 in 250ms ===
+
+[2025-06-12T02:32:49.654Z] 
+=== Incoming GET /pages/logos/audi.png ===
+[2025-06-12T02:32:49.654Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.657Z] === Completed 200 in 180ms ===
+
+[2025-06-12T02:32:49.670Z] 
+=== Incoming GET /pages/logos/png-transparent-jaguar-cars-luxury-vehicle-logo-jaguar-angle-animals-company.png ===
+[2025-06-12T02:32:49.671Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.758Z] 
+=== Incoming GET /pages/logos/png-transparent-maserati-logo-car-organization-brand-maserati-emblem-text-logo.png ===
+[2025-06-12T02:32:49.758Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.762Z] === Completed 200 in 141ms ===
+
+[2025-06-12T02:32:49.776Z] === Completed 200 in 151ms ===
+
+[2025-06-12T02:32:49.780Z] === Completed 200 in 154ms ===
+
+[2025-06-12T02:32:49.845Z] === Completed 200 in 191ms ===
+
+[2025-06-12T02:32:49.849Z] 
+=== Incoming GET /pages/logos/land-rover-logo-png_seeklogo-201638.png ===
+[2025-06-12T02:32:49.850Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:49.857Z] === Completed 200 in 187ms ===
+
+[2025-06-12T02:32:49.862Z] === Completed 200 in 104ms ===
+
+[2025-06-12T02:32:49.863Z] === Completed 200 in 14ms ===
+
+[2025-06-12T02:32:51.747Z] 
+=== Incoming GET /pages/customerservice.html ===
+[2025-06-12T02:32:51.757Z] Headers: {
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "accept-encoding": "gzip,deflate,br",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "sec-ch-ua-mobile": "?0",
+  "accept-language": "en-US,en;q=0.9",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "upgrade-insecure-requests": "1",
+  "content-type": "application/octet-stream",
+  "content-length": "0",
+  "host": "localhost:5000",
+  "connection": "keep-alive"
+}
+[2025-06-12T02:32:51.788Z] === Completed 200 in 41ms ===
+
+[2025-06-12T02:32:51.890Z] 
+=== Incoming GET /pages/customerservice.html ===
+[2025-06-12T02:32:51.890Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept-language": "en-US,en;q=0.9",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/luxurycars.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:51.893Z] === Completed 200 in 3ms ===
+
+[2025-06-12T02:32:52.006Z] 
+=== Incoming GET /pages/customerservice.css ===
+[2025-06-12T02:32:52.006Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:52.011Z] === Completed 200 in 5ms ===
+
+[2025-06-12T02:32:52.014Z] 
+=== Incoming GET /pages/images/orange.jpg ===
+[2025-06-12T02:32:52.017Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:52.020Z] 
+=== Incoming GET /js/particles.js ===
+[2025-06-12T02:32:52.020Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:52.028Z] 
+=== Incoming GET /js/customerservice.js ===
+[2025-06-12T02:32:52.028Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:52.043Z] === Completed 200 in 29ms ===
+
+[2025-06-12T02:32:52.061Z] === Completed 200 in 41ms ===
+
+[2025-06-12T02:32:52.083Z] === Completed 200 in 55ms ===
+
+[2025-06-12T02:32:52.637Z] 
+=== Incoming GET /api/placeholder/800/650 ===
+[2025-06-12T02:32:52.637Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "image",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:32:52.642Z] === Completed 200 in 5ms ===
+
+[2025-06-12T02:33:10.815Z] 
+=== Incoming POST /api/chat ===
+[2025-06-12T02:33:10.816Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "68",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept-language": "en-US,en;q=0.9",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:33:10.816Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "i want to know the prices"
+    }
+  ]
+}
+[2025-06-12T02:33:10.817Z] === CHAT REQUEST ===
+[2025-06-12T02:33:10.817Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "68",
+  "pragma": "no-cache",
+  "cache-control": "no-cache",
+  "sec-ch-ua-platform": "\"macOS\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Chromium\";v=\"135\", \"Not:A Brand\";v=\"99\", \"Google Chrome\";v=\"135\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept-language": "en-US,en;q=0.9",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/customerservice.html",
+  "accept-encoding": "gzip, deflate, br, zstd"
+}
+[2025-06-12T02:33:10.817Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "i want to know the prices"
+    }
+  ]
+}
+[2025-06-12T02:33:10.818Z] Sending to OpenAI: {
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful concierge for Prestigio Motors, a luxury car dealership in Al Obour City, Egypt. Contact: +2 01098613073, prestegioautomobiles@gmail.com. Provide helpful, professional, and friendly responses to customer inquiries. If you don't know the answer, offer to connect them with a human representative. Keep responses concise but informative. Hours: Mon-Sat 9AM-8PM, Sun 11AM-6PM."
+    },
+    {
+      "role": "user",
+      "content": "i want to know the prices"
+    }
+  ]
+}
+[2025-06-12T02:33:13.540Z] === OPENAI ERROR ===
+[2025-06-12T02:33:13.541Z] Error message: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+[2025-06-12T02:33:13.541Z] Rate limit or quota exceeded - using fallback response
+[2025-06-12T02:33:13.548Z] === Completed 200 in 2733ms ===
+
+[2025-06-12T02:37:55.183Z] 
+=== Incoming POST /api/chat ===
+[2025-06-12T02:37:55.201Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "511",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=-UzNv1ZH5mNIaZqC5HIJFq-i; XSRF-TOKEN=M9KtpFzS-S_qTFDxUaOpsB6bE1FbWaTU87ps"
+}
+[2025-06-12T02:37:55.206Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Welcome to Prestigio Motors Concierge! How may I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "i am asking about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "I appreciate your inquiry. A member of our team will respond soon. For urgent matters, call +2 01098613073."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Good day! Welcome to Prestigio Motors. What would you like to know?"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    }
+  ]
+}
+[2025-06-12T02:37:55.206Z] === CHAT REQUEST ===
+[2025-06-12T02:37:55.206Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "511",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "application/json",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=-UzNv1ZH5mNIaZqC5HIJFq-i; XSRF-TOKEN=M9KtpFzS-S_qTFDxUaOpsB6bE1FbWaTU87ps"
+}
+[2025-06-12T02:37:55.206Z] Body: {
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Welcome to Prestigio Motors Concierge! How may I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "i am asking about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "I appreciate your inquiry. A member of our team will respond soon. For urgent matters, call +2 01098613073."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Good day! Welcome to Prestigio Motors. What would you like to know?"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    }
+  ]
+}
+[2025-06-12T02:37:55.207Z] Sending to OpenAI: {
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful concierge for Prestigio Motors, a luxury car dealership in Al Obour City, Egypt. Contact: +2 01098613073, prestegioautomobiles@gmail.com. Provide helpful, professional, and friendly responses to customer inquiries. If you don't know the answer, offer to connect them with a human representative. Keep responses concise but informative. Hours: Mon-Sat 9AM-8PM, Sun 11AM-6PM."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Welcome to Prestigio Motors Concierge! How may I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "i am asking about the new s class"
+    },
+    {
+      "role": "assistant",
+      "content": "I appreciate your inquiry. A member of our team will respond soon. For urgent matters, call +2 01098613073."
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Good day! Welcome to Prestigio Motors. What would you like to know?"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    }
+  ]
+}
+[2025-06-12T02:37:57.814Z] === OPENAI ERROR ===
+[2025-06-12T02:37:57.814Z] Error message: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+[2025-06-12T02:37:57.814Z] Rate limit or quota exceeded - using fallback response
+[2025-06-12T02:37:57.820Z] === Completed 200 in 2638ms ===
+

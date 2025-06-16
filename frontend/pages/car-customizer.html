@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="customizer.pageTitle">Premium Car Customizer</title>
+    
+    <!-- Localization CSS -->
+    <link rel="stylesheet" href="../css/i18n.css">
+    
+    <!-- Three.js and dependencies -->
+    <script src="https://unpkg.com/three@0.134.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/car-customizer.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div class="model-loading" data-i18n="common.loading">Loading your customization experience...</div>
+    </div>
+
+    <div class="container">
+        <!-- 3D Model Viewer -->
+        <div class="viewer-section">
+            <div class="viewer-header">
+                <button class="back-btn" onclick="window.location.href='/pages/luxurycars.html'">
+                    <i class="fas fa-arrow-left"></i> <span data-i18n="common.back">Back to Cars</span>
+                </button>
+                <div class="model-info">
+                    <h1 id="car-model-name">Bugatti Bolide 2024</h1>
+                    <p id="car-model-description">Experience ultimate luxury and performance</p>
+                </div>
+                <div class="viewer-controls">
+                    <button class="control-btn" id="autoRotateBtn" data-i18n-title="customizer.autoRotate" title="Toggle Auto-Rotate">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="control-btn" id="resetViewBtn" data-i18n-title="customizer.resetView" title="Reset View">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    <button class="control-btn" id="fullscreenBtn" data-i18n-title="customizer.fullscreen" title="Toggle Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 3D Model Container -->
+            <div id="model-viewer"></div>
+            
+            <div class="viewer-footer">
+                <div class="view-angles">
+                    <button class="angle-btn active" data-angle="front" data-i18n="customizer.frontView">Front</button>
+                    <button class="angle-btn" data-angle="side" data-i18n="customizer.sideView">Side</button>
+                    <button class="angle-btn" data-angle="rear" data-i18n="customizer.rearView">Rear</button>
+                    <button class="angle-btn" data-angle="top">Top</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customization Panel -->
+        <div class="customization-panel">
+            <div class="panel-header">
+                <h2 data-i18n="customizer.customization">Customize Your Vehicle</h2>
+                <div class="tabs">
+                    <div class="tab active" data-tab="colors" data-i18n="customizer.color">Colors</div>
+                    <div class="tab" data-tab="wheels" data-i18n="customizer.wheels">Wheels</div>
+                    <div class="tab" data-tab="interior" data-i18n="customizer.interior">Interior</div>
+                    <div class="tab" data-tab="features">Features</div>
+                </div>
+            </div>
+            
+            <div class="panel-content">
+                <!-- Colors Section -->
+                <div class="customization-section active" id="colors-section">
+                    <h3><i class="fas fa-palette"></i> Paint Color</h3>
+                    <div class="color-grid">
+                        <!-- Row 1: Classic Colors -->
+                        <div class="color-option active" data-color="#000000" style="background-color: #000000;" title="Midnight Black"></div>
+                        <div class="color-option" data-color="#ffffff" style="background-color: #ffffff;" title="Pearl White"></div>
+                        <div class="color-option" data-color="#c0c0c0" style="background-color: #c0c0c0;" title="Silver Metallic"></div>
+                        <div class="color-option" data-color="#2c2c2c" style="background-color: #2c2c2c;" title="Charcoal Gray"></div>
+                        
+                        <!-- Row 2: Bold Colors -->
+                        <div class="color-option" data-color="#dc143c" style="background-color: #dc143c;" title="Racing Red"></div>
+                        <div class="color-option" data-color="#0066cc" style="background-color: #0066cc;" title="Ocean Blue"></div>
+                        <div class="color-option" data-color="#228b22" style="background-color: #228b22;" title="Forest Green"></div>
+                        <div class="color-option" data-color="#800080" style="background-color: #800080;" title="Royal Purple"></div>
+                        
+                        <!-- Row 3: Premium Colors -->
+                        <div class="color-option" data-color="#ffd700" style="background-color: #ffd700;" title="Gold Chrome"></div>
+                        <div class="color-option" data-color="#ff4500" style="background-color: #ff4500;" title="Sunset Orange"></div>
+                        <div class="color-option" data-color="#4b0082" style="background-color: #4b0082;" title="Deep Indigo"></div>
+                        <div class="color-option" data-color="#8b4513" style="background-color: #8b4513;" title="Cognac Brown"></div>
+                        
+                        <!-- Row 4: Exotic Colors -->
+                        <div class="color-option" data-color="#ff1493" style="background-color: #ff1493;" title="Hot Pink"></div>
+                        <div class="color-option" data-color="#00ffff" style="background-color: #00ffff;" title="Electric Cyan"></div>
+                        <div class="color-option" data-color="#32cd32" style="background-color: #32cd32;" title="Lime Green"></div>
+                        <div class="color-option" data-color="#ff6347" style="background-color: #ff6347;" title="Coral Red"></div>
+                    </div>
+                    
+                    <h4 data-i18n="customizer.finish">Paint Finish</h4>
+                    <div class="finish-options">
+                        <div class="finish-option active" data-finish="metallic">
+                            <i class="fas fa-circle"></i>
+                            <span data-i18n="customizer.metallic">Metallic</span>
+                        </div>
+                        <div class="finish-option" data-finish="matte">
+                            <i class="fas fa-circle"></i>
+                            <span data-i18n="customizer.matte">Matte</span>
+                        </div>
+                        <div class="finish-option" data-finish="gloss">
+                            <i class="fas fa-circle"></i>
+                            <span data-i18n="customizer.glossy">High Gloss</span>
+                        </div>
+                        <div class="finish-option" data-finish="satin">
+                            <i class="fas fa-circle"></i>
+                            <span data-i18n="customizer.satin">Satin</span>
+                        </div>
+                        <div class="finish-option" data-finish="chrome">
+                            <i class="fas fa-circle"></i>
+                            <span>Chrome</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wheels Section -->
+                <div class="customization-section" id="wheels-section">
+                    <h3><i class="fas fa-tire"></i> Wheel Design</h3>
+                    <div class="wheel-options">
+                        <div class="wheel-option active" data-wheel="standard">
+                            <div class="wheel-preview">🔘 Standard Alloy</div>
+                            <div class="wheel-price">Included</div>
+                        </div>
+                        <div class="wheel-option" data-wheel="sport">
+                            <div class="wheel-preview">⚡ Sport Performance</div>
+                            <div class="wheel-price">+$2,500</div>
+                        </div>
+                        <div class="wheel-option" data-wheel="carbon">
+                            <div class="wheel-preview">🏁 Carbon Fiber</div>
+                            <div class="wheel-price">+$8,500</div>
+                        </div>
+                        <div class="wheel-option" data-wheel="forged">
+                            <div class="wheel-preview">💎 Forged Titanium</div>
+                            <div class="wheel-price">+$12,000</div>
+                        </div>
+                        <div class="wheel-option" data-wheel="chrome">
+                            <div class="wheel-preview">✨ Chrome Finish</div>
+                            <div class="wheel-price">+$5,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior Section -->
+                <div class="customization-section" id="interior-section">
+                    <h3><i class="fas fa-couch"></i> Interior Materials</h3>
+                    <div class="interior-options">
+                        <div class="interior-option active" data-interior="leather-black">
+                            <div class="material-swatch" style="background-color: #1a1a1a;"></div>
+                            <div class="material-info">
+                                <div class="material-name">Black Leather</div>
+                                <div class="material-price">Standard</div>
+                            </div>
+                        </div>
+                        <div class="interior-option" data-interior="leather-beige">
+                            <div class="material-swatch" style="background-color: #d2b48c;"></div>
+                            <div class="material-info">
+                                <div class="material-name">Beige Leather</div>
+                                <div class="material-price">+$1,500</div>
+                            </div>
+                        </div>
+                        <div class="interior-option" data-interior="leather-red">
+                            <div class="material-swatch" style="background-color: #8b0000;"></div>
+                            <div class="material-info">
+                                <div class="material-name">Red Leather</div>
+                                <div class="material-price">+$2,000</div>
+                            </div>
+                        </div>
+                        <div class="interior-option" data-interior="alcantara">
+                            <div class="material-swatch" style="background-color: #2c2c2c;"></div>
+                            <div class="material-info">
+                                <div class="material-name">Alcantara Sport</div>
+                                <div class="material-price">+$3,000</div>
+                            </div>
+                        </div>
+                        <div class="interior-option" data-interior="carbon-fiber">
+                            <div class="material-swatch" style="background: linear-gradient(45deg, #1a1a1a, #333);"></div>
+                            <div class="material-info">
+                                <div class="material-name">Carbon Fiber</div>
+                                <div class="material-price">+$8,000</div>
+                            </div>
+                        </div>
+                        <div class="interior-option" data-interior="luxury-white">
+                            <div class="material-swatch" style="background-color: #f5f5f5;"></div>
+                            <div class="material-info">
+                                <div class="material-name">Luxury White</div>
+                                <div class="material-price">+$2,500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div class="customization-section" id="features-section">
+                    <h3><i class="fas fa-cogs"></i> Performance & Features</h3>
+                    
+                    <h4>Performance Package</h4>
+                    <div class="feature-options">
+                        <div class="feature-option active" data-feature="performance-standard">
+                            <div class="feature-info">
+                                <div class="feature-name">🏁 Standard Performance</div>
+                                <div class="feature-description">Factory specifications</div>
+                                <div class="feature-price">Included</div>
+                            </div>
+                        </div>
+                        <div class="feature-option" data-feature="performance-sport">
+                            <div class="feature-info">
+                                <div class="feature-name">⚡ Sport Package</div>
+                                <div class="feature-description">Enhanced suspension, brakes, exhaust</div>
+                                <div class="feature-price">+$15,000</div>
+                            </div>
+                        </div>
+                        <div class="feature-option" data-feature="performance-track">
+                            <div class="feature-info">
+                                <div class="feature-name">🏆 Track Package</div>
+                                <div class="feature-description">Race-tuned components, roll cage</div>
+                                <div class="feature-price">+$35,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Technology Features</h4>
+                    <div class="tech-features">
+                        <div class="tech-feature" data-tech="premium-audio">
+                            <div class="tech-checkbox">
+                                <input type="checkbox" id="premium-audio">
+                                <label for="premium-audio">🎵 Premium Audio System</label>
+                            </div>
+                            <div class="tech-price">+$3,500</div>
+                        </div>
+                        <div class="tech-feature" data-tech="heads-up-display">
+                            <div class="tech-checkbox">
+                                <input type="checkbox" id="heads-up-display">
+                                <label for="heads-up-display">📱 Heads-Up Display</label>
+                            </div>
+                            <div class="tech-price">+$2,200</div>
+                        </div>
+                        <div class="tech-feature" data-tech="adaptive-cruise">
+                            <div class="tech-checkbox">
+                                <input type="checkbox" id="adaptive-cruise">
+                                <label for="adaptive-cruise">🚗 Adaptive Cruise Control</label>
+                            </div>
+                            <div class="tech-price">+$1,800</div>
+                        </div>
+                        <div class="tech-feature" data-tech="night-vision">
+                            <div class="tech-checkbox">
+                                <input type="checkbox" id="night-vision">
+                                <label for="night-vision">🌙 Night Vision System</label>
+                            </div>
+                            <div class="tech-price">+$4,500</div>
+                        </div>
+                    </div>
+
+                    <h4>Exterior Enhancements</h4>
+                    <div class="exterior-features">
+                        <div class="exterior-feature" data-exterior="carbon-spoiler">
+                            <div class="exterior-checkbox">
+                                <input type="checkbox" id="carbon-spoiler">
+                                <label for="carbon-spoiler">🏎️ Carbon Fiber Spoiler</label>
+                            </div>
+                            <div class="exterior-price">+$6,500</div>
+                        </div>
+                        <div class="exterior-feature" data-exterior="ceramic-coating">
+                            <div class="exterior-checkbox">
+                                <input type="checkbox" id="ceramic-coating">
+                                <label for="ceramic-coating">✨ Ceramic Paint Protection</label>
+                            </div>
+                            <div class="exterior-price">+$2,800</div>
+                        </div>
+                        <div class="exterior-feature" data-exterior="tinted-windows">
+                            <div class="exterior-checkbox">
+                                <input type="checkbox" id="tinted-windows">
+                                <label for="tinted-windows">🕶️ Premium Window Tinting</label>
+                            </div>
+                            <div class="exterior-price">+$1,200</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-footer">
+                <div class="price-display">
+                    <h3>Total Configuration</h3>
+                    <div class="price-amount" id="total-price">$4,200,000</div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                    <button class="btn btn-primary" id="saveBtn">
+                        <i class="fas fa-save"></i> Save Config
+                    </button>
+                    <button class="btn btn-success" id="purchaseBtn">
+                        <i class="fas fa-shopping-cart"></i> Purchase
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="../js/car-models.js"></script>
+    <script src="../js/car-customizer.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script>
+        // Initialize i18n
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.I18n) {
+                window.i18n = new I18n();
+            }
+        });
+        
+        // Purchase Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const purchaseBtn = document.getElementById('purchaseBtn');
+            if (purchaseBtn) {
+                purchaseBtn.addEventListener('click', handlePurchase);
+            }
+        });
+
+        function handlePurchase() {
+            const selectedCarId = getSelectedCar();
+            const selectedCar = availableModels[selectedCarId];
+            
+            if (!selectedCar) {
+                showNotification('Error: Car data not found', 'error');
+                return;
+            }
+            
+            // Save current configuration first
+            saveConfiguration();
+            
+            // Calculate total price from current display
+            const priceElement = document.getElementById('total-price');
+            const totalPrice = priceElement ? 
+                parseInt(priceElement.textContent.replace(/[$,]/g, '')) : 
+                (currentConfig.basePrice || selectedCar.price);
+            
+            // Prepare purchase data
+            const purchaseData = {
+                carId: selectedCarId,
+                carName: selectedCar.name,
+                basePrice: currentConfig.basePrice || selectedCar.price,
+                totalPrice: totalPrice,
+                options: {
+                    color: currentConfig.color,
+                    finish: currentConfig.finish,
+                    wheels: currentConfig.wheels,
+                    interior: currentConfig.interior,
+                    performance: currentConfig.performance
+                },
+                selectedFeatures: [],
+                timestamp: new Date().toISOString(),
+                isPlaceholder: selectedCar.placeholder || false
+            };
+            
+            // Collect selected technology features
+            document.querySelectorAll('.tech-feature input[type="checkbox"]:checked').forEach(checkbox => {
+                const label = checkbox.nextElementSibling;
+                purchaseData.selectedFeatures.push({
+                    type: 'technology',
+                    name: label ? label.textContent : checkbox.id,
+                    id: checkbox.id
+                });
+            });
+            
+            // Collect selected exterior features
+            document.querySelectorAll('.exterior-feature input[type="checkbox"]:checked').forEach(checkbox => {
+                const label = checkbox.nextElementSibling;
+                purchaseData.selectedFeatures.push({
+                    type: 'exterior',
+                    name: label ? label.textContent : checkbox.id,
+                    id: checkbox.id
+                });
+            });
+            
+            // Store purchase data for customer service page
+            localStorage.setItem('purchaseData', JSON.stringify(purchaseData));
+            
+            console.log('🛒 Purchase data prepared:', purchaseData);
+            
+            // Show confirmation message
+            showNotification('Redirecting to customer service for appointment booking...', 'info');
+            
+            // Redirect to customer service page
+            setTimeout(() => {
+                window.location.href = '/pages/customerservice.html?purchase=true';
+            }, 2000);
+        }
+    </script>
+</body>
+</html> 
