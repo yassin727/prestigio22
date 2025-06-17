@@ -209,8 +209,31 @@ class I18n {
                     contactUs: 'Contact Us',
                     weAreHereToHelp: 'We\'re Here to Help',
                     tagline: 'Your feedback and inquiries are important to us.',
-                    getInTouch: 'Get in Touch',
+                    getInTouch: 'Customer Service',
                     formDescription: 'Fill out the form below, and we\'ll get back to you shortly.',
+                    sendMessage: 'Submit Service Request',
+                    address: 'Address',
+                    addressText: 'Sixth District\nAl Obour City\nEgypt',
+                    phone: 'Phone',
+                    phoneText: '+2 01098613073',
+                    email: 'Email',
+                    emailText: 'prestegioautomobiles@gmail.com',
+                    hours: 'Business Hours',
+                    hoursText: 'Mon - Fri: 9:00 AM - 8:00 PM\nSat: 10:00 AM - 6:00 PM\nSun: 12:00 PM - 5:00 PM',
+                    services: 'Our Services',
+                    servicesText: 'Luxury & Regular Cars\nCustomization & Financing\nMaintenance & Insurance',
+                    service: 'Select Service',
+                    selectService: 'Choose a service...',
+                    luxuryCars: 'Luxury Cars',
+                    regularCars: 'Regular Cars',
+                    carCustomization: 'Car Customization',
+                    financing: 'Financing',
+                    maintenance: 'Maintenance & Service',
+                    insurance: 'Insurance',
+                    tradeIn: 'Trade-In',
+                    general: 'General Inquiry',
+                    problem: 'Describe Your Request',
+                    sendButton: 'Submit Request',
                     fullName: 'Full Name',
                     enterFullName: 'Enter your full name',
                     emailAddress: 'Email Address',
@@ -221,7 +244,6 @@ class I18n {
                     enterSubject: 'Enter the subject',
                     message: 'Message',
                     enterMessage: 'Enter your message',
-                    sendMessage: 'Send Message',
                     needImmediateAssistance: 'Need immediate assistance?',
                     thankYouMessage: 'Thank you for your message! We will contact you shortly.'
                 },
@@ -532,8 +554,31 @@ class I18n {
                     contactUs: 'اتصل بنا',
                     weAreHereToHelp: 'نحن هنا لمساعدتك',
                     tagline: 'ملاحظاتك واستفساراتك مهمة بالنسبة لنا.',
-                    getInTouch: 'تواصل معنا',
+                    getInTouch: 'خدمة العملاء',
                     formDescription: 'املأ النموذج أدناه، وسنعاود الاتصال بك قريباً.',
+                    sendMessage: 'تقديم طلب خدمة',
+                    address: 'العنوان',
+                    addressText: 'الحي السادس\nمدينة العبور\nمصر',
+                    phone: 'الهاتف',
+                    phoneText: '+2 01098613073',
+                    email: 'البريد الإلكتروني',
+                    emailText: 'prestegioautomobiles@gmail.com',
+                    hours: 'ساعات العمل',
+                    hoursText: 'الإثنين - الجمعة: 9:00 صباحاً - 8:00 مساءً\nالسبت: 10:00 صباحاً - 6:00 مساءً\nالأحد: 12:00 ظهراً - 5:00 مساءً',
+                    services: 'خدماتنا',
+                    servicesText: 'السيارات الفاخرة والعادية\nالتخصيص والتمويل\nالصيانة والتأمين',
+                    service: 'اختر الخدمة',
+                    selectService: 'اختر خدمة...',
+                    luxuryCars: 'السيارات الفاخرة',
+                    regularCars: 'السيارات العادية',
+                    carCustomization: 'تخصيص السيارات',
+                    financing: 'التمويل',
+                    maintenance: 'الصيانة والخدمة',
+                    insurance: 'التأمين',
+                    tradeIn: 'المقايضة',
+                    general: 'استفسار عام',
+                    problem: 'اشرح طلبك',
+                    sendButton: 'تقديم الطلب',
                     fullName: 'الاسم الكامل',
                     enterFullName: 'أدخل اسمك الكامل',
                     emailAddress: 'عنوان البريد الإلكتروني',
@@ -544,7 +589,6 @@ class I18n {
                     enterSubject: 'أدخل الموضوع',
                     message: 'الرسالة',
                     enterMessage: 'أدخل رسالتك',
-                    sendMessage: 'إرسال الرسالة',
                     needImmediateAssistance: 'تحتاج مساعدة فورية؟',
                     thankYouMessage: 'شكراً لك على رسالتك! سنتواصل معك قريباً.'
                 },
@@ -755,9 +799,12 @@ class I18n {
                 } else if (element.tagName === 'TITLE') {
                     document.title = translation;
                 } else {
-                    // Check if translation contains HTML
+                    // Check if translation contains HTML or line breaks
                     if (translation.includes('<') && translation.includes('>')) {
                         element.innerHTML = translation;
+                    } else if (translation.includes('\n')) {
+                        // Convert line breaks to HTML
+                        element.innerHTML = translation.replace(/\n/g, '<br>');
                     } else {
                         element.textContent = translation;
                     }

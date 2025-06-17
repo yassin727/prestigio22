@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 const passport = require('./config/passport');
 const authRoutes = require('./routes/auth');
 const chatRoutes = require('./routes/chat');
+const contactRoutes = require('./routes/contact');
 const User = require('./models/User');
 const Car = require('./models/Car');
 const Order = require('./models/Order');
@@ -1107,6 +1108,27 @@ app.post('/api/auth/login', async (req, res) => {
 
 // Mount chat routes
 app.use('/api/chatbot', chatRoutes);
+
+// Mount contact routes
+app.use('/api', contactRoutes);
+
+// Serve static files from the frontend directory BEFORE any other routes
+const frontendPath = path.join(__dirname, '..', 'frontend');
+if (fs.existsSync(frontendPath)) {
+    log(`✅ Serving static files from: ${frontendPath}`);
+    app.use(express.static(frontendPath));
+} else {
+    log(`❌ Frontend directory not found: ${frontendPath}`);
+}
+
+// Serve 3D models from the models directory
+const modelsPath = path.join(__dirname, '..', 'models');
+if (fs.existsSync(modelsPath)) {
+    log(`✅ Serving 3D models from: ${modelsPath}`);
+    app.use('/models', express.static(modelsPath));
+} else {
+    log(`❌ Models directory not found: ${modelsPath}`);
+}
 
 // Legacy chat endpoint (keeping for backward compatibility)
 app.post('/api/chat', async (req, res) => {
@@ -2731,23 +2753,7 @@ async function sendStatusUpdateEmail(order) {
     log(`Status update email sent to ${order.customer.email}`);
 }
 
-// Serve static files from the frontend directory BEFORE API routes
-const frontendPath = path.join(__dirname, '..', 'frontend');
-if (fs.existsSync(frontendPath)) {
-    log(`✅ Serving static files from: ${frontendPath}`);
-    app.use(express.static(frontendPath));
-} else {
-    log(`❌ Frontend directory not found: ${frontendPath}`);
-}
 
-// Serve 3D models from the models directory
-const modelsPath = path.join(__dirname, '..', 'models');
-if (fs.existsSync(modelsPath)) {
-    log(`✅ Serving 3D models from: ${modelsPath}`);
-    app.use('/models', express.static(modelsPath));
-} else {
-    log(`❌ Models directory not found: ${modelsPath}`);
-}
 
 
 // Function to check if a port is available
