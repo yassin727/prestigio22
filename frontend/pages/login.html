@@ -203,6 +203,7 @@
             letter-spacing: 1px;
             position: relative;
             overflow: hidden;
+            margin-bottom: 1rem;
         }
 
         .login-button::before {
@@ -231,6 +232,8 @@
             cursor: not-allowed;
             transform: none;
         }
+
+
 
         .forgot-password {
             text-align: center;
@@ -390,7 +393,7 @@
         async function handleLogin(username, password) {
             try {
                 // Make API call to backend
-                const response = await fetch('/api/auth/login', {
+                const response = await fetch('http://localhost:5000/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -420,9 +423,9 @@
                     // Redirect based on user type
                     setTimeout(() => {
                         if (result.user.isAdmin) {
-                            window.location.href = '/admindashboard.html';
+                            window.location.href = '../pages/admindashboard.html';
                         } else {
-                            window.location.href = '/pages/car-selection.html';
+                            window.location.href = 'car-selection.html';
                         }
                     }, 1000);
                     
@@ -437,6 +440,8 @@
                 return false;
             }
         }
+
+
 
         // Login button click handler
         loginButton.addEventListener('click', async function(e) {
@@ -476,6 +481,8 @@
                 loginButton.innerHTML = window.i18n ? window.i18n.t('login.signIn') : 'Sign In';
             }
         });
+
+
 
         // Form submit handler
         loginForm.addEventListener('submit', async function(e) {
@@ -539,9 +546,9 @@
                 showMessage('You are already logged in. Redirecting...', 'success');
                 setTimeout(() => {
                     if (userData.isAdmin) {
-                        window.location.href = '/admindashboard.html';
+                        window.location.href = '../pages/admindashboard.html';
                     } else {
-                        window.location.href = '/pages/car-selection.html';
+                        window.location.href = 'car-selection.html';
                     }
                 }, 1000);
             }

@@ -1,0 +1,239 @@
+[2025-06-17T03:01:59.074Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-17T03:01:59.074Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-17T03:01:59.075Z] ✅ Google Gemini initialized
+[2025-06-17T03:01:59.076Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\frontend
+[2025-06-17T03:01:59.077Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\models
+[2025-06-17T03:01:59.077Z] 🧪 Testing Google Gemini API connection...
+[2025-06-17T03:01:59.873Z] ✅ Google Gemini connection successful
+[2025-06-17T03:02:00.697Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-00.p3qyd4n.mongodb.net
+[2025-06-17T03:02:00.716Z] ✅ Server is running on port 5000
+[2025-06-17T03:02:00.717Z] 🌍 Environment: development
+[2025-06-17T03:02:00.717Z] 🚀 Available endpoints:
+[2025-06-17T03:02:00.717Z]    POST http://localhost:5000/api/chat
+[2025-06-17T03:02:00.717Z]    GET  http://localhost:5000/
+[2025-06-17T03:02:00.719Z]    GET  http://localhost:5000/health
+[2025-06-17T03:02:01.429Z] ✅ Email Service Connected
+[2025-06-17T03:02:41.582Z] 
+=== Incoming GET / ===
+[2025-06-17T03:02:41.583Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-purpose": "prefetch;prerender",
+  "purpose": "prefetch",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "none",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T03:02:41.583Z] Serving frontend index.html
+[2025-06-17T03:02:41.591Z] === Completed 304 in 9ms ===
+
+[2025-06-17T03:02:41.610Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-17T03:02:41.611Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"18d8-1977ba068f9\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T03:02:41.614Z] === Completed 304 in 4ms ===
+
+[2025-06-17T03:02:41.619Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-17T03:02:41.620Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"a0ec-1977ba068fe\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T03:02:41.621Z] === Completed 304 in 2ms ===
+
+[2025-06-17T03:02:41.626Z] 
+=== Incoming GET /js/auth.js ===
+[2025-06-17T03:02:41.627Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-purpose": "prefetch;prerender",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "purpose": "prefetch",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"1800-1977ba068fd\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T03:02:41.629Z] === Completed 304 in 3ms ===
+
+[2025-06-17T03:02:43.979Z] 
+=== Incoming GET /pages/registration.html ===
+[2025-06-17T03:02:43.980Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"6b09-1977bcf26f0\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:54:22 GMT"
+}
+[2025-06-17T03:02:43.991Z] === Completed 200 in 12ms ===
+
+[2025-06-17T03:02:44.075Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-17T03:02:44.075Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"18d8-1977ba068f9\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T03:02:44.077Z] 
+=== Incoming GET /js/i18n.js ===
+[2025-06-17T03:02:44.078Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"a0ec-1977ba068fe\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "script",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T03:02:44.084Z] === Completed 304 in 9ms ===
+
+[2025-06-17T03:02:44.085Z] === Completed 304 in 8ms ===
+
+[2025-06-17T03:03:20.019Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-17T03:03:20.020Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T03:03:20.026Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-17T03:03:20.030Z] === Completed 200 in 11ms ===
+
+[2025-06-17T03:03:20.033Z] 
+=== Incoming GET /css/i18n.css ===
+[2025-06-17T03:03:20.033Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "if-none-match": "W/\"18d8-1977ba068f9\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "text/css,*/*;q=0.1",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "style",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T03:03:20.037Z] === Completed 304 in 4ms ===
+
+[2025-06-17T03:03:20.066Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-17T03:03:20.067Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T03:03:20.074Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-17T03:03:20.078Z] === Completed 304 in 12ms ===
+
+[2025-06-17T03:19:12.044Z] 
+🚨 Received SIGINT. Shutting down gracefully...

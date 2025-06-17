@@ -1,0 +1,224 @@
+[2025-06-17T04:06:14.764Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-17T04:06:14.764Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-17T04:06:14.765Z] ✅ Google Gemini initialized
+[2025-06-17T04:06:14.765Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\frontend
+[2025-06-17T04:06:14.766Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\models
+[2025-06-17T04:06:14.766Z] 🧪 Testing Google Gemini API connection...
+[2025-06-17T04:06:15.563Z] ✅ Google Gemini connection successful
+[2025-06-17T04:06:16.550Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-02.p3qyd4n.mongodb.net
+[2025-06-17T04:06:16.562Z] ✅ Server is running on port 5000
+[2025-06-17T04:06:16.562Z] 🌍 Environment: development
+[2025-06-17T04:06:16.564Z] 🚀 Available endpoints:
+[2025-06-17T04:06:16.565Z]    POST http://localhost:5000/api/chat
+[2025-06-17T04:06:16.565Z]    GET  http://localhost:5000/
+[2025-06-17T04:06:16.565Z]    GET  http://localhost:5000/health
+[2025-06-17T04:06:17.167Z] ✅ Email Service Connected
+[2025-06-17T04:06:44.569Z] 
+=== Incoming GET /index.html ===
+[2025-06-17T04:06:44.570Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/pages/login.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T04:06:44.576Z] === Completed 304 in 7ms ===
+
+[2025-06-17T04:06:47.206Z] 
+=== Incoming GET /pages/registration.html ===
+[2025-06-17T04:06:47.207Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "upgrade-insecure-requests": "1",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-user": "?1",
+  "sec-fetch-dest": "document",
+  "referer": "http://localhost:5000/index.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"7659-1977be95644\"",
+  "if-modified-since": "Tue, 17 Jun 2025 03:22:59 GMT"
+}
+[2025-06-17T04:06:47.237Z] === Completed 200 in 31ms ===
+
+[2025-06-17T04:07:07.308Z] 
+=== Incoming POST /api/auth/register ===
+[2025-06-17T04:07:07.309Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "157",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T04:07:07.310Z] Body: {
+  "fullName": "moamen mohy",
+  "address": "obour city",
+  "phone": "01158228005",
+  "age": 19,
+  "nationality": "Belgium",
+  "gender": "male",
+  "email": "yassindakrory927@gmail.com"
+}
+[2025-06-17T04:07:07.313Z] === REGISTRATION REQUEST ===
+[2025-06-17T04:07:07.314Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "157",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T04:07:07.314Z] Body: {
+  "fullName": "moamen mohy",
+  "address": "obour city",
+  "phone": "01158228005",
+  "age": 19,
+  "nationality": "Belgium",
+  "gender": "male",
+  "email": "yassindakrory927@gmail.com"
+}
+[2025-06-17T04:07:07.391Z] === Completed 400 in 83ms ===
+
+[2025-06-17T04:07:21.672Z] 
+=== Incoming POST /api/auth/register ===
+[2025-06-17T04:07:21.674Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "156",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T04:07:21.675Z] Body: {
+  "fullName": "moamen mohy",
+  "address": "obour city",
+  "phone": "01158228005",
+  "age": 19,
+  "nationality": "Belgium",
+  "gender": "male",
+  "email": "yassindakrory21@gmail.com"
+}
+[2025-06-17T04:07:21.675Z] === REGISTRATION REQUEST ===
+[2025-06-17T04:07:21.675Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "content-length": "156",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+  "content-type": "application/json",
+  "sec-ch-ua-mobile": "?0",
+  "accept": "*/*",
+  "origin": "http://localhost:5000",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty",
+  "referer": "http://localhost:5000/pages/registration.html",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ"
+}
+[2025-06-17T04:07:21.676Z] Body: {
+  "fullName": "moamen mohy",
+  "address": "obour city",
+  "phone": "01158228005",
+  "age": 19,
+  "nationality": "Belgium",
+  "gender": "male",
+  "email": "yassindakrory21@gmail.com"
+}
+[2025-06-17T04:07:21.733Z] Registration data validated successfully
+[2025-06-17T04:07:22.799Z] ✅ User registered in database: user_3t7g651736 (yassindakrory21@gmail.com)
+[2025-06-17T04:07:24.412Z] ✅ Welcome email sent successfully to yassindakrory21@gmail.com
+[2025-06-17T04:07:24.417Z] === Completed 201 in 2745ms ===
+
+[2025-06-17T04:09:48.413Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-17T04:09:48.479Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T04:09:48.613Z] 404 - Route not found: GET /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-17T04:09:48.654Z] === Completed 302 in 242ms ===
+
+[2025-06-17T04:09:48.662Z] 
+=== Incoming GET /error ===
+[2025-06-17T04:09:48.663Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"62ee-1977c028835\"",
+  "if-modified-since": "Tue, 17 Jun 2025 03:50:30 GMT"
+}
+[2025-06-17T04:09:48.671Z] Serving error game page: /error
+[2025-06-17T04:09:48.701Z] === Completed 200 in 39ms ===
+

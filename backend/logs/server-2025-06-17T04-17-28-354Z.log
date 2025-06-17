@@ -1,0 +1,53 @@
+[2025-06-17T04:17:28.365Z] Initializing OpenAI with API key: MISSING API KEY
+[2025-06-17T04:17:28.365Z] ⚠️ OPENAI_API_KEY not found - OpenAI disabled
+[2025-06-17T04:17:28.365Z] ✅ Google Gemini initialized
+[2025-06-17T04:17:28.366Z] ✅ Serving static files from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\frontend
+[2025-06-17T04:17:28.367Z] ✅ Serving 3D models from: C:\Users\yassi\OneDrive\Desktop\prestigio\prestigio22-1\models
+[2025-06-17T04:17:28.367Z] 🧪 Testing Google Gemini API connection...
+[2025-06-17T04:17:29.113Z] ✅ Google Gemini connection successful
+[2025-06-17T04:17:30.034Z] ✅ MongoDB Connected: ac-ldrtyfl-shard-00-01.p3qyd4n.mongodb.net
+[2025-06-17T04:17:30.046Z] ✅ Server is running on port 5000
+[2025-06-17T04:17:30.047Z] 🌍 Environment: development
+[2025-06-17T04:17:30.047Z] 🚀 Available endpoints:
+[2025-06-17T04:17:30.047Z]    POST http://localhost:5000/api/chat
+[2025-06-17T04:17:30.048Z]    GET  http://localhost:5000/
+[2025-06-17T04:17:30.048Z]    GET  http://localhost:5000/health
+[2025-06-17T04:17:30.712Z] ✅ Email Service Connected
+[2025-06-17T04:18:31.120Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-17T04:18:31.120Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T04:18:31.130Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-17T04:18:31.150Z] === Completed 304 in 30ms ===
+
+[2025-06-17T04:22:20.801Z] 
+=== Incoming GET /.well-known/appspecific/com.chrome.devtools.json ===
+[2025-06-17T04:22:20.838Z] Headers: {
+  "host": "localhost:5000",
+  "connection": "keep-alive",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "no-cors",
+  "sec-fetch-dest": "empty",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+  "accept-encoding": "gzip, deflate, br, zstd",
+  "accept-language": "en-US,en;q=0.9",
+  "cookie": "_csrf=B6j5u3Ex2AE5uQ_Myu5wAmJ_; XSRF-TOKEN=fx4R18lE-dFsNjbJY-rFrCkb0CSNUcxwb5gQ",
+  "if-none-match": "W/\"9411-1977ba068fc\"",
+  "if-modified-since": "Tue, 17 Jun 2025 02:03:19 GMT"
+}
+[2025-06-17T04:22:20.878Z] Serving index.html for route: /.well-known/appspecific/com.chrome.devtools.json
+[2025-06-17T04:22:20.898Z] === Completed 304 in 97ms ===
+
+[2025-06-17T04:22:53.301Z] 
+🚨 Received SIGINT. Shutting down gracefully...

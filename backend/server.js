@@ -248,6 +248,17 @@ async function generateUniqueUsername() {
     throw new Error('Unable to generate unique username');
 }
 
+// Generate a random password
+function generateRandomPassword() {
+    const length = 12;
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        password += charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+    return password;
+}
+
 // AI helper function - tries Google Gemini if OpenAI fails
 async function getChatResponse(messages) {
     // First try OpenAI (if available)
@@ -667,10 +678,10 @@ app.post('/api/auth/register', async (req, res) => {
     log('Body:', req.body);
     
     try {
-        const { fullName, phone, address, age, gender, nationality, email, password } = req.body;
+        const { fullName, phone, address, age, gender, nationality, email } = req.body;
         
         // Basic validation
-        if (!fullName || !phone || !address || !age || !gender || !nationality || !email || !password) {
+        if (!fullName || !phone || !address || !age || !gender || !nationality || !email) {
             return res.status(400).json({
                 success: false,
                 message: 'All fields are required'
@@ -705,8 +716,9 @@ app.post('/api/auth/register', async (req, res) => {
         
         log('Registration data validated successfully');
         
-        // Generate unique username
+        // Generate unique username and random password
         const username = await generateUniqueUsername();
+        const password = generateRandomPassword();
         
         // Create new user in database
         const newUser = new User({

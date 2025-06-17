@@ -3,76 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error - Try the Dino Game!</title>
+    <title>Enhanced Exotic Car Racing Game</title>
     <style>
         body {
             margin: 0;
             padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
         }
 
         .error-container {
             text-align: center;
             margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 30px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6); }
         }
 
         .error-code {
             font-size: 72px;
-            color: #333;
+            color: #fff;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .error-message {
             font-size: 24px;
-            color: #666;
+            color: #f0f0f0;
             margin: 10px 0;
         }
 
         #game-container {
-            width: 600px;
-            height: 200px;
-            border: 2px solid #333;
+            width: 800px;
+            height: 300px;
+            border: 3px solid #fff;
+            border-radius: 15px;
             position: relative;
             overflow: hidden;
-            background-color: white;
+            background: linear-gradient(to bottom, 
+                #87CEEB 0%, 
+                #87CEEB 40%, 
+                #98FB98 40%, 
+                #228B22 70%, 
+                #32CD32 100%);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 30px rgba(255,255,255,0.1);
         }
 
-        #dino {
-            width: 50px;
-            height: 50px;
-            background-color: #333;
+        #car {
+            width: 80px;
+            height: 40px;
             position: absolute;
             bottom: 0;
             left: 50px;
+            z-index: 10;
+            transition: transform 0.1s ease;
         }
 
-        .obstacle {
-            width: 20px;
+        .car-body {
+            width: 80px;
+            height: 25px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ffa726);
+            border-radius: 15px 15px 5px 5px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            animation: carShine 3s ease-in-out infinite;
+        }
+
+        @keyframes carShine {
+            0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+            50% { box-shadow: 0 4px 20px rgba(255,107,107,0.6), 0 0 30px rgba(255,107,107,0.3); }
+        }
+
+        .car-roof {
+            width: 40px;
+            height: 15px;
+            background: linear-gradient(45deg, #ff3838, #c44569);
+            border-radius: 8px 8px 0 0;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+
+        .car-window {
+            width: 30px;
+            height: 8px;
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.9), rgba(100, 149, 237, 0.8));
+            border-radius: 4px;
+            position: absolute;
+            top: -10px;
+            left: 25px;
+            border: 1px solid #333;
+        }
+
+        .wheel {
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle, #333 0%, #000 70%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -8px;
+            border: 2px solid #666;
+            animation: wheelSpin 0.1s linear infinite;
+        }
+
+        @keyframes wheelSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .wheel-front {
+            right: 8px;
+        }
+
+        .wheel-rear {
+            left: 8px;
+        }
+
+        .wheel-rim {
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #silver, #gold);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Enhanced obstacles */
+        .obstacle-tree {
+            width: 25px;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            right: -25px;
+        }
+
+        .tree-trunk {
+            width: 25px;
             height: 40px;
-            background-color: #666;
+            background: linear-gradient(to top, #8B4513, #D2691E);
+            border-radius: 5px 5px 0 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .tree-leaves {
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle, #228B22, #006400);
+            border-radius: 50%;
+            position: absolute;
+            top: -15px;
+            left: -5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .obstacle-rock {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(135deg, #696969, #2F4F4F, #708090);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            bottom: 0;
+            right: -40px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+
+        .obstacle-cactus {
+            width: 20px;
+            height: 70px;
             position: absolute;
             bottom: 0;
             right: -20px;
         }
 
+        .cactus-body {
+            width: 20px;
+            height: 50px;
+            background: linear-gradient(to right, #228B22, #32CD32, #006400);
+            border-radius: 10px 10px 3px 3px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .cactus-arm {
+            width: 12px;
+            height: 25px;
+            background: linear-gradient(to right, #228B22, #32CD32);
+            border-radius: 6px;
+            position: absolute;
+            top: 15px;
+        }
+
+        .cactus-arm.left {
+            left: -8px;
+            transform: rotate(30deg);
+        }
+
+        .cactus-arm.right {
+            right: -8px;
+            transform: rotate(-30deg);
+        }
+
+        .obstacle-sign {
+            width: 30px;
+            height: 55px;
+            position: absolute;
+            bottom: 0;
+            right: -30px;
+        }
+
+        .sign-post {
+            width: 8px;
+            height: 40px;
+            background: linear-gradient(to top, #8B4513, #D2691E);
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        .sign-board {
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border: 2px solid #B8860B;
+            border-radius: 3px;
+            position: absolute;
+            top: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #8B0000;
+        }
+
         .ground {
             width: 100%;
-            height: 2px;
-            background-color: #333;
+            height: 5px;
+            background: linear-gradient(to right, #8B4513, #A0522D, #CD853F);
             position: absolute;
             bottom: 0;
         }
 
+        .road-lines {
+            width: 100%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                to right,
+                transparent 0px,
+                transparent 30px,
+                #fff 30px,
+                #fff 50px
+            );
+            position: absolute;
+            bottom: 25px;
+            animation: movingLines 0.8s linear infinite;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        @keyframes movingLines {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-80px); }
+        }
+
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><circle cx="20" cy="10" r="8" fill="white" opacity="0.8"/><circle cx="35" cy="10" r="12" fill="white" opacity="0.6"/><circle cx="60" cy="8" r="6" fill="white" opacity="0.7"/><circle cx="80" cy="12" r="10" fill="white" opacity="0.5"/></svg>') repeat-x;
+            animation: moveClouds 25s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+
+        .sun {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            animation: sunGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes sunGlow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.9), 0 0 70px rgba(255, 215, 0, 0.4); }
+        }
+
         #score {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 10px 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        #combo {
+            position: absolute;
+            top: 70px;
+            right: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: rgba(255, 215, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 8px;
+            display: none;
+            animation: comboGlow 0.5s ease-in-out;
+        }
+
+        @keyframes comboGlow {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         #game-over {
@@ -81,23 +351,92 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: #333;
+            font-size: 28px;
+            color: #fff;
+            text-align: center;
+            background: rgba(0,0,0,0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border: 2px solid #ff6b6b;
+            box-shadow: 0 0 30px rgba(255,107,107,0.5);
         }
 
         .restart-btn {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 18px;
-            background-color: #4CAF50;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         .restart-btn:hover {
-            background-color: #45a049;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            color: #f0f0f0;
+            font-size: 16px;
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle-float 2s ease-out forwards;
+        }
+
+        @keyframes particle-float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px) scale(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-5px) rotate(-2deg); }
+            75% { transform: translateX(5px) rotate(2deg); }
+        }
+
+        .speed-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 15px
+            );
+            animation: speedLines 0.3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes speedLines {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-30px); }
         }
     </style>
 </head>
@@ -105,105 +444,302 @@
     <div class="error-container">
         <h1 class="error-code">404</h1>
         <p class="error-message">Oops! Something went wrong.</p>
-        <p>While you wait, try playing our dinosaur game!</p>
+        <p>While you wait, race through the desert with our exotic supercar!</p>
     </div>
 
     <div id="game-container">
-        <div id="dino"></div>
+        <div class="sun"></div>
+        <div class="clouds"></div>
+        <div class="speed-lines"></div>
+        <div class="road-lines"></div>
+        <div id="car">
+            <div class="car-roof"></div>
+            <div class="car-body">
+                <div class="car-window"></div>
+                <div class="wheel wheel-front">
+                    <div class="wheel-rim"></div>
+                </div>
+                <div class="wheel wheel-rear">
+                    <div class="wheel-rim"></div>
+                </div>
+            </div>
+        </div>
         <div class="ground"></div>
         <div id="score">Score: 0</div>
-        <div id="game-over">Game Over! Press Space to restart</div>
+        <div id="combo">COMBO x1</div>
+        <div id="game-over">Game Over!<br><span style="font-size: 18px;">Final Score: <span id="final-score">0</span></span><br>Press Space to restart</div>
     </div>
 
-    <button class="restart-btn" onclick="window.location.reload()">Try Again</button>
+    <button class="restart-btn" onclick="restartGame()">Try Again</button>
+    
+    <div class="instructions">
+        <p><strong>SPACEBAR</strong> to jump | Avoid obstacles | Chain jumps for combo bonuses!</p>
+        <p>🌵 Cactus | 🪨 Rock | 🌳 Tree | 🚧 Sign</p>
+    </div>
 
     <script>
-        const dino = document.getElementById('dino');
+        const car = document.getElementById('car');
         const gameContainer = document.getElementById('game-container');
         const scoreDisplay = document.getElementById('score');
+        const comboDisplay = document.getElementById('combo');
         const gameOverDisplay = document.getElementById('game-over');
+        const finalScoreDisplay = document.getElementById('final-score');
+        const speedLines = document.querySelector('.speed-lines');
 
         let isJumping = false;
         let gravity = 0.9;
         let position = 0;
         let score = 0;
+        let combo = 0;
+        let comboTimer = null;
         let isGameOver = false;
+        let gameSpeed = 1;
+        let obstacleTypes = ['tree', 'rock', 'cactus', 'sign'];
 
-        // Jump function
+        // Enhanced jump function with particle effects
         function jump() {
-            if (isJumping) return;
+            if (isJumping || isGameOver) return;
             
-            let upTime = setInterval(function() {
-                // Jump up
-                if (position >= 150) {
-                    clearInterval(upTime);
-                    let downTime = setInterval(function() {
-                        // Fall down
-                        if (position <= 0) {
-                            clearInterval(downTime);
-                            isJumping = false;
-                        }
-                        position -= 30;
-                        dino.style.bottom = position + 'px';
-                    }, 20);
+            // Create jump particles
+            createParticles(car.offsetLeft + 40, gameContainer.offsetHeight - car.offsetHeight);
+            
+            isJumping = true;
+            let velocity = 28;
+            
+            let jumpInterval = setInterval(function() {
+                velocity -= 2.2;
+                position += velocity;
+                
+                if (position <= 0) {
+                    position = 0;
+                    isJumping = false;
+                    clearInterval(jumpInterval);
                 }
-                position += 30;
-                dino.style.bottom = position + 'px';
-                isJumping = true;
-            }, 20);
+                
+                car.style.bottom = position + 'px';
+                
+                if (position > 0) {
+                    car.style.transform = `rotate(${Math.min(position / 6, 8)}deg)`;
+                } else {
+                    car.style.transform = 'rotate(0deg)';
+                }
+            }, 16);
         }
 
-        // Generate obstacles
+        // Create particle effects
+        function createParticles(x, y) {
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = (x + Math.random() * 20 - 10) + 'px';
+                particle.style.bottom = (y + Math.random() * 10) + 'px';
+                particle.style.animationDelay = Math.random() * 0.3 + 's';
+                gameContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (gameContainer.contains(particle)) {
+                        gameContainer.removeChild(particle);
+                    }
+                }, 2000);
+            }
+        }
+
+        // Enhanced obstacle generation with multiple types
         function generateObstacle() {
             if (isGameOver) return;
 
+            const obstacleType = obstacleTypes[Math.floor(Math.random() * obstacleTypes.length)];
             const obstacle = document.createElement('div');
-            obstacle.classList.add('obstacle');
+            
+            // Create different obstacle types
+            switch(obstacleType) {
+                case 'tree':
+                    obstacle.className = 'obstacle-tree';
+                    obstacle.innerHTML = '<div class="tree-trunk"></div><div class="tree-leaves"></div>';
+                    break;
+                case 'rock':
+                    obstacle.className = 'obstacle-rock';
+                    break;
+                case 'cactus':
+                    obstacle.className = 'obstacle-cactus';
+                    obstacle.innerHTML = `
+                        <div class="cactus-body">
+                            <div class="cactus-arm left"></div>
+                            <div class="cactus-arm right"></div>
+                        </div>
+                    `;
+                    break;
+                case 'sign':
+                    obstacle.className = 'obstacle-sign';
+                    const signs = ['⚠️', '🚧', '⛔', '🚫'];
+                    obstacle.innerHTML = `
+                        <div class="sign-post"></div>
+                        <div class="sign-board">${signs[Math.floor(Math.random() * signs.length)]}</div>
+                    `;
+                    break;
+            }
+            
             gameContainer.appendChild(obstacle);
 
-            let obstaclePosition = 580;
+            let obstaclePosition = 800;
+            const baseSpeed = 14;
+            const currentSpeed = baseSpeed + (gameSpeed * 2);
+            
             let obstacleTimer = setInterval(function() {
-                if (obstaclePosition < -20) {
+                if (obstaclePosition < -50) {
                     clearInterval(obstacleTimer);
-                    gameContainer.removeChild(obstacle);
-                    score++;
-                    scoreDisplay.textContent = `Score: ${score}`;
+                    if (gameContainer.contains(obstacle)) {
+                        gameContainer.removeChild(obstacle);
+                    }
+                    // Successful dodge - increase score and combo
+                    updateScore(obstacleType);
                 } else if (
-                    obstaclePosition > 0 && 
-                    obstaclePosition < 100 && 
-                    position < 40
+                    obstaclePosition > 30 && 
+                    obstaclePosition < 150 && 
+                    position < getObstacleHeight(obstacleType)
                 ) {
                     clearInterval(obstacleTimer);
                     gameOver();
                 }
 
-                obstaclePosition -= 10;
+                obstaclePosition -= currentSpeed;
                 obstacle.style.right = -obstaclePosition + 'px';
-            }, 20);
+            }, 16);
 
-            // Generate new obstacle after random time
-            setTimeout(generateObstacle, Math.random() * 2000 + 1000);
+            // Generate next obstacle with dynamic timing
+            const baseDelay = 1800 - (gameSpeed * 50);
+            const nextObstacleDelay = Math.random() * 800 + Math.max(baseDelay, 900);
+            setTimeout(generateObstacle, nextObstacleDelay);
         }
 
-        // Game over function
+        // Get obstacle height for collision detection
+        function getObstacleHeight(type) {
+            switch(type) {
+                case 'tree': return 50;
+                case 'rock': return 25;
+                case 'cactus': return 60;
+                case 'sign': return 45;
+                default: return 40;
+            }
+        }
+
+        // Enhanced scoring system with combos
+        function updateScore(obstacleType) {
+            let basePoints = 10;
+            
+            // Different obstacles give different points
+            switch(obstacleType) {
+                case 'cactus': basePoints = 15; break;
+                case 'sign': basePoints = 12; break;
+                case 'rock': basePoints = 8; break;
+            }
+            
+            combo++;
+            const comboMultiplier = Math.min(combo, 10);
+            const points = basePoints * comboMultiplier;
+            
+            score += points;
+            scoreDisplay.textContent = `Score: ${score}`;
+            
+            // Show combo display
+            if (combo > 1) {
+                comboDisplay.textContent = `COMBO x${combo}`;
+                comboDisplay.style.display = 'block';
+                comboDisplay.style.animation = 'comboGlow 0.5s ease-in-out';
+            }
+            
+            // Reset combo timer
+            clearTimeout(comboTimer);
+            comboTimer = setTimeout(() => {
+                combo = 0;
+                comboDisplay.style.display = 'none';
+            }, 3000);
+            
+            // Increase game speed
+            if (score % 100 === 0) {
+                gameSpeed++;
+                speedLines.style.opacity = Math.min(gameSpeed * 0.1, 0.8);
+            }
+        }
+
+        // Enhanced game over function
         function gameOver() {
             isGameOver = true;
+            finalScoreDisplay.textContent = score;
             gameOverDisplay.style.display = 'block';
+            car.style.transform = 'rotate(0deg)';
+            comboDisplay.style.display = 'none';
+            speedLines.style.opacity = 0;
+            
+            // Add crash effect
+            car.style.animation = 'shake 0.5s ease-in-out';
+            setTimeout(() => {
+                car.style.animation = '';
+            }, 500);
         }
 
-        // Control
+        // Restart game function
+        function restartGame() {
+            isGameOver = false;
+            isJumping = false;
+            position = 0;
+            score = 0;
+            combo = 0;
+            gameSpeed = 1;
+            
+            car.style.bottom = '0px';
+            car.style.transform = 'rotate(0deg)';
+            car.style.animation = '';
+            
+            scoreDisplay.textContent = 'Score: 0';
+            comboDisplay.style.display = 'none';
+            gameOverDisplay.style.display = 'none';
+            speedLines.style.opacity = 0;
+            
+            // Remove all obstacles
+            const obstacles = gameContainer.querySelectorAll('[class*="obstacle-"]');
+            obstacles.forEach(obstacle => {
+                if (gameContainer.contains(obstacle)) {
+                    gameContainer.removeChild(obstacle);
+                }
+            });
+            
+            // Remove all particles
+            const particles = gameContainer.querySelectorAll('.particle');
+            particles.forEach(particle => {
+                if (gameContainer.contains(particle)) {
+                    gameContainer.removeChild(particle);
+                }
+            });
+            
+            // Start new game
+            setTimeout(generateObstacle, 2000);
+        }
+
+        // Enhanced controls
         document.addEventListener('keydown', function(event) {
             if (event.code === 'Space') {
+                event.preventDefault();
                 if (isGameOver) {
-                    window.location.reload();
+                    restartGame();
                 } else {
                     jump();
                 }
             }
         });
 
+        // Touch controls for mobile
+        gameContainer.addEventListener('touchstart', function(event) {
+            event.preventDefault();
+            if (isGameOver) {
+                restartGame();
+            } else {
+                jump();
+            }
+        });
+
         // Start game
-        generateObstacle();
+        setTimeout(generateObstacle, 2500);
     </script>
 </body>
-</html> 
+</html>
